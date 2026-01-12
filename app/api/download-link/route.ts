@@ -19,6 +19,17 @@ import { createSignedDownloadUrl } from '@/lib/r2';
  */
 export async function GET(request: NextRequest) {
   try {
+    // Validate environment variables
+    if (!process.env.STRIPE_SECRET_KEY || !process.env.R2_ENDPOINT || 
+        !process.env.R2_ACCESS_KEY || !process.env.R2_SECRET_KEY || 
+        !process.env.R2_BUCKET) {
+      console.error('Missing required environment variables');
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+
     // Extract session_id from query parameters
     const searchParams = request.nextUrl.searchParams;
     const sessionId = searchParams.get('session_id');

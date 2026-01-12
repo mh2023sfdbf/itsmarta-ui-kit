@@ -1,30 +1,16 @@
 import { S3Client, GetObjectCommand } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
-// Validate required environment variables
-if (!process.env.R2_ENDPOINT) {
-  throw new Error('R2_ENDPOINT is not defined in environment variables');
-}
-if (!process.env.R2_ACCESS_KEY) {
-  throw new Error('R2_ACCESS_KEY is not defined in environment variables');
-}
-if (!process.env.R2_SECRET_KEY) {
-  throw new Error('R2_SECRET_KEY is not defined in environment variables');
-}
-if (!process.env.R2_BUCKET) {
-  throw new Error('R2_BUCKET is not defined in environment variables');
-}
-
 /**
  * S3Client configured for Cloudflare R2
  * Compatible with Cloudflare Pages Functions edge runtime
  */
 export const r2Client = new S3Client({
   region: 'auto',
-  endpoint: process.env.R2_ENDPOINT,
+  endpoint: process.env.R2_ENDPOINT || '',
   credentials: {
-    accessKeyId: process.env.R2_ACCESS_KEY,
-    secretAccessKey: process.env.R2_SECRET_KEY,
+    accessKeyId: process.env.R2_ACCESS_KEY || '',
+    secretAccessKey: process.env.R2_SECRET_KEY || '',
   },
 });
 
