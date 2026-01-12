@@ -1,11 +1,21 @@
 import Stripe from 'stripe';
 
 /**
- * Stripe client configured with secret key and latest API version
- * Compatible with Cloudflare Pages Functions edge runtime
+ * Get Stripe client configured with secret key and latest API version
+ * Factory function to avoid initializing at module scope (build-time safe)
+ * 
+ * @throws Error if STRIPE_SECRET_KEY is not set
  */
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2025-02-24.acacia',
-  typescript: true,
-});
+export function getStripe(): Stripe {
+  const apiKey = process.env.STRIPE_SECRET_KEY;
+  
+  if (!apiKey) {
+    throw new Error('STRIPE_SECRET_KEY environment variable is not set');
+  }
+
+  return new Stripe(apiKey, {
+    apiVersion: '2025-02-24.acacia',
+    typescript: true,
+  });
+}
 

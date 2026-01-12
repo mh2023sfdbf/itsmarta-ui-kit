@@ -1,12 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { stripe } from '@/lib/stripe';
+import { getStripe } from '@/lib/stripe';
 import { createSignedDownloadUrl } from '@/lib/r2';
+
+// Force Node.js runtime (required for Stripe SDK on Netlify)
+export const runtime = 'nodejs';
+
+// Force dynamic rendering (never static/cached)
+export const dynamic = 'force-dynamic';
 
 /**
  * API Route: GET /api/download-link
  * 
  * Verifies a Stripe checkout session and returns a signed R2 download URL
- * Compatible with Cloudflare Pages Functions
  * 
  * Query params:
  *   - session_id: Stripe checkout session ID
@@ -15,21 +20,10 @@ import { createSignedDownloadUrl } from '@/lib/r2';
  *   - 200: { url: string } - Signed download URL
  *   - 400: Missing or invalid session_id
  *   - 403: Payment not completed or invalid session
- *   - 500: Server error
+ *   - 500: Server error (including missing env vars)
  */
 export async function GET(request: NextRequest) {
   try {
-    // Validate environment variables
-    if (!process.env.STRIPE_SECRET_KEY || !process.env.R2_ENDPOINT || 
-        !process.env.R2_ACCESS_KEY || !process.env.R2_SECRET_KEY || 
-        !process.env.R2_BUCKET) {
-      console.error('Missing required environment variables');
-      return NextResponse.json(
-        { error: 'Server configuration error' },
-        { status: 500 }
-      );
-    }
-
     // Extract session_id from query parameters
     const searchParams = request.nextUrl.searchParams;
     const sessionId = searchParams.get('session_id');
@@ -39,6 +33,18 @@ export async function GET(request: NextRequest) {
       return NextResponse.json(
         { error: 'Missing session_id parameter' },
         { status: 400 }
+      );
+    }
+
+    // Get Stripe client (will throw if STRIPE_SECRET_KEY is missing)
+    let stripe;
+    try {
+      stripe = getStripe();
+    } catch (error) {
+      console.error('Stripe initialization error:', error);
+      return NextResponse.json(
+        { error: 'Missing STRIPE_SECRET_KEY configuration' },
+        { status: 500 }
       );
     }
 
@@ -87,7 +93,16 @@ export async function GET(request: NextRequest) {
     const r2Key = process.env.R2_KEY || 'ui-kit-ver1.zip';
 
     // Generate signed download URL (expires in 10 minutes = 600 seconds)
-    const signedUrl = await createSignedDownloadUrl(r2Key, 600);
+    let signedUrl;
+    try {
+      signedUrl = await createSignedDownloadUrl(r2Key, 600);
+    } catch (error) {
+      console.error('R2 signed URL generation error:', error);
+      return NextResponse.json(
+        { error: 'Missing R2 configuration (R2_ENDPOINT, R2_ACCESS_KEY, R2_SECRET_KEY, R2_BUCKET)' },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ url: signedUrl });
 
@@ -99,7 +114,4 @@ export async function GET(request: NextRequest) {
     );
   }
 }
-
-// Specify edge runtime for Cloudflare Pages compatibility
-export const runtime = 'edge';
 
