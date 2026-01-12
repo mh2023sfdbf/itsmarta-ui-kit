@@ -627,7 +627,7 @@ export default function FooterComprehensive() {
                 <p className="text-sm sm:text-base text-black/60 font-light max-w-2xl leading-relaxed">
                   Ready-to-use sections and flows from real SaaS products.
                   <br />
-                  Preview them live, then download the code.
+                  Preview them live, then buy the code. Easy.
                 </p>
               </div>
 

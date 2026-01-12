@@ -28,7 +28,7 @@ const projects: Project[] = [
     company: 'Clamalo · Concept',
     period: '2026',
     description: 'A concept design for an emotional journaling and tracking platform. I designed the complete visual identity, including branding, landing page, and app UI, focusing on creating a calm, welcoming space for users to track their emotions, reflect on patterns, and grow through self-awareness.',
-    image: '/project-screenshots/clamalo_concept1.png',
+    image: '/project-screenshots/clamalo_concept_preview.jpeg',
     images: ['/project-screenshots/clamalo_concept1.png', '/project-screenshots/clamalo_concept2.png'],
     tags: ['Branding', 'UI Design', 'Landing Page', 'App UI'],
   },
