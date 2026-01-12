@@ -41,8 +41,8 @@ export default function HeroGlassy() {
         <div className="relative h-full p-10 md:p-16 flex items-center justify-center">
           <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-10 w-full max-w-sm">
             <div className="text-white/60 text-sm uppercase tracking-wider mb-3">Pro</div>
-            <div className="text-5xl font-bold text-white mb-2">$29</div>
-            <div className="text-white/70 text-base mb-6">per month</div>
+            <div className="text-5xl font-bold text-white mb-2">$49</div>
+            <div className="text-white/70 text-base mb-6">one-time</div>
             <div className="space-y-3 text-base text-white/80">
               <div>✓ All features</div>
               <div>✓ Priority support</div>
@@ -442,9 +442,12 @@ export default function FooterComprehensive() {
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
           
-          <button className="inline-flex items-center px-5 py-2.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors">
+          <a 
+            href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
+            className="inline-flex items-center px-5 py-2.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors"
+          >
             Buy the code
-          </button>
+          </a>
         </div>
       </div>
 
@@ -656,7 +659,7 @@ export default function FooterComprehensive() {
                     description=""
                     category={currentTemplate.category}
                     isPremium
-                    price={29}
+                    price={49}
                     code={currentTemplate.code}
                   >
                     {currentTemplate.component}

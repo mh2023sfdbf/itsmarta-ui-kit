@@ -109,30 +109,51 @@ export const metadata: Metadata = {
 5. Ensure responsive design (mobile-first)
 6. Components are "use client" if they need interactivity
 
+## 💳 Digital Downloads (NEW!)
+
+Sell your UI Kit with **Stripe + Cloudflare R2** integration:
+
+- ✅ Stripe Checkout for payments
+- ✅ Cloudflare R2 for secure file storage
+- ✅ Auto-download after payment
+- ✅ Short-lived signed URLs (10 min expiry)
+- ✅ No authentication required
+- ✅ Edge runtime for global performance
+
+**Quick Start**: See `QUICK-START-DOWNLOADS.md`  
+**Full Guide**: See `DOWNLOAD-FLOW-SETUP.md`
+
 ## 🌐 Deployment
 
-### Vercel (Recommended - 1-Click)
+### Cloudflare Pages (Recommended for Downloads)
+Best for projects using digital downloads with R2:
+```bash
+npm run build
+npx wrangler pages deploy .vercel/output/static --project-name=itsmarta-ui-kit
+```
+See: `CLOUDFLARE-DEPLOYMENT.md`
+
+### Vercel (1-Click)
 ```bash
 npm i -g vercel
 vercel
 ```
 
-### Static Export (Any Host)
-Already configured for static export:
-```bash
-npm run build
-# Deploy the 'out' folder
-```
-
-### Netlify, Cloudflare Pages, AWS
+### Netlify, AWS, Other Hosts
 Build command: `npm run build`  
-Publish directory: `out`
+Publish directory: `.vercel/output/static`
 
 ## 📚 Documentation
 
+### Core Documentation
 - **MIGRATION-COMPLETE.md** - Migration details & new features
 - **SEO-STRATEGY.md** - Complete SEO strategy
 - **QUICK-SEO-GUIDE.md** - Implementation guide
+
+### Digital Downloads
+- **QUICK-START-DOWNLOADS.md** - 5-minute setup guide
+- **DOWNLOAD-FLOW-SETUP.md** - Complete setup & testing
+- **CLOUDFLARE-DEPLOYMENT.md** - Deployment guide
 
 ## 📝 License
 

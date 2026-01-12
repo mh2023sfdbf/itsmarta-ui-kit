@@ -1,0 +1,27 @@
+# Cloudflare Pages configuration for Next.js
+# This file is used when deploying to Cloudflare Pages
+
+name = "itsmarta-ui-kit"
+compatibility_date = "2024-01-01"
+
+# Pages-specific configuration
+pages_build_output_dir = ".vercel/output/static"
+
+# Environment variables (set these in Cloudflare Dashboard)
+# Do not commit actual secrets - these are just declarations
+# Go to: Pages Project > Settings > Environment Variables
+
+# Required variables:
+# - STRIPE_SECRET_KEY
+# - R2_ENDPOINT
+# - R2_ACCESS_KEY
+# - R2_SECRET_KEY
+# - R2_BUCKET
+# - R2_KEY (optional, defaults to "ui-kit-ver1.zip")
+
+[env.production]
+# Production environment variables go in Cloudflare Dashboard
+
+[env.preview]
+# Preview environment variables go in Cloudflare Dashboard
+
