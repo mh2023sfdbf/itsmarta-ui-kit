@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
+// Force dynamic rendering - this page needs query params at runtime
+export const dynamic = 'force-dynamic';
+
 type DownloadState = 'loading' | 'success' | 'error';
 
 export default function DownloadPage() {
