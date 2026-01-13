@@ -13,10 +13,10 @@ export default function HeroVideo() {
             It&apos;s journaling made simple! Capture your thoughts, feelings, and reflections—just for you, or shared with your therapist if you choose. Your journal, your way.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <a href="#" className="py-4 px-8 text-lg font-medium text-black border border-gray-900 bg-purple-200 hover:bg-purple-100 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+            <a href="#" className="py-4 px-8 text-lg font-medium text-black bg-purple-200 hover:bg-purple-100 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
               Track Your Mood
             </a>
-            <a href="#" className="py-4 px-8 text-lg font-medium text-black border border-gray-900 bg-[#fbf9bf] hover:bg-yellow-100 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+            <a href="#" className="py-4 px-8 text-lg font-medium text-black bg-[#fbf9bf] hover:bg-yellow-100 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
               Learn More
             </a>
           </div>

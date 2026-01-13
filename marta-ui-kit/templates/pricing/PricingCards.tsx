@@ -58,7 +58,7 @@ export default function PricingCards() {
               Track emotions, journal daily, reflect, and share with your therapist, if you choose — completely free.
             </p>
             <div className="mt-auto">
-              <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-black border border-gray-900 bg-purple-200 hover:bg-purple-100 rounded-full transition duration-300">
+              <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-black bg-purple-200 hover:bg-purple-100 rounded-full transition duration-300">
                 Start Journaling Free
               </a>
             </div>

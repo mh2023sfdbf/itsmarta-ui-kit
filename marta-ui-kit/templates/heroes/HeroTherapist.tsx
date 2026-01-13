@@ -18,17 +18,17 @@ export default function HeroTherapist() {
             </p>
             <div className="flex flex-wrap -m-2">
               <div className="w-full sm:w-auto p-2">
-                <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-black border border-gray-900 bg-purple-200 hover:bg-purple-100 rounded-full transition duration-300">
+                <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-black bg-purple-200 hover:bg-purple-100 rounded-full transition duration-300">
                   Register as a Therapist
                 </a>
               </div>
               <div className="xl:flex items-center space-x-2 p-2 xl:hidden">
-                <a href="#" className="inline-flex px-6 text-lg font-medium text-black transition duration-300 border border-gray-900 rounded-full py-4 transition duration-300 hover:bg-gradient-to-r hover:from-purple-200 hover:to-yellow-100 xl:hidden">
+                <a href="#" className="inline-flex px-6 text-lg font-medium text-black transition duration-300 border border-gray-900 rounded-full py-4 hover:bg-gradient-to-r hover:from-purple-200 hover:to-yellow-100 xl:hidden">
                   Sign In
                 </a>
               </div>
               <div className="p-2 w-full sm:w-auto hidden md:block">
-                <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-black border border-gray-900 bg-[#fbf9bf] hover:bg-yellow-100 rounded-full transition duration-300 hidden xl:block">
+                <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-black bg-[#fbf9bf] hover:bg-yellow-100 rounded-full transition duration-300 hidden xl:block">
                   Learn More
                 </a>
               </div>
