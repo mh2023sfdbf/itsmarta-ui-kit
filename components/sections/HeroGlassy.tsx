@@ -2,16 +2,27 @@
 
 import { useState, useEffect } from 'react';
 import TemplatePreview from '@/components/showcase/TemplatePreview';
-import HeroModern from '@/marta-ui-kit/templates/heroes/HeroModern';
-import HeroMinimal from '@/marta-ui-kit/templates/heroes/HeroMinimal';
-import FeaturesGlass from '@/marta-ui-kit/templates/features/FeaturesGlass';
-import CTAGradient from '@/marta-ui-kit/templates/cta/CTAGradient';
 import PulsingLogo from '@/marta-ui-kit/templates/loaders/PulsingLogo';
 import SignInSplit from '@/marta-ui-kit/templates/auth/SignInSplit';
 import FooterComprehensive from '@/marta-ui-kit/templates/footers/FooterComprehensive';
+import NavOrange from '@/marta-ui-kit/templates/navigation/NavOrange';
+import HeroVideo from '@/marta-ui-kit/templates/heroes/HeroVideo';
+import HeroTherapist from '@/marta-ui-kit/templates/heroes/HeroTherapist';
+import BenefitsStats from '@/marta-ui-kit/templates/features/BenefitsStats';
+import VideoTestimonial from '@/marta-ui-kit/templates/video/VideoTestimonial';
+import CoreFeatures from '@/marta-ui-kit/templates/features/CoreFeatures';
+import TherapistBenefits from '@/marta-ui-kit/templates/features/TherapistBenefits';
+import TestimonialsCards from '@/marta-ui-kit/templates/testimonials/TestimonialsCards';
+import FAQAccordion from '@/marta-ui-kit/templates/faq/FAQAccordion';
+import CTAHighlighted from '@/marta-ui-kit/templates/cta/CTAHighlighted';
+import CTAWithImages from '@/marta-ui-kit/templates/cta/CTAWithImages';
+import CTAElevate from '@/marta-ui-kit/templates/cta/CTAElevate';
+import BridgeGapCTA from '@/marta-ui-kit/templates/about/BridgeGapCTA';
+import PricingCards from '@/marta-ui-kit/templates/pricing/PricingCards';
+import TermsOfUse from '@/marta-ui-kit/templates/legal/TermsOfUse';
 
 export default function HeroGlassy() {
-  const [activeTemplate, setActiveTemplate] = useState('hero-modern');
+  const [activeTemplate, setActiveTemplate] = useState('sign-in-split');
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   // Card carousel data
@@ -101,91 +112,98 @@ export default function HeroGlassy() {
 
   const templates = [
     {
-      id: 'hero-modern',
-      title: 'Hero Modern',
-      category: 'Heroes',
-      component: <HeroModern />,
-      code: `export default function HeroModern() {
+      id: 'sign-in-split',
+      title: 'Sign In Split',
+      category: 'Auth',
+      component: <SignInSplit />,
+      code: `export default function SignInSplit() {
+  const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E";
+  
   return (
-    <section className="relative min-h-screen flex items-center">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 
-          bg-gradient-to-br from-purple-400/30 to-pink-400/30 
-          rounded-full blur-3xl" />
-      </div>
-      <div className="relative max-w-7xl mx-auto px-4">
-        <h1 className="text-8xl font-bold">
-          <span className="bg-gradient-to-r from-indigo-600 
-            to-purple-600 bg-clip-text text-transparent">
-            Beautiful UI
-          </span>
-        </h1>
-      </div>
-    </section>
-  );
-}`
-    },
-    {
-      id: 'hero-minimal',
-      title: 'Hero Minimal',
-      category: 'Heroes',
-      component: <HeroMinimal />,
-      code: `export default function HeroMinimal() {
-  return (
-    <section className="min-h-screen flex items-center bg-white">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h1 className="text-9xl font-bold tracking-tighter">
-          <span className="text-gray-900">Design</span>
-          <br />
-          <span className="text-gray-300">Simplified</span>
-        </h1>
-      </div>
-    </section>
-  );
-}`
-    },
-    {
-      id: 'features-glass',
-      title: 'Features Glass',
-      category: 'Features',
-      component: <FeaturesGlass />,
-      code: `export default function FeaturesGlass() {
-  const features = [
-    { icon: "⚡", title: "Lightning Fast" },
-    { icon: "🎨", title: "Fully Customizable" },
-  ];
-  return (
-    <section className="py-32 bg-gradient-to-br from-slate-50 to-indigo-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-4 gap-6">
-          {features.map((feature) => (
-            <div className="backdrop-blur-xl bg-white/40 rounded-3xl p-8">
-              {feature.icon} {feature.title}
+    <section 
+      className="relative pt-16 pb-0 md:py-32 bg-[#f7f6f4]" 
+      style={{ backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: 'center' }}
+    >
+      <div className="container px-4 mx-auto mb-16">
+        <div className="w-full md:w-3/5 lg:w-1/2">
+          <div className="max-w-sm mx-auto">
+            <div className="mb-6 text-center">
+              <a className="inline-block mb-6" href="">
+                <img className="h-16" src={placeholder} alt="Logo"/>
+              </a>
+              <h3 className="mb-4 text-2xl md:text-3xl font-heading">Sign in to your account</h3>
             </div>
-          ))}
+            
+            <form action="" className="">
+              <a 
+                href="" 
+                className="font-heading text-sm sm:text-base rounded-full cursor-pointer hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 mx-auto mb-4 flex items-center justify-center p-2 md:w-2/3"
+              >
+                <img className="w-5 h-5 mr-3" src={placeholder} alt="Google logo"/>
+                <span>Sign in with Google</span>
+              </a>
+
+              <div className="flex items-center justify-center mb-6">
+                <div className="border-t border-coolGray-300 flex-grow mr-4"></div>
+                <span className="text-gray-400 text-xs">or</span>
+                <div className="border-t border-coolGray-300 flex-grow ml-4"></div>
+              </div>
+
+              <div className="mb-6">
+                <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="email">
+                  Email
+                </label>
+                <input 
+                  id="email" 
+                  className="block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500 focus:ring-opacity-50" 
+                  type="email" 
+                  placeholder="you@example.com"
+                />
+              </div>
+
+              <div className="mb-6">
+                <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="password">
+                  Password
+                </label>
+                <input 
+                  id="password" 
+                  className="block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500 focus:ring-opacity-50" 
+                  type="password" 
+                  placeholder="************"
+                />
+              </div>
+
+              <div className="flex flex-wrap items-center justify-between mb-6">
+                <div className="w-full md:w-auto mt-1">
+                  <a className="inline-block text-xs text-pink-500 hover:text-pink-600" href="">
+                    Forgot your password?
+                  </a>
+                </div>
+              </div>
+
+              <a 
+                className="font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer font-heading hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 text-center mx-auto mb-4 w-2/3" 
+                href=""
+              >
+                Sign In
+              </a>
+              
+              <p className="text-center">
+                <span className="text-xs">Don't have an account?</span>
+                <a className="inline-block text-xs text-pink-500 hover:text-pink-600 hover:underline" href="">
+                  Sign up
+                </a>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
-    </section>
-  );
-}`
-    },
-    {
-      id: 'cta-gradient',
-      title: 'CTA Gradient',
-      category: 'CTA',
-      component: <CTAGradient />,
-      code: `export default function CTAGradient() {
-  return (
-    <section className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br 
-        from-indigo-600 via-purple-600 to-pink-600" />
-      <div className="relative max-w-4xl mx-auto px-4 text-center">
-        <div className="backdrop-blur-xl bg-white/10 rounded-3xl p-12">
-          <h2 className="text-6xl font-bold text-white mb-6">
-            Ready to build something amazing?
-          </h2>
-        </div>
-      </div>
+
+      <img 
+        className="md:absolute md:top-0 md:right-0 mx-auto md:h-full md:w-2/5 lg:w-1/2 md:object-cover hidden md:block" 
+        src="https://myroomdesigner.ai/_next/image?url=https%3A%2F%2Fstatic.shuffle.dev%2Fuploads%2Ffiles%2F68%2F685cdf6531559900d35917105bd95b994e60c466%2F1707239043111990.jpg&w=3840&q=75" 
+        alt="Interior design inspiration"
+      />
     </section>
   );
 }`
@@ -288,98 +306,270 @@ export default function FooterComprehensive() {
 }`
     },
     {
-      id: 'sign-in-split',
-      title: 'Sign In Split',
-      category: 'Auth',
-      component: <SignInSplit />,
-      code: `export default function SignInSplit() {
-  const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E";
+      id: 'nav-orange',
+      title: 'Navigation Orange',
+      category: 'Navigation',
+      component: <NavOrange />,
+      code: `'use client';
+
+import { useState } from 'react';
+
+export default function NavOrange() {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   
   return (
-    <section 
-      className="relative pt-16 pb-0 md:py-32 bg-[#f7f6f4]" 
-      style={{ backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: 'center' }}
-    >
-      <div className="container px-4 mx-auto mb-16">
-        <div className="w-full md:w-3/5 lg:w-1/2">
-          <div className="max-w-sm mx-auto">
-            <div className="mb-6 text-center">
-              <a className="inline-block mb-6" href="">
-                <img className="h-16" src={placeholder} alt="Logo"/>
-              </a>
-              <h3 className="mb-4 text-2xl md:text-3xl font-heading">Sign in to your account</h3>
-            </div>
-            
-            <form action="" className="">
-              <a 
-                href="" 
-                className="font-heading text-sm sm:text-base rounded-full cursor-pointer hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 mx-auto mb-4 flex items-center justify-center p-2 md:w-2/3"
-              >
-                <img className="w-5 h-5 mr-3" src={placeholder} alt="Google logo"/>
-                <span>Sign in with Google</span>
-              </a>
-
-              <div className="flex items-center justify-center mb-6">
-                <div className="border-t border-coolGray-300 flex-grow mr-4"></div>
-                <span className="text-gray-400 text-xs">or</span>
-                <div className="border-t border-coolGray-300 flex-grow ml-4"></div>
-              </div>
-
-              <div className="mb-6">
-                <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="email">
-                  Email
-                </label>
-                <input 
-                  id="email" 
-                  className="block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500 focus:ring-opacity-50" 
-                  type="email" 
-                  placeholder="you@example.com"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="password">
-                  Password
-                </label>
-                <input 
-                  id="password" 
-                  className="block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500 focus:ring-opacity-50" 
-                  type="password" 
-                  placeholder="************"
-                />
-              </div>
-
-              <div className="flex flex-wrap items-center justify-between mb-6">
-                <div className="w-full md:w-auto mt-1">
-                  <a className="inline-block text-xs text-pink-500 hover:text-pink-600" href="">
-                    Forgot your password?
-                  </a>
-                </div>
-              </div>
-
-              <a 
-                className="font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer font-heading hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 text-center mx-auto mb-4 w-2/3" 
-                href=""
-              >
-                Sign In
-              </a>
-              
-              <p className="text-center">
-                <span className="text-xs">Don't have an account?</span>
-                <a className="inline-block text-xs text-pink-500 hover:text-pink-600 hover:underline" href="">
-                  Sign up
-                </a>
-              </p>
-            </form>
-          </div>
-        </div>
+    <section className="bg-orange-50">
+      <div className="container mx-auto px-4">
+        {/* Navigation content */}
       </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'hero-video',
+      title: 'Hero Video',
+      category: 'Heroes',
+      component: <HeroVideo />,
+      code: `export default function HeroVideo() {
+  return (
+    <section className="bg-orange-50">
+      <div className="container mx-auto py-12 px-4 relative">
+        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+          Track. Reflect. Grow.
+        </h2>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'hero-therapist',
+      title: 'Hero Therapist',
+      category: 'Heroes',
+      component: <HeroTherapist />,
+      code: `export default function HeroTherapist() {
+  return (
+    <section className="bg-orange-50">
+      <div className="container mx-auto p-4 mt-8 pb-12">
+        <h1 className="font-heading text-4xl xs:text-5xl sm:text-6xl">
+          Turn Client Journaling into Deeper Insights
+        </h1>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'benefits-stats',
+      title: 'Benefits Stats',
+      category: 'Features',
+      component: <BenefitsStats />,
+      code: `export default function BenefitsStats() {
+  return (
+    <section className="py-12 lg:py-24">
+      <div className="container mx-auto px-4">
+        <h2 className="font-heading text-4xl xs:text-5xl sm:text-6xl mb-20">
+          Why Emotional Tracking Matters
+        </h2>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'video-testimonial',
+      title: 'Video Testimonial',
+      category: 'Video',
+      component: <VideoTestimonial />,
+      code: `'use client';
 
-      <img 
-        className="md:absolute md:top-0 md:right-0 mx-auto md:h-full md:w-2/5 lg:w-1/2 md:object-cover hidden md:block" 
-        src="https://myroomdesigner.ai/_next/image?url=https%3A%2F%2Fstatic.shuffle.dev%2Fuploads%2Ffiles%2F68%2F685cdf6531559900d35917105bd95b994e60c466%2F1707239043111990.jpg&w=3840&q=75" 
-        alt="Interior design inspiration"
-      />
+import { useState } from 'react';
+
+export default function VideoTestimonial() {
+  const [playing, setPlaying] = useState(false);
+  
+  return (
+    <section className="relative overflow-hidden bg-orange-50 py-36">
+      {/* Video testimonial content */}
+    </section>
+  );
+}`
+    },
+    {
+      id: 'core-features',
+      title: 'Core Features',
+      category: 'Features',
+      component: <CoreFeatures />,
+      code: `export default function CoreFeatures() {
+  return (
+    <section className="relative py-16 lg:py-28 overflow-hidden bg-white">
+      <div className="container mx-auto px-6 relative z-10">
+        <h2 className="font-heading text-4xl xs:text-5xl sm:text-6xl mb-6">
+          See How YourLogo Helps You To...
+        </h2>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'therapist-benefits',
+      title: 'Therapist Benefits',
+      category: 'Features',
+      component: <TherapistBenefits />,
+      code: `export default function TherapistBenefits() {
+  return (
+    <section className="py-12 bg-orange-50 lg:py-44">
+      <div className="container mx-auto px-4">
+        <h2 className="font-heading text-4xl xs:text-5xl sm:text-6xl mb-20">
+          Sharing your emotional tracking with your therapist...
+        </h2>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'testimonials-cards',
+      title: 'Testimonials Cards',
+      category: 'Testimonials',
+      component: <TestimonialsCards />,
+      code: `export default function TestimonialsCards() {
+  return (
+    <section className="py-12 lg:py-24 overflow-hidden">
+      <div className="container mx-auto px-4">
+        <h1 className="font-heading text-4xl xs:text-5xl sm:text-6xl">
+          What our customers say
+        </h1>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'faq-accordion',
+      title: 'FAQ Accordion',
+      category: 'FAQ',
+      component: <FAQAccordion />,
+      code: `'use client';
+
+import { useState } from 'react';
+
+export default function FAQAccordion() {
+  const [selected, setSelected] = useState<number | null>(null);
+  
+  return (
+    <section className="relative py-20 md:py-40">
+      <h1 className="font-heading text-4xl xs:text-5xl sm:text-6xl">
+        Frequently Asked Questions
+      </h1>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'cta-highlighted',
+      title: 'CTA Highlighted',
+      category: 'CTA',
+      component: <CTAHighlighted />,
+      code: `export default function CTAHighlighted() {
+  return (
+    <section className="relative overflow-hidden pb-40 px-6 xl:px-32">
+      <div className="container mx-auto bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 py-36 px-6 rounded-xl">
+        <h1 className="font-heading text-4xl xs:text-5xl sm:text-6xl mb-8">
+          Find the Right Therapist for Your Needs
+        </h1>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'cta-with-images',
+      title: 'CTA With Images',
+      category: 'CTA',
+      component: <CTAWithImages />,
+      code: `export default function CTAWithImages() {
+  return (
+    <section className="relative overflow-hidden py-16 lg:py-28 bg-orange-50">
+      <div className="container mx-auto px-6 relative z-10">
+        <h2 className="font-heading text-4xl xs:text-5xl sm:text-6xl mb-4">
+          Start Your Emotional Journey Today
+        </h2>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'cta-elevate',
+      title: 'CTA Elevate',
+      category: 'CTA',
+      component: <CTAElevate />,
+      code: `export default function CTAElevate() {
+  return (
+    <section className="py-20 relative overflow-hidden bg-orange-50">
+      <div className="container mx-auto px-6 relative z-10">
+        <h1 className="font-heading text-4xl xs:text-5xl sm:text-6xl mb-6">
+          Ready to Elevate Your Practice?
+        </h1>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'bridge-gap-cta',
+      title: 'Bridge Gap CTA',
+      category: 'About',
+      component: <BridgeGapCTA />,
+      code: `export default function BridgeGapCTA() {
+  return (
+    <section className="relative overflow-hidden bg-orange-50 py-32">
+      <div className="container mx-auto px-4 relative z-10">
+        <h1 className="font-heading text-4xl xs:text-5xl sm:text-6xl mb-8">
+          Bridge the Gap Between Therapy Sessions
+        </h1>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'pricing-cards',
+      title: 'Pricing Cards',
+      category: 'Pricing',
+      component: <PricingCards />,
+      code: `'use client';
+
+import { useState } from 'react';
+
+export default function PricingCards() {
+  const [yearly, setYearly] = useState(false);
+  
+  return (
+    <section className="py-24 bg-orange-50 lg:pb-34">
+      <h2 className="font-heading text-4xl xs:text-5xl sm:text-6xl mb-4">
+        Simple, Transparent Pricing
+      </h2>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'terms-of-use',
+      title: 'Terms of Use',
+      category: 'Legal',
+      component: <TermsOfUse />,
+      code: `export default function TermsOfUse() {
+  return (
+    <section className="py-24 lg:py-32 bg-orange-50">
+      <div className="container mx-auto px-6">
+        <h2 className="font-heading text-5xl sm:text-6xl text-gray-900">
+          Terms of Use
+        </h2>
+      </div>
     </section>
   );
 }`
