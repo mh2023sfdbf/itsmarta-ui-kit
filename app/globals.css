@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Sego';
+  src: url('/fonts/sego/SEGO.otf') format('opentype'),
+       url('/fonts/sego/SEGO.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --font-inter: 'Inter', system-ui, sans-serif;
+    --font-sego: 'Sego', sans-serif;
   }
   
   body {

@@ -24,6 +24,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        sego: ['var(--font-sego)', 'Sego', 'sans-serif'],
       },
     },
   },
