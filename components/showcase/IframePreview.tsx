@@ -12,6 +12,7 @@ export default function IframePreview({ children, width }: IframePreviewProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [mountNode, setMountNode] = useState<HTMLElement | null>(null);
   const [iframeHeight, setIframeHeight] = useState(800);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const iframe = iframeRef.current;
@@ -73,6 +74,8 @@ export default function IframePreview({ children, width }: IframePreviewProps) {
     const root = iframeDoc.getElementById('iframe-root');
     if (root) {
       setMountNode(root);
+      // Mark as ready once mount node is set
+      setTimeout(() => setIsReady(true), 50);
     }
 
     // Observe content height changes
@@ -136,6 +139,8 @@ export default function IframePreview({ children, width }: IframePreviewProps) {
           width: `${width}px`,
           height: `${iframeHeight}px`,
           border: 'none',
+          opacity: isReady ? 1 : 0,
+          transition: 'opacity 0.2s ease-in-out',
         }}
         title="Preview"
       />

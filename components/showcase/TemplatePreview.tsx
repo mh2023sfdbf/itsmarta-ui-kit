@@ -135,21 +135,25 @@ export default function TemplatePreview({
           </div>
 
           {/* The actual component */}
-          <div className="relative min-h-[600px] flex justify-center items-start">
+          <div className="relative min-h-[600px] flex justify-center items-start bg-white">
             <div 
               className="transition-all duration-500 ease-in-out"
               style={{
                 width: viewport === 'desktop' ? '100%' : `${typeof currentConfig.width === 'number' ? currentConfig.width : 1200}px`,
+                minHeight: '600px',
               }}
             >
               {viewport === 'desktop' ? (
                 // Desktop: render directly
-                <div className="w-full">
+                <div className="w-full min-h-[600px]">
                   {children}
                 </div>
               ) : (
                 // Mobile/Tablet: render in iframe with proper viewport
-                <IframePreview width={typeof currentConfig.width === 'number' ? currentConfig.width : 1200}>
+                <IframePreview 
+                  key={viewport}
+                  width={typeof currentConfig.width === 'number' ? currentConfig.width : 1200}
+                >
                   {children}
                 </IframePreview>
               )}
