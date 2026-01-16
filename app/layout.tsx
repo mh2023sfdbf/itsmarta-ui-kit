@@ -63,9 +63,17 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: [
+      { url: "/favicon itsmarta/favicon.ico" },
+      { url: "/favicon itsmarta/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon itsmarta/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon itsmarta/favicon.ico",
+    apple: [
+      { url: "/favicon itsmarta/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
+  manifest: "/favicon itsmarta/site.webmanifest",
 };
 
 export default function RootLayout({
