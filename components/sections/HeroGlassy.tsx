@@ -1264,9 +1264,14 @@ export default function PricingCards() {
         <div id="how" className="pt-40 sm:pt-48 md:pt-56">
             <div className="max-w-5xl mx-auto">
               {/* Title - Centered */}
-              <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-20 sm:mb-28 md:mb-32 text-black/90 text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-8 text-black/90 text-center">
                 How it works
               </h2>
+              
+              {/* Subtitle */}
+              <p className="text-base sm:text-lg text-black/60 leading-relaxed font-light text-center mb-20 sm:mb-28 md:mb-32 max-w-2xl mx-auto">
+                Built to be understandable, flexible, and production-ready.
+              </p>
 
               {/* Steps - Single Column with Dramatic Spacing */}
               <div className="space-y-20 sm:space-y-28 md:space-y-32">
@@ -1310,11 +1315,6 @@ export default function PricingCards() {
                   </div>
                 </div>
               </div>
-
-              {/* Bottom Note - Centered */}
-              <p className="mt-20 sm:mt-28 md:mt-32 text-sm text-black/40 italic text-center">
-                Built to be understandable, flexible, and production-ready.
-              </p>
             </div>
         </div>
       </div>
