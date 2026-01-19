@@ -25,7 +25,7 @@ export default function Navigation() {
               href="#work" 
               className="text-sm text-black/60 hover:text-black transition-colors"
             >
-              Work
+              Recent work
             </a>
             <a 
               href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"

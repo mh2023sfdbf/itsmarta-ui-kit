@@ -25,6 +25,10 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
         sego: ['var(--font-sego)', 'Sego', 'sans-serif'],
+        lustria: ['var(--font-lustria)', 'Lustria', 'serif'],
+        heading: ['var(--font-lustria)', 'Lustria', 'serif'], // Design App headings
+        hedvig: ['var(--font-hedvig)', 'Hedvig Letters Serif', 'serif'], // Therapy App body
+        outfit: ['var(--font-outfit)', 'Outfit', 'sans-serif'], // Therapy App headings
       },
     },
   },

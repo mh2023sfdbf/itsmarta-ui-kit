@@ -15,6 +15,9 @@
   :root {
     --font-inter: 'Inter', system-ui, sans-serif;
     --font-sego: 'Sego', sans-serif;
+    --font-lustria: 'Lustria', serif;
+    --font-hedvig: 'Hedvig Letters Serif', serif;
+    --font-outfit: 'Outfit', sans-serif;
   }
   
   body {

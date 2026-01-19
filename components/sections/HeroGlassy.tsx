@@ -30,6 +30,7 @@ import TermsOfUse from '@/marta-ui-kit/templates/legal/TermsOfUse';
 
 export default function HeroGlassy() {
   const [activeTemplate, setActiveTemplate] = useState('sign-in-split');
+  const [activeProject, setActiveProject] = useState('design-app');
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   // Project preview photos carousel
@@ -70,11 +71,24 @@ export default function HeroGlassy() {
     return () => clearInterval(interval);
   }, [carouselCards.length]);
 
-  const templates = [
+  // Template type definition
+  type TemplateProject = 'design-app' | 'therapy-app';
+  
+  interface Template {
+    id: string;
+    title: string;
+    category: string;
+    project: TemplateProject;
+    component: React.ReactNode;
+    code: string;
+  }
+
+  const templates: Template[] = [
     {
       id: 'sign-in-split',
       title: 'Sign In Split',
       category: 'Auth',
+      project: 'design-app',
       component: <SignInSplit />,
       code: `'use client';
 
@@ -147,7 +161,7 @@ export default function SignInSplit() {
 
               <button 
                 type="submit"
-                className="font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer font-heading hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 text-center mx-auto mb-4 w-2/3" 
+                className="font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 text-center mx-auto mb-4 w-2/3" 
               >
                 Sign In
               </button>
@@ -176,6 +190,7 @@ export default function SignInSplit() {
       id: 'pulsing-logo',
       title: 'Pulsing Logo',
       category: 'Loaders',
+      project: 'therapy-app',
       component: <PulsingLogo />,
       code: `export default function PulsingLogo() {
   const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E";
@@ -199,6 +214,7 @@ export default function SignInSplit() {
       id: 'footer-comprehensive',
       title: 'Footer Comprehensive',
       category: 'Footers',
+      project: 'therapy-app',
       component: <FooterComprehensive />,
       code: `'use client';
 
@@ -273,6 +289,7 @@ export default function FooterComprehensive() {
       id: 'nav-orange',
       title: 'Navigation Orange',
       category: 'Navigation',
+      project: 'therapy-app',
       component: <NavOrange />,
       code: `'use client';
 
@@ -294,6 +311,7 @@ export default function NavOrange() {
       id: 'hero-video',
       title: 'Hero Video',
       category: 'Heroes',
+      project: 'therapy-app',
       component: <HeroVideo />,
       code: `export default function HeroVideo() {
   return (
@@ -311,6 +329,7 @@ export default function NavOrange() {
       id: 'hero-therapist',
       title: 'Hero Therapist',
       category: 'Heroes',
+      project: 'therapy-app',
       component: <HeroTherapist />,
       code: `export default function HeroTherapist() {
   return (
@@ -328,6 +347,7 @@ export default function NavOrange() {
       id: 'hero-before-after',
       title: 'Hero Recent Work',
       category: 'Heroes',
+      project: 'therapy-app',
       component: <HeroBeforeAfter />,
       code: `'use client';
 
@@ -469,6 +489,7 @@ export default function HeroBeforeAfter() {
       id: 'social-proof',
       title: 'Social Proof',
       category: 'Features',
+      project: 'design-app',
       component: <SocialProof />,
       code: `import Image from 'next/image';
 
@@ -527,6 +548,7 @@ export default function SocialProof() {
       id: 'restyle-your-space',
       title: 'Restyle Your Space',
       category: 'Features',
+      project: 'design-app',
       component: <RestyleYourSpace />,
       code: `import Image from 'next/image';
 
@@ -591,6 +613,7 @@ export default function RestyleYourSpace() {
       id: 'our-tips',
       title: 'Our Tips (Did You Know)',
       category: 'Features',
+      project: 'design-app',
       component: <OurTips />,
       code: `import Image from 'next/image';
 
@@ -625,6 +648,7 @@ export default function OurTips() {
       id: 'comparison-table',
       title: 'Comparison Table',
       category: 'Features',
+      project: 'design-app',
       component: <ComparisonTable />,
       code: `export default function ComparisonTable() {
   return (
@@ -674,6 +698,7 @@ export default function OurTips() {
       id: 'three-in-one',
       title: '3 in 1',
       category: 'Features',
+      project: 'design-app',
       component: <ThreeInOne />,
       code: `import Image from 'next/image';
 
@@ -721,6 +746,7 @@ export default function ThreeInOne() {
       id: 'benefits-stats',
       title: 'Benefits Stats',
       category: 'Features',
+      project: 'therapy-app',
       component: <BenefitsStats />,
       code: `export default function BenefitsStats() {
   return (
@@ -738,6 +764,7 @@ export default function ThreeInOne() {
       id: 'video-testimonial',
       title: 'Video Testimonial',
       category: 'Video',
+      project: 'therapy-app',
       component: <VideoTestimonial />,
       code: `'use client';
 
@@ -757,6 +784,7 @@ export default function VideoTestimonial() {
       id: 'core-features',
       title: 'Core Features',
       category: 'Features',
+      project: 'therapy-app',
       component: <CoreFeatures />,
       code: `export default function CoreFeatures() {
   return (
@@ -774,6 +802,7 @@ export default function VideoTestimonial() {
       id: 'therapist-benefits',
       title: 'Therapist Benefits',
       category: 'Features',
+      project: 'therapy-app',
       component: <TherapistBenefits />,
       code: `export default function TherapistBenefits() {
   return (
@@ -791,6 +820,7 @@ export default function VideoTestimonial() {
       id: 'testimonials-cards',
       title: 'Testimonials Cards',
       category: 'Testimonials',
+      project: 'therapy-app',
       component: <TestimonialsCards />,
       code: `export default function TestimonialsCards() {
   return (
@@ -808,6 +838,7 @@ export default function VideoTestimonial() {
       id: 'faq-accordion',
       title: 'FAQ Accordion',
       category: 'FAQ',
+      project: 'therapy-app',
       component: <FAQAccordion />,
       code: `'use client';
 
@@ -829,6 +860,7 @@ export default function FAQAccordion() {
       id: 'cta-highlighted',
       title: 'CTA Highlighted',
       category: 'CTA',
+      project: 'therapy-app',
       component: <CTAHighlighted />,
       code: `export default function CTAHighlighted() {
   return (
@@ -846,6 +878,7 @@ export default function FAQAccordion() {
       id: 'cta-with-images',
       title: 'CTA With Images',
       category: 'CTA',
+      project: 'therapy-app',
       component: <CTAWithImages />,
       code: `export default function CTAWithImages() {
   return (
@@ -863,6 +896,7 @@ export default function FAQAccordion() {
       id: 'cta-elevate',
       title: 'CTA Elevate',
       category: 'CTA',
+      project: 'therapy-app',
       component: <CTAElevate />,
       code: `export default function CTAElevate() {
   return (
@@ -880,6 +914,7 @@ export default function FAQAccordion() {
       id: 'bridge-gap-cta',
       title: 'Bridge Gap CTA',
       category: 'About',
+      project: 'therapy-app',
       component: <BridgeGapCTA />,
       code: `export default function BridgeGapCTA() {
   return (
@@ -897,6 +932,7 @@ export default function FAQAccordion() {
       id: 'pricing-cards',
       title: 'Pricing Cards',
       category: 'Pricing',
+      project: 'therapy-app',
       component: <PricingCards />,
       code: `'use client';
 
@@ -918,6 +954,7 @@ export default function PricingCards() {
       id: 'terms-of-use',
       title: 'Terms of Use',
       category: 'Legal',
+      project: 'therapy-app',
       component: <TermsOfUse />,
       code: `export default function TermsOfUse() {
   return (
@@ -950,6 +987,28 @@ export default function PricingCards() {
             <p className="text-sm sm:text-base text-black/60 font-light max-w-xl leading-relaxed">
               These UI decisions doubled revenue in a real SaaS product. Now you can preview, buy and use them too.
             </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4">
+              <a
+                href="#ui-templates"
+                className="inline-flex items-center gap-2 text-sm text-black hover:text-black/60 transition-colors group"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('ui-templates')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                <span>View all templates</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+              
+              <a 
+                href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
+                className="inline-flex items-center px-5 py-2.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors"
+              >
+                Buy the code
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -997,30 +1056,6 @@ export default function PricingCards() {
         </div>
       </div>
 
-      {/* CTAs with Padding */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 py-12">
-        <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-          <a
-            href="#ui-templates"
-            className="inline-flex items-center gap-2 text-sm text-black hover:text-black/60 transition-colors group"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('ui-templates')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
-          >
-            <span>View all templates</span>
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </a>
-          
-          <a 
-            href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-            className="inline-flex items-center px-5 py-2.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors"
-          >
-            Buy the code
-          </a>
-        </div>
-      </div>
-
       {/* Trust Section - Founder Note */}
       <div className="pt-12 sm:pt-16 md:pt-20 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
              <div className="max-w-4xl mx-auto text-center px-6 md:px-16 lg:px-32">
@@ -1046,38 +1081,9 @@ export default function PricingCards() {
                </p>
 
               {/* Context */}
-              <p className="text-sm sm:text-base text-black/60 max-w-2xl mx-auto mb-8">
+              <p className="text-sm sm:text-base text-black/60 max-w-2xl mx-auto">
                 These UI kits are built from those same design decisions: calm UX, clear hierarchy, and trust-first layouts.
               </p>
-
-              {/* Social Links */}
-              <div className="flex items-center justify-center gap-6 pt-6">
-                <a
-                  href="https://www.linkedin.com/in/marta-herget/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-black/60 hover:text-black transition-colors"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  LinkedIn
-                </a>
-                
-                <span className="text-black/20">·</span>
-                
-                <a
-                  href="https://app.cal.eu/itsmarta/50min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-black/60 hover:text-black transition-colors"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  Work with me
-                </a>
-              </div>
             </div>
       </div>
 
@@ -1233,9 +1239,41 @@ export default function PricingCards() {
                 </p>
               </div>
 
+              {/* Project Switcher - Minimal Navigation */}
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
+                  <button
+                    onClick={() => {
+                      setActiveProject('design-app');
+                      setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
+                    }}
+                    className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
+                      activeProject === 'design-app'
+                        ? 'bg-white text-black shadow-sm'
+                        : 'text-black/50 hover:text-black/70'
+                    }`}
+                  >
+                    Design App
+                  </button>
+                  <button
+                    onClick={() => {
+                      setActiveProject('therapy-app');
+                      setActiveTemplate(templates.find(t => t.project === 'therapy-app')?.id || 'pulsing-logo');
+                    }}
+                    className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
+                      activeProject === 'therapy-app'
+                        ? 'bg-white text-black shadow-sm'
+                        : 'text-black/50 hover:text-black/70'
+                    }`}
+                  >
+                    Therapy App
+                  </button>
+                </div>
+              </div>
+
               {/* Template Switcher Buttons */}
               <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
-                {templates.map((template) => (
+                {templates.filter(t => t.project === activeProject).map((template) => (
                   <button
                     key={template.id}
                     onClick={() => setActiveTemplate(template.id)}
@@ -1260,6 +1298,7 @@ export default function PricingCards() {
                     isPremium
                     price={49}
                     code={currentTemplate.code}
+                    project={currentTemplate.project}
                   >
                     {currentTemplate.component}
                   </TemplatePreview>

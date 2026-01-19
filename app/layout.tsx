@@ -1,11 +1,31 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Lustria, Hedvig_Letters_Serif, Outfit } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ 
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+});
+
+const lustria = Lustria({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-lustria",
+});
+
+const hedvigLettersSerif = Hedvig_Letters_Serif({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-hedvig",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-outfit",
 });
 
 export const metadata: Metadata = {
@@ -82,7 +102,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${lustria.variable} ${hedvigLettersSerif.variable} ${outfit.variable}`}>
       <body className="font-sans antialiased">
         {children}
       </body>

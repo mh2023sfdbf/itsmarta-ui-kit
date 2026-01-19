@@ -6,13 +6,27 @@ import { createPortal } from 'react-dom';
 interface IframePreviewProps {
   children: React.ReactNode;
   width: number;
+  project?: 'design-app' | 'therapy-app';
 }
 
-export default function IframePreview({ children, width }: IframePreviewProps) {
+export default function IframePreview({ children, width, project = 'therapy-app' }: IframePreviewProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [mountNode, setMountNode] = useState<HTMLElement | null>(null);
   const [iframeHeight, setIframeHeight] = useState(800);
   const [isReady, setIsReady] = useState(false);
+  
+  // Font configuration based on project
+  const fontConfig = project === 'design-app' 
+    ? {
+        headingFont: 'Lustria, serif',
+        bodyFont: 'Inter, system-ui, sans-serif',
+        headingClass: 'font-heading'
+      }
+    : {
+        headingFont: 'Outfit, sans-serif',
+        bodyFont: 'Hedvig Letters Serif, serif',
+        headingClass: 'font-outfit'
+      };
 
   useEffect(() => {
     const iframe = iframeRef.current;
@@ -21,7 +35,7 @@ export default function IframePreview({ children, width }: IframePreviewProps) {
     const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
     if (!iframeDoc) return;
 
-    // Create the document structure
+    // Create the document structure with project-specific fonts
     iframeDoc.open();
     iframeDoc.write(`
       <!DOCTYPE html>
@@ -30,11 +44,34 @@ export default function IframePreview({ children, width }: IframePreviewProps) {
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" href="/globals.css">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          ${project === 'design-app' 
+            ? '<link href="https://fonts.googleapis.com/css2?family=Lustria&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">' 
+            : '<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">'
+          }
           <style>
+            :root {
+              --font-heading: ${fontConfig.headingFont};
+              --font-body: ${fontConfig.bodyFont};
+            }
             body {
               margin: 0;
               padding: 0;
               overflow-x: hidden;
+              font-family: var(--font-body);
+            }
+            .font-heading {
+              font-family: var(--font-heading) !important;
+            }
+            .font-sans {
+              font-family: var(--font-body) !important;
+            }
+            .font-outfit {
+              font-family: var(--font-heading) !important;
+            }
+            .font-hedvig {
+              font-family: var(--font-body) !important;
             }
             /* Override min-h-screen and h-screen for showcase - use padding instead */
             .min-h-screen {

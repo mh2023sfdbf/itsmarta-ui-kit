@@ -2,6 +2,7 @@ import Navigation from "@/components/layout/Navigation";
 import HeroGlassy from "@/components/sections/HeroGlassy";
 import ProjectShowcase from "@/components/sections/ProjectShowcase";
 import Footer from "@/components/sections/Footer";
+import ScrollLink from "@/components/ui/ScrollLink";
 
 export default function Home() {
   return (
@@ -35,6 +36,19 @@ export default function Home() {
                 Shaped by real experience shipping and iterating SaaS products end-to-end.
               </p>
             </div>
+
+            {/* Work with me CTA */}
+            <div className="flex items-center justify-center mt-10">
+              <ScrollLink
+                href="#need-a-second-brain"
+                className="inline-flex items-center gap-2 text-sm text-black/60 hover:text-black transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Work with me
+              </ScrollLink>
+            </div>
           </div>
         </div>
       </section>
@@ -43,7 +57,7 @@ export default function Home() {
       <ProjectShowcase />
 
       {/* Advisory Section */}
-      <section className="pt-20 sm:pt-24 md:pt-28 pb-20 px-6 md:px-8">
+      <section id="need-a-second-brain" className="pt-20 sm:pt-24 md:pt-28 pb-20 px-6 md:px-8 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto text-center px-6 md:px-16 lg:px-32">
             {/* Title */}
