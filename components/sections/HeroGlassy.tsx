@@ -1259,49 +1259,60 @@ export default function PricingCards() {
         </div>
       </div>
 
-      {/* How It Works - Minimal Editorial */}
+      {/* How It Works - Dramatic & Artistic */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div id="how" className="pt-28 sm:pt-32 md:pt-40">
-            <div className="max-w-4xl">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-12 text-black/90">
+        <div id="how" className="pt-40 sm:pt-48 md:pt-56">
+            <div className="max-w-5xl mx-auto">
+              {/* Title - Centered */}
+              <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-20 sm:mb-28 md:mb-32 text-black/90 text-center">
                 How it works
               </h2>
 
-              <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
-                <div>
-                  <div className="text-5xl font-light text-black/20 mb-4">01</div>
-                  <h3 className="text-lg font-medium text-black mb-3">Preview</h3>
-                  <p className="text-black/60 leading-relaxed">
-                    Explore the UI live in your browser. Scroll, resize, and click through the components.
-                  </p>
+              {/* Steps - Single Column with Dramatic Spacing */}
+              <div className="space-y-20 sm:space-y-28 md:space-y-32">
+                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-start">
+                  <div className="text-7xl sm:text-8xl md:text-9xl font-light text-black/10 leading-none">01</div>
+                  <div className="space-y-4">
+                    <h3 className="text-xl sm:text-2xl font-medium text-black">Preview</h3>
+                    <p className="text-base sm:text-lg text-black/60 leading-relaxed font-light max-w-xl">
+                      Explore the UI live in your browser. Scroll, resize, and click through the components.
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <div className="text-5xl font-light text-black/20 mb-4">02</div>
-                  <h3 className="text-lg font-medium text-black mb-3">Buy</h3>
-                  <p className="text-black/60 leading-relaxed">
-                    Purchase the kit once. Instant access after checkout.
-                  </p>
+                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-start">
+                  <div className="text-7xl sm:text-8xl md:text-9xl font-light text-black/10 leading-none">02</div>
+                  <div className="space-y-4">
+                    <h3 className="text-xl sm:text-2xl font-medium text-black">Buy</h3>
+                    <p className="text-base sm:text-lg text-black/60 leading-relaxed font-light max-w-xl">
+                      Purchase the kit once. Instant access after checkout.
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <div className="text-5xl font-light text-black/20 mb-4">03</div>
-                  <h3 className="text-lg font-medium text-black mb-3">Download</h3>
-                  <p className="text-black/60 leading-relaxed">
-                    Get the full React + Tailwind code as a downloadable package.
-                  </p>
+                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-start">
+                  <div className="text-7xl sm:text-8xl md:text-9xl font-light text-black/10 leading-none">03</div>
+                  <div className="space-y-4">
+                    <h3 className="text-xl sm:text-2xl font-medium text-black">Download</h3>
+                    <p className="text-base sm:text-lg text-black/60 leading-relaxed font-light max-w-xl">
+                      Get the full React + Tailwind code as a downloadable package.
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <div className="text-5xl font-light text-black/20 mb-4">04</div>
-                  <h3 className="text-lg font-medium text-black mb-3">Use & adapt</h3>
-                  <p className="text-black/60 leading-relaxed">
-                    Drop the components into your product and customize as needed.
-                  </p>
+                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-start">
+                  <div className="text-7xl sm:text-8xl md:text-9xl font-light text-black/10 leading-none">04</div>
+                  <div className="space-y-4">
+                    <h3 className="text-xl sm:text-2xl font-medium text-black">Use & adapt</h3>
+                    <p className="text-base sm:text-lg text-black/60 leading-relaxed font-light max-w-xl">
+                      Drop the components into your product and customize as needed.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <p className="mt-12 text-sm text-black/40 italic">
+              {/* Bottom Note - Centered */}
+              <p className="mt-20 sm:mt-28 md:mt-32 text-sm text-black/40 italic text-center">
                 Built to be understandable, flexible, and production-ready.
               </p>
             </div>
