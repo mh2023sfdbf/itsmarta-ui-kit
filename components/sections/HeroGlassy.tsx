@@ -1087,86 +1087,86 @@ export default function PricingCards() {
             </div>
       </div>
 
-      {/* Editorial Opening Statement */}
+      {/* Editorial Opening Statement - Magazine Style */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="pt-20 sm:pt-28 md:pt-32">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              {/* Left: Large statement */}
-              <div>
-                <p className="text-3xl sm:text-4xl md:text-5xl font-light leading-tight text-black/90 tracking-tight">
-                  Calm, conversion-ready Tailwind components I use in real SaaS products.
-                </p>
-              </div>
+        <div className="pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-32">
+            {/* Main Statement - Full Width */}
+            <div className="max-w-5xl mx-auto text-center mb-20 sm:mb-28 md:mb-32">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-12">
+                Calm, conversion-ready Tailwind components I use in real SaaS products.
+              </h2>
               
-              {/* Right: Supporting text */}
-              <div className="space-y-8">
-                <p className="text-lg leading-relaxed text-black/70">
-                  See the UI running in your browser before you buy the code.
-                </p>
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mx-auto mb-12">
+                See the UI running in your browser before you buy the code.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+                <a
+                  href="#ui-templates"
+                  className="inline-flex items-center gap-2 text-sm text-black hover:text-black/60 transition-colors group"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('ui-templates')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  <span>View all templates</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
                 
-                <p className="text-base leading-relaxed text-black/60">
-                  For developers, indie founders, and small SaaS teams who want design taste without the design process.
-                </p>
-
-                <div className="flex flex-col gap-3 pt-4">
-                  <a
-                    href=""
-                    className="inline-flex items-center text-base font-medium text-black hover:text-black/70 transition-colors"
-                  >
-                    Make a stunning first impression →
-                  </a>
-
-                  <a
-                    href=""
-                    className="inline-flex items-center text-base font-medium text-black/50 hover:text-black transition-colors"
-                  >
-                    Get All Templates
-                  </a>
-                </div>
-
-                <p className="text-xs text-black/40 pt-2">
-                  React · Tailwind · TypeScript · Instant download
-                </p>
+                <a 
+                  href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
+                  className="inline-flex items-center px-5 py-2.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors"
+                >
+                  Buy the code
+                </a>
               </div>
+
+              <p className="text-xs text-black/40 mt-10">
+                React · Tailwind · TypeScript · Instant download
+              </p>
             </div>
-        </div>
-      </div>
 
-      {/* For Who + What's Included - Combined Editorial Section */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="pt-28 sm:pt-32 md:pt-40">
-            <div className="grid md:grid-cols-2 gap-16 md:gap-20 lg:gap-24">
+            {/* Horizontal Divider */}
+            <div className="w-16 h-px bg-black/10 mx-auto mb-20 sm:mb-28 md:mb-32"></div>
+
+            {/* Two Column Info - Magazine Layout */}
+            <div className="grid md:grid-cols-2 gap-20 md:gap-24 lg:gap-32 max-w-6xl mx-auto">
               {/* Left Column: For You If */}
-              <div>
-                <h2 className="text-xl font-medium tracking-tight text-black/90 mb-8">
+              <div className="space-y-8">
+                <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
                   These UI kits are for you if…
-                </h2>
+                </h3>
 
-                <div className="space-y-4 text-black/70 leading-relaxed">
+                <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed font-light">
                   <p>You're a developer who wants polished UI without hiring a designer</p>
                   <p>You're an indie founder building a SaaS or landing page</p>
                   <p>You care about clarity, UX, and conversion, not flashy visuals</p>
                 </div>
 
-                <p className="mt-8 text-sm text-black/40 italic">
+                <div className="w-12 h-px bg-black/10 my-10"></div>
+
+                <p className="text-sm text-black/40 italic leading-relaxed">
                   Not ideal for marketing-heavy websites or one-off visual concepts.
                 </p>
               </div>
 
               {/* Right Column: What's Included */}
-              <div>
-                <h2 className="text-xl font-medium tracking-tight text-black/90 mb-8">
+              <div className="space-y-8">
+                <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
                   Each kit includes:
-                </h2>
+                </h3>
 
-                <div className="space-y-4 text-black/70 leading-relaxed">
+                <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed font-light">
                   <p>Real React + Tailwind components</p>
                   <p>A live preview environment</p>
                   <p>Clean, readable code structure</p>
                   <p>Notes on usage and customization</p>
                 </div>
 
-                <p className="mt-8 text-sm text-black/40 italic">
+                <div className="w-12 h-px bg-black/10 my-10"></div>
+
+                <p className="text-sm text-black/40 italic leading-relaxed">
                   No design tools, no screenshots — just real code.
                 </p>
               </div>
