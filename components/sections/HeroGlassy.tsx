@@ -1001,8 +1001,12 @@ export default function PricingCards() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 py-12">
         <div className="flex flex-wrap items-center gap-4 sm:gap-6">
           <a
-            href=""
+            href="#ui-templates"
             className="inline-flex items-center gap-2 text-sm text-black hover:text-black/60 transition-colors group"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('ui-templates')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
           >
             <span>View all templates</span>
             <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -1214,7 +1218,7 @@ export default function PricingCards() {
       </div>
 
       {/* Template Showcase with Switcher */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+      <div id="ui-templates" className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 scroll-mt-20">
         <div className="pt-20 sm:pt-24 md:pt-28">
             <div className="max-w-7xl">
               {/* Title and Intro */}
