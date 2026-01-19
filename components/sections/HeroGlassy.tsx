@@ -1127,50 +1127,6 @@ export default function PricingCards() {
               </p>
             </div>
 
-            {/* Horizontal Divider */}
-            <div className="w-16 h-px bg-black/10 mb-20 sm:mb-28 md:mb-32"></div>
-
-            {/* Two Column Info - Magazine Layout */}
-            <div className="grid md:grid-cols-2 gap-20 md:gap-24 lg:gap-32 max-w-6xl mx-auto">
-              {/* Left Column: For You If */}
-              <div className="space-y-8 text-center">
-                <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
-                  These UI kits are for you if…
-                </h3>
-
-                <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed font-light">
-                  <p>You're a developer who wants polished UI without hiring a designer</p>
-                  <p>You're an indie founder building a SaaS or landing page</p>
-                  <p>You care about clarity, UX, and conversion, not flashy visuals</p>
-                </div>
-
-                <div className="w-12 h-px bg-black/10 my-10 mx-auto"></div>
-
-                <p className="text-sm text-black/40 italic leading-relaxed">
-                  Not ideal for marketing-heavy websites or one-off visual concepts.
-                </p>
-              </div>
-
-              {/* Right Column: What's Included */}
-              <div className="space-y-8 text-center">
-                <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
-                  Each kit includes:
-                </h3>
-
-                <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed font-light">
-                  <p>Real React + Tailwind components</p>
-                  <p>A live preview environment</p>
-                  <p>Clean, readable code structure</p>
-                  <p>Notes on usage and customization</p>
-                </div>
-
-                <div className="w-12 h-px bg-black/10 my-10 mx-auto"></div>
-
-                <p className="text-sm text-black/40 italic leading-relaxed">
-                  No design tools, no screenshots — just real code.
-                </p>
-              </div>
-            </div>
         </div>
       </div>
 
@@ -1257,6 +1213,55 @@ export default function PricingCards() {
               </TemplatePreview>
             </div>
           )}
+        </div>
+      </div>
+
+      {/* Two Column Info - Magazine Layout */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+        <div className="pt-28 sm:pt-32 md:pt-40">
+          {/* Horizontal Divider */}
+          <div className="w-16 h-px bg-black/10 mb-20 sm:mb-28 md:mb-32"></div>
+
+          <div className="grid md:grid-cols-2 gap-20 md:gap-24 lg:gap-32 max-w-6xl mx-auto">
+            {/* Left Column: For You If */}
+            <div className="space-y-8 text-center">
+              <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
+                These UI kits are for you if…
+              </h3>
+
+              <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed font-light">
+                <p>You're a developer who wants polished UI without hiring a designer</p>
+                <p>You're an indie founder building a SaaS or landing page</p>
+                <p>You care about clarity, UX, and conversion, not flashy visuals</p>
+              </div>
+
+              <div className="w-12 h-px bg-black/10 my-10 mx-auto"></div>
+
+              <p className="text-sm text-black/40 italic leading-relaxed">
+                Not ideal for marketing-heavy websites or one-off visual concepts.
+              </p>
+            </div>
+
+            {/* Right Column: What's Included */}
+            <div className="space-y-8 text-center">
+              <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
+                Each kit includes:
+              </h3>
+
+              <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed font-light">
+                <p>Real React + Tailwind components</p>
+                <p>A live preview environment</p>
+                <p>Clean, readable code structure</p>
+                <p>Notes on usage and customization</p>
+              </div>
+
+              <div className="w-12 h-px bg-black/10 my-10 mx-auto"></div>
+
+              <p className="text-sm text-black/40 italic leading-relaxed">
+                No design tools, no screenshots — just real code.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
