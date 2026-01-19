@@ -1270,7 +1270,7 @@ export default function PricingCards() {
 
               {/* Steps - Single Column with Dramatic Spacing */}
               <div className="space-y-20 sm:space-y-28 md:space-y-32">
-                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-start">
+                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-center">
                   <div className="text-7xl sm:text-8xl md:text-9xl font-light text-black/10 leading-none">01</div>
                   <div className="space-y-4">
                     <h3 className="text-xl sm:text-2xl font-medium text-black">Preview</h3>
@@ -1280,7 +1280,7 @@ export default function PricingCards() {
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-start">
+                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-center">
                   <div className="text-7xl sm:text-8xl md:text-9xl font-light text-black/10 leading-none">02</div>
                   <div className="space-y-4">
                     <h3 className="text-xl sm:text-2xl font-medium text-black">Buy</h3>
@@ -1290,7 +1290,7 @@ export default function PricingCards() {
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-start">
+                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-center">
                   <div className="text-7xl sm:text-8xl md:text-9xl font-light text-black/10 leading-none">03</div>
                   <div className="space-y-4">
                     <h3 className="text-xl sm:text-2xl font-medium text-black">Download</h3>
@@ -1300,7 +1300,7 @@ export default function PricingCards() {
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-start">
+                <div className="grid sm:grid-cols-[auto,1fr] gap-8 sm:gap-12 items-center">
                   <div className="text-7xl sm:text-8xl md:text-9xl font-light text-black/10 leading-none">04</div>
                   <div className="space-y-4">
                     <h3 className="text-xl sm:text-2xl font-medium text-black">Use & adapt</h3>
