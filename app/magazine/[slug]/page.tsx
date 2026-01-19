@@ -252,12 +252,11 @@ Choose the approach that gets you to shipped product fastest, then iterate from 
 };
 
 type Props = {
-  params: Promise<{ slug: string }>
+  params: { slug: string }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const article = articles[slug];
+  const article = articles[params.slug];
   
   if (!article) {
     return {
@@ -270,7 +269,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: article.excerpt,
     keywords: ["ui design", "saas", "product design", article.category.toLowerCase()],
     alternates: {
-      canonical: `https://yourdomain.com/magazine/${slug}`,
+      canonical: `https://yourdomain.com/magazine/${params.slug}`,
     },
     robots: {
       index: true,
@@ -279,14 +278,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "article",
       locale: "en_US",
-      url: `https://yourdomain.com/magazine/${slug}`,
+      url: `https://yourdomain.com/magazine/${params.slug}`,
       title: article.title,
       description: article.excerpt,
       siteName: "ItsMarta UI Kit",
       publishedTime: article.date,
       images: [
         {
-          url: `https://yourdomain.com/og-${slug}.png`,
+          url: `https://yourdomain.com/og-${params.slug}.png`,
           width: 1200,
           height: 630,
           alt: article.title,
@@ -297,14 +296,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
-      images: [`https://yourdomain.com/og-${slug}.png`],
+      images: [`https://yourdomain.com/og-${params.slug}.png`],
     },
   };
 }
 
-export default async function ArticlePage({ params }: Props) {
-  const { slug } = await params;
-  const article = articles[slug];
+export default function ArticlePage({ params }: Props) {
+  const article = articles[params.slug];
 
   if (!article) {
     notFound();
@@ -347,7 +345,7 @@ export default async function ArticlePage({ params }: Props) {
             "@type": "ListItem",
             "position": 3,
             "name": article.title,
-            "item": `https://yourdomain.com/magazine/${slug}`
+            "item": `https://yourdomain.com/magazine/${params.slug}`
           }
         ]
       }

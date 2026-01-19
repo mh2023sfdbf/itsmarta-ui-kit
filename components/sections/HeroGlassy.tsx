@@ -974,9 +974,10 @@ export default function PricingCards() {
 
   return (
     <div className="relative w-full bg-white">
-      {/* 1. Hero Section */}
+      {/* Header with Padding */}
       <div className="pt-24 pb-12">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+          {/* Main Headline */}
           <div className="space-y-4 sm:space-y-6">
             <h1 className="font-serif italic text-[clamp(2rem,6vw,4.5rem)] leading-[0.95] tracking-[-0.01em] text-black/95 font-light">
               My UI kits. Live previews.
@@ -1012,262 +1013,16 @@ export default function PricingCards() {
         </div>
       </div>
 
-      {/* 2. Proof / Credibility Quote */}
-      <div className="pt-20 sm:pt-24 md:pt-28 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="max-w-4xl mx-auto text-center px-6 md:px-16 lg:px-32">
-          {/* Small headline above quote */}
-          <p className="text-xs sm:text-sm uppercase tracking-widest text-black/40 mb-12">
-            Design that moves real metrics
-          </p>
-
-          {/* Photo */}
-          <div className="mb-8">
-            <div className="relative w-16 h-16 mx-auto rounded-full overflow-hidden ring-1 ring-black/10">
-              <img 
-                src="/images/marta.png" 
-                alt="Marta" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Quote */}
-          <blockquote className="italic text-2xl md:text-3xl lg:text-4xl font-serif leading-relaxed mb-6 text-black/90">
-            "We had a SaaS product that worked — but the UI felt off. I redesigned the interface without changing the code or the users. Revenue doubled."
-          </blockquote>
-
-          {/* Attribution */}
-          <p className="text-xs sm:text-sm uppercase tracking-widest text-black/50 mb-4">
-            — Marta
-          </p>
-
-          {/* Context */}
-          <p className="text-sm sm:text-base text-black/60 max-w-2xl mx-auto">
-            These UI kits are built from those same design decisions: calm UX, clear hierarchy, and trust-first layouts.
-          </p>
-        </div>
-      </div>
-
-      {/* 3. What these kits are - Short Explainer */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="pt-20 sm:pt-24 md:pt-28">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-xs sm:text-sm uppercase tracking-widest text-black/40 mb-6">
-              Calm, conversion-ready UI components
-            </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-black/80">
-              Production-ready Tailwind components from real SaaS products. See them running live in your browser before you buy the code.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* 4. Who these kits are for */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="pt-20 sm:pt-24 md:pt-28">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-xs sm:text-sm uppercase tracking-widest text-black/40 mb-8 text-center">
-              Made for
-            </h2>
-            
-            <div className="space-y-3 text-base sm:text-lg text-black/70 leading-relaxed">
-              <p>• Developers who want polished UI without hiring a designer</p>
-              <p>• Indie founders building a SaaS or landing page</p>
-              <p>• Small teams who care about clarity, UX, and conversion—not flashy visuals</p>
-            </div>
-
-            <p className="mt-8 text-sm text-black/40 italic text-center">
-              Not ideal for marketing-heavy websites or one-off visual concepts.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* 5. What's inside each kit */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="pt-20 sm:pt-24 md:pt-28">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-xs sm:text-sm uppercase tracking-widest text-black/40 mb-8 text-center">
-              What you get
-            </h2>
-            
-            <div className="space-y-3 text-base sm:text-lg text-black/70 leading-relaxed">
-              <p>• Full TypeScript + Tailwind code</p>
-              <p>• Responsive layouts</p>
-              <p>• Dark mode support</p>
-              <p>• Clean, readable structure</p>
-              <p>• Commercial license</p>
-              <p>• AI prompt suggestions for implementation & extension</p>
-              <p>• Updates for each kit</p>
-            </div>
-
-            <p className="mt-8 text-sm text-black/40 italic text-center">
-              No design tools, no screenshots—just real code.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* 6. UI Templates / Live Previews */}
-      <div id="ui-templates" className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 scroll-mt-20">
-        <div className="pt-28 sm:pt-32 md:pt-40">
-          <div className="max-w-7xl">
-            {/* Title and Intro */}
-            <div className="mb-12">
-              <h2 className="text-xs sm:text-sm uppercase tracking-widest text-black/40 mb-6">
-                Explore the UI kits
-              </h2>
-              <p className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed text-black/90 max-w-2xl">
-                Ready-to-use sections and flows from real SaaS products.
-              </p>
-              <p className="text-sm sm:text-base text-black/60 font-light max-w-2xl leading-relaxed mt-4">
-                Preview them live, then buy the code. Easy.
-              </p>
-            </div>
-
-            {/* Project Switcher - Minimal Navigation */}
-            <div className="mb-8">
-              <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
-                <button
-                  onClick={() => {
-                    setActiveProject('design-app');
-                    setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
-                  }}
-                  className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
-                    activeProject === 'design-app'
-                      ? 'bg-white text-black shadow-sm'
-                      : 'text-black/50 hover:text-black/70'
-                  }`}
-                >
-                  Design App
-                </button>
-                <button
-                  onClick={() => {
-                    setActiveProject('therapy-app');
-                    setActiveTemplate(templates.find(t => t.project === 'therapy-app')?.id || 'pulsing-logo');
-                  }}
-                  className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
-                    activeProject === 'therapy-app'
-                      ? 'bg-white text-black shadow-sm'
-                      : 'text-black/50 hover:text-black/70'
-                  }`}
-                >
-                  Therapy App
-                </button>
-              </div>
-            </div>
-
-            {/* Template Switcher Buttons */}
-            <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
-              {templates.filter(t => t.project === activeProject).map((template) => (
-                <button
-                  key={template.id}
-                  onClick={() => setActiveTemplate(template.id)}
-                  className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-medium transition-all ${
-                    activeTemplate === template.id
-                      ? 'bg-black text-white'
-                      : 'border border-neutral-300 text-neutral-700 hover:border-neutral-400 hover:bg-neutral-50'
-                  }`}
-                >
-                  {template.title}
-                </button>
-              ))}
-            </div>
-
-            {/* Active Template Display */}
-            {currentTemplate && (
-              <div className="rounded-2xl overflow-hidden">
-                <TemplatePreview
-                  title={currentTemplate.title}
-                  description=""
-                  category={currentTemplate.category}
-                  isPremium
-                  price={49}
-                  code={currentTemplate.code}
-                  project={currentTemplate.project}
-                >
-                  {currentTemplate.component}
-                </TemplatePreview>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* 7. How it works */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div id="how" className="pt-28 sm:pt-32 md:pt-40">
-          <div className="max-w-4xl">
-            <h2 className="text-xs sm:text-sm uppercase tracking-widest text-black/40 mb-12">
-              How it works
-            </h2>
-
-            <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
-              <div>
-                <div className="text-5xl font-light text-black/20 mb-4">01</div>
-                <h3 className="text-lg font-medium text-black mb-3">Preview</h3>
-                <p className="text-black/60 leading-relaxed">
-                  Explore the UI live in your browser. Scroll, resize, and click through the components.
-                </p>
-              </div>
-
-              <div>
-                <div className="text-5xl font-light text-black/20 mb-4">02</div>
-                <h3 className="text-lg font-medium text-black mb-3">Buy</h3>
-                <p className="text-black/60 leading-relaxed">
-                  Purchase the kit once. Instant access after checkout.
-                </p>
-              </div>
-
-              <div>
-                <div className="text-5xl font-light text-black/20 mb-4">03</div>
-                <h3 className="text-lg font-medium text-black mb-3">Download</h3>
-                <p className="text-black/60 leading-relaxed">
-                  Get the full React + Tailwind code as a downloadable package.
-                </p>
-              </div>
-
-              <div>
-                <div className="text-5xl font-light text-black/20 mb-4">04</div>
-                <h3 className="text-lg font-medium text-black mb-3">Use & adapt</h3>
-                <p className="text-black/60 leading-relaxed">
-                  Drop the components into your product and customize as needed.
-                </p>
-              </div>
-            </div>
-
-            <p className="mt-12 text-sm text-black/40 italic">
-              Built to be understandable, flexible, and production-ready.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* 8. Designed by a founder (short) */}
-      <div className="pt-28 sm:pt-32 md:pt-40 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-lg sm:text-xl leading-relaxed text-black/70">
-            Built at the intersection of product psychology, design, and software. Shaped by real experience shipping and iterating SaaS products end-to-end.
-          </p>
-        </div>
-      </div>
-
-      {/* 9. Recent work (limited to 2 projects) */}
-      <div className="relative w-full overflow-hidden pt-20 sm:pt-24 md:pt-28 pb-12">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-8">
-          <h2 className="text-xs sm:text-sm uppercase tracking-widest text-black/40">
-            Recent work
-          </h2>
-        </div>
-        
+      {/* Full Width Conveyor Belt - Minimal Pro Style */}
+      <div className="relative w-full overflow-hidden py-16 mb-12">
         <div 
           className="flex gap-20 lg:gap-28 transition-transform duration-700 ease-out"
           style={{
             transform: `translateX(-${(currentCardIndex * 100) / carouselCards.length}%)`
           }}
         >
-          {/* Show only first 2 cards, duplicated for smooth scroll */}
-          {[...carouselCards.slice(0, 2), ...carouselCards.slice(0, 2)].map((card, index) => (
+          {/* Cards - duplicate for infinite loop */}
+          {[...carouselCards, ...carouselCards].map((card, index) => (
             <div
               key={index}
               className="flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[50vw] lg:w-[38vw] relative"
@@ -1281,6 +1036,7 @@ export default function PricingCards() {
                   sizes="(max-width: 640px) 85vw, (max-width: 768px) 70vw, (max-width: 1024px) 50vw, 38vw"
                 />
                 
+                {/* Smooth ombre gradient overlay - shorter with smooth fade */}
                 <div 
                   className="absolute bottom-0 left-0 right-0 backdrop-blur-[1px] pt-20 pb-6 px-6"
                   style={{
@@ -1291,7 +1047,8 @@ export default function PricingCards() {
                 </div>
               </div>
               
-              {index < 3 && (
+              {/* Elegant vertical divider matching horizontal divider */}
+              {index < carouselCards.length * 2 - 1 && (
                 <div className="absolute right-[-40px] lg:right-[-56px] top-[3%] bottom-[3%] w-[1px] bg-gradient-to-b from-transparent via-gray-300/40 to-transparent" />
               )}
             </div>
@@ -1299,54 +1056,255 @@ export default function PricingCards() {
         </div>
       </div>
 
-      {/* 10. Soft consulting CTA (quiet) */}
-      <section id="need-a-second-brain" className="pt-20 sm:pt-24 md:pt-28 pb-12 px-6 md:px-8 scroll-mt-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-xs sm:text-sm uppercase tracking-widest text-black/40 mb-6">
-              Need a second brain?
-            </h2>
+      {/* Trust Section - Founder Note */}
+      <div className="pt-12 sm:pt-16 md:pt-20 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+             <div className="max-w-4xl mx-auto text-center px-6 md:px-16 lg:px-32">
+               {/* Photo */}
+               <div className="mb-8">
+                 <div className="relative w-16 h-16 mx-auto rounded-full overflow-hidden ring-1 ring-black/10">
+                   <img 
+                     src="/images/marta.png" 
+                     alt="Marta" 
+                     className="w-full h-full object-cover"
+                   />
+                 </div>
+               </div>
 
-            <p className="text-base sm:text-lg leading-relaxed text-black/60">
-              I also offer a small amount of product & UX advisory for SaaS founders—usually around clarity, UI decisions, positioning, or conversion.
-            </p>
+               {/* Quote */}
+               <blockquote className="italic text-2xl md:text-3xl lg:text-4xl font-serif leading-relaxed mb-6 text-black/90">
+                 "We had a SaaS product that worked — but the UI felt off. I redesigned the interface without changing the code or the users. Revenue doubled."
+               </blockquote>
 
-            <div className="mt-6">
-              <a 
-                href="https://app.cal.eu/itsmarta/50min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-black/50 hover:text-black transition-colors group"
-              >
-                <span>Work with me</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </a>
+               {/* Attribution */}
+               <p className="text-xs sm:text-sm uppercase tracking-widest text-black/50 mb-4">
+                 — Marta
+               </p>
+
+              {/* Context */}
+              <p className="text-sm sm:text-base text-black/60 max-w-2xl mx-auto">
+                These UI kits are built from those same design decisions: calm UX, clear hierarchy, and trust-first layouts.
+              </p>
             </div>
+      </div>
 
-            <p className="mt-3 text-xs text-black/30 italic">
-              Limited availability.
-            </p>
-          </div>
+      {/* Editorial Opening Statement */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+        <div className="pt-20 sm:pt-28 md:pt-32">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              {/* Left: Large statement */}
+              <div>
+                <p className="text-3xl sm:text-4xl md:text-5xl font-light leading-tight text-black/90 tracking-tight">
+                  Calm, conversion-ready Tailwind components I use in real SaaS products.
+                </p>
+              </div>
+              
+              {/* Right: Supporting text */}
+              <div className="space-y-8">
+                <p className="text-lg leading-relaxed text-black/70">
+                  See the UI running in your browser before you buy the code.
+                </p>
+                
+                <p className="text-base leading-relaxed text-black/60">
+                  For developers, indie founders, and small SaaS teams who want design taste without the design process.
+                </p>
+
+                <div className="flex flex-col gap-3 pt-4">
+                  <a
+                    href=""
+                    className="inline-flex items-center text-base font-medium text-black hover:text-black/70 transition-colors"
+                  >
+                    Make a stunning first impression →
+                  </a>
+
+                  <a
+                    href=""
+                    className="inline-flex items-center text-base font-medium text-black/50 hover:text-black transition-colors"
+                  >
+                    Get All Templates
+                  </a>
+                </div>
+
+                <p className="text-xs text-black/40 pt-2">
+                  React · Tailwind · TypeScript · Instant download
+                </p>
+              </div>
+            </div>
         </div>
-      </section>
+      </div>
 
-      {/* 11. Final CTA repeat */}
-      <div className="pt-20 sm:pt-24 md:pt-28 pb-28 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-xs sm:text-sm uppercase tracking-widest text-black/40 mb-8">
-            Ready to use this in your product?
-          </h2>
-          
-          <a
-            href="#ui-templates"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('ui-templates')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
-          >
-            View UI kits
-          </a>
+      {/* For Who + What's Included - Combined Editorial Section */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+        <div className="pt-28 sm:pt-32 md:pt-40">
+            <div className="grid md:grid-cols-2 gap-16 md:gap-20 lg:gap-24">
+              {/* Left Column: For You If */}
+              <div>
+                <h2 className="text-xl font-medium tracking-tight text-black/90 mb-8">
+                  These UI kits are for you if…
+                </h2>
+
+                <div className="space-y-4 text-black/70 leading-relaxed">
+                  <p>You're a developer who wants polished UI without hiring a designer</p>
+                  <p>You're an indie founder building a SaaS or landing page</p>
+                  <p>You care about clarity, UX, and conversion, not flashy visuals</p>
+                </div>
+
+                <p className="mt-8 text-sm text-black/40 italic">
+                  Not ideal for marketing-heavy websites or one-off visual concepts.
+                </p>
+              </div>
+
+              {/* Right Column: What's Included */}
+              <div>
+                <h2 className="text-xl font-medium tracking-tight text-black/90 mb-8">
+                  Each kit includes:
+                </h2>
+
+                <div className="space-y-4 text-black/70 leading-relaxed">
+                  <p>Real React + Tailwind components</p>
+                  <p>A live preview environment</p>
+                  <p>Clean, readable code structure</p>
+                  <p>Notes on usage and customization</p>
+                </div>
+
+                <p className="mt-8 text-sm text-black/40 italic">
+                  No design tools, no screenshots — just real code.
+                </p>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      {/* How It Works - Minimal Editorial */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+        <div id="how" className="pt-28 sm:pt-32 md:pt-40">
+            <div className="max-w-4xl">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight text-black/90 mb-12">
+                How it works
+              </h2>
+
+              <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
+                <div>
+                  <div className="text-5xl font-light text-black/20 mb-4">01</div>
+                  <h3 className="text-lg font-medium text-black mb-3">Preview</h3>
+                  <p className="text-black/60 leading-relaxed">
+                    Explore the UI live in your browser. Scroll, resize, and click through the components.
+                  </p>
+                </div>
+
+                <div>
+                  <div className="text-5xl font-light text-black/20 mb-4">02</div>
+                  <h3 className="text-lg font-medium text-black mb-3">Buy</h3>
+                  <p className="text-black/60 leading-relaxed">
+                    Purchase the kit once. Instant access after checkout.
+                  </p>
+                </div>
+
+                <div>
+                  <div className="text-5xl font-light text-black/20 mb-4">03</div>
+                  <h3 className="text-lg font-medium text-black mb-3">Download</h3>
+                  <p className="text-black/60 leading-relaxed">
+                    Get the full React + Tailwind code as a downloadable package.
+                  </p>
+                </div>
+
+                <div>
+                  <div className="text-5xl font-light text-black/20 mb-4">04</div>
+                  <h3 className="text-lg font-medium text-black mb-3">Use & adapt</h3>
+                  <p className="text-black/60 leading-relaxed">
+                    Drop the components into your product and customize as needed.
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-12 text-sm text-black/40 italic">
+                Built to be understandable, flexible, and production-ready.
+              </p>
+            </div>
+        </div>
+      </div>
+
+      {/* Template Showcase with Switcher */}
+      <div id="ui-templates" className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 scroll-mt-20">
+        <div className="pt-20 sm:pt-24 md:pt-28">
+            <div className="max-w-7xl">
+              {/* Title and Intro */}
+              <div className="mb-12">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-6 text-black/90">
+                  UI Templates
+                </h2>
+                <p className="text-sm sm:text-base text-black/60 font-light max-w-2xl leading-relaxed">
+                  Ready-to-use sections and flows from real SaaS products.
+                  <br />
+                  Preview them live, then buy the code. Easy.
+                </p>
+              </div>
+
+              {/* Project Switcher - Minimal Navigation */}
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
+                  <button
+                    onClick={() => {
+                      setActiveProject('design-app');
+                      setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
+                    }}
+                    className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
+                      activeProject === 'design-app'
+                        ? 'bg-white text-black shadow-sm'
+                        : 'text-black/50 hover:text-black/70'
+                    }`}
+                  >
+                    Design App
+                  </button>
+                  <button
+                    onClick={() => {
+                      setActiveProject('therapy-app');
+                      setActiveTemplate(templates.find(t => t.project === 'therapy-app')?.id || 'pulsing-logo');
+                    }}
+                    className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
+                      activeProject === 'therapy-app'
+                        ? 'bg-white text-black shadow-sm'
+                        : 'text-black/50 hover:text-black/70'
+                    }`}
+                  >
+                    Therapy App
+                  </button>
+                </div>
+              </div>
+
+              {/* Template Switcher Buttons */}
+              <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
+                {templates.filter(t => t.project === activeProject).map((template) => (
+                  <button
+                    key={template.id}
+                    onClick={() => setActiveTemplate(template.id)}
+                    className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-medium transition-all ${
+                      activeTemplate === template.id
+                        ? 'bg-black text-white'
+                        : 'border border-neutral-300 text-neutral-700 hover:border-neutral-400 hover:bg-neutral-50'
+                    }`}
+                  >
+                    {template.title}
+                  </button>
+                ))}
+              </div>
+
+              {/* Active Template Display */}
+              {currentTemplate && (
+                <div className="rounded-2xl overflow-hidden">
+                  <TemplatePreview
+                    title={currentTemplate.title}
+                    description=""
+                    category={currentTemplate.category}
+                    isPremium
+                    price={49}
+                    code={currentTemplate.code}
+                    project={currentTemplate.project}
+                  >
+                    {currentTemplate.component}
+                  </TemplatePreview>
+                </div>
+              )}
+            </div>
         </div>
       </div>
     </div>

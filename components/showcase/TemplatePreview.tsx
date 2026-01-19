@@ -244,7 +244,7 @@ export default function TemplatePreview({
       <div className="mt-4">
         <a 
           href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-          className="block px-6 py-3 bg-black text-white rounded-xl font-medium shadow-sm hover:bg-black/80 transition-colors text-center"
+          className="block w-full px-6 py-3 bg-black text-white rounded-xl font-medium shadow-sm hover:bg-black/80 transition-colors text-center"
         >
           Buy Template - ${price}
         </a>
