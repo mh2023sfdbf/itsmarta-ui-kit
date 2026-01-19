@@ -1175,87 +1175,88 @@ export default function PricingCards() {
       </div>
 
       {/* Template Showcase with Switcher */}
-      <div id="ui-templates" className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 scroll-mt-20">
+      <div id="ui-templates" className="w-full scroll-mt-20">
         <div className="pt-20 sm:pt-24 md:pt-28">
-            <div className="max-w-7xl">
-              {/* Title and Intro */}
-              <div className="mb-12">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-6 text-black/90">
-                  UI Templates
-                </h2>
-                <p className="text-sm sm:text-base text-black/60 font-light max-w-2xl leading-relaxed">
-                  Ready-to-use sections and flows from real SaaS products.
-                  <br />
-                  Preview them live, then buy the code. Easy.
-                </p>
-              </div>
-
-              {/* Project Switcher - Minimal Navigation */}
-              <div className="mb-8">
-                <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
-                  <button
-                    onClick={() => {
-                      setActiveProject('design-app');
-                      setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
-                    }}
-                    className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
-                      activeProject === 'design-app'
-                        ? 'bg-white text-black shadow-sm'
-                        : 'text-black/50 hover:text-black/70'
-                    }`}
-                  >
-                    Design App
-                  </button>
-                  <button
-                    onClick={() => {
-                      setActiveProject('therapy-app');
-                      setActiveTemplate(templates.find(t => t.project === 'therapy-app')?.id || 'pulsing-logo');
-                    }}
-                    className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
-                      activeProject === 'therapy-app'
-                        ? 'bg-white text-black shadow-sm'
-                        : 'text-black/50 hover:text-black/70'
-                    }`}
-                  >
-                    Therapy App
-                  </button>
-                </div>
-              </div>
-
-              {/* Template Switcher Buttons */}
-              <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
-                {templates.filter(t => t.project === activeProject).map((template) => (
-                  <button
-                    key={template.id}
-                    onClick={() => setActiveTemplate(template.id)}
-                    className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-medium transition-all ${
-                      activeTemplate === template.id
-                        ? 'bg-black text-white'
-                        : 'border border-neutral-300 text-neutral-700 hover:border-neutral-400 hover:bg-neutral-50'
-                    }`}
-                  >
-                    {template.title}
-                  </button>
-                ))}
-              </div>
-
-              {/* Active Template Display */}
-              {currentTemplate && (
-                <div className="rounded-2xl overflow-hidden">
-                  <TemplatePreview
-                    title={currentTemplate.title}
-                    description=""
-                    category={currentTemplate.category}
-                    isPremium
-                    price={49}
-                    code={currentTemplate.code}
-                    project={currentTemplate.project}
-                  >
-                    {currentTemplate.component}
-                  </TemplatePreview>
-                </div>
-              )}
+          {/* Controls Container - Constrained Width */}
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+            {/* Title and Intro */}
+            <div className="mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-6 text-black/90">
+                UI Templates
+              </h2>
+              <p className="text-sm sm:text-base text-black/60 font-light max-w-2xl leading-relaxed">
+                Ready-to-use sections and flows from real SaaS products.
+                <br />
+                Preview them live, then buy the code. Easy.
+              </p>
             </div>
+
+            {/* Project Switcher - Minimal Navigation */}
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
+                <button
+                  onClick={() => {
+                    setActiveProject('design-app');
+                    setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
+                  }}
+                  className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
+                    activeProject === 'design-app'
+                      ? 'bg-white text-black shadow-sm'
+                      : 'text-black/50 hover:text-black/70'
+                  }`}
+                >
+                  Design App
+                </button>
+                <button
+                  onClick={() => {
+                    setActiveProject('therapy-app');
+                    setActiveTemplate(templates.find(t => t.project === 'therapy-app')?.id || 'pulsing-logo');
+                  }}
+                  className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
+                    activeProject === 'therapy-app'
+                      ? 'bg-white text-black shadow-sm'
+                      : 'text-black/50 hover:text-black/70'
+                  }`}
+                >
+                  Therapy App
+                </button>
+              </div>
+            </div>
+
+            {/* Template Switcher Buttons */}
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
+              {templates.filter(t => t.project === activeProject).map((template) => (
+                <button
+                  key={template.id}
+                  onClick={() => setActiveTemplate(template.id)}
+                  className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-medium transition-all ${
+                    activeTemplate === template.id
+                      ? 'bg-black text-white'
+                      : 'border border-neutral-300 text-neutral-700 hover:border-neutral-400 hover:bg-neutral-50'
+                  }`}
+                >
+                  {template.title}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Active Template Display - Full Width */}
+          {currentTemplate && (
+            <div className="w-full">
+              <TemplatePreview
+                title={currentTemplate.title}
+                description=""
+                category={currentTemplate.category}
+                isPremium
+                price={49}
+                code={currentTemplate.code}
+                project={currentTemplate.project}
+              >
+                {currentTemplate.component}
+              </TemplatePreview>
+            </div>
+          )}
         </div>
       </div>
 

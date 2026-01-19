@@ -244,7 +244,7 @@ export default function TemplatePreview({
       </div>
 
       {/* Quick Actions */}
-      <div className="mt-4">
+      <div className="mt-4 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
         <a 
           href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
           className="block w-full px-6 py-3 bg-black text-white rounded-xl font-medium shadow-sm hover:bg-black/80 transition-colors text-center"
