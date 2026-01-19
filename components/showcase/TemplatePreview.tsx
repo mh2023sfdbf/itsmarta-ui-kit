@@ -241,16 +241,13 @@ export default function TemplatePreview({
       </div>
 
       {/* Quick Actions */}
-      <div className="mt-4 flex gap-4">
+      <div className="mt-4">
         <a 
           href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-          className="flex-1 px-6 py-3 bg-black text-white rounded-xl font-medium shadow-sm hover:bg-black/80 transition-colors text-center"
+          className="block px-6 py-3 bg-black text-white rounded-xl font-medium shadow-sm hover:bg-black/80 transition-colors text-center"
         >
           Buy Template - ${price}
         </a>
-        <button className="px-6 py-3 bg-white/80 border border-black/10 text-black rounded-xl font-medium hover:bg-white transition-colors">
-          Live Demo →
-        </button>
       </div>
     </div>
   );
