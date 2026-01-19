@@ -1126,7 +1126,6 @@ export default function PricingCards() {
                 React · Tailwind · TypeScript · Instant download
               </p>
             </div>
-
         </div>
       </div>
 
@@ -1218,9 +1217,9 @@ export default function PricingCards() {
 
       {/* Two Column Info - Magazine Layout */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="pt-28 sm:pt-32 md:pt-40">
+        <div className="pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-32">
           {/* Horizontal Divider */}
-          <div className="w-16 h-px bg-black/10 mb-20 sm:mb-28 md:mb-32"></div>
+          <div className="w-16 h-px bg-black/10 mb-20 sm:mb-28 md:mb-32 mx-auto"></div>
 
           <div className="grid md:grid-cols-2 gap-20 md:gap-24 lg:gap-32 max-w-6xl mx-auto">
             {/* Left Column: For You If */}
