@@ -1043,7 +1043,7 @@ export default function PricingCards() {
                     background: 'linear-gradient(to top, rgb(255 255 255 / 1) 0%, rgb(255 255 255 / 0.85) 30%, rgb(255 255 255 / 0.5) 60%, rgb(255 255 255 / 0.15) 85%, transparent 100%)'
                   }}
                 >
-                  <p className="text-gray-900 font-heading text-base font-medium tracking-wide">{card.title}</p>
+                  <p className="text-gray-900 text-base font-medium tracking-wide">{card.title}</p>
                 </div>
               </div>
               
