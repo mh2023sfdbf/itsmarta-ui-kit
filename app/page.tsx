@@ -13,19 +13,19 @@ export default function Home() {
         <HeroGlassy />
       
       {/* Designed by a Founder Section */}
-      <section id="work" className="pt-20 sm:pt-24 md:pt-28 px-6 md:px-8">
+      <section id="work" className="pt-20 sm:pt-24 md:pt-28 lg:pt-40 xl:pt-48 pb-20 sm:pb-24 md:pb-28 lg:pb-40 xl:pb-48 px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto text-center px-6 md:px-16 lg:px-32">
             {/* Title */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-6 text-black/90">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-6 lg:mb-10 text-black/90">
               Designed by a founder
             </h2>
 
             {/* Attribution style separator */}
-            <div className="w-12 h-px bg-black/10 mx-auto mb-8"></div>
+            <div className="w-12 h-px bg-black/10 mx-auto mb-8 lg:mb-12"></div>
 
             {/* Content */}
-            <div className="space-y-6 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto text-black/70">
+            <div className="space-y-6 lg:space-y-8 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto text-black/70">
               <p>
                 Built at the intersection of product psychology, design, and software.
               </p>
