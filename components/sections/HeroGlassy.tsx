@@ -1133,7 +1133,7 @@ export default function PricingCards() {
             {/* Two Column Info - Magazine Layout */}
             <div className="grid md:grid-cols-2 gap-20 md:gap-24 lg:gap-32 max-w-6xl mx-auto">
               {/* Left Column: For You If */}
-              <div className="space-y-8">
+              <div className="space-y-8 text-center">
                 <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
                   These UI kits are for you if…
                 </h3>
@@ -1144,7 +1144,7 @@ export default function PricingCards() {
                   <p>You care about clarity, UX, and conversion, not flashy visuals</p>
                 </div>
 
-                <div className="w-12 h-px bg-black/10 my-10"></div>
+                <div className="w-12 h-px bg-black/10 my-10 mx-auto"></div>
 
                 <p className="text-sm text-black/40 italic leading-relaxed">
                   Not ideal for marketing-heavy websites or one-off visual concepts.
@@ -1152,7 +1152,7 @@ export default function PricingCards() {
               </div>
 
               {/* Right Column: What's Included */}
-              <div className="space-y-8">
+              <div className="space-y-8 text-center">
                 <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
                   Each kit includes:
                 </h3>
@@ -1164,7 +1164,7 @@ export default function PricingCards() {
                   <p>Notes on usage and customization</p>
                 </div>
 
-                <div className="w-12 h-px bg-black/10 my-10"></div>
+                <div className="w-12 h-px bg-black/10 my-10 mx-auto"></div>
 
                 <p className="text-sm text-black/40 italic leading-relaxed">
                   No design tools, no screenshots — just real code.
