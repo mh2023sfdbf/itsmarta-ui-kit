@@ -1174,55 +1174,6 @@ export default function PricingCards() {
         </div>
       </div>
 
-      {/* How It Works - Minimal Editorial */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div id="how" className="pt-28 sm:pt-32 md:pt-40">
-            <div className="max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight text-black/90 mb-12">
-                How it works
-              </h2>
-
-              <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
-                <div>
-                  <div className="text-5xl font-light text-black/20 mb-4">01</div>
-                  <h3 className="text-lg font-medium text-black mb-3">Preview</h3>
-                  <p className="text-black/60 leading-relaxed">
-                    Explore the UI live in your browser. Scroll, resize, and click through the components.
-                  </p>
-                </div>
-
-                <div>
-                  <div className="text-5xl font-light text-black/20 mb-4">02</div>
-                  <h3 className="text-lg font-medium text-black mb-3">Buy</h3>
-                  <p className="text-black/60 leading-relaxed">
-                    Purchase the kit once. Instant access after checkout.
-                  </p>
-                </div>
-
-                <div>
-                  <div className="text-5xl font-light text-black/20 mb-4">03</div>
-                  <h3 className="text-lg font-medium text-black mb-3">Download</h3>
-                  <p className="text-black/60 leading-relaxed">
-                    Get the full React + Tailwind code as a downloadable package.
-                  </p>
-                </div>
-
-                <div>
-                  <div className="text-5xl font-light text-black/20 mb-4">04</div>
-                  <h3 className="text-lg font-medium text-black mb-3">Use & adapt</h3>
-                  <p className="text-black/60 leading-relaxed">
-                    Drop the components into your product and customize as needed.
-                  </p>
-                </div>
-              </div>
-
-              <p className="mt-12 text-sm text-black/40 italic">
-                Built to be understandable, flexible, and production-ready.
-              </p>
-            </div>
-        </div>
-      </div>
-
       {/* Template Showcase with Switcher */}
       <div id="ui-templates" className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 scroll-mt-20">
         <div className="pt-20 sm:pt-24 md:pt-28">
@@ -1304,6 +1255,55 @@ export default function PricingCards() {
                   </TemplatePreview>
                 </div>
               )}
+            </div>
+        </div>
+      </div>
+
+      {/* How It Works - Minimal Editorial */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+        <div id="how" className="pt-28 sm:pt-32 md:pt-40">
+            <div className="max-w-4xl">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight text-black/90 mb-12">
+                How it works
+              </h2>
+
+              <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
+                <div>
+                  <div className="text-5xl font-light text-black/20 mb-4">01</div>
+                  <h3 className="text-lg font-medium text-black mb-3">Preview</h3>
+                  <p className="text-black/60 leading-relaxed">
+                    Explore the UI live in your browser. Scroll, resize, and click through the components.
+                  </p>
+                </div>
+
+                <div>
+                  <div className="text-5xl font-light text-black/20 mb-4">02</div>
+                  <h3 className="text-lg font-medium text-black mb-3">Buy</h3>
+                  <p className="text-black/60 leading-relaxed">
+                    Purchase the kit once. Instant access after checkout.
+                  </p>
+                </div>
+
+                <div>
+                  <div className="text-5xl font-light text-black/20 mb-4">03</div>
+                  <h3 className="text-lg font-medium text-black mb-3">Download</h3>
+                  <p className="text-black/60 leading-relaxed">
+                    Get the full React + Tailwind code as a downloadable package.
+                  </p>
+                </div>
+
+                <div>
+                  <div className="text-5xl font-light text-black/20 mb-4">04</div>
+                  <h3 className="text-lg font-medium text-black mb-3">Use & adapt</h3>
+                  <p className="text-black/60 leading-relaxed">
+                    Drop the components into your product and customize as needed.
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-12 text-sm text-black/40 italic">
+                Built to be understandable, flexible, and production-ready.
+              </p>
             </div>
         </div>
       </div>
