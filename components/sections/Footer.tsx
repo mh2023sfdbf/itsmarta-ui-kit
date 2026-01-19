@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="relative py-16 overflow-hidden">
@@ -12,14 +14,23 @@ export default function Footer() {
 
           {/* Right: Links */}
           <div className="w-full md:w-auto">
-            <a
-              href="https://www.linkedin.com/in/marta-herget/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-black/60 hover:text-black transition-colors font-light"
-            >
-              LinkedIn
-            </a>
+            <nav className="flex flex-wrap items-center gap-3">
+              <a
+                href="https://www.linkedin.com/in/marta-herget/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-black/60 hover:text-black transition-colors font-light"
+              >
+                LinkedIn
+              </a>
+              <span className="text-xs text-black/20">•</span>
+              <Link
+                href="/magazine"
+                className="text-sm text-black/60 hover:text-black transition-colors font-light"
+              >
+                Magazine
+              </Link>
+            </nav>
           </div>
         </div>
       </div>
