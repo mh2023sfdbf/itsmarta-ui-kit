@@ -181,11 +181,11 @@ export default function TemplatePreview({
                 </pre>
               </div>
 
-              {/* Lock Overlay - Minimal & Glassy */}
+              {/* Lock Overlay - Minimal & Elegant */}
               <div className="absolute inset-0 flex items-center justify-center backdrop-blur-sm bg-white/5">
-                <div className="text-center backdrop-blur-2xl bg-white/90 border border-black/5 rounded-3xl p-12 shadow-[0_8px_32px_rgba(0,0,0,0.08)] max-w-md mx-4">
-                  <div className="w-14 h-14 mx-auto mb-6 bg-black/5 rounded-2xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-black/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="text-center backdrop-blur-2xl bg-white/90 border border-black/5 rounded-3xl p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)] max-w-md mx-4">
+                  <div className="w-12 h-12 mx-auto mb-5 bg-black/5 rounded-2xl flex items-center justify-center">
+                    <svg className="w-5 h-5 text-black/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
                   </div>
@@ -193,11 +193,11 @@ export default function TemplatePreview({
                   <h3 className="text-xl font-medium text-black/90 mb-2">
                     Unlock Full Code
                   </h3>
-                  <p className="text-sm text-black/50 mb-8 font-light">
+                  <p className="text-sm text-black/50 mb-6 font-light">
                     Get instant access to production-ready code.
                   </p>
 
-                  <div className="space-y-2">
+                  <div className="space-y-2 mb-6">
                     <button className="w-full px-8 py-3 bg-black text-white rounded-full font-medium text-sm shadow-sm hover:bg-black/90 transition-all duration-200">
                       Buy for ${price}
                     </button>
@@ -209,21 +209,26 @@ export default function TemplatePreview({
                     </button>
                   </div>
 
-                  {/* Features - Minimal List */}
-                  <div className="mt-8 pt-8 border-t border-black/5 text-left">
-                    <p className="text-xs font-medium text-black/40 uppercase tracking-wider mb-4">
+                  {/* Features - Compact List */}
+                  <div className="pt-6 border-t border-black/5 text-left">
+                    <p className="text-xs font-medium text-black/40 uppercase tracking-wider mb-3">
                       What's Included
                     </p>
-                    <ul className="space-y-2.5 text-xs text-black/60">
+                    <ul className="space-y-1.5 text-xs text-black/60">
                       {[
-                        "Tailwind code",
-                        "Incl. React"
+                        "Full React + Tailwind + TypeScript code",
+                        "Clean, readable component structure",
+                        "Responsive layouts",
+                        "AI prompt suggestions",
+                        "README with setup notes",
+                        "Commercial license",
+                        "Updates for this kit"
                       ].map((feature) => (
-                        <li key={feature} className="flex items-center gap-2">
-                          <svg className="w-4 h-4 text-black/30 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <li key={feature} className="flex items-start gap-2">
+                          <svg className="w-4 h-4 text-black/50 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
-                          {feature}
+                          <span className="leading-tight">{feature}</span>
                         </li>
                       ))}
                     </ul>
