@@ -1090,18 +1090,18 @@ export default function PricingCards() {
       {/* Editorial Opening Statement - Magazine Style */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
         <div className="pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-32">
-            {/* Main Statement - Full Width */}
-            <div className="max-w-5xl mx-auto text-center mb-20 sm:mb-28 md:mb-32">
+            {/* Main Statement - Left Aligned */}
+            <div className="max-w-5xl mb-20 sm:mb-28 md:mb-32">
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-12">
                 Calm, conversion-ready Tailwind components I use in real SaaS products.
               </h2>
               
-              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mx-auto mb-12">
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-12">
                 See the UI running in your browser before you buy the code.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                 <a
                   href="#ui-templates"
                   className="inline-flex items-center gap-2 text-sm text-black hover:text-black/60 transition-colors group"
@@ -1128,7 +1128,7 @@ export default function PricingCards() {
             </div>
 
             {/* Horizontal Divider */}
-            <div className="w-16 h-px bg-black/10 mx-auto mb-20 sm:mb-28 md:mb-32"></div>
+            <div className="w-16 h-px bg-black/10 mb-20 sm:mb-28 md:mb-32"></div>
 
             {/* Two Column Info - Magazine Layout */}
             <div className="grid md:grid-cols-2 gap-20 md:gap-24 lg:gap-32 max-w-6xl mx-auto">
