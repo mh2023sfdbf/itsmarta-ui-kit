@@ -111,7 +111,7 @@ export default function SignInSplit() {
                 <div className="border-t border-coolGray-300 flex-grow ml-4"></div>
               </div>
 
-              <div className="mb-6">
+              <div className="mb-6" suppressHydrationWarning>
                 <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="email">
                   Email
                 </label>
@@ -120,10 +120,11 @@ export default function SignInSplit() {
                   className="block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500 focus:ring-opacity-50" 
                   type="email" 
                   placeholder="you@example.com"
+                  autoComplete="email"
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-6" suppressHydrationWarning>
                 <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="password">
                   Password
                 </label>
@@ -132,6 +133,7 @@ export default function SignInSplit() {
                   className="block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500 focus:ring-opacity-50" 
                   type="password" 
                   placeholder="************"
+                  autoComplete="current-password"
                 />
               </div>
 
@@ -974,8 +976,14 @@ export default function PricingCards() {
                   className="object-cover object-top"
                   sizes="(max-width: 640px) 85vw, (max-width: 768px) 70vw, (max-width: 1024px) 50vw, 38vw"
                 />
-                {/* White glassy overlay with dark text */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white/95 via-white/80 to-transparent backdrop-blur-md pt-16 pb-6 px-6">
+                
+                {/* Smooth ombre gradient overlay - shorter with smooth fade */}
+                <div 
+                  className="absolute bottom-0 left-0 right-0 backdrop-blur-[1px] pt-20 pb-6 px-6"
+                  style={{
+                    background: 'linear-gradient(to top, rgb(255 255 255 / 1) 0%, rgb(255 255 255 / 0.85) 30%, rgb(255 255 255 / 0.5) 60%, rgb(255 255 255 / 0.15) 85%, transparent 100%)'
+                  }}
+                >
                   <p className="text-gray-900 font-heading text-base font-medium tracking-wide">{card.title}</p>
                 </div>
               </div>

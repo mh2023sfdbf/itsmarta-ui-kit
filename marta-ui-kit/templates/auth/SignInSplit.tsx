@@ -34,7 +34,7 @@ export default function SignInSplit() {
                 <div className="border-t border-coolGray-300 flex-grow ml-4"></div>
               </div>
 
-              <div className="mb-6">
+              <div className="mb-6" suppressHydrationWarning>
                 <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="email">
                   Email
                 </label>
@@ -43,10 +43,11 @@ export default function SignInSplit() {
                   className="block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500 focus:ring-opacity-50" 
                   type="email" 
                   placeholder="you@example.com"
+                  autoComplete="email"
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-6" suppressHydrationWarning>
                 <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="password">
                   Password
                 </label>
@@ -55,6 +56,7 @@ export default function SignInSplit() {
                   className="block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500 focus:ring-opacity-50" 
                   type="password" 
                   placeholder="************"
+                  autoComplete="current-password"
                 />
               </div>
 

@@ -13,7 +13,9 @@ export default function Footer() {
           {/* Right: Links */}
           <div className="w-full md:w-auto">
             <a
-              href=""
+              href="https://www.linkedin.com/in/marta-herget/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm text-black/60 hover:text-black transition-colors font-light"
             >
               LinkedIn

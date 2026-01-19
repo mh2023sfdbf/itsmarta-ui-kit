@@ -64,7 +64,9 @@ export default function Home() {
             {/* CTA Link */}
             <div className="mt-8">
               <a 
-                href="" 
+                href="https://app.cal.eu/itsmarta/50min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-black hover:text-black/60 transition-colors group"
               >
                 <span>Work with me</span>
