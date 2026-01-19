@@ -34,7 +34,7 @@ export default function SignInSplit() {
                 <div className="border-t border-coolGray-300 flex-grow ml-4"></div>
               </div>
 
-              <div className="mb-6" suppressHydrationWarning>
+              <div className="mb-6">
                 <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="email">
                   Email
                 </label>
@@ -47,7 +47,7 @@ export default function SignInSplit() {
                 />
               </div>
 
-              <div className="mb-6" suppressHydrationWarning>
+              <div className="mb-6">
                 <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="password">
                   Password
                 </label>
@@ -70,13 +70,13 @@ export default function SignInSplit() {
 
               <button 
                 type="submit"
-                className="font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer font-heading hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 text-center mx-auto mb-4 w-2/3" 
+                className="font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 text-center mx-auto mb-4 w-2/3" 
               >
                 Sign In
               </button>
               
               <p className="text-center">
-                <span className="text-xs">Don&apos;t have an account?</span>
+                <span className="text-xs">Don&apos;t have an account? </span>
                 <a className="inline-block text-xs text-pink-500 hover:text-pink-600 hover:underline" href="">
                   Sign up
                 </a>
