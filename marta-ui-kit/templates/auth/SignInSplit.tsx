@@ -1,13 +1,15 @@
+'use client';
+
 export default function SignInSplit() {
   // Transparent 1x1 pixel placeholder
   const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E";
   
   return (
     <section 
-      className="relative pt-16 pb-0 md:py-32 bg-[#f7f6f4]" 
+      className="relative min-h-screen py-16 md:py-32 bg-[#f7f6f4]" 
       style={{ backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: 'center' }}
     >
-      <div className="container px-4 mx-auto mb-16">
+      <div className="container px-4 mx-auto pb-16">
         <div className="w-full md:w-3/5 lg:w-1/2">
           <div className="max-w-sm mx-auto">
             <div className="mb-6 text-center">
@@ -18,13 +20,13 @@ export default function SignInSplit() {
             </div>
             
             <form action="" className="">
-              <a 
-                href="" 
+              <button 
+                type="button"
                 className="font-heading text-sm sm:text-base rounded-full cursor-pointer hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 mx-auto mb-4 flex items-center justify-center p-2 md:w-2/3"
               >
                 <img className="w-5 h-5 mr-3" src={placeholder} alt="Google logo"/>
                 <span>Sign in with Google</span>
-              </a>
+              </button>
 
               <div className="flex items-center justify-center mb-6">
                 <div className="border-t border-coolGray-300 flex-grow mr-4"></div>
@@ -64,12 +66,12 @@ export default function SignInSplit() {
                 </div>
               </div>
 
-              <a 
+              <button 
+                type="submit"
                 className="font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer font-heading hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 text-center mx-auto mb-4 w-2/3" 
-                href=""
               >
                 Sign In
-              </a>
+              </button>
               
               <p className="text-center">
                 <span className="text-xs">Don&apos;t have an account?</span>

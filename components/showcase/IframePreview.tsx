@@ -36,6 +36,25 @@ export default function IframePreview({ children, width }: IframePreviewProps) {
               padding: 0;
               overflow-x: hidden;
             }
+            /* Override min-h-screen and h-screen for showcase - use padding instead */
+            .min-h-screen {
+              min-height: auto !important;
+              padding-top: 4rem !important;
+              padding-bottom: 4rem !important;
+            }
+            .h-screen {
+              height: auto !important;
+              padding-top: 4rem !important;
+              padding-bottom: 4rem !important;
+            }
+            /* For mobile/tablet preview, ensure reasonable spacing */
+            @media (max-width: 768px) {
+              .min-h-screen,
+              .h-screen {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+              }
+            }
           </style>
         </head>
         <body>

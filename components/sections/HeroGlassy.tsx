@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import TemplatePreview from '@/components/showcase/TemplatePreview';
 import PulsingLogo from '@/marta-ui-kit/templates/loaders/PulsingLogo';
 import SignInSplit from '@/marta-ui-kit/templates/auth/SignInSplit';
@@ -8,7 +9,13 @@ import FooterComprehensive from '@/marta-ui-kit/templates/footers/FooterComprehe
 import NavOrange from '@/marta-ui-kit/templates/navigation/NavOrange';
 import HeroVideo from '@/marta-ui-kit/templates/heroes/HeroVideo';
 import HeroTherapist from '@/marta-ui-kit/templates/heroes/HeroTherapist';
+import HeroBeforeAfter from '@/marta-ui-kit/templates/heroes/HeroBeforeAfter';
 import BenefitsStats from '@/marta-ui-kit/templates/features/BenefitsStats';
+import SocialProof from '@/marta-ui-kit/templates/features/SocialProof';
+import RestyleYourSpace from '@/marta-ui-kit/templates/features/RestyleYourSpace';
+import OurTips from '@/marta-ui-kit/templates/features/OurTips';
+import ComparisonTable from '@/marta-ui-kit/templates/features/ComparisonTable';
+import ThreeInOne from '@/marta-ui-kit/templates/features/ThreeInOne';
 import VideoTestimonial from '@/marta-ui-kit/templates/video/VideoTestimonial';
 import CoreFeatures from '@/marta-ui-kit/templates/features/CoreFeatures';
 import TherapistBenefits from '@/marta-ui-kit/templates/features/TherapistBenefits';
@@ -25,79 +32,32 @@ export default function HeroGlassy() {
   const [activeTemplate, setActiveTemplate] = useState('sign-in-split');
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
-  // Card carousel data
+  // Project preview photos carousel
   const carouselCards = [
     {
-      title: "Hero Modern",
-      category: "Hero",
-      gradient: "from-indigo-500/90 to-purple-600/90",
-      preview: (
-        <div className="relative h-full p-10 md:p-16 flex items-center justify-center">
-          <div className="text-center space-y-5">
-            <div className="text-sm font-medium text-white/60 uppercase tracking-wider">New Release</div>
-            <h3 className="text-4xl md:text-5xl font-bold text-white">Beautiful UI</h3>
-            <p className="text-lg text-white/80">Hand-crafted components</p>
-            <button className="mt-6 px-8 py-3 bg-white text-black rounded-full text-base font-medium">
-              Get Started
-            </button>
-          </div>
-        </div>
-      )
+      title: "Clamalo",
+      image: "/project-screenshots/clamalo_concept_preview.jpeg",
+      alt: "Clamalo Concept Preview"
     },
     {
-      title: "Pricing Table",
-      category: "Pricing",
-      gradient: "from-orange-500/90 to-pink-600/90",
-      preview: (
-        <div className="relative h-full p-10 md:p-16 flex items-center justify-center">
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-10 w-full max-w-sm">
-            <div className="text-white/60 text-sm uppercase tracking-wider mb-3">Pro</div>
-            <div className="text-5xl font-bold text-white mb-2">$49</div>
-            <div className="text-white/70 text-base mb-6">one-time</div>
-            <div className="space-y-3 text-base text-white/80">
-              <div>✓ All features</div>
-              <div>✓ Priority support</div>
-              <div>✓ Updates included</div>
-            </div>
-          </div>
-        </div>
-      )
+      title: "DreamHouse AI",
+      image: "/project-screenshots/dreamhouseai1_cover.png",
+      alt: "DreamHouse AI Cover"
     },
     {
-      title: "Feature Grid",
-      category: "Features",
-      gradient: "from-emerald-500/90 to-teal-600/90",
-      preview: (
-        <div className="relative h-full p-10 md:p-16 flex items-center justify-center">
-          <div className="grid grid-cols-2 gap-4 max-w-md">
-            {['⚡', '🎨', '📱', '🔒'].map((emoji, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 flex flex-col items-center justify-center gap-3">
-                <div className="text-4xl">{emoji}</div>
-                <div className="text-sm text-white/80">Feature {i + 1}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )
+      title: "MyRoom Designer AI",
+      image: "/project-screenshots/myroomdesignerai_cover.png",
+      alt: "MyRoom Designer AI Cover"
     },
     {
-      title: "Sign In Form",
-      category: "Auth",
-      gradient: "from-rose-500/90 to-pink-600/90",
-      preview: (
-        <div className="relative h-full p-10 md:p-16 flex items-center justify-center">
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-10 w-full max-w-sm space-y-4">
-            <h3 className="text-3xl font-bold text-white mb-6">Sign in</h3>
-            <div className="space-y-3">
-              <div className="h-12 bg-white/20 rounded-xl"></div>
-              <div className="h-12 bg-white/20 rounded-xl"></div>
-              <button className="w-full h-12 bg-white text-black rounded-xl font-medium mt-4">
-                Continue
-              </button>
-            </div>
-          </div>
-        </div>
-      )
+      title: "Mood Board AI",
+      image: "/project-screenshots/moodboardai_cover.png",
+      alt: "Mood Board AI Cover"
+    },
+    {
+      title: "MySkin Routine",
+      image: "/project-screenshots/myskinroutine_cover.png",
+      alt: "MySkin Routine Cover"
     },
   ];
 
@@ -116,7 +76,9 @@ export default function HeroGlassy() {
       title: 'Sign In Split',
       category: 'Auth',
       component: <SignInSplit />,
-      code: `export default function SignInSplit() {
+      code: `'use client';
+
+export default function SignInSplit() {
   const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E";
   
   return (
@@ -135,13 +97,13 @@ export default function HeroGlassy() {
             </div>
             
             <form action="" className="">
-              <a 
-                href="" 
+              <button 
+                type="button"
                 className="font-heading text-sm sm:text-base rounded-full cursor-pointer hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 mx-auto mb-4 flex items-center justify-center p-2 md:w-2/3"
               >
                 <img className="w-5 h-5 mr-3" src={placeholder} alt="Google logo"/>
                 <span>Sign in with Google</span>
-              </a>
+              </button>
 
               <div className="flex items-center justify-center mb-6">
                 <div className="border-t border-coolGray-300 flex-grow mr-4"></div>
@@ -181,12 +143,12 @@ export default function HeroGlassy() {
                 </div>
               </div>
 
-              <a 
+              <button 
+                type="submit"
                 className="font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer font-heading hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 text-center mx-auto mb-4 w-2/3" 
-                href=""
               >
                 Sign In
-              </a>
+              </button>
               
               <p className="text-center">
                 <span className="text-xs">Don't have an account?</span>
@@ -355,6 +317,399 @@ export default function NavOrange() {
         <h1 className="font-heading text-4xl xs:text-5xl sm:text-6xl">
           Turn Client Journaling into Deeper Insights
         </h1>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'hero-before-after',
+      title: 'Hero Recent Work',
+      category: 'Heroes',
+      component: <HeroBeforeAfter />,
+      code: `'use client';
+
+import React, { useState, useEffect } from "react";
+import Image from 'next/image';
+
+export default function HeroBeforeAfter() {
+  const [activeSlide, setActiveSlide] = useState(0);
+  
+  // Slide data - Recent Work Previews (single photos)
+  const slides = [
+    {
+      image: "/project-screenshots/clamalo_concept2.png",
+      alt: "Clamalo Concept",
+      label: "Clamalo"
+    },
+    {
+      image: "/project-screenshots/dreamhouseai2.png",
+      alt: "DreamHouse AI",
+      label: "DreamHouse AI"
+    },
+    {
+      image: "/project-screenshots/myroomdesignerai2.png",
+      alt: "MyRoomDesigner AI",
+      label: "MyRoom Designer"
+    },
+    {
+      image: "/project-screenshots/moodboardai.png",
+      alt: "Mood Board AI",
+      label: "Mood Board AI"
+    }
+  ];
+
+  // Auto-slide effect (10 seconds per slide)
+  useEffect(() => {
+    const autoSlideRef = setInterval(() => {
+      setActiveSlide(prev => (prev < slides.length - 1 ? prev + 1 : 0));
+    }, 10000);
+
+    return () => {
+      clearInterval(autoSlideRef);
+    };
+  }, [slides.length]);
+
+  return (
+    <section className="relative">
+      <div className="container-fluid relative">
+        <div className="flex flex-col max-w-[2500px] px-0">
+          
+          {/* Main Image Slider */}
+          <div className="flex-1 min-w-0 mb-4 relative">
+            <div className="relative w-full aspect-[15/8] max-h-[1300px] overflow-hidden">
+              <div className="relative h-full w-full">
+                {/* Single Image with fade-in */}
+                <div key={activeSlide} className="absolute inset-0">
+                  <Image
+                    src={slides[activeSlide].image}
+                    alt={slides[activeSlide].alt}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    width={2560}
+                    height={1600}
+                    priority
+                  />
+                </div>
+
+                {/* Overlay gradient */}
+                <div className="hidden lg:block absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                {/* Header content */}
+                <div className="hidden lg:block absolute bottom-0 left-0 right-0 z-[5] p-8">
+                  <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-5xl font-heading leading-[1.1] tracking-[-0.02em] mb-4 text-white">
+                      See Your Room Transform
+                    </h2>
+                    <p className="text-lg text-white/90 font-light max-w-2xl mx-auto mb-6">
+                      Upload a photo and get instant redesigns, virtual staging, or fresh inspiration with MyRoom Designer.AI.
+                    </p>
+                    <button className="py-3 px-8 bg-white hover:bg-gray-100 text-black rounded-full font-heading text-base hover:shadow-lg transition-all duration-300">
+                      Get Started
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Thumbnails */}
+            <div className="w-full relative z-[5] mb-4">
+              <div className="mx-auto max-w-[1400px] px-4">
+                <div className="flex gap-3 pt-1 pb-2 items-center justify-center overflow-x-auto">
+                  {slides.map((slide, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveSlide(index)}
+                      className="group flex-shrink-0"
+                    >
+                      <div className={\`relative w-[180px] h-[135px] rounded-lg overflow-hidden \${index === activeSlide ? 'ring-1 ring-gray-700' : ''}\`}>
+                        <Image
+                          src={slide.image}
+                          alt={slide.alt}
+                          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                          width={220}
+                          height={165}
+                        />
+                        <div className={\`absolute inset-0 bg-black transition-all \${index === activeSlide ? 'bg-opacity-0' : 'bg-opacity-20 group-hover:bg-opacity-10'}\`} />
+                        <div className="absolute bottom-0 left-0 right-0 bg-white/70 backdrop-blur-[2px] py-1.5 px-2">
+                          <p className="text-sm font-medium text-center text-gray-900">{slide.label}</p>
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Header */}
+            <div className="lg:hidden bg-gradient-to-t from-[#f7f6f4] via-[#f7f6f4]/95 to-transparent pt-3 pb-6">
+              <div className="container mx-auto px-4">
+                <div className="max-w-4xl mx-auto text-center">
+                  <h2 className="text-[2rem] md:text-4xl font-heading leading-[1.1] tracking-[-0.02em] mb-2">
+                    See Your Room Transform
+                  </h2>
+                  <p className="text-sm text-gray-600 font-light max-w-2xl mx-auto mb-4 px-4">
+                    Upload a photo and get instant redesigns, virtual staging, or fresh inspiration with MyRoom Designer.AI.
+                  </p>
+                  <button className="w-full sm:w-auto py-2 px-6 bg-[#2C2C2C] hover:bg-black text-white rounded-full font-heading text-sm sm:text-base hover:shadow-lg transition-all duration-300">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'social-proof',
+      title: 'Social Proof',
+      category: 'Features',
+      component: <SocialProof />,
+      code: `import Image from 'next/image';
+
+const socialProof = [
+  {
+    image: "https://moodboardai.com/assets/logos/producthunt-official.svg",
+    alt: "Product Hunt Logo",
+    className: "lg:w-full w-full [filter:grayscale(100%)_contrast(1000%)]"
+  },
+  {
+    image: "https://static.shuffle.dev/uploads/files/4c/4c980fffbebd7485321e59965426e442ac7319a7/Reddit-Logo-Black.png",
+    alt: "Reddit Logo",
+    className: "w-2/3 lg:w-full"
+  },
+  {
+    image: "https://static.shuffle.dev/uploads/files/4c/4c980fffbebd7485321e59965426e442ac7319a7/Medium-website-Logo-wine.png",
+    alt: "Medium Logo",
+    className: "w-2/3 lg:w-full"
+  },
+  {
+    image: "https://static.shuffle.dev/uploads/files/4c/4c980fffbebd7485321e59965426e442ac7319a7/Black-YouTube-logo.png",
+    alt: "YouTube Logo",
+    className: "w-2/3 lg:w-full"
+  }
+];
+
+export default function SocialProof() {
+  return (
+    <section className="relative pt-24">
+      <div className="relative z-10 container px-4 mx-auto">
+        <p className="text-gray-600 text-center uppercase tracking-px mb-6 text-xs">
+          AS SEEN ON
+        </p>
+        <div className="sm:flex grid grid-cols-2 flex-wrap max-w-5xl mx-auto -m-3">
+          {socialProof.map((item, index) => (
+            <div key={index} className="w-full sm:w-1/2 lg:w-1/4 p-3">
+              <div className="flex items-center justify-center sm:px-9 h-full rounded-3xl">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  width={2000}
+                  height={2000}
+                  className={item.className}
+                  sizes="100vw"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'restyle-your-space',
+      title: 'Restyle Your Space',
+      category: 'Features',
+      component: <RestyleYourSpace />,
+      code: `import Image from 'next/image';
+
+export default function RestyleYourSpace() {
+  return (
+    <section className="relative py-32">
+      <div className="container mx-auto px-4">
+        <div className="max-w-[1600px] mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+            {/* Video Container */}
+            <div className="w-full lg:w-3/5">
+              <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,_0,_0,_0.08)]">
+                <video className="w-full aspect-video object-cover" autoPlay loop muted playsInline>
+                  <source src="/assets/restyling-bedroom-with-ai.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="w-full lg:w-2/5 space-y-10">
+              <div className="space-y-6">
+                <p className="text-gray-500 uppercase tracking-wider text-sm">RESTYLE YOUR SPACE</p>
+                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-gray-900">
+                  Effortless Room Design with AI
+                </h1>
+              </div>
+
+              <div className="space-y-8">
+                <div className="flex items-start gap-6">
+                  <span className="font-heading text-gray-400 text-2xl">01</span>
+                  <div>
+                    <h3 className="text-xl font-medium mb-2">Upload and analyze</h3>
+                    <p className="text-gray-600">Upload a photo, and our AI will instantly analyze your room's layout.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <span className="font-heading text-gray-400 text-2xl">02</span>
+                  <div>
+                    <h3 className="text-xl font-medium mb-2">Choose your style</h3>
+                    <p className="text-gray-600">Select from curated design styles or customize details.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <span className="font-heading text-gray-400 text-2xl">03</span>
+                  <div>
+                    <h3 className="text-xl font-medium mb-2">Chat with AI</h3>
+                    <p className="text-gray-600">Refine your design by chatting with AI.</p>
+                  </div>
+                </div>
+              </div>
+
+              <button className="py-3 px-8 bg-[#2C2C2C] hover:bg-black text-white rounded-full">Try it now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'our-tips',
+      title: 'Our Tips (Did You Know)',
+      category: 'Features',
+      component: <OurTips />,
+      code: `import Image from 'next/image';
+
+export default function OurTips() {
+  return (
+    <section className="relative overflow-hidden pb-44 pt-20">
+      <div className="relative z-10 container mx-auto px-4">
+        <p className="mb-5 font-heading font-medium text-xs uppercase text-center">OUR TIPS</p>
+        <h2 className="mb-24 text-center font-heading text-4xl md:text-5xl text-gray-800">Did You Know?</h2>
+        
+        <div className="md:mx-auto md:max-w-6xl">
+          <div className="flex flex-wrap -m-5">
+            {/* Tip cards with videos and images */}
+            <div className="w-full md:w-1/2 p-5">
+              <div className="p-9 rounded-2xl bg-[#f7f6f4]">
+                <video className="w-full" loop muted autoPlay playsInline>
+                  <source src="/assets/did-you-know/Upscale.mp4" type="video/mp4" />
+                </video>
+                <h3 className="font-heading text-3xl mt-6">Easy Upscale and more</h3>
+                <p className="font-heading text-base mt-2">You can upscale your photo for high-resolution results.</p>
+              </div>
+            </div>
+            {/* More tips... */}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'comparison-table',
+      title: 'Comparison Table',
+      category: 'Features',
+      component: <ComparisonTable />,
+      code: `export default function ComparisonTable() {
+  return (
+    <section className="relative px-4 sm:px-8 lg:px-32 pb-44 pt-20">
+      <div className="max-w-screen-xl mx-auto text-center">
+        <p className="mb-5 font-heading text-xs uppercase text-center">WHY CHOOSE US?</p>
+        <h2 className="mb-12 sm:mb-24 text-center font-heading text-3xl sm:text-4xl md:text-5xl text-gray-800">
+          How We Compare to Other Tools
+        </h2>
+        
+        <div className="rounded-xl bg-[#f7f6f4] p-4 sm:p-8 lg:p-14">
+          <div className="relative overflow-x-auto mb-6 sm:mb-8">
+            <table className="w-full text-sm text-left text-gray-600 min-w-[800px]">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-3 sm:py-4 px-3 sm:px-6"></th>
+                  <th className="py-3 sm:py-4 px-3 sm:px-6 bg-pink-50 border-l-4 border-pink-400">Your Product</th>
+                  <th className="py-3 sm:py-4 px-3 sm:px-6">Competitor A</th>
+                  <th className="py-3 sm:py-4 px-3 sm:px-6">Competitor B</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-3 sm:py-4 px-3 sm:px-6 font-semibold">Speed</td>
+                  <td className="py-3 sm:py-4 px-3 sm:px-6 bg-pink-50 border-l-4 border-pink-400">
+                    <span className="text-pink-600 font-bold">✅</span> Under 4 Seconds
+                  </td>
+                  <td className="py-3 sm:py-4 px-3 sm:px-6">
+                    <span className="text-red-500 font-bold">❌</span> 10+ Seconds
+                  </td>
+                  <td className="py-3 sm:py-4 px-3 sm:px-6">
+                    <span className="text-orange-500 font-bold">❌</span> 6-8 Seconds
+                  </td>
+                </tr>
+                {/* More rows... */}
+              </tbody>
+            </table>
+          </div>
+          <button className="w-full py-3 sm:py-4 bg-black text-white rounded-full">Start Now</button>
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'three-in-one',
+      title: '3 in 1',
+      category: 'Features',
+      component: <ThreeInOne />,
+      code: `import Image from 'next/image';
+
+export default function ThreeInOne() {
+  const products = [
+    {
+      title: "Product One",
+      description: "Description for product one",
+      image: "/assets/product1.png",
+      features: ["Feature 1", "Feature 2", "Feature 3"]
+    },
+    // More products...
+  ];
+
+  return (
+    <section className="relative overflow-hidden py-44 pb-12 bg-[#f7f6f4] p-6 mb-24">
+      <div className="container mx-auto px-4">
+        <h2 className="mb-3 font-heading text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-gray-200 to-blue-400">
+          3 in 1
+        </h2>
+        <h2 className="mb-5 font-heading text-center text-gray-900 text-5xl sm:text-7xl">
+          Instead of one you actually buy three
+        </h2>
+        
+        <div className="flex flex-wrap justify-center divide-y md:divide-y-0 md:divide-x">
+          {products.map((product, index) => (
+            <div key={index} className="w-full lg:w-1/3 p-6 md:p-16">
+              <h3 className="font-heading text-center text-2xl lg:text-3xl">{product.title}</h3>
+              <p className="text-center text-gray-600">{product.description}</p>
+              <Image src={product.image} alt={product.title} width={2000} height={2000} className="rounded-2xl mb-8" />
+              <ul>
+                {product.features.map((feature, i) => (
+                  <li key={i} className="flex items-center mb-3">✓ {feature}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -597,10 +952,10 @@ export default function PricingCards() {
         </div>
       </div>
 
-      {/* Full Width Conveyor Belt - No Padding */}
-      <div className="relative w-full overflow-hidden py-8">
+      {/* Full Width Conveyor Belt - Minimal Pro Style */}
+      <div className="relative w-full overflow-hidden py-16 mb-12">
         <div 
-          className="flex gap-6 transition-transform duration-700 ease-out"
+          className="flex gap-20 lg:gap-28 transition-transform duration-700 ease-out"
           style={{
             transform: `translateX(-${(currentCardIndex * 100) / carouselCards.length}%)`
           }}
@@ -609,13 +964,26 @@ export default function PricingCards() {
           {[...carouselCards, ...carouselCards].map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[50vw] lg:w-[38vw]"
+              className="flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[50vw] lg:w-[38vw] relative"
             >
-              <div className="relative aspect-[4/5] rounded-none overflow-hidden bg-gray-50 border border-black/5">
-                <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient}`}>
-                  {card.preview}
+              <div className="relative aspect-[4/5] overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+                <Image
+                  src={card.image}
+                  alt={card.alt}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 85vw, (max-width: 768px) 70vw, (max-width: 1024px) 50vw, 38vw"
+                />
+                {/* White glassy overlay with dark text */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white/95 via-white/80 to-transparent backdrop-blur-md pt-16 pb-6 px-6">
+                  <p className="text-gray-900 font-heading text-base font-medium tracking-wide">{card.title}</p>
                 </div>
               </div>
+              
+              {/* Elegant vertical divider matching horizontal divider */}
+              {index < carouselCards.length * 2 - 1 && (
+                <div className="absolute right-[-40px] lg:right-[-56px] top-[3%] bottom-[3%] w-[1px] bg-gradient-to-b from-transparent via-gray-300/40 to-transparent" />
+              )}
             </div>
           ))}
         </div>
@@ -665,11 +1033,40 @@ export default function PricingCards() {
                  — Marta
                </p>
 
-               {/* Context */}
-               <p className="text-sm sm:text-base text-black/60 max-w-2xl mx-auto">
-                 These UI kits are built from those same design decisions: calm UX, clear hierarchy, and trust-first layouts.
-               </p>
-             </div>
+              {/* Context */}
+              <p className="text-sm sm:text-base text-black/60 max-w-2xl mx-auto mb-8">
+                These UI kits are built from those same design decisions: calm UX, clear hierarchy, and trust-first layouts.
+              </p>
+
+              {/* Social Links */}
+              <div className="flex items-center justify-center gap-6 pt-6">
+                <a
+                  href="https://www.linkedin.com/in/marta-herget/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-black/60 hover:text-black transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  LinkedIn
+                </a>
+                
+                <span className="text-black/20">·</span>
+                
+                <a
+                  href="https://app.cal.eu/itsmarta/50min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-black/60 hover:text-black transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Work with me
+                </a>
+              </div>
+            </div>
       </div>
 
       {/* Editorial Opening Statement */}
