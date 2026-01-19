@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Left: Copyright */}
           <div className="w-full md:w-auto">
             <p className="text-sm text-black/60 font-light">
-              © 2026 - Marta. All Rights Reserved
+              © 2026 - itsMarta. All Rights Reserved
             </p>
           </div>
 
