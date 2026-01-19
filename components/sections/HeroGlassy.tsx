@@ -1130,10 +1130,17 @@ export default function PricingCards() {
             {/* Horizontal Divider */}
             <div className="w-16 h-px bg-black/10 mb-20 sm:mb-28 md:mb-32"></div>
 
+            {/* UI Templates Section Title */}
+            <div className="mb-16 sm:mb-20 md:mb-24">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight">
+                UI Templates
+              </h2>
+            </div>
+
             {/* Two Column Info - Magazine Layout */}
             <div className="grid md:grid-cols-2 gap-20 md:gap-24 lg:gap-32 max-w-6xl mx-auto">
               {/* Left Column: For You If */}
-              <div className="space-y-8 text-center">
+              <div className="space-y-8">
                 <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
                   These UI kits are for you if…
                 </h3>
@@ -1144,7 +1151,7 @@ export default function PricingCards() {
                   <p>You care about clarity, UX, and conversion, not flashy visuals</p>
                 </div>
 
-                <div className="w-12 h-px bg-black/10 my-10 mx-auto"></div>
+                <div className="w-12 h-px bg-black/10 my-10"></div>
 
                 <p className="text-sm text-black/40 italic leading-relaxed">
                   Not ideal for marketing-heavy websites or one-off visual concepts.
@@ -1152,7 +1159,7 @@ export default function PricingCards() {
               </div>
 
               {/* Right Column: What's Included */}
-              <div className="space-y-8 text-center">
+              <div className="space-y-8">
                 <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
                   Each kit includes:
                 </h3>
@@ -1164,7 +1171,7 @@ export default function PricingCards() {
                   <p>Notes on usage and customization</p>
                 </div>
 
-                <div className="w-12 h-px bg-black/10 my-10 mx-auto"></div>
+                <div className="w-12 h-px bg-black/10 my-10"></div>
 
                 <p className="text-sm text-black/40 italic leading-relaxed">
                   No design tools, no screenshots — just real code.
@@ -1263,7 +1270,7 @@ export default function PricingCards() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
         <div id="how" className="pt-28 sm:pt-32 md:pt-40">
             <div className="max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight text-black/90 mb-12">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-12">
                 How it works
               </h2>
 
