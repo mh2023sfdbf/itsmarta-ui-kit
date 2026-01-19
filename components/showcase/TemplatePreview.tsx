@@ -198,9 +198,12 @@ export default function TemplatePreview({
                   </p>
 
                   <div className="space-y-2 mb-6">
-                    <button className="w-full px-8 py-3 bg-black text-white rounded-full font-medium text-sm shadow-sm hover:bg-black/90 transition-all duration-200">
+                    <a 
+                      href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
+                      className="block w-full px-8 py-3 bg-black text-white rounded-full font-medium text-sm shadow-sm hover:bg-black/90 transition-all duration-200 text-center"
+                    >
                       Buy for ${price}
-                    </button>
+                    </a>
                     <button 
                       onClick={() => setShowCode(false)}
                       className="w-full px-8 py-3 bg-white/50 border border-black/10 text-black/70 rounded-full font-medium text-sm hover:bg-white/80 transition-all"
