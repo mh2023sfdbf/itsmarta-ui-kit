@@ -19,7 +19,7 @@ export default function SignInSplit() {
               <h3 className="mb-4 text-2xl md:text-3xl font-heading">Sign in to your account</h3>
             </div>
             
-            <form action="#" onSubmit={(e) => e.preventDefault()}>
+            <form action="#" onSubmit={(e) => e.preventDefault()} suppressHydrationWarning>
               <button 
                 type="button"
                 className="font-heading text-sm sm:text-base rounded-full cursor-pointer hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 mx-auto mb-4 flex items-center justify-center p-2 md:w-2/3"
@@ -34,7 +34,7 @@ export default function SignInSplit() {
                 <div className="border-t border-coolGray-300 flex-grow ml-4"></div>
               </div>
 
-              <div className="mb-6">
+              <div className="mb-6" suppressHydrationWarning>
                 <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="email">
                   Email
                 </label>
@@ -48,7 +48,7 @@ export default function SignInSplit() {
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-6" suppressHydrationWarning>
                 <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="password">
                   Password
                 </label>
