@@ -1020,8 +1020,8 @@ export default function PricingCards() {
       </div>
 
       {/* Recent Work Subtitle */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-8">
-        <p className="text-xs sm:text-sm uppercase tracking-widest text-black/40 font-medium">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-4">
+        <p className="text-[10px] sm:text-xs uppercase tracking-widest text-black/30 font-medium">
           Recent work
         </p>
       </div>
