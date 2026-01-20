@@ -9,7 +9,7 @@ export default function SignInSplit() {
       className="relative min-h-screen py-16 md:py-32 bg-[#f7f6f4]" 
       style={{ backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: 'center' }}
     >
-      <div className="container px-4 mx-auto pb-16">
+      <div className="container px-4 mx-auto pb-16" suppressHydrationWarning>
         <div className="w-full md:w-3/5 lg:w-1/2">
           <div className="max-w-sm mx-auto">
             <div className="mb-6 text-center">
