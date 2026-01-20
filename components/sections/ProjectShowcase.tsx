@@ -82,6 +82,7 @@ export default function ProjectShowcase() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageLoading, setImageLoading] = useState(true);
+  const [carouselImageLoaded, setCarouselImageLoaded] = useState(false);
 
   // Reset loading state when modal opens
   useEffect(() => {
@@ -91,10 +92,12 @@ export default function ProjectShowcase() {
   }, [selectedProject]);
 
   const nextProject = () => {
+    setCarouselImageLoaded(false);
     setCurrentIndex((prev) => (prev + 1) % projects.length);
   };
 
   const prevProject = () => {
+    setCarouselImageLoaded(false);
     setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
@@ -126,14 +129,29 @@ export default function ProjectShowcase() {
                 onClick={() => setSelectedProject(currentProject)}
               >
                 <div className="relative aspect-[3/4] overflow-hidden shadow-md bg-neutral-100">
+                  {/* Loading skeleton */}
+                  {!carouselImageLoaded && (
+                    <div className="absolute inset-0 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-100 animate-pulse">
+                      <div className="flex items-center justify-center h-full">
+                        <div className="w-6 h-6 border-2 border-black/10 border-t-black/30 rounded-full animate-spin"></div>
+                      </div>
+                    </div>
+                  )}
+                  
                   <Image
                     src={currentProject.image}
                     alt={currentProject.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-top"
+                    className={cn(
+                      "object-cover object-top transition-opacity duration-500",
+                      carouselImageLoaded ? "opacity-100" : "opacity-0"
+                    )}
                     priority={currentIndex === 0}
                     quality={90}
+                    onLoad={() => setCarouselImageLoaded(true)}
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjkwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iI2Y1ZjVmNSIvPjwvc3ZnPg=="
                   />
                   
                   {/* Overlay and button container - synced hover state */}
