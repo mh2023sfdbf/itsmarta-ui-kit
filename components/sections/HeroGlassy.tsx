@@ -1019,6 +1019,13 @@ export default function PricingCards() {
         </div>
       </div>
 
+      {/* Recent Work Subtitle */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-8">
+        <p className="text-xs sm:text-sm uppercase tracking-widest text-black/40 font-medium">
+          Recent work
+        </p>
+      </div>
+
       {/* Full Width Conveyor Belt - Minimal Pro Style */}
       <div className="relative w-full overflow-hidden py-16 mb-12">
         <div 
@@ -1109,15 +1116,8 @@ export default function PricingCards() {
                 Preview live Tailwind components in your browser, then buy the code. Easy.
               </p>
 
-              <p className="text-xs text-black/40">
+              <p className="text-xs text-black/40 mb-12 sm:mb-14 md:mb-16">
                 React · Tailwind · TypeScript · Instant download
-              </p>
-            </div>
-
-            {/* Recent Work Subtitle */}
-            <div className="mb-8 sm:mb-10">
-              <p className="text-xs uppercase tracking-widest text-black/40">
-                Recent work
               </p>
             </div>
 
