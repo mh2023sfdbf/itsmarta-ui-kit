@@ -52,83 +52,113 @@ function DownloadContent() {
   }, [sessionId]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
+    <div className="min-h-screen bg-white flex items-center justify-center px-6 py-24">
+      <div className="max-w-2xl w-full text-center">
         {state === "loading" && (
-          <>
-            <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-black mx-auto mb-6"></div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
-              Preparing Your Download...
-            </h1>
-            <p className="text-gray-600">
-              Verifying your payment and generating secure download link.
-            </p>
-          </>
+          <div className="space-y-8">
+            {/* Minimal spinner */}
+            <div className="w-12 h-12 border-2 border-black/10 border-t-black/30 rounded-full animate-spin mx-auto"></div>
+            
+            <div className="space-y-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-serif leading-tight text-black/90">
+                Preparing your download
+              </h1>
+              
+              <div className="w-12 h-px bg-black/10 mx-auto my-6"></div>
+              
+              <p className="text-base sm:text-lg text-black/60 font-light leading-relaxed max-w-md mx-auto">
+                Verifying your payment and generating secure download link.
+              </p>
+            </div>
+          </div>
         )}
 
         {state === "success" && downloadUrl && (
-          <>
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="space-y-8">
+            {/* Minimal success icon */}
+            <div className="w-16 h-16 rounded-full bg-black/5 flex items-center justify-center mx-auto">
               <svg 
-                className="w-8 h-8 text-green-600" 
+                className="w-7 h-7 text-black/70" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
+                strokeWidth={2}
               >
                 <path 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
-                  strokeWidth={2} 
                   d="M5 13l4 4L19 7" 
                 />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
-              Download Starting...
-            </h1>
-            <p className="text-gray-600 mb-6">
-              Your download should start automatically.
-            </p>
-            <a
-              href={downloadUrl}
-              className="inline-block bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
-            >
-              Click here if download doesn&apos;t start
-            </a>
-            <p className="text-xs text-gray-400 mt-6">
-              For security, this link expires in 10 minutes.
-            </p>
-          </>
+            
+            <div className="space-y-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-serif leading-tight text-black/90">
+                Download starting
+              </h1>
+              
+              <div className="w-12 h-px bg-black/10 mx-auto"></div>
+              
+              <p className="text-base sm:text-lg text-black/60 font-light leading-relaxed max-w-md mx-auto">
+                Your download should start automatically.
+              </p>
+              
+              <div className="pt-4">
+                <a
+                  href={downloadUrl}
+                  className="inline-block px-10 py-3.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/90 transition-all duration-200"
+                >
+                  Click here if download doesn&apos;t start
+                </a>
+              </div>
+              
+              <p className="text-xs text-black/40 italic pt-4">
+                For security, this link expires in 10 minutes.
+              </p>
+            </div>
+          </div>
         )}
 
         {state === "error" && (
-          <>
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="space-y-8">
+            {/* Minimal error icon */}
+            <div className="w-16 h-16 rounded-full bg-black/5 flex items-center justify-center mx-auto">
               <svg 
-                className="w-8 h-8 text-red-600" 
+                className="w-7 h-7 text-black/70" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
+                strokeWidth={2}
               >
                 <path 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
-                  strokeWidth={2} 
                   d="M6 18L18 6M6 6l12 12" 
                 />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
-              Download Failed
-            </h1>
-            <p className="text-red-600 mb-6">{errorMessage}</p>
-            <a
-              href="/"
-              className="inline-block bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
-            >
-              Return Home
-            </a>
-          </>
+            
+            <div className="space-y-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-serif leading-tight text-black/90">
+                Something went wrong
+              </h1>
+              
+              <div className="w-12 h-px bg-black/10 mx-auto"></div>
+              
+              <p className="text-base sm:text-lg text-black/60 font-light leading-relaxed max-w-md mx-auto">
+                {errorMessage}
+              </p>
+              
+              <div className="pt-4">
+                <a
+                  href="/"
+                  className="inline-block px-10 py-3.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/90 transition-all duration-200"
+                >
+                  Return home
+                </a>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
@@ -139,10 +169,12 @@ export default function DownloadClient() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4">
-          <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-black mx-auto mb-6"></div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Loading...</h1>
+        <div className="min-h-screen bg-white flex items-center justify-center px-6 py-24">
+          <div className="max-w-2xl w-full text-center space-y-8">
+            <div className="w-12 h-12 border-2 border-black/10 border-t-black/30 rounded-full animate-spin mx-auto"></div>
+            <h1 className="text-3xl md:text-4xl italic font-serif leading-tight text-black/90">
+              Loading...
+            </h1>
           </div>
         </div>
       }
@@ -151,4 +183,3 @@ export default function DownloadClient() {
     </Suspense>
   );
 }
-

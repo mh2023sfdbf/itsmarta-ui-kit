@@ -1020,14 +1020,14 @@ export default function PricingCards() {
       </div>
 
       {/* Recent Work Subtitle */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-4">
+      <div className="text-right mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-0">
         <p className="text-[10px] sm:text-xs uppercase tracking-widest text-black/30 font-medium">
           Recent work
         </p>
       </div>
 
       {/* Full Width Conveyor Belt - Minimal Pro Style */}
-      <div className="relative w-full overflow-hidden py-16 mb-12">
+      <div className="relative w-full overflow-hidden pb-16 pt-4 mb-12">
         <div 
           className="flex gap-20 lg:gap-28 transition-transform duration-700 ease-out"
           style={{
