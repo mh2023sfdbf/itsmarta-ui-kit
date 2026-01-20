@@ -191,10 +191,10 @@ export default function TemplatePreview({
                   </div>
                   
                   <h3 className="text-xl font-medium text-black/90 mb-2">
-                    Unlock Full Code
+                    Get All Templates
                   </h3>
                   <p className="text-sm text-black/50 mb-6 font-light">
-                    Get instant access to production-ready code.
+                    One purchase unlocks all templates shown in the preview.
                   </p>
 
                   <div className="space-y-2 mb-6">
@@ -202,7 +202,7 @@ export default function TemplatePreview({
                       href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
                       className="block w-full px-8 py-3 bg-black text-white rounded-full font-medium text-sm shadow-sm hover:bg-black/90 transition-all duration-200 text-center"
                     >
-                      Buy for ${price}
+                      Buy All Templates — ${price}
                     </a>
                     <button 
                       onClick={() => setShowCode(false)}
@@ -248,12 +248,12 @@ export default function TemplatePreview({
         <div className="max-w-md mx-auto">
           <a 
             href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-            className="block w-full px-8 py-4 bg-black text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:bg-black/90 transition-all duration-200 text-center text-base"
+            className="block w-full px-10 py-3.5 bg-black text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:bg-black/90 transition-all duration-200 text-center text-sm"
           >
-            Buy Template — ${price}
+            Buy All Templates — ${price}
           </a>
           <p className="text-center text-xs text-black/40 mt-4">
-            Instant download · Commercial license
+            Get all templates shown above · Instant download · Commercial license
           </p>
         </div>
       </div>

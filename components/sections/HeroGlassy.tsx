@@ -1195,7 +1195,7 @@ export default function PricingCards() {
             {/* Right Column: What's Included */}
             <div className="space-y-8 text-center">
               <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
-                Each kit includes:
+                One purchase. All templates.
               </h3>
 
               <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed font-light">
