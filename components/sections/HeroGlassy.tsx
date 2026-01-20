@@ -1057,7 +1057,7 @@ export default function PricingCards() {
       </div>
 
       {/* Designed by a Founder Section */}
-      <div className="pt-12 sm:pt-16 md:pt-20 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+      <div className="pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-32 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto text-center px-6 md:px-16 lg:px-32">
           {/* Title */}
           <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-6 lg:mb-10 text-black/90">
