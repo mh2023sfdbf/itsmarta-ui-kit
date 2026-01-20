@@ -1088,32 +1088,23 @@ export default function PricingCards() {
       </div>
 
       {/* Editorial Opening Statement - Magazine Style */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-32">
-            {/* Main Statement - Left Aligned */}
-            <div className="max-w-5xl mb-20 sm:mb-28 md:mb-32">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-12">
-                Calm, conversion-ready Tailwind components I use in real SaaS products.
+      {/* Template Showcase with Switcher */}
+      <div id="ui-templates" className="w-full scroll-mt-20">
+        <div className="pt-32 sm:pt-40 md:pt-48">
+          {/* Controls Container - Constrained Width */}
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+            {/* Combined Title and Intro */}
+            <div className="mb-16 sm:mb-20 md:mb-24">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-8 sm:mb-10 md:mb-12">
+                Calm, conversion-ready UI templates from real SaaS products.
               </h2>
               
-              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-12">
-                See the UI running in your browser before you buy the code.
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-10 sm:mb-12">
+                Preview live Tailwind components in your browser, then buy the code. Easy.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-                <a
-                  href="#ui-templates"
-                  className="inline-flex items-center gap-2 text-sm text-black hover:text-black/60 transition-colors group"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('ui-templates')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
-                >
-                  <span>View all templates</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-                
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-10">
                 <a 
                   href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
                   className="inline-flex items-center px-5 py-2.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors"
@@ -1122,27 +1113,8 @@ export default function PricingCards() {
                 </a>
               </div>
 
-              <p className="text-xs text-black/40 mt-10">
+              <p className="text-xs text-black/40">
                 React · Tailwind · TypeScript · Instant download
-              </p>
-            </div>
-        </div>
-      </div>
-
-      {/* Template Showcase with Switcher */}
-      <div id="ui-templates" className="w-full scroll-mt-20">
-        <div className="pt-20 sm:pt-24 md:pt-28">
-          {/* Controls Container - Constrained Width */}
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-            {/* Title and Intro */}
-            <div className="mb-12">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-6 text-black/90">
-                UI Templates
-              </h2>
-              <p className="text-sm sm:text-base text-black/60 font-light max-w-2xl leading-relaxed">
-                Ready-to-use sections and flows from real SaaS products.
-                <br />
-                Preview them live, then buy the code. Easy.
               </p>
             </div>
 
