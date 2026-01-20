@@ -112,7 +112,7 @@ function DownloadContent() {
                 </a>
               </div>
               
-              <p className="text-sm sm:text-base text-black/40 font-light pt-4">
+              <p className="text-xs text-black/30 font-light pt-4">
                 For security, this link expires in 10 minutes.
               </p>
             </div>
