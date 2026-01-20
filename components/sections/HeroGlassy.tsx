@@ -1212,7 +1212,7 @@ export default function PricingCards() {
           </div>
 
           {/* Centered CTA Below Both Columns */}
-          <div className="max-w-3xl mx-auto text-center mt-20 sm:mt-24 md:mt-28">
+          <div className="max-w-3xl mx-auto text-center py-20 sm:py-24 md:py-28">
             <div className="w-16 h-px bg-black/10 mb-12 sm:mb-14 mx-auto"></div>
             
             <p className="text-sm text-black/40 italic leading-relaxed mb-10">
