@@ -1205,7 +1205,6 @@ export default function PricingCards() {
 
               <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed font-light">
                 <p>Real React + Tailwind components</p>
-                <p>A live preview environment</p>
                 <p>Clean, readable code structure</p>
                 <p>Notes on usage and customization</p>
               </div>
