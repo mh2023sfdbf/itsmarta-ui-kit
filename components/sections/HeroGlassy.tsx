@@ -1212,7 +1212,7 @@ export default function PricingCards() {
           </div>
 
           {/* Centered CTA Below Both Columns */}
-          <div className="max-w-3xl mx-auto text-center py-20 sm:py-24 md:py-28">
+          <div className="max-w-3xl mx-auto text-center mt-20 sm:mt-24 md:mt-28 mb-20 sm:mb-24 md:mb-28">
             <div className="w-16 h-px bg-black/10 mb-12 sm:mb-14 mx-auto"></div>
             
             <p className="text-sm text-black/40 italic leading-relaxed mb-10">
@@ -1235,7 +1235,7 @@ export default function PricingCards() {
 
       {/* How It Works - Dramatic & Artistic */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div id="how" className="pt-40 sm:pt-48 md:pt-56">
+        <div id="how" className="pt-20 sm:pt-24 md:pt-32">
             <div className="max-w-5xl mx-auto">
               {/* Title - Centered */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-8 text-black/90 text-center">
