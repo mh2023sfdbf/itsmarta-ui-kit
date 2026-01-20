@@ -1229,15 +1229,15 @@ export default function PricingCards() {
       {/* Minimal CTA Section */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
         <div className="pt-24 sm:pt-32 md:pt-40 pb-8 sm:pb-12">
-          <div className="max-w-2xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center">
             <a 
               href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-              className="inline-flex items-center px-8 py-3.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/90 transition-all duration-200 shadow-sm hover:shadow-md"
+              className="inline-block w-full sm:w-auto sm:min-w-[400px] px-12 py-4 rounded-full bg-black text-white text-base font-medium hover:bg-black/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
             >
               Buy all templates — $49
             </a>
             <p className="text-xs text-black/40 mt-6">
-              Instant download · Commercial license · Lifetime updates
+              Instant download · Commercial license
             </p>
           </div>
         </div>
