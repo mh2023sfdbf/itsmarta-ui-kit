@@ -1195,12 +1195,6 @@ export default function PricingCards() {
                 <p>You're an indie founder building a SaaS or landing page</p>
                 <p>You care about clarity, UX, and conversion, not flashy visuals</p>
               </div>
-
-              <div className="w-12 h-px bg-black/10 my-10 mx-auto"></div>
-
-              <p className="text-sm text-black/40 italic leading-relaxed">
-                Not ideal for marketing-heavy websites or one-off visual concepts.
-              </p>
             </div>
 
             {/* Right Column: What's Included */}
@@ -1215,26 +1209,27 @@ export default function PricingCards() {
                 <p>Clean, readable code structure</p>
                 <p>Notes on usage and customization</p>
               </div>
-
-              <div className="w-12 h-px bg-black/10 my-10 mx-auto"></div>
-
-              <p className="text-sm text-black/40 italic leading-relaxed mb-10">
-                No design tools, no screenshots — just real code.
-              </p>
-
-              {/* CTA Button */}
-              <div className="mt-12">
-                <a 
-                  href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-                  className="inline-block w-full sm:w-auto sm:min-w-[400px] px-12 py-4 rounded-full bg-black text-white text-base font-medium hover:bg-black/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
-                >
-                  Buy all templates — $49
-                </a>
-                <p className="text-xs text-black/40 mt-6">
-                  Instant download · Commercial license
-                </p>
-              </div>
             </div>
+          </div>
+
+          {/* Centered CTA Below Both Columns */}
+          <div className="max-w-3xl mx-auto text-center mt-20 sm:mt-24 md:mt-28">
+            <div className="w-16 h-px bg-black/10 mb-12 sm:mb-14 mx-auto"></div>
+            
+            <p className="text-sm text-black/40 italic leading-relaxed mb-10">
+              No design tools, no screenshots — just real code.
+            </p>
+
+            <a 
+              href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
+              className="inline-block px-10 py-3.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/90 transition-all duration-200"
+            >
+              Buy all templates — $49
+            </a>
+            
+            <p className="text-xs text-black/40 mt-5">
+              Instant download · Commercial license
+            </p>
           </div>
         </div>
       </div>
