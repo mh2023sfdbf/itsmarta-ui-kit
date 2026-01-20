@@ -244,13 +244,18 @@ export default function TemplatePreview({
       </div>
 
       {/* Quick Actions */}
-      <div className="mt-4 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-        <a 
-          href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-          className="block w-full px-6 py-3 bg-black text-white rounded-xl font-medium shadow-sm hover:bg-black/80 transition-colors text-center"
-        >
-          Buy Template - ${price}
-        </a>
+      <div className="mt-8 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+        <div className="max-w-md mx-auto">
+          <a 
+            href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
+            className="block w-full px-8 py-4 bg-black text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:bg-black/90 transition-all duration-200 text-center text-base"
+          >
+            Buy Template — ${price}
+          </a>
+          <p className="text-center text-xs text-black/40 mt-4">
+            Instant download · Commercial license
+          </p>
+        </div>
       </div>
     </div>
   );
