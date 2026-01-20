@@ -67,7 +67,7 @@ function DownloadContent() {
               <div className="w-12 h-px bg-black/10 mx-auto my-6"></div>
               
               <p className="text-sm sm:text-base text-black/60 font-light leading-relaxed max-w-md mx-auto">
-                Thank you for your purchase and support. ♡
+                Thank you for your purchase and support.
               </p>
             </div>
           </div>
@@ -94,7 +94,7 @@ function DownloadContent() {
             
             <div className="space-y-6">
               <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-serif leading-tight text-black/90">
-                Thank you ♡
+                Thank you
               </h1>
               
               <div className="w-12 h-px bg-black/10 mx-auto"></div>
