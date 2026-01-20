@@ -1101,11 +1101,6 @@ export default function PricingCards() {
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
             {/* Combined Title and Intro */}
             <div className="mb-12 sm:mb-14 md:mb-16">
-              {/* Subtle Label */}
-              <p className="text-xs sm:text-sm uppercase tracking-widest text-black/40 mb-6 sm:mb-8">
-                Recent work
-              </p>
-              
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-6 sm:mb-7 md:mb-8">
                 Calm, conversion-ready UI templates from real SaaS products.
               </h2>
@@ -1114,8 +1109,15 @@ export default function PricingCards() {
                 Preview live Tailwind components in your browser, then buy the code. Easy.
               </p>
 
-              <p className="text-xs text-black/40 mb-12 sm:mb-14 md:mb-16">
+              <p className="text-xs text-black/40">
                 React · Tailwind · TypeScript · Instant download
+              </p>
+            </div>
+
+            {/* Recent Work Subtitle */}
+            <div className="mb-8 sm:mb-10">
+              <p className="text-xs uppercase tracking-widest text-black/40">
+                Recent work
               </p>
             </div>
 
