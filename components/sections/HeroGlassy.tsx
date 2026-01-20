@@ -2,9 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import TemplatePreview from '@/components/showcase/TemplatePreview';
 import PulsingLogo from '@/marta-ui-kit/templates/loaders/PulsingLogo';
-import SignInSplit from '@/marta-ui-kit/templates/auth/SignInSplit';
+
+// Dynamic import with SSR disabled to avoid hydration issues from browser extensions
+const SignInSplit = dynamic(
+  () => import('@/marta-ui-kit/templates/auth/SignInSplit'),
+  { ssr: false }
+);
 import FooterComprehensive from '@/marta-ui-kit/templates/footers/FooterComprehensive';
 import NavOrange from '@/marta-ui-kit/templates/navigation/NavOrange';
 import HeroVideo from '@/marta-ui-kit/templates/heroes/HeroVideo';
