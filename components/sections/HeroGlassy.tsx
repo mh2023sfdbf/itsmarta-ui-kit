@@ -1103,16 +1103,6 @@ export default function PricingCards() {
                 Preview live Tailwind components in your browser, then buy the code. Easy.
               </p>
 
-              {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-10">
-                <a 
-                  href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-                  className="inline-flex items-center px-5 py-2.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors"
-                >
-                  Buy the code
-                </a>
-              </div>
-
               <p className="text-xs text-black/40">
                 React · Tailwind · TypeScript · Instant download
               </p>
