@@ -54,7 +54,7 @@ export default function Home() {
       <ProjectShowcase />
 
       {/* Advisory Section */}
-      <section id="need-a-second-brain" className="pt-20 sm:pt-24 md:pt-28 pb-20 px-6 md:px-8 scroll-mt-20">
+      <section id="need-a-second-brain" className="pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-32 px-6 md:px-8 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto text-center px-6 md:px-16 lg:px-32">
             {/* Title */}
