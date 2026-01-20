@@ -1079,6 +1079,11 @@ export default function PricingCards() {
               Shaped by real experience shipping and iterating SaaS products end-to-end.
             </p>
           </div>
+
+          {/* Differentiator Note */}
+          <p className="text-xs sm:text-sm italic text-black/40 max-w-xl mx-auto mt-10 lg:mt-12">
+            UI created with AI looks mostly the same, no storytelling, no human psychology.
+          </p>
         </div>
       </div>
 
