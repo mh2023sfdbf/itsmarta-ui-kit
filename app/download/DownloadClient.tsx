@@ -52,7 +52,7 @@ function DownloadContent() {
   }, [sessionId]);
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center px-6 py-24">
+    <div className="min-h-screen bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 flex items-center justify-center px-6 py-24">
       <div className="max-w-2xl w-full text-center">
         {state === "loading" && (
           <div className="space-y-8">
@@ -67,7 +67,7 @@ function DownloadContent() {
               <div className="w-12 h-px bg-black/10 mx-auto my-6"></div>
               
               <p className="text-base sm:text-lg text-black/60 font-light leading-relaxed max-w-md mx-auto">
-                Verifying your payment and generating secure download link.
+                Thank you for your purchase and support. ♡
               </p>
             </div>
           </div>
@@ -76,7 +76,7 @@ function DownloadContent() {
         {state === "success" && downloadUrl && (
           <div className="space-y-8">
             {/* Minimal success icon */}
-            <div className="w-16 h-16 rounded-full bg-black/5 flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 rounded-full bg-white/60 flex items-center justify-center mx-auto">
               <svg 
                 className="w-7 h-7 text-black/70" 
                 fill="none" 
@@ -94,7 +94,7 @@ function DownloadContent() {
             
             <div className="space-y-6">
               <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-serif leading-tight text-black/90">
-                Download starting
+                Thank you ♡
               </h1>
               
               <div className="w-12 h-px bg-black/10 mx-auto"></div>
@@ -169,7 +169,7 @@ export default function DownloadClient() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-white flex items-center justify-center px-6 py-24">
+        <div className="min-h-screen bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 flex items-center justify-center px-6 py-24">
           <div className="max-w-2xl w-full text-center space-y-8">
             <div className="w-12 h-12 border-2 border-black/10 border-t-black/30 rounded-full animate-spin mx-auto"></div>
             <h1 className="text-3xl md:text-4xl italic font-serif leading-tight text-black/90">
