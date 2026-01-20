@@ -128,13 +128,12 @@ export default function ProjectShowcase() {
                 className="group cursor-pointer order-2 lg:order-1"
                 onClick={() => setSelectedProject(currentProject)}
               >
-                <div className="relative aspect-[3/4] overflow-hidden shadow-md bg-neutral-100">
-                  {/* Loading skeleton */}
+                <div className="relative aspect-[3/4] overflow-hidden shadow-md bg-neutral-50">
+                  {/* Elegant shimmer loading skeleton */}
                   {!carouselImageLoaded && (
-                    <div className="absolute inset-0 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-100 animate-pulse">
-                      <div className="flex items-center justify-center h-full">
-                        <div className="w-6 h-6 border-2 border-black/10 border-t-black/30 rounded-full animate-spin"></div>
-                      </div>
+                    <div className="absolute inset-0 animate-shimmer">
+                      {/* Subtle overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/20 to-white/0"></div>
                     </div>
                   )}
                   
@@ -144,8 +143,10 @@ export default function ProjectShowcase() {
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className={cn(
-                      "object-cover object-top transition-opacity duration-500",
-                      carouselImageLoaded ? "opacity-100" : "opacity-0"
+                      "object-cover object-top transition-all duration-700",
+                      carouselImageLoaded 
+                        ? "opacity-100 scale-100 blur-0" 
+                        : "opacity-0 scale-95 blur-sm"
                     )}
                     priority={currentIndex === 0}
                     quality={90}
