@@ -1285,7 +1285,7 @@ export default function PricingCards() {
 
             <a 
               href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-              className="inline-block px-10 py-3.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/90 transition-all duration-200"
+              className="inline-block px-12 py-4 rounded-full bg-black text-white text-sm font-medium hover:bg-black/90 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Buy all templates — $49
             </a>
