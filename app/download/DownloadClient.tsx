@@ -66,7 +66,7 @@ function DownloadContent() {
               
               <div className="w-12 h-px bg-black/10 mx-auto my-6"></div>
               
-              <p className="text-base sm:text-lg text-black/60 font-light leading-relaxed max-w-md mx-auto">
+              <p className="text-sm sm:text-base text-black/60 font-light leading-relaxed max-w-md mx-auto">
                 Thank you for your purchase and support. ♡
               </p>
             </div>
@@ -99,7 +99,7 @@ function DownloadContent() {
               
               <div className="w-12 h-px bg-black/10 mx-auto"></div>
               
-              <p className="text-base sm:text-lg text-black/60 font-light leading-relaxed max-w-md mx-auto">
+              <p className="text-sm sm:text-base text-black/60 font-light leading-relaxed max-w-md mx-auto">
                 Your download should start automatically.
               </p>
               
@@ -112,7 +112,7 @@ function DownloadContent() {
                 </a>
               </div>
               
-              <p className="text-xs text-black/40 italic pt-4">
+              <p className="text-sm sm:text-base text-black/40 font-light pt-4">
                 For security, this link expires in 10 minutes.
               </p>
             </div>
@@ -145,7 +145,7 @@ function DownloadContent() {
               
               <div className="w-12 h-px bg-black/10 mx-auto"></div>
               
-              <p className="text-base sm:text-lg text-black/60 font-light leading-relaxed max-w-md mx-auto">
+              <p className="text-sm sm:text-base text-black/60 font-light leading-relaxed max-w-md mx-auto">
                 {errorMessage}
               </p>
               
