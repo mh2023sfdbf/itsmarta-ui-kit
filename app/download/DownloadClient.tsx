@@ -121,23 +121,6 @@ function DownloadContent() {
 
         {state === "error" && (
           <div className="space-y-8">
-            {/* Minimal error icon */}
-            <div className="w-16 h-16 rounded-full bg-black/5 flex items-center justify-center mx-auto">
-              <svg 
-                className="w-7 h-7 text-black/70" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  d="M6 18L18 6M6 6l12 12" 
-                />
-              </svg>
-            </div>
-            
             <div className="space-y-6">
               <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-serif leading-tight text-black/90">
                 Something went wrong
