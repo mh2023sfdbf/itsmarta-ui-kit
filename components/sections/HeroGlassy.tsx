@@ -1094,22 +1094,22 @@ export default function PricingCards() {
           {/* Controls Container - Constrained Width */}
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
             {/* Combined Title and Intro */}
-            <div className="mb-16 sm:mb-20 md:mb-24">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-8 sm:mb-10 md:mb-12">
+            <div className="mb-12 sm:mb-14 md:mb-16">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-6 sm:mb-7 md:mb-8">
                 Calm, conversion-ready UI templates from real SaaS products.
               </h2>
               
-              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-10 sm:mb-12">
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-6 sm:mb-7">
                 Preview live Tailwind components in your browser, then buy the code. Easy.
               </p>
 
-              <p className="text-xs text-black/40">
+              <p className="text-xs text-black/40 mb-12 sm:mb-14 md:mb-16">
                 React · Tailwind · TypeScript · Instant download
               </p>
             </div>
 
             {/* Project Switcher - Minimal Navigation */}
-            <div className="mb-8">
+            <div className="mb-6">
               <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
                 <button
                   onClick={() => {
@@ -1141,7 +1141,7 @@ export default function PricingCards() {
             </div>
 
             {/* Template Switcher Buttons */}
-            <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-12">
               {templates.filter(t => t.project === activeProject).map((template) => (
                 <button
                   key={template.id}
