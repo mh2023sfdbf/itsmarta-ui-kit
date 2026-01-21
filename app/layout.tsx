@@ -49,14 +49,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yourdomain.com",
+    url: "https://itsmarta.co",
     title: "ItsMarta UI Kit - Premium Tailwind CSS Components",
     description:
       "Hand-crafted, production-ready Tailwind CSS components and sections.",
     siteName: "ItsMarta UI Kit",
     images: [
       {
-        url: "https://yourdomain.com/og-image.png",
+        url: "https://itsmarta.co/og-image.png",
         width: 1200,
         height: 630,
         alt: "ItsMarta UI Kit",
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
     title: "ItsMarta UI Kit - Premium Tailwind CSS Components",
     description:
       "Hand-crafted, production-ready Tailwind CSS components and sections.",
-    images: ["https://yourdomain.com/og-image.png"],
-    creator: "@yourusername",
+    images: ["https://itsmarta.co/og-image.png"],
+    creator: "@itsmarta",
   },
   robots: {
     index: true,
