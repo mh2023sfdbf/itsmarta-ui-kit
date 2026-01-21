@@ -243,6 +243,32 @@ export default function TemplatePreview({
         )}
       </div>
 
+      {/* Description - Minimal & Pro */}
+      {description && (
+        <div className="mt-6 mx-auto max-w-2xl px-4 sm:px-6 md:px-8 text-center">
+          {description.split('\n').map((line, index) => {
+            const isItalic = line.startsWith('*') && line.endsWith('*');
+            const text = isItalic ? line.slice(1, -1) : line;
+            
+            return index === 0 ? (
+              <p key={index} className="text-xs sm:text-sm font-medium text-black/90 mb-1">
+                {text}
+              </p>
+            ) : (
+              <p 
+                key={index} 
+                className={cn(
+                  "text-xs sm:text-sm text-black/60 font-light",
+                  isItalic && "italic"
+                )}
+              >
+                {text}
+              </p>
+            );
+          })}
+        </div>
+      )}
+
       {/* Quick Actions */}
       <div className="mt-8 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
         <div className="max-w-md mx-auto">

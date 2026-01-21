@@ -1188,7 +1188,10 @@ export default function PricingCards() {
             <div className="w-full">
               <TemplatePreview
                 title={currentTemplate.title}
-                description=""
+                description={currentTemplate.id === 'sign-in-split' 
+                  ? "All auth states included\nSign in, sign up, password reset, magic link, loading & error states.\n*Prompt guidance included.*"
+                  : ""
+                }
                 category={currentTemplate.category}
                 isPremium
                 price={49}
