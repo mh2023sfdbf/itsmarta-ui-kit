@@ -1165,8 +1165,8 @@ export default function PricingCards() {
               </div>
             </div>
 
-            {/* Template Switcher Buttons - Scrollable on mobile */}
-            <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-6">
+            {/* Template Switcher Buttons - Scrollable on mobile with hidden scrollbar */}
+            <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-6 scrollbar-hide">
               <div className="flex gap-2 sm:gap-3 min-w-min md:flex-wrap">
                 {templates.filter(t => t.project === activeProject).map((template) => (
                   <button
