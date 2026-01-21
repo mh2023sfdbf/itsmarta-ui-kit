@@ -6,7 +6,7 @@ import { createPortal } from 'react-dom';
 interface IframePreviewProps {
   children: React.ReactNode;
   width: number;
-  project?: 'design-app' | 'therapy-app';
+  project?: 'design-app' | 'therapy-app' | 'basics';
 }
 
 export default function IframePreview({ children, width, project = 'therapy-app' }: IframePreviewProps) {
@@ -17,6 +17,12 @@ export default function IframePreview({ children, width, project = 'therapy-app'
   
   // Font configuration based on project
   const fontConfig = project === 'design-app' 
+    ? {
+        headingFont: 'Lustria, serif',
+        bodyFont: 'Inter, system-ui, sans-serif',
+        headingClass: 'font-heading'
+      }
+    : project === 'basics'
     ? {
         headingFont: 'Lustria, serif',
         bodyFont: 'Inter, system-ui, sans-serif',
