@@ -5,3 +5,22 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+
+# Force canonical HTTPS non-www domain
+[[redirects]]
+  from = "http://www.itsmarta.co/*"
+  to = "https://itsmarta.co/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.itsmarta.co/*"
+  to = "https://itsmarta.co/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://itsmarta.co/*"
+  to = "https://itsmarta.co/:splat"
+  status = 301
+  force = true

@@ -3,6 +3,14 @@ import HeroGlassy from "@/components/sections/HeroGlassy";
 import ProjectShowcase from "@/components/sections/ProjectShowcase";
 import Footer from "@/components/sections/Footer";
 import ScrollLink from "@/components/ui/ScrollLink";
+import { SITE_URL } from "@/lib/site";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: SITE_URL,
+  },
+};
 
 export default function Home() {
   return (

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Magazine – Design Insights & SaaS Thoughts",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     "ui patterns",
   ],
   alternates: {
-    canonical: "https://yourdomain.com/magazine",
+    canonical: `${SITE_URL}/magazine`,
   },
   robots: {
     index: true,
@@ -23,13 +24,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yourdomain.com/magazine",
+    url: `${SITE_URL}/magazine`,
     title: "Magazine – Design Insights & SaaS Thoughts",
     description: "Thoughts on UI design, SaaS product decisions, and what actually works in production.",
     siteName: "ItsMarta UI Kit",
     images: [
       {
-        url: "https://yourdomain.com/og-magazine.png",
+        url: `${SITE_URL}/og-magazine.png",
         width: 1200,
         height: 630,
         alt: "ItsMarta Magazine",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Magazine – Design Insights & SaaS Thoughts",
     description: "Thoughts on UI design, SaaS product decisions, and what actually works in production.",
-    images: ["https://yourdomain.com/og-magazine.png"],
+    images: [`${SITE_URL}/og-magazine.png"],
   },
 };
 
@@ -86,12 +87,12 @@ export default function Magazine() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://yourdomain.com/magazine",
-        "url": "https://yourdomain.com/magazine",
+        "@id": `${SITE_URL}/magazine",
+        "url": `${SITE_URL}/magazine",
         "name": "Magazine – Design Insights & SaaS Thoughts",
         "description": "Thoughts on UI design, SaaS product decisions, and what actually works in production.",
         "isPartOf": {
-          "@id": "https://yourdomain.com/#website"
+          "@id": `${SITE_URL}/#website"
         },
       },
       {
@@ -101,13 +102,13 @@ export default function Magazine() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://yourdomain.com"
+            "item": `${SITE_URL}`
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Magazine",
-            "item": "https://yourdomain.com/magazine"
+            "item": `${SITE_URL}/magazine"
           }
         ]
       },
@@ -115,13 +116,13 @@ export default function Magazine() {
         "@type": "Blog",
         "name": "ItsMarta Magazine",
         "description": "Insights on UI design, SaaS, and product decisions",
-        "url": "https://yourdomain.com/magazine"
+        "url": `${SITE_URL}/magazine"
       },
       {
         "@type": "Organization",
-        "@id": "https://yourdomain.com/#organization",
+        "@id": `${SITE_URL}/#organization",
         "name": "ItsMarta UI Kit",
-        "url": "https://yourdomain.com"
+        "url": `${SITE_URL}`
       }
     ]
   };
