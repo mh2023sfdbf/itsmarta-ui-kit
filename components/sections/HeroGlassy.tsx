@@ -1123,7 +1123,7 @@ export default function PricingCards() {
                 Preview live Tailwind components in your browser, then buy the code. Easy.
               </p>
 
-              <p className="text-xs text-black/40 mb-16 sm:mb-20 md:mb-24">
+              <p className="text-xs text-black/40 mb-32 sm:mb-40 md:mb-48">
                 React · Tailwind · TypeScript · Instant download
               </p>
 
@@ -1137,77 +1137,85 @@ export default function PricingCards() {
               </p>
             </div>
 
-            {/* Project Switcher - Minimal vs Colorful */}
-            <div className="mb-6">
-              <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
-                <button
-                  onClick={() => {
-                    setActiveProject('design-app');
-                    setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
-                  }}
-                  className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
-                    activeProject === 'design-app'
-                      ? 'bg-white text-black shadow-sm'
-                      : 'text-black/50 hover:text-black/70'
-                  }`}
-                >
-                  Minimal & Calm
-                </button>
-                <button
-                  onClick={() => {
-                    setActiveProject('basics');
-                    setActiveTemplate(templates.find(t => t.project === 'basics')?.id || '');
-                  }}
-                  className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
-                    activeProject === 'basics'
-                      ? 'bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 text-black shadow-sm'
-                      : 'text-black/50 hover:text-black/70'
-                  }`}
-                >
-                  Colorful
-                </button>
-              </div>
-            </div>
-
-            {/* Template Switcher Buttons - Scrollable on mobile with hidden scrollbar */}
-            <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-6 scrollbar-hide">
-              <div className="flex gap-2 sm:gap-3 min-w-min md:flex-wrap">
-                {templates.filter(t => t.project === activeProject).map((template) => (
-                  <button
-                    key={template.id}
-                    onClick={() => setActiveTemplate(template.id)}
-                    className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap flex-shrink-0 ${
-                      activeTemplate === template.id
-                        ? 'bg-black text-white'
-                        : 'border border-neutral-300 text-neutral-700 hover:border-neutral-400 hover:bg-neutral-50'
-                    }`}
-                  >
-                    {template.title}
-                  </button>
-                ))}
-              </div>
+            {/* Split Layout: Nav Left, Preview Right */}
+            <div className="grid lg:grid-cols-[320px,1fr] gap-8 lg:gap-12 xl:gap-16 items-start">
+              
+              {/* LEFT: Navigation Panel */}
+              <div className="space-y-6 lg:sticky lg:top-8">
+                
+                {/* Project Switcher */}
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-black/40 mb-3 font-medium">Style</p>
+                  <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
+                    <button
+                      onClick={() => {
+                        setActiveProject('design-app');
+                        setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
+                      }}
+                      className={`px-4 py-2 text-xs font-medium transition-all duration-300 rounded-full ${
+                        activeProject === 'design-app'
+                          ? 'bg-white text-black shadow-sm'
+                          : 'text-black/50 hover:text-black/70'
+                      }`}
+                    >
+                      Minimal & Calm
+                    </button>
+                    <button
+                      onClick={() => {
+                        setActiveProject('basics');
+                        setActiveTemplate(templates.find(t => t.project === 'basics')?.id || '');
+                      }}
+                      className={`px-4 py-2 text-xs font-medium transition-all duration-300 rounded-full ${
+                        activeProject === 'basics'
+                          ? 'bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 text-black shadow-sm'
+                          : 'text-black/50 hover:text-black/70'
+                      }`}
+                    >
+                      Colorful
+                    </button>
+                  </div>
                 </div>
 
-            {/* Template Description - Minimal & Pro - Left Aligned */}
-            {activeTemplate === 'sign-in-split' && (
-              <div className="text-left mb-10 sm:mb-12">
-                <p className="text-xs font-medium text-black/90 mb-1">
-                  All auth states included
-                </p>
-                <p className="text-xs text-black/60 font-light">
-                  Sign in, sign up, password reset, magic link, loading & error states.
-                </p>
-                <p className="text-xs text-black/60 font-light italic">
-                  Prompt guidance included.
+                {/* Template List */}
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-black/40 mb-3 font-medium">Templates</p>
+                  <div className="space-y-2">
+                    {templates.filter(t => t.project === activeProject).map((template) => (
+                      <button
+                        key={template.id}
+                        onClick={() => setActiveTemplate(template.id)}
+                        className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                          activeTemplate === template.id
+                            ? 'bg-black text-white'
+                            : 'text-black/70 hover:bg-black/5 hover:text-black'
+                        }`}
+                      >
+                        {template.title}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Template Description */}
+                {activeTemplate === 'sign-in-split' && (
+                  <div className="pt-4 border-t border-black/5">
+                    <p className="text-xs font-medium text-black/90 mb-2">
+                      All auth states included
+                    </p>
+                    <p className="text-xs text-black/60 font-light leading-relaxed">
+                      Sign in, sign up, password reset, magic link, loading & error states.
+                    </p>
+                    <p className="text-xs text-black/60 font-light italic mt-1">
+                      Prompt guidance included.
                 </p>
               </div>
-            )}
+                )}
             </div>
 
-          {/* Active Template Display - Full Width */}
-          {currentTemplate && (
-            <div className="w-full">
-              <TemplatePreview
+              {/* RIGHT: Preview Panel */}
+              {currentTemplate && (
+                <div className="lg:pl-8">
+                  <TemplatePreview
                 title={currentTemplate.title}
                 description=""
                 category={currentTemplate.category}
@@ -1216,10 +1224,12 @@ export default function PricingCards() {
                 code={currentTemplate.code}
                 project={currentTemplate.project}
               >
-                {currentTemplate.component}
-              </TemplatePreview>
+                    {currentTemplate.component}
+                  </TemplatePreview>
+                </div>
+              )}
             </div>
-          )}
+            </div>
         </div>
       </div>
 
