@@ -90,8 +90,8 @@ export default function SignInSplit() {
 
       <img 
         className="md:absolute md:top-0 md:right-0 mx-auto md:h-full md:w-2/5 lg:w-1/2 md:object-cover hidden md:block" 
-        src="https://myroomdesigner.ai/_next/image?url=https%3A%2F%2Fstatic.shuffle.dev%2Fuploads%2Ffiles%2F68%2F685cdf6531559900d35917105bd95b994e60c466%2F1707239043111990.jpg&w=3840&q=75" 
-        alt="Interior design inspiration"
+        src="/images/flower-close-up.jpg" 
+        alt="Flower close-up"
       />
     </section>
   );
