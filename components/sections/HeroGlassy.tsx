@@ -1166,7 +1166,7 @@ export default function PricingCards() {
             </div>
 
             {/* Template Switcher Buttons */}
-            <div className="flex flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-12">
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
               {templates.filter(t => t.project === activeProject).map((template) => (
                 <button
                   key={template.id}
@@ -1181,6 +1181,21 @@ export default function PricingCards() {
                 </button>
               ))}
             </div>
+
+            {/* Template Description - Minimal & Pro */}
+            {activeTemplate === 'sign-in-split' && (
+              <div className="text-center mb-10 sm:mb-12">
+                <p className="text-xs sm:text-sm font-medium text-black/90 mb-1">
+                  All auth states included
+                </p>
+                <p className="text-xs sm:text-sm text-black/60 font-light">
+                  Sign in, sign up, password reset, magic link, loading & error states.
+                </p>
+                <p className="text-xs sm:text-sm text-black/60 font-light italic">
+                  Prompt guidance included.
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Active Template Display - Full Width */}
@@ -1188,10 +1203,7 @@ export default function PricingCards() {
             <div className="w-full">
               <TemplatePreview
                 title={currentTemplate.title}
-                description={currentTemplate.id === 'sign-in-split' 
-                  ? "All auth states included\nSign in, sign up, password reset, magic link, loading & error states.\n*Prompt guidance included.*"
-                  : ""
-                }
+                description=""
                 category={currentTemplate.category}
                 isPremium
                 price={49}
