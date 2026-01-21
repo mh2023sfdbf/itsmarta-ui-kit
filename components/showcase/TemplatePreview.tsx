@@ -12,7 +12,7 @@ interface TemplatePreviewProps {
   price?: number;
   children: React.ReactNode;
   code: string;
-  project?: 'design-app' | 'therapy-app';
+  project?: 'design-app' | 'therapy-app' | 'basics';
 }
 
 /**
