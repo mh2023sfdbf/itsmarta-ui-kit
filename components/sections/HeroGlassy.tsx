@@ -1187,13 +1187,13 @@ export default function PricingCards() {
             {/* Template Description - Minimal & Pro - Left Aligned */}
             {activeTemplate === 'sign-in-split' && (
               <div className="text-left mb-10 sm:mb-12">
-                <p className="text-xs sm:text-sm font-medium text-black/90 mb-1">
+                <p className="text-xs font-medium text-black/90 mb-1">
                   All auth states included
                 </p>
-                <p className="text-xs sm:text-sm text-black/60 font-light">
+                <p className="text-xs text-black/60 font-light">
                   Sign in, sign up, password reset, magic link, loading & error states.
                 </p>
-                <p className="text-xs sm:text-sm text-black/60 font-light italic">
+                <p className="text-xs text-black/60 font-light italic">
                   Prompt guidance included.
                 </p>
               </div>
