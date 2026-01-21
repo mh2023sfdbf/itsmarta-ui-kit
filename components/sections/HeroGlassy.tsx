@@ -1160,7 +1160,7 @@ export default function PricingCards() {
                       : 'text-black/50 hover:text-black/70'
                   }`}
                 >
-                  Colorful UI
+                  Colorful
                 </button>
               </div>
             </div>
