@@ -23,7 +23,7 @@ export default function SignInSplit() {
             <form action="#" onSubmit={(e) => e.preventDefault()} suppressHydrationWarning>
               <button 
                 type="button"
-                className="font-heading text-sm sm:text-base rounded-full cursor-pointer hover:ring-1 ring-1 ring-gray-700 hover:ring-gray-500 mx-auto mb-3 flex items-center justify-center p-2 md:w-2/3"
+                className="font-heading text-sm sm:text-base rounded-full cursor-pointer hover:ring-1 ring-1 ring-gray-700 hover:ring-gray-500 mx-auto mb-3 flex items-center justify-center p-2 w-2/3"
               >
                 <span>Sign in with Google</span>
               </button>
