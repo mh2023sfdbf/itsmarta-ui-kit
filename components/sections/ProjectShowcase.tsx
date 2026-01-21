@@ -55,17 +55,6 @@ const projects: Project[] = [
     tags: ['Full-Stack Dev', 'Product Strategy', 'UX/UI', 'SaaS'],
   },
   {
-    id: 'moodboard',
-    title: 'Mood Board AI',
-    role: 'Co-Founder & CEO',
-    company: 'Mood Board AI · Self-employed',
-    period: 'Jan 2022 – Present · 4 yrs 1 mo',
-    description: 'I co-founded Mood Board AI (formerly MoodBoardly) and MyRoomDesigner AI, AI-powered design platforms for creating mood boards and visualizing room redesigns. Across both products, I focused on product vision, UX/UI, and making powerful design tools accessible and understandable for non-technical users.',
-    image: '/project-screenshots/moodboardai_cover.png',
-    images: ['/project-screenshots/moodboardai.png'],
-    tags: ['Co-Founder', 'CEO', 'Product Vision', 'UX/UI'],
-  },
-  {
     id: 'myroomdesigner',
     title: 'MyRoomDesigner AI',
     role: 'Co-Founder & Product Lead',

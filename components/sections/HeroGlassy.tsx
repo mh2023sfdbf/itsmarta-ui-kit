@@ -57,11 +57,6 @@ export default function HeroGlassy() {
       alt: "MyRoom Designer AI Cover"
     },
     {
-      title: "Mood Board AI",
-      image: "/project-screenshots/moodboardai_cover.png",
-      alt: "Mood Board AI Cover"
-    },
-    {
       title: "MySkin Routine",
       image: "/project-screenshots/myskinroutine_cover.png",
       alt: "MySkin Routine Cover"
@@ -1133,9 +1128,13 @@ export default function PricingCards() {
               </p>
 
               {/* Purchase Subheading */}
-              <h3 className="text-2xl sm:text-3xl md:text-4xl italic font-serif leading-relaxed text-black/90 mb-10 sm:mb-12 md:mb-14">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl italic font-serif leading-relaxed text-black/90 mb-4">
                 One purchase includes all templates shown below
               </h3>
+              
+              <p className="text-sm sm:text-base text-black/50 font-light mb-10 sm:mb-12 md:mb-14">
+                Everything you need for a calm, conversion-ready UI
+              </p>
             </div>
 
             {/* Project Switcher - Minimal vs Colorful */}
