@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "ItsMarta UI Kit",
     images: [
       {
-        url: `${SITE_URL}/og-magazine.png",
+        url: `${SITE_URL}/og-magazine.png`,
         width: 1200,
         height: 630,
         alt: "ItsMarta Magazine",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Magazine – Design Insights & SaaS Thoughts",
     description: "Thoughts on UI design, SaaS product decisions, and what actually works in production.",
-    images: [`${SITE_URL}/og-magazine.png"],
+    images: [`${SITE_URL}/og-magazine.png`],
   },
 };
 
@@ -87,12 +87,12 @@ export default function Magazine() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": `${SITE_URL}/magazine",
-        "url": `${SITE_URL}/magazine",
+        "@id": `${SITE_URL}/magazine`,
+        "url": `${SITE_URL}/magazine`,
         "name": "Magazine – Design Insights & SaaS Thoughts",
         "description": "Thoughts on UI design, SaaS product decisions, and what actually works in production.",
         "isPartOf": {
-          "@id": `${SITE_URL}/#website"
+          "@id": `${SITE_URL}/#website`
         },
       },
       {
@@ -108,7 +108,7 @@ export default function Magazine() {
             "@type": "ListItem",
             "position": 2,
             "name": "Magazine",
-            "item": `${SITE_URL}/magazine"
+            "item": `${SITE_URL}/magazine`
           }
         ]
       },
@@ -116,11 +116,11 @@ export default function Magazine() {
         "@type": "Blog",
         "name": "ItsMarta Magazine",
         "description": "Insights on UI design, SaaS, and product decisions",
-        "url": `${SITE_URL}/magazine"
+        "url": `${SITE_URL}/magazine`
       },
       {
         "@type": "Organization",
-        "@id": `${SITE_URL}/#organization",
+        "@id": `${SITE_URL}/#organization`,
         "name": "ItsMarta UI Kit",
         "url": `${SITE_URL}`
       }
