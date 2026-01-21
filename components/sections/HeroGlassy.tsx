@@ -1083,7 +1083,7 @@ export default function PricingCards() {
 
       {/* Designed by a Founder Section */}
       <div className="pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-32 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="max-w-4xl mx-auto text-center px-6 md:px-16 lg:px-32">
+             <div className="max-w-4xl mx-auto text-center px-6 md:px-16 lg:px-32">
           {/* Title */}
           <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-6 lg:mb-10 text-black/90">
             Designed by a founder
@@ -1108,8 +1108,8 @@ export default function PricingCards() {
           {/* Differentiator Note */}
           <p className="text-xs sm:text-sm italic text-black/40 max-w-xl mx-auto mt-10 lg:mt-12">
             Human-led design over generic AI output.
-          </p>
-        </div>
+              </p>
+            </div>
       </div>
 
       {/* Editorial Opening Statement - Magazine Style */}
@@ -1117,20 +1117,25 @@ export default function PricingCards() {
       <div id="ui-templates" className="w-full scroll-mt-20">
         <div className="pt-32 sm:pt-40 md:pt-48">
           {/* Controls Container - Constrained Width */}
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
             {/* Combined Title and Intro */}
             <div className="mb-12 sm:mb-14 md:mb-16">
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-6 sm:mb-7 md:mb-8">
                 Calm, conversion-ready UI templates from real SaaS products.
               </h2>
               
-              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-6 sm:mb-7">
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-6">
                 Preview live Tailwind components in your browser, then buy the code. Easy.
               </p>
 
-              <p className="text-xs text-black/40 mb-12 sm:mb-14 md:mb-16">
+              <p className="text-xs text-black/40 mb-16 sm:mb-20 md:mb-24">
                 React · Tailwind · TypeScript · Instant download
               </p>
+
+              {/* Purchase Subheading */}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl italic font-serif leading-relaxed text-black/90 mb-10 sm:mb-12 md:mb-14">
+                One purchase includes all templates shown below
+              </h3>
             </div>
 
             {/* Project Switcher - Minimal vs Colorful */}
@@ -1182,7 +1187,7 @@ export default function PricingCards() {
                   </button>
                 ))}
               </div>
-            </div>
+                </div>
 
             {/* Template Description - Minimal & Pro - Left Aligned */}
             {activeTemplate === 'sign-in-split' && (
@@ -1198,7 +1203,7 @@ export default function PricingCards() {
                 </p>
               </div>
             )}
-          </div>
+            </div>
 
           {/* Active Template Display - Full Width */}
           {currentTemplate && (
@@ -1226,32 +1231,32 @@ export default function PricingCards() {
           <div className="w-16 h-px bg-black/10 mb-20 sm:mb-28 md:mb-32 mx-auto"></div>
 
           <div className="grid md:grid-cols-2 gap-20 md:gap-24 lg:gap-32 max-w-6xl mx-auto">
-            {/* Left Column: For You If */}
+              {/* Left Column: For You If */}
             <div className="space-y-8 text-center">
               <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
-                These UI kits are for you if…
+                  These UI kits are for you if…
               </h3>
 
               <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed font-light">
-                <p>You're a developer who wants polished UI without hiring a designer</p>
-                <p>You're an indie founder building a SaaS or landing page</p>
-                <p>You care about clarity, UX, and conversion, not flashy visuals</p>
+                  <p>You're a developer who wants polished UI without hiring a designer</p>
+                  <p>You're an indie founder building a SaaS or landing page</p>
+                  <p>You care about clarity, UX, and conversion, not flashy visuals</p>
+                </div>
               </div>
-            </div>
 
-            {/* Right Column: What's Included */}
+              {/* Right Column: What's Included */}
             <div className="space-y-8 text-center">
               <h3 className="text-2xl md:text-3xl italic font-serif text-black/90 mb-10">
                 One purchase. All templates.
               </h3>
 
               <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed font-light">
-                <p>Real React + Tailwind components</p>
-                <p>Clean, readable code structure</p>
-                <p>Notes on usage and customization</p>
+                  <p>Real React + Tailwind components</p>
+                  <p>Clean, readable code structure</p>
+                  <p>Notes on usage and customization</p>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
 
@@ -1263,7 +1268,7 @@ export default function PricingCards() {
               <h2 className="text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed mb-8 text-black/90 text-center">
                 How it works
               </h2>
-              
+
               {/* Subtitle */}
               <p className="text-base sm:text-lg text-black/60 leading-relaxed font-light text-center mb-20 sm:mb-28 md:mb-32 max-w-2xl mx-auto">
                 Built to be understandable, flexible, and production-ready.
@@ -1276,8 +1281,8 @@ export default function PricingCards() {
                   <div className="space-y-4">
                     <h3 className="text-xl sm:text-2xl font-medium text-black">Preview</h3>
                     <p className="text-base sm:text-lg text-black/60 leading-relaxed font-light max-w-xl">
-                      Explore the UI live in your browser. Scroll, resize, and click through the components.
-                    </p>
+                    Explore the UI live in your browser. Scroll, resize, and click through the components.
+                  </p>
                   </div>
                 </div>
 
@@ -1286,8 +1291,8 @@ export default function PricingCards() {
                   <div className="space-y-4">
                     <h3 className="text-xl sm:text-2xl font-medium text-black">Buy</h3>
                     <p className="text-base sm:text-lg text-black/60 leading-relaxed font-light max-w-xl">
-                      Purchase the kit once. Instant access after checkout.
-                    </p>
+                    Purchase the kit once. Instant access after checkout.
+                  </p>
                   </div>
                 </div>
 
@@ -1296,8 +1301,8 @@ export default function PricingCards() {
                   <div className="space-y-4">
                     <h3 className="text-xl sm:text-2xl font-medium text-black">Download</h3>
                     <p className="text-base sm:text-lg text-black/60 leading-relaxed font-light max-w-xl">
-                      Get the full React + Tailwind code as a downloadable package.
-                    </p>
+                    Get the full React + Tailwind code as a downloadable package.
+                  </p>
                   </div>
                 </div>
 
@@ -1306,10 +1311,10 @@ export default function PricingCards() {
                   <div className="space-y-4">
                     <h3 className="text-xl sm:text-2xl font-medium text-black">Use & adapt</h3>
                     <p className="text-base sm:text-lg text-black/60 leading-relaxed font-light max-w-xl">
-                      Drop the components into your product and customize as needed.
-                    </p>
-                  </div>
+                    Drop the components into your product and customize as needed.
+                  </p>
                 </div>
+              </div>
               </div>
             </div>
         </div>
@@ -1335,7 +1340,7 @@ export default function PricingCards() {
             <p className="text-xs text-black/40 mt-5">
               Instant download · Commercial license
             </p>
-          </div>
+              </div>
         </div>
       </div>
     </div>
