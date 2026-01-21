@@ -1165,26 +1165,28 @@ export default function PricingCards() {
               </div>
             </div>
 
-            {/* Template Switcher Buttons */}
-            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
-              {templates.filter(t => t.project === activeProject).map((template) => (
-                <button
-                  key={template.id}
-                  onClick={() => setActiveTemplate(template.id)}
-                  className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-medium transition-all ${
-                    activeTemplate === template.id
-                      ? 'bg-black text-white'
-                      : 'border border-neutral-300 text-neutral-700 hover:border-neutral-400 hover:bg-neutral-50'
-                  }`}
-                >
-                  {template.title}
-                </button>
-              ))}
+            {/* Template Switcher Buttons - Scrollable on mobile */}
+            <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-6">
+              <div className="flex gap-2 sm:gap-3 min-w-min md:flex-wrap">
+                {templates.filter(t => t.project === activeProject).map((template) => (
+                  <button
+                    key={template.id}
+                    onClick={() => setActiveTemplate(template.id)}
+                    className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap flex-shrink-0 ${
+                      activeTemplate === template.id
+                        ? 'bg-black text-white'
+                        : 'border border-neutral-300 text-neutral-700 hover:border-neutral-400 hover:bg-neutral-50'
+                    }`}
+                  >
+                    {template.title}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            {/* Template Description - Minimal & Pro */}
+            {/* Template Description - Minimal & Pro - Left Aligned */}
             {activeTemplate === 'sign-in-split' && (
-              <div className="text-center mb-10 sm:mb-12">
+              <div className="text-left mb-10 sm:mb-12">
                 <p className="text-xs sm:text-sm font-medium text-black/90 mb-1">
                   All auth states included
                 </p>
