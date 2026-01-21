@@ -113,15 +113,14 @@ export default function SignInSplit() {
               <a className="inline-block mb-6" href="">
                 <img className="h-16" src={placeholder} alt="Logo"/>
               </a>
-              <h3 className="mb-4 text-2xl md:text-3xl font-heading">Sign in to your account</h3>
+              <h3 className="mb-4 text-xl md:text-2xl font-heading">Sign in to your account</h3>
             </div>
             
             <form action="" className="">
               <button 
                 type="button"
-                className="font-heading text-sm sm:text-base rounded-full cursor-pointer hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 mx-auto mb-4 flex items-center justify-center p-2 md:w-2/3"
+                className="font-heading text-sm sm:text-base rounded-full cursor-pointer hover:ring-1 ring-1 ring-gray-700 hover:ring-gray-500 mx-auto mb-3 flex items-center justify-center p-2 md:w-2/3"
               >
-                <img className="w-5 h-5 mr-3" src={placeholder} alt="Google logo"/>
                 <span>Sign in with Google</span>
               </button>
 
@@ -144,7 +143,7 @@ export default function SignInSplit() {
                 />
               </div>
 
-              <div className="mb-6" suppressHydrationWarning>
+              <div className="mb-3" suppressHydrationWarning>
                 <label className="block mb-2 text-coolGray-800 font-medium" htmlFor="password">
                   Password
                 </label>
@@ -167,7 +166,7 @@ export default function SignInSplit() {
 
               <button 
                 type="submit"
-                className="font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer hover:ring-2 ring-2 ring-gray-700 hover:ring-gray-500 text-center mx-auto mb-4 w-2/3" 
+                className="font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer hover:ring-1 ring-1 ring-gray-700 hover:ring-gray-500 text-center mx-auto mb-4 w-2/3" 
               >
                 Sign In
               </button>
@@ -976,7 +975,7 @@ export default function PricingCards() {
     },
     
     // ============================================
-    // FAVORITE BASICS - Add new templates below
+    // COLORFUL UI - Add new templates below
     // ============================================
     // Example template structure:
     // {
@@ -1161,7 +1160,7 @@ export default function PricingCards() {
                       : 'text-black/50 hover:text-black/70'
                   }`}
                 >
-                  Favorite Basics
+                  Colorful UI
                 </button>
               </div>
             </div>
