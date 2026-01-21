@@ -78,7 +78,7 @@ export default function HeroGlassy() {
   }, [carouselCards.length]);
 
   // Template type definition
-  type TemplateProject = 'design-app' | 'therapy-app';
+  type TemplateProject = 'design-app' | 'therapy-app' | 'basics';
   
   interface Template {
     id: string;
@@ -973,7 +973,20 @@ export default function PricingCards() {
     </section>
   );
 }`
-    }
+    },
+    
+    // ============================================
+    // FAVORITE BASICS - Add new templates below
+    // ============================================
+    // Example template structure:
+    // {
+    //   id: 'template-id',
+    //   title: 'Template Title',
+    //   category: 'Category',
+    //   project: 'basics',
+    //   component: <ComponentName />,
+    //   code: `code string here`
+    // }
   ];
 
   const currentTemplate = templates.find(t => t.id === activeTemplate);
@@ -1121,7 +1134,7 @@ export default function PricingCards() {
               </p>
             </div>
 
-            {/* Project Switcher - Minimal Navigation */}
+            {/* Project Switcher - Minimal vs Colorful */}
             <div className="mb-6">
               <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
                 <button
@@ -1135,20 +1148,20 @@ export default function PricingCards() {
                       : 'text-black/50 hover:text-black/70'
                   }`}
                 >
-                  Design App
+                  Minimal UI
                 </button>
                 <button
                   onClick={() => {
-                    setActiveProject('therapy-app');
-                    setActiveTemplate(templates.find(t => t.project === 'therapy-app')?.id || 'pulsing-logo');
+                    setActiveProject('basics');
+                    setActiveTemplate(templates.find(t => t.project === 'basics')?.id || '');
                   }}
                   className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full ${
-                    activeProject === 'therapy-app'
-                      ? 'bg-white text-black shadow-sm'
+                    activeProject === 'basics'
+                      ? 'bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 text-black shadow-sm'
                       : 'text-black/50 hover:text-black/70'
                   }`}
                 >
-                  Therapy App
+                  Favorite Basics
                 </button>
               </div>
             </div>
