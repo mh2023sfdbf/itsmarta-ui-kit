@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import IframePreview from "./IframePreview";
 
@@ -52,14 +52,39 @@ export default function TemplatePreview({
   const visibleCode = lines.slice(0, visibleLines).join('\n');
   const blurredCode = lines.slice(visibleLines).join('\n');
 
-  // Viewport configurations with scale
+  // Viewport configurations with accurate aspect ratios
   const viewportConfig = {
-    mobile: { width: 375, containerWidth: 1200, scale: 0.8 },
-    tablet: { width: 768, containerWidth: 1200, scale: 0.9 },
-    desktop: { width: '100%', containerWidth: '100%', scale: 1 },
+    // Phone: 19.5:9 portrait
+    mobile: { aspectRatio: 9 / 19.5, frameClass: 'max-w-[320px]', baseWidth: 390, baseHeight: 844 },
+    // Tablet: 4:3
+    tablet: { aspectRatio: 4 / 3, frameClass: 'max-w-[680px]', baseWidth: 1024, baseHeight: 768 },
+    // Laptop: 16:10
+    desktop: { aspectRatio: 16 / 10, frameClass: 'max-w-none', baseWidth: 1440, baseHeight: 900 },
   };
 
   const currentConfig = viewportConfig[viewport];
+  const frameRef = useRef<HTMLDivElement | null>(null);
+  const [previewScale, setPreviewScale] = useState(1);
+
+  useEffect(() => {
+    const frame = frameRef.current;
+    if (!frame) return;
+
+    const updateScale = () => {
+      const { width, height } = frame.getBoundingClientRect();
+      const scale = Math.min(
+        width / currentConfig.baseWidth,
+        height / currentConfig.baseHeight
+      );
+      setPreviewScale(Number.isFinite(scale) ? Math.max(0.1, scale) : 1);
+    };
+
+    updateScale();
+    const observer = new ResizeObserver(updateScale);
+    observer.observe(frame);
+
+    return () => observer.disconnect();
+  }, [currentConfig.baseHeight, currentConfig.baseWidth, viewport]);
 
   return (
     <div className="group relative">
@@ -81,7 +106,7 @@ export default function TemplatePreview({
                       ? "bg-white text-gray-900 shadow-md"
                       : "text-gray-600 hover:text-gray-900"
                   )}
-                  title="Mobile view (375px)"
+                  title="Phone view (19.5:9)"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -97,7 +122,7 @@ export default function TemplatePreview({
                       ? "bg-white text-gray-900 shadow-md"
                       : "text-gray-600 hover:text-gray-900"
                   )}
-                  title="Tablet view (768px)"
+                  title="Tablet view (4:3)"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -113,7 +138,7 @@ export default function TemplatePreview({
                       ? "bg-white text-gray-900 shadow-md"
                       : "text-gray-600 hover:text-gray-900"
                   )}
-                  title="Desktop view (full width)"
+                  title="Laptop view (16:10)"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -137,29 +162,43 @@ export default function TemplatePreview({
           </div>
 
           {/* The actual component */}
-          <div className="relative min-h-[600px] flex justify-center items-start bg-white">
-            <div 
-              className="transition-all duration-500 ease-in-out"
-              style={{
-                width: viewport === 'desktop' ? '100%' : `${typeof currentConfig.width === 'number' ? currentConfig.width : 1200}px`,
-                minHeight: '600px',
-              }}
-            >
-              {viewport === 'desktop' ? (
-                // Desktop: render directly
-                <div className="w-full min-h-[600px]">
-                  {children}
-                </div>
-              ) : (
-                // Mobile/Tablet: render in iframe with proper viewport
-                <IframePreview 
-                  key={viewport}
-                  width={typeof currentConfig.width === 'number' ? currentConfig.width : 1200}
-                  project={project}
-                >
-                  {children}
-                </IframePreview>
+          <div className="relative flex justify-center items-start bg-white">
+            <div
+              ref={frameRef}
+              className={cn(
+                "relative w-full mx-auto transition-all duration-500 ease-in-out",
+                currentConfig.frameClass
               )}
+              style={{ aspectRatio: `${currentConfig.aspectRatio}` }}
+            >
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div
+                  style={{
+                    width: currentConfig.baseWidth * previewScale,
+                    height: currentConfig.baseHeight * previewScale,
+                  }}
+                >
+                  <div
+                    className="rounded-3xl overflow-hidden bg-white shadow-[0_12px_40px_rgba(0,0,0,0.06)]"
+                    style={{
+                      width: currentConfig.baseWidth,
+                      height: currentConfig.baseHeight,
+                      transform: `scale(${previewScale})`,
+                      transformOrigin: "top left",
+                    }}
+                  >
+                    <IframePreview
+                      key={viewport}
+                      width={currentConfig.baseWidth}
+                      height={currentConfig.baseHeight}
+                      fixedViewport
+                      project={project}
+                    >
+                      {children}
+                    </IframePreview>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

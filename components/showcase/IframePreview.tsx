@@ -5,11 +5,21 @@ import { createPortal } from 'react-dom';
 
 interface IframePreviewProps {
   children: React.ReactNode;
-  width: number;
+  width?: number;
+  height?: number;
+  fit?: boolean;
+  fixedViewport?: boolean;
   project?: 'design-app' | 'therapy-app' | 'basics';
 }
 
-export default function IframePreview({ children, width, project = 'therapy-app' }: IframePreviewProps) {
+export default function IframePreview({
+  children,
+  width = 1200,
+  height = 800,
+  fit = false,
+  fixedViewport = false,
+  project = 'therapy-app',
+}: IframePreviewProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [mountNode, setMountNode] = useState<HTMLElement | null>(null);
   const [iframeHeight, setIframeHeight] = useState(800);
@@ -64,7 +74,7 @@ export default function IframePreview({ children, width, project = 'therapy-app'
             body {
               margin: 0;
               padding: 0;
-              overflow-x: hidden;
+              overflow: hidden;
               font-family: var(--font-body);
             }
             .font-heading {
@@ -140,6 +150,10 @@ export default function IframePreview({ children, width, project = 'therapy-app'
       setTimeout(() => setIsReady(true), 50);
     }
 
+    if (fixedViewport) {
+      return () => undefined;
+    }
+
     // Observe content height changes
     const updateHeight = () => {
       if (iframeDoc.body) {
@@ -173,6 +187,7 @@ export default function IframePreview({ children, width, project = 'therapy-app'
 
   // Re-measure when children change
   useEffect(() => {
+    if (fixedViewport) return;
     const iframe = iframeRef.current;
     if (!iframe?.contentDocument) return;
     
@@ -190,7 +205,7 @@ export default function IframePreview({ children, width, project = 'therapy-app'
     };
 
     setTimeout(updateHeight, 100);
-  }, [children, mountNode]);
+  }, [children, fixedViewport, mountNode]);
 
   return (
     <>
@@ -198,8 +213,8 @@ export default function IframePreview({ children, width, project = 'therapy-app'
         ref={iframeRef}
         className="transition-all duration-500"
         style={{
-          width: `${width}px`,
-          height: `${iframeHeight}px`,
+          width: fit ? '100%' : `${width}px`,
+          height: fixedViewport ? `${height}px` : fit ? '100%' : `${iframeHeight}px`,
           border: 'none',
           opacity: isReady ? 1 : 0,
           transition: 'opacity 0.2s ease-in-out',

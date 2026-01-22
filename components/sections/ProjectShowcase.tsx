@@ -125,12 +125,19 @@ export default function ProjectShowcase() {
                       <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/20 to-white/0"></div>
                     </div>
                   )}
+                  {!carouselImageLoaded && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <p className="text-xs uppercase tracking-widest text-black/30 font-medium">
+                        Loading preview
+                      </p>
+                    </div>
+                  )}
                   
                   <Image
                     src={currentProject.image}
                     alt={currentProject.title}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 90vw, 40vw"
                     className={cn(
                       "object-cover object-top transition-all duration-700",
                       carouselImageLoaded 
@@ -138,7 +145,8 @@ export default function ProjectShowcase() {
                         : "opacity-0 scale-95 blur-sm"
                     )}
                     priority={currentIndex === 0}
-                    quality={90}
+                    loading="eager"
+                    quality={80}
                     onLoad={() => setCarouselImageLoaded(true)}
                     placeholder="blur"
                     blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjkwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iI2Y1ZjVmNSIvPjwvc3ZnPg=="
