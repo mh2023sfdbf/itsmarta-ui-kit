@@ -167,7 +167,8 @@ export default function TemplatePreview({
               ref={frameRef}
               className={cn(
                 "relative w-full mx-auto transition-all duration-500 ease-in-out",
-                currentConfig.frameClass
+                currentConfig.frameClass,
+                viewport === "desktop" && "shadow-[0_24px_70px_rgba(0,0,0,0.10)]"
               )}
               style={{ aspectRatio: `${currentConfig.aspectRatio}` }}
             >
@@ -179,7 +180,12 @@ export default function TemplatePreview({
                   }}
                 >
                   <div
-                    className="rounded-3xl overflow-hidden bg-white shadow-[0_12px_40px_rgba(0,0,0,0.06)]"
+                    className={cn(
+                      "rounded-3xl overflow-hidden bg-white ring-1 ring-black/5",
+                      viewport === "desktop"
+                        ? "shadow-[0_16px_50px_rgba(0,0,0,0.08)]"
+                        : "shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
+                    )}
                     style={{
                       width: currentConfig.baseWidth,
                       height: currentConfig.baseHeight,
