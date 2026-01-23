@@ -62,13 +62,13 @@ function DownloadContent() {
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-serif leading-tight text-black/90">
                 Preparing your download
-              </h1>
+            </h1>
               
               <div className="w-12 h-px bg-black/10 mx-auto my-6"></div>
               
               <p className="text-sm sm:text-base text-black/60 font-light leading-relaxed max-w-md mx-auto">
                 Thank you for your purchase and support.
-              </p>
+            </p>
             </div>
           </div>
         )}
@@ -95,26 +95,26 @@ function DownloadContent() {
             <div className="space-y-6">
               <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-serif leading-tight text-black/90">
                 Thank you
-              </h1>
+            </h1>
               
               <div className="w-12 h-px bg-black/10 mx-auto"></div>
               
               <p className="text-sm sm:text-base text-black/60 font-light leading-relaxed max-w-md mx-auto">
-                Your download should start automatically.
-              </p>
+              Your download should start automatically.
+            </p>
               
               <div className="pt-4">
-                <a
-                  href={downloadUrl}
+            <a
+              href={downloadUrl}
                   className="inline-block px-10 py-3.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/90 transition-all duration-200"
-                >
-                  Click here if download doesn&apos;t start
-                </a>
+            >
+              Click here if download doesn&apos;t start
+            </a>
               </div>
               
               <p className="text-xs text-black/30 font-light pt-4">
-                For security, this link expires in 10 minutes.
-              </p>
+              For security, this link expires in 10 minutes.
+            </p>
             </div>
           </div>
         )}
@@ -124,7 +124,7 @@ function DownloadContent() {
             <div className="space-y-6">
               <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-serif leading-tight text-black/90">
                 Something went wrong
-              </h1>
+            </h1>
               
               <div className="w-12 h-px bg-black/10 mx-auto"></div>
               
@@ -133,12 +133,12 @@ function DownloadContent() {
               </p>
               
               <div className="pt-4">
-                <a
-                  href="/"
+            <a
+              href="/"
                   className="inline-block px-10 py-3.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/90 transition-all duration-200"
-                >
+            >
                   Return home
-                </a>
+            </a>
               </div>
             </div>
           </div>

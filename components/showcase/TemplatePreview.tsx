@@ -162,13 +162,15 @@ export default function TemplatePreview({
           </div>
 
           {/* The actual component */}
-          <div className="relative flex justify-center items-start bg-white">
+          <div className={cn(
+            "relative flex justify-center items-start bg-white",
+            viewport === "desktop" ? "p-12" : "p-6"
+          )}>
             <div
               ref={frameRef}
               className={cn(
                 "relative w-full mx-auto transition-all duration-500 ease-in-out",
-                currentConfig.frameClass,
-                viewport === "desktop" && "shadow-[0_24px_70px_rgba(0,0,0,0.10)]"
+                currentConfig.frameClass
               )}
               style={{ aspectRatio: `${currentConfig.aspectRatio}` }}
             >
@@ -181,10 +183,10 @@ export default function TemplatePreview({
                 >
                   <div
                     className={cn(
-                      "rounded-3xl overflow-hidden bg-white ring-1 ring-black/5",
+                      "rounded-3xl overflow-hidden bg-white",
                       viewport === "desktop"
-                        ? "shadow-[0_16px_50px_rgba(0,0,0,0.08)]"
-                        : "shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
+                        ? "shadow-[0_24px_80px_rgba(0,0,0,0.15)] ring-1 ring-black/10"
+                        : "shadow-[0_20px_60px_rgba(0,0,0,0.10)] ring-1 ring-black/5"
                     )}
                     style={{
                       width: currentConfig.baseWidth,

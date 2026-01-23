@@ -15,14 +15,14 @@ export default function Footer() {
           {/* Right: Links */}
           <div className="w-full md:w-auto">
             <nav className="flex flex-wrap items-center gap-3">
-              <a
-                href="https://www.linkedin.com/in/marta-herget/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-black/60 hover:text-black transition-colors font-light"
-              >
-                LinkedIn
-              </a>
+            <a
+              href="https://www.linkedin.com/in/marta-herget/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-black/60 hover:text-black transition-colors font-light"
+            >
+              LinkedIn
+            </a>
               <span className="text-xs text-black/20">•</span>
               <Link
                 href="/magazine"

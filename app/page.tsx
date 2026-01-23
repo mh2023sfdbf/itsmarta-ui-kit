@@ -51,8 +51,8 @@ export default function Home() {
                 {/* Context */}
                 <p className="text-sm sm:text-base text-black/60 leading-relaxed font-light">
                   These UI kits are built from those same design decisions: calm UX, clear hierarchy, and trust-first layouts.
-                </p>
-              </div>
+              </p>
+            </div>
             </div>
           </div>
         </div>
