@@ -1387,7 +1387,7 @@ export default function PricingCards() {
 
       {/* Editorial Opening Statement - Magazine Style */}
       {/* Template Showcase with Switcher */}
-      <div id="ui-templates" className="w-full scroll-mt-20">
+      <div className="w-full">
         <div className="pt-32 sm:pt-40 md:pt-48">
           {/* Controls Container - Constrained Width */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
@@ -1416,7 +1416,7 @@ export default function PricingCards() {
             </div>
 
             {/* Split Layout: Nav Left, Preview Right */}
-            <div className="grid lg:grid-cols-[320px,1fr] gap-8 lg:gap-12 xl:gap-16 items-start">
+            <div id="ui-templates" className="grid lg:grid-cols-[320px,1fr] gap-8 lg:gap-12 xl:gap-16 items-start scroll-mt-20">
               
               {/* LEFT: Navigation Panel */}
               <div className="space-y-6 lg:sticky lg:top-8">
