@@ -88,78 +88,85 @@ export default function TemplatePreview({
 
   return (
     <div className="group relative">
+      {/* Controls Toolbar - Outside Preview Area */}
+      <div className="flex items-center justify-between mb-4 px-1">
+        <div className="text-sm text-gray-500">
+          {/* Placeholder for balance */}
+        </div>
+        
+        <div className="flex gap-2 items-center">
+          {/* Device Size Toggles */}
+          {!showCode && (
+            <div className="flex gap-1 bg-gray-100/80 border border-gray-200/60 rounded-lg p-1">
+              {/* Mobile */}
+              <button
+                onClick={() => setViewport('mobile')}
+                className={cn(
+                  "p-1.5 rounded transition-all duration-200",
+                  viewport === 'mobile'
+                    ? "bg-white text-gray-900 shadow-sm"
+                    : "text-gray-500 hover:text-gray-900"
+                )}
+                title="Phone view"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </button>
+
+              {/* Tablet */}
+              <button
+                onClick={() => setViewport('tablet')}
+                className={cn(
+                  "p-1.5 rounded transition-all duration-200",
+                  viewport === 'tablet'
+                    ? "bg-white text-gray-900 shadow-sm"
+                    : "text-gray-500 hover:text-gray-900"
+                )}
+                title="Tablet view"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </button>
+
+              {/* Desktop */}
+              <button
+                onClick={() => setViewport('desktop')}
+                className={cn(
+                  "p-1.5 rounded transition-all duration-200",
+                  viewport === 'desktop'
+                    ? "bg-white text-gray-900 shadow-sm"
+                    : "text-gray-500 hover:text-gray-900"
+                )}
+                title="Desktop view"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </button>
+            </div>
+          )}
+
+          {/* View Code Button */}
+          <button
+            onClick={() => setShowCode(!showCode)}
+            className={cn(
+              "px-3 py-1.5 rounded-lg font-medium text-sm transition-all duration-200",
+              showCode
+                ? "bg-gray-900 text-white"
+                : "bg-gray-100/80 border border-gray-200/60 text-gray-700 hover:bg-gray-200/80"
+            )}
+          >
+            {showCode ? "← Preview" : "View Code"}
+          </button>
+        </div>
+      </div>
 
       {/* Preview Container */}
       <div className="relative rounded-3xl overflow-hidden">
         {/* Live Preview */}
         <div className="relative">
-          <div className="absolute top-4 right-4 z-20 flex gap-2">
-            {/* Device Size Toggles */}
-            {!showCode && (
-              <div className="flex gap-1 backdrop-blur-md bg-white/40 border border-white/60 rounded-xl p-1 shadow-lg">
-                {/* Mobile */}
-                <button
-                  onClick={() => setViewport('mobile')}
-                  className={cn(
-                    "p-2 rounded-lg transition-all duration-200",
-                    viewport === 'mobile'
-                      ? "bg-white text-gray-900 shadow-md"
-                      : "text-gray-600 hover:text-gray-900"
-                  )}
-                  title="Phone view (19.5:9)"
-                >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                </button>
-
-                {/* Tablet */}
-                <button
-                  onClick={() => setViewport('tablet')}
-                  className={cn(
-                    "p-2 rounded-lg transition-all duration-200",
-                    viewport === 'tablet'
-                      ? "bg-white text-gray-900 shadow-md"
-                      : "text-gray-600 hover:text-gray-900"
-                  )}
-                  title="Tablet view (4:3)"
-                >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                </button>
-
-                {/* Desktop */}
-                <button
-                  onClick={() => setViewport('desktop')}
-                  className={cn(
-                    "p-2 rounded-lg transition-all duration-200",
-                    viewport === 'desktop'
-                      ? "bg-white text-gray-900 shadow-md"
-                      : "text-gray-600 hover:text-gray-900"
-                  )}
-                  title="Laptop view (16:10)"
-                >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </button>
-              </div>
-            )}
-
-            {/* View Code Button */}
-            <button
-              onClick={() => setShowCode(!showCode)}
-              className={cn(
-                "px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 shadow-lg",
-                showCode
-                  ? "bg-white text-gray-900 border-2 border-gray-200"
-                  : "backdrop-blur-md bg-white/40 border border-white/60 text-gray-700 hover:bg-white/60"
-              )}
-            >
-              {showCode ? "← Live Preview" : "View Code"}
-            </button>
-          </div>
 
           {/* The actual component */}
           <div className={cn(
