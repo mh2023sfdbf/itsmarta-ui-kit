@@ -21,7 +21,7 @@ function DemoContent() {
       {/* Fixed Back Button - Top Left */}
       <Link
         href={template ? `/?t=${template}#ui-templates` : '/#ui-templates'}
-        className="fixed top-6 left-6 z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm text-black/70 text-sm font-medium hover:bg-white hover:text-black transition-all duration-200 shadow-lg hover:shadow-xl border border-black/5"
+        className="fixed top-6 left-6 z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/40 backdrop-blur-md text-black/60 text-sm font-medium hover:bg-white/60 hover:text-black transition-all duration-200 shadow-md hover:shadow-lg border border-black/10"
       >
         <svg 
           className="w-4 h-4" 
