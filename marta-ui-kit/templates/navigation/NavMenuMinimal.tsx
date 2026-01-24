@@ -9,8 +9,8 @@ export default function NavMenuMinimal() {
         <div className="flex items-center justify-between py-5 relative max-w-7xl mx-auto">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/" className="inline-block text-lg xl:text-3xl font-sego text-gray-900">
-              Minimal &amp; Calm
+            <a href="/" className="inline-block text-xs xl:text-sm font-medium uppercase tracking-[0.2em] text-gray-900">
+              MINIMAL & CALM
             </a>
           </div>
 
@@ -88,8 +88,8 @@ export default function NavMenuMinimal() {
         <div onClick={() => setMobileNavOpen(false)} className="fixed inset-0 bg-gray-800 opacity-80"></div>
         <nav className="relative z-10 bg-white h-full overflow-y-auto rounded-r-2xl shadow-xl">
           <div className="flex justify-between items-center p-6 border-b border-gray-200">
-            <a href="#" className="block text-lg font-sego text-gray-900">
-              Minimal &amp; Calm
+            <a href="#" className="block text-xs font-medium uppercase tracking-[0.2em] text-gray-900">
+              MINIMAL & CALM
             </a>
             <button onClick={() => setMobileNavOpen(false)} className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Close menu">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
