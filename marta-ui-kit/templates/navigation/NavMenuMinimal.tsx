@@ -5,10 +5,10 @@ export default function NavMenuMinimal() {
 
   return (
     <section className="bg-[#f7f6f4]">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between py-5 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-5 relative max-w-7xl mx-auto">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center flex-shrink-0">
             <a href="/" className="inline-block text-lg xl:text-3xl font-sego text-gray-900">
               Minimal &amp; Calm
             </a>
@@ -53,16 +53,16 @@ export default function NavMenuMinimal() {
           </div>
 
           {/* Desktop Sign In/Register */}
-          <div className="hidden xl:flex items-center space-x-2">
+          <div className="hidden xl:flex items-center space-x-3 flex-shrink-0">
             <a
               href="#"
-              className="inline-flex py-2.5 px-5 text-sm font-medium text-black border border-gray-900 rounded-full transition duration-300 hover:bg-white/60"
+              className="inline-flex py-2.5 px-6 text-sm font-medium text-black border border-gray-900 rounded-full transition duration-300 hover:bg-white/60 backdrop-blur-sm"
             >
               Sign In
             </a>
             <a
               href="#"
-              className="inline-flex py-2.5 px-5 text-sm font-medium text-white bg-black border border-gray-900 rounded-full transition duration-300 hover:bg-gray-800"
+              className="inline-flex py-2.5 px-6 text-sm font-medium text-white bg-black border border-gray-900 rounded-full transition duration-300 hover:bg-gray-800 shadow-sm"
             >
               Register
             </a>

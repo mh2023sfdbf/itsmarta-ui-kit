@@ -228,57 +228,51 @@ export default function TemplatePreview({
                 </pre>
               </div>
 
-              {/* Lock Overlay - Minimal & Elegant */}
-              <div className="absolute inset-0 flex items-center justify-center backdrop-blur-sm bg-white/5">
-                <div className="text-center backdrop-blur-2xl bg-white/90 border border-black/5 rounded-3xl p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)] max-w-md mx-4">
-                  <div className="w-12 h-12 mx-auto mb-5 bg-black/5 rounded-2xl flex items-center justify-center">
-                    <svg className="w-5 h-5 text-black/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                  </div>
+              {/* Lock Overlay - Vibrant & Visible */}
+              <div className="absolute inset-0 flex items-center justify-center backdrop-blur-sm bg-gradient-to-br from-black/40 via-black/30 to-black/20">
+                <div className="text-center bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 border-2 border-white/80 rounded-3xl p-10 shadow-2xl max-w-sm mx-4">
                   
-                  <h3 className="text-xl font-medium text-black/90 mb-2">
+                  {/* Heading - Airy spacing */}
+                  <h3 className="text-2xl font-medium text-black mb-3">
                     Get All Templates
                   </h3>
-                  <p className="text-sm text-black/50 mb-6 font-light">
-                    One purchase unlocks all templates shown in the preview.
+                  <p className="text-sm text-black/60 mb-8 font-light">
+                    One purchase unlocks everything
                   </p>
 
-                  <div className="space-y-2 mb-6">
-                    <a 
-                      href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-                      className="block w-full px-8 py-3 bg-black text-white rounded-full font-medium text-sm shadow-sm hover:bg-black/90 transition-all duration-200 text-center"
-                    >
-                      Buy All Templates — ${price}
-                    </a>
-                    <button 
-                      onClick={() => setShowCode(false)}
-                      className="w-full px-8 py-3 bg-white/50 border border-black/10 text-black/70 rounded-full font-medium text-sm hover:bg-white/80 transition-all"
-                    >
-                      Close Preview
-                    </button>
-                  </div>
+                  {/* Primary CTA Button */}
+                  <a 
+                    href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
+                    className="block w-full px-8 py-3.5 bg-black text-white rounded-full font-medium text-sm shadow-lg hover:bg-black/90 hover:shadow-xl hover:scale-105 transition-all duration-200 text-center mb-4"
+                  >
+                    Buy All Templates — ${price}
+                  </a>
 
-                  {/* Features - Compact List */}
-                  <div className="pt-6 border-t border-black/5 text-left">
-                    <p className="text-xs font-medium text-black/40 uppercase tracking-wider mb-3">
+                  {/* Minimal Close Button */}
+                  <button 
+                    onClick={() => setShowCode(false)}
+                    className="text-xs text-black/50 hover:text-black/70 font-light transition-colors underline decoration-1 underline-offset-2"
+                  >
+                    Close Preview
+                  </button>
+
+                  {/* Features - Airy spacing */}
+                  <div className="pt-8 mt-8 border-t border-black/10 text-left">
+                    <p className="text-xs font-medium text-black/50 uppercase tracking-wider mb-3">
                       What's Included
                     </p>
-                    <ul className="space-y-1.5 text-xs text-black/60">
+                    <ul className="space-y-2 text-xs text-black/70 leading-relaxed">
                       {[
-                        "Full React + Tailwind + TypeScript code",
-                        "Clean, readable component structure",
+                        "React + Tailwind + TypeScript",
+                        "Clean component structure",
                         "Responsive layouts",
-                        "AI prompt suggestions",
-                        "README with setup notes",
-                        "Commercial license",
-                        "Updates for this kit"
+                        "Commercial license"
                       ].map((feature) => (
                         <li key={feature} className="flex items-start gap-2">
-                          <svg className="w-4 h-4 text-black/50 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="w-3.5 h-3.5 text-black/50 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="leading-tight">{feature}</span>
+                          <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
