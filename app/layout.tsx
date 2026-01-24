@@ -84,16 +84,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon itsmarta/favicon.ico" },
-      { url: "/favicon itsmarta/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon itsmarta/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon itsmarta colorful/favicon.ico" },
+      { url: "/favicon itsmarta colorful/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon itsmarta colorful/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
-    shortcut: "/favicon itsmarta/favicon.ico",
+    shortcut: "/favicon itsmarta colorful/favicon.ico",
     apple: [
-      { url: "/favicon itsmarta/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/favicon itsmarta colorful/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
-  manifest: "/favicon itsmarta/site.webmanifest",
+  manifest: "/favicon itsmarta colorful/site.webmanifest",
 };
 
 export default function RootLayout({
