@@ -30,7 +30,7 @@ export default function HeroVideo() {
               Learn More
             </a>
           </div>
-          
+
           {/* Video in Spotlight - Compact on desktop/tablet */}
           <div className="relative w-full max-w-xl md:max-w-2xl mx-auto mb-6 md:mb-8">
             <div className="relative p-1 rounded-2xl">
@@ -49,7 +49,7 @@ export default function HeroVideo() {
             </div>
           </div>
         </div>
-        
+
         {/* Scroll Indicator - Always visible */}
         <div className="flex justify-center pt-1">
           <a className="text-center inline-block group" href="">
