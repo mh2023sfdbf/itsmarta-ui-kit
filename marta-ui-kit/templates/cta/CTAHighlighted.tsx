@@ -1,6 +1,6 @@
 export default function CTAHighlighted() {
   return (
-    <section className="relative overflow-hidden pb-40 px-6 xl:px-32">
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-6 xl:px-32 py-20">
       {/* Decorative Blob */}
       <div className="absolute bottom-[-50px] right-[-150px] w-[600px] h-[600px] z-0 pointer-events-none">
         <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" className="w-full h-full"></svg>
