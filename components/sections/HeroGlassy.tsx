@@ -47,6 +47,13 @@ export default function HeroGlassy() {
       const templateParam = params.get('t');
       if (templateParam) {
         setActiveTemplate(templateParam);
+        // Scroll to templates section after a brief delay to ensure DOM is ready
+        setTimeout(() => {
+          const element = document.getElementById('ui-templates');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
         // Clean up URL without reload
         window.history.replaceState({}, '', window.location.pathname + window.location.hash);
       }
