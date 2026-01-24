@@ -1509,6 +1509,7 @@ export default function PricingCards() {
                 price={49}
                 code={currentTemplate.code}
                 project={currentTemplate.project}
+                templateId={currentTemplate.id}
               >
                     {currentTemplate.component}
                   </TemplatePreview>

@@ -13,6 +13,7 @@ interface TemplatePreviewProps {
   children: React.ReactNode;
   code: string;
   project?: 'design-app' | 'therapy-app' | 'basics';
+  templateId?: string;
 }
 
 /**
@@ -41,6 +42,7 @@ export default function TemplatePreview({
   children,
   code,
   project = 'therapy-app',
+  templateId,
 }: TemplatePreviewProps) {
   const [showCode, setShowCode] = useState(false);
   const [viewport, setViewport] = useState<ViewportSize>('desktop');
@@ -147,6 +149,14 @@ export default function TemplatePreview({
               </button>
             </div>
           )}
+
+          {/* Live Demo Button */}
+          <a
+            href={`/demo-minimal-calm${templateId ? `?template=${templateId}` : ''}#ui-templates`}
+            className="px-3 py-1.5 rounded-lg font-medium text-sm transition-all duration-200 bg-gray-100/80 border border-gray-200/60 text-gray-700 hover:bg-gray-200/80"
+          >
+            Live Demo
+          </a>
 
           {/* View Code Button */}
           <button
