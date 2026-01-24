@@ -172,9 +172,9 @@ export default function TableComparison() {
           </div>
 
           {/* Button Outside Scroll Area */}
-          <div className="w-full">
+          <div className="w-full flex justify-center">
             <button 
-              className="w-full py-3 sm:py-4 bg-black text-white rounded-full hover:bg-gray-900 transition duration-300 ease-in-out shadow-lg text-sm sm:text-base"
+              className="inline-flex py-2.5 px-5 text-sm font-medium text-white bg-black border border-gray-900 rounded-full transition duration-300 hover:bg-gray-800"
             >
               Get Started Now
             </button>

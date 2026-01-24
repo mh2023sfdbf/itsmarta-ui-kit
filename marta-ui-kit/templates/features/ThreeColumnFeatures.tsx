@@ -99,8 +99,8 @@ export default function ThreeColumnFeatures() {
                     className="w-full h-auto rounded-2xl mb-8 transform ease-out hover:translate-y-3 duration-1000 transition"
                   />
                   <a href={feature.link}>
-                    <button className="group relative flex items-center justify-center font-heading block py-2 px-5 text-sm sm:text-base rounded-full cursor-pointer font-heading hover:ring-1 ring-1 ring-gray-800 hover:ring-gray-500 mx-auto">
-                      <p className="relative">{feature.buttonText}</p>
+                    <button className="inline-flex py-2.5 px-5 text-sm font-medium text-black border border-gray-900 rounded-full transition duration-300 hover:bg-white/60 mx-auto">
+                      {feature.buttonText}
                     </button>
                   </a>
                   

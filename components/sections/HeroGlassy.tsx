@@ -852,7 +852,7 @@ export default function VideoContentLayout() {
                 </div>
               </div>
 
-              <button className="py-3 px-8 bg-[#2C2C2C] hover:bg-black text-white rounded-full">Get Started</button>
+              <button className="inline-flex py-2.5 px-5 text-sm font-medium text-white bg-black border border-gray-900 rounded-full transition duration-300 hover:bg-gray-800">Get Started</button>
             </div>
           </div>
         </div>
@@ -945,7 +945,9 @@ export default function GridCards() {
               </tbody>
             </table>
           </div>
-          <button className="w-full py-3 sm:py-4 bg-black text-white rounded-full">Get Started</button>
+          <div className="w-full flex justify-center">
+            <button className="inline-flex py-2.5 px-5 text-sm font-medium text-white bg-black border border-gray-900 rounded-full transition duration-300 hover:bg-gray-800">Get Started</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1256,7 +1258,7 @@ export default function PricingCards() {
             </span>{' '}
             you can easily connect with qualified therapists who match your specific needs. Browse our extensive database of professionals, read reviews, and schedule your first session - all in one place.
           </p>
-          <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-black border border-gray-900 rounded-full transition duration-300 hover:bg-gradient-to-r hover:from-purple-200 hover:to-yellow-100">
+          <a href="#" className="inline-flex py-2.5 px-5 text-sm font-medium text-white bg-black border border-gray-900 rounded-full transition duration-300 hover:bg-gray-800">
             Find a Therapist
           </a>
         </div>

@@ -18,7 +18,7 @@ export default function CTAHighlighted() {
             </span>{' '}
             you can easily connect with qualified therapists who match your specific needs. Browse our extensive database of professionals, read reviews, and schedule your first session - all in one place.
           </p>
-          <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-black border border-gray-900 rounded-full transition duration-300 hover:bg-gradient-to-r hover:from-purple-200 hover:to-yellow-100">
+          <a href="#" className="inline-flex py-2.5 px-5 text-sm font-medium text-white bg-black border border-gray-900 rounded-full transition duration-300 hover:bg-gray-800">
             Find a Therapist
           </a>
         </div>

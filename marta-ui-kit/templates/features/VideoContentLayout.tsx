@@ -80,9 +80,9 @@ export default function VideoContentLayout() {
               </div>
 
               <button
-                className="w-[200px] sm:w-auto min-w-[180px] py-3 px-8 bg-[#2C2C2C] hover:bg-black text-white rounded-full font-heading text-base hover:shadow-lg transition-all duration-300 shadow-sm"
+                className="inline-flex py-2.5 px-5 text-sm font-medium text-white bg-black border border-gray-900 rounded-full transition duration-300 hover:bg-gray-800"
               >
-                <span>Get Started</span>
+                Get Started
               </button>
             </div>
           </div>

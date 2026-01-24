@@ -57,7 +57,7 @@ export default function GridCards() {
                   </p>
                   <div className="flex space-x-4 mt-6">
                     <button
-                      className="w-[200px] sm:w-[200px] py-3 px-8 bg-[#2C2C2C] hover:bg-black text-white rounded-full font-heading text-base hover:shadow-lg transition-all duration-300 shadow-sm"
+                      className="inline-flex py-2.5 px-5 text-sm font-medium text-white bg-black border border-gray-900 rounded-full transition duration-300 hover:bg-gray-800"
                     >
                       Try It Now
                     </button>
