@@ -239,10 +239,6 @@ export default function TemplatePreview({
               <div className="absolute inset-0 flex items-center justify-center backdrop-blur-sm bg-gradient-to-br from-black/40 via-black/30 to-black/20">
                 <div className="text-center bg-gradient-to-r from-red-100/95 via-yellow-50/95 to-purple-100/95 backdrop-blur-xl border-2 border-white/80 rounded-3xl p-10 shadow-2xl max-w-sm mx-4 ">
                   
-                  {/* Heading - Serif italic with glassy effect */}
-                  <h3 className="text-3xl font-serif italic font-light text-black mb-3 leading-tight">
-                    Get All Templates
-                  </h3>
                   <p className="text-sm text-black/60 mb-8 font-light">
                     One purchase unlocks everything
                   </p>
