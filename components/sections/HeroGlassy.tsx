@@ -1482,7 +1482,7 @@ export default function PricingCards() {
                     </p>
                     <p className="text-xs text-black/60 font-light leading-relaxed">
                       Sign in, sign up, password reset, magic link, loading & error states.
-                    </p>
+                </p>
                     <p className="text-xs text-black/60 font-light italic mt-1">
                       Prompt guidance included.
                 </p>
@@ -1507,7 +1507,7 @@ export default function PricingCards() {
 
                   {/* Full Demo Direct Link Button */}
                   <div className="mt-8">
-                    <a
+                  <a
                       href={`/demo-minimal-calm?template=${activeTemplate}`}
                       className="group w-full relative overflow-hidden rounded-2xl border border-black/10 bg-white p-6 sm:p-8 shadow-sm hover:shadow-2xl transition-all duration-500 block"
                     >

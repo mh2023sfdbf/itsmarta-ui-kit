@@ -74,7 +74,7 @@ export default function IframePreview({
             body {
               margin: 0;
               padding: 0;
-              overflow: hidden;
+              overflow: ${fixedViewport ? 'auto' : 'hidden'};
               font-family: var(--font-body);
             }
             .font-heading {

@@ -58,8 +58,8 @@ export default function TemplatePreview({
     mobile: { aspectRatio: 9 / 19.5, frameClass: 'max-w-[320px]', baseWidth: 390, baseHeight: 844 },
     // Tablet: 4:3
     tablet: { aspectRatio: 4 / 3, frameClass: 'max-w-[680px]', baseWidth: 1024, baseHeight: 768 },
-    // Laptop: 16:10 - Increased height for long templates
-    desktop: { aspectRatio: 16 / 10, frameClass: 'max-w-none', baseWidth: 1440, baseHeight: 1200 },
+    // Laptop: 16:10
+    desktop: { aspectRatio: 16 / 10, frameClass: 'max-w-none', baseWidth: 1440, baseHeight: 900 },
   };
 
   const currentConfig = viewportConfig[viewport];
@@ -183,7 +183,7 @@ export default function TemplatePreview({
                 >
                   <div
                     className={cn(
-                      "rounded-3xl overflow-hidden bg-white relative",
+                      "rounded-3xl overflow-hidden bg-white",
                       viewport === "desktop"
                         ? "shadow-[0_24px_80px_rgba(0,0,0,0.15)] ring-1 ring-black/10"
                         : "shadow-[0_20px_60px_rgba(0,0,0,0.10)] ring-1 ring-black/5"
@@ -204,18 +204,6 @@ export default function TemplatePreview({
                     >
                       {children}
                     </IframePreview>
-                    
-                    {/* Scroll Indicator - Subtle hint for scrollable content */}
-                    {viewport === 'desktop' && (
-                      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/5 to-transparent pointer-events-none flex items-end justify-center pb-4">
-                        <div className="flex flex-col items-center gap-1 animate-bounce">
-                          <svg className="w-4 h-4 text-black/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                          </svg>
-                          <span className="text-[10px] text-black/30 font-medium uppercase tracking-wider">Scroll</span>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
