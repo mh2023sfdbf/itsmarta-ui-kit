@@ -89,19 +89,21 @@ export default function IframePreview({
             .font-hedvig {
               font-family: var(--font-body) !important;
             }
-            /* Override min-h-screen for showcase - use padding instead */
+            /* Override min-h-screen and h-screen for showcase - use padding instead */
             .min-h-screen {
               min-height: auto !important;
               padding-top: 4rem !important;
               padding-bottom: 4rem !important;
             }
-            /* Keep h-screen as full height for components that need it (like auth pages) */
             .h-screen {
-              height: 100vh !important;
+              height: auto !important;
+              padding-top: 4rem !important;
+              padding-bottom: 4rem !important;
             }
-            /* For mobile/tablet preview, adjust min-h-screen spacing */
+            /* For mobile/tablet preview, ensure reasonable spacing */
             @media (max-width: 768px) {
-              .min-h-screen {
+              .min-h-screen,
+              .h-screen {
                 padding-top: 3rem !important;
                 padding-bottom: 3rem !important;
               }

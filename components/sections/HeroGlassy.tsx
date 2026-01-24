@@ -119,10 +119,10 @@ export default function SignInSplit() {
   
   return (
     <section 
-      className="relative h-screen bg-[#f7f6f4] flex items-center" 
+      className="relative pt-16 pb-0 md:py-32 bg-[#f7f6f4]" 
       style={{ backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: 'center' }}
     >
-      <div className="container px-4 mx-auto">
+      <div className="container px-4 mx-auto mb-16">
         <div className="w-full md:w-3/5 lg:w-1/2">
           <div className="max-w-sm mx-auto">
             <div className="mb-6 text-center">
