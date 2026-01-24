@@ -1,18 +1,18 @@
 import Image from 'next/image';
 
-export default function OurTips() {
+export default function GridCards() {
   return (
     <section className="relative overflow-hidden pb-44 pt-20 bs-section-dragged">
       <div className="relative z-10 container mx-auto px-4">
         <p className="mb-5 font-heading font-medium text-xs tracking-wider text-transparent bg-clip-text bg-gradient-cyan uppercase text-center">
-          OUR TIPS
+          FEATURED
         </p>
         <h2 className="mb-24 text-center font-heading text-4xl md:text-5xl text-gray-800">
-          Did You Know?
+          Discover What's Possible
         </h2>
         <div className="md:mx-auto md:max-w-6xl">
           <div className="flex flex-wrap -m-5">
-            {/* Tip 1: Easy Upscale */}
+            {/* Card 1: Feature Highlight */}
             <div className="w-full md:w-1/2 p-5 md:mt-auto">
               <div className="p-9 transform hover:-translate-y-3 rounded-2xl transition ease-out duration-1000 bg-[#f7f6f4]">
                 <video className="mx-auto w-full h-full object-cover" loop muted autoPlay playsInline>
@@ -22,16 +22,16 @@ export default function OurTips() {
                 <div></div>
                 <h3 className="font-heading text-3xl mt-6 pl-6 mb-4">
                   <span style={{ fontSize: '1.75rem', fontWeight: 'inherit', backgroundColor: 'rgb(247 246 244 / var(--tw-bg-opacity))', color: 'rgba(0,0,0,var(--tw-text-opacity))' }}>
-                    Easy Upscale and more
+                    Enhanced Quality & More
                   </span>
                 </h3>
                 <p className="font-heading text-base text-opacity-70 pl-6">
-                  You can upscale your photo for high-resolution results, or remove unwanted items.
+                  Upgrade your results with high-resolution outputs and advanced refinement tools.
                 </p>
               </div>
             </div>
 
-            {/* Tip 2: Integrate Designer Styles */}
+            {/* Card 2: Pro Tip */}
             <div className="w-full md:w-1/2 p-5">
               <div className="flex flex-col justify-between transform hover:-translate-y-3 overflow-hidden rounded-2xl transition ease-out duration-1000 bg-[#f7f6f4] p-9">
                 <div className="pb-0 mb-4 p-0">
@@ -42,39 +42,39 @@ export default function OurTips() {
                     Pro Tip
                   </p>
                   <h3 className="font-heading text-3xl mb-6 w-3/4">
-                    You Can Integrate Top Designer Styles
+                    Customize With Precision
                   </h3>
                   <div className="mb-5">
                     <Image 
                       src="/assets/did-you-know/MyRoomDesignerAI-result1.jpg" 
-                      alt="MyRoomDesigner AI result example" 
+                      alt="Feature example" 
                       width={800} 
                       height={600} 
                     />
                   </div>
                   <p className="mt-6 font-heading mb-4">
-                    Dreaming of a room styled like Magnolia, Becki Owens, or Studio McGee? Simply enter your favorite designer's name in the chat, and the AI will craft a stunning space tailored to your aesthetic.
+                    Take full control with advanced customization options. Simply describe what you want, and watch your vision come to life with precision and style.
                   </p>
                   <div className="flex space-x-4 mt-6">
                     <button
                       className="w-[200px] sm:w-[200px] py-3 px-8 bg-[#2C2C2C] hover:bg-black text-white rounded-full font-heading text-base hover:shadow-lg transition-all duration-300 shadow-sm"
                     >
-                      Design your room
+                      Try It Now
                     </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Tip 3: Find Similar Products */}
+            {/* Card 3: Additional Feature */}
             <div className="w-full md:w-1/2 p-5">
               <div className="flex flex-col justify-between transform hover:-translate-y-3 overflow-hidden rounded-2xl transition ease-out duration-1000 bg-[#f7f6f4] p-4 p-9">
                 <div className="pb-0 p-9 mb-4">
                   <h3 className="mb-5 font-heading text-3xl">
-                    Explore Real-Life Products
+                    Explore More Options
                   </h3>
                   <p className="mt-6 font-heading mb-2">
-                    You can find similar products based on what's in your photo with ease. Simply click on the <strong>"Find Similar"</strong> button, then select the item in your photo that you want to match.
+                    Find similar items and related content with ease. Simply select what interests you and discover recommendations tailored to your preferences.
                   </p>
                 </div>
                 <video className="mx-auto w-full h-full object-cover px-4 pb-6" loop muted autoPlay playsInline>
@@ -84,19 +84,19 @@ export default function OurTips() {
               </div>
             </div>
 
-            {/* Tip 4: Customize Freely */}
+            {/* Card 4: Tools & Features */}
             <div className="w-full md:w-1/2 p-5">
               <div className="p-9 transform hover:-translate-y-3 rounded-2xl transition ease-out duration-1000 bg-[#f7f6f4]">
                 <Image 
                   src="/assets/did-you-know/Mood-Board-Editor-with-Shopping-List-Creator.png" 
-                  alt="Mood Board Editor with Shopping List Creator" 
+                  alt="Advanced tools" 
                   width={800} 
                   height={600} 
                 />
                 <div className="pb-0 p-6 mb-6">
-                  <h3 className="mb-5 font-heading text-3xl">Customize freely</h3>
+                  <h3 className="mb-5 font-heading text-3xl">Powerful Tools Included</h3>
                   <p className="mb-4 font-heading text-base text-opacity-70">
-                    You can import your AI-generated photos into the Mood Board Editor for further customization. Explore powerful features like:
+                    Access a comprehensive suite of tools designed to enhance your workflow. Explore features like:
                   </p>
                 </div>
                 <ul className="inline-block max-w-sm justify-center text-center ml-6">
@@ -104,31 +104,31 @@ export default function OurTips() {
                     <svg className="mr-2.5 shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fillRule="evenodd" clipRule="evenodd" d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z" fill="#14B082" />
                     </svg>
-                    <p>Shopping List Creator</p>
+                    <p>List & Organization</p>
                   </li>
                   <li className="flex items-center font-heading mb-3 font-medium text-base text-gray-900 text-center md:text-left">
                     <svg className="mr-2.5 shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fillRule="evenodd" clipRule="evenodd" d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z" fill="#14B082" />
                     </svg>
-                    <p>Background Remover</p>
+                    <p>Smart Removal</p>
                   </li>
                   <li className="flex items-center font-heading mb-3 font-medium text-base text-gray-900 text-center md:text-left">
                     <svg className="mr-2.5 shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fillRule="evenodd" clipRule="evenodd" d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z" fill="#14B082" />
                     </svg>
-                    <p>One-click Import of Favorites</p>
+                    <p>One-Click Import</p>
                   </li>
                   <li className="flex items-center font-heading mb-3 font-medium text-base text-gray-900 text-center md:text-left">
                     <svg className="mr-2.5 shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fillRule="evenodd" clipRule="evenodd" d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z" fill="#14B082" />
                     </svg>
-                    <p>Crop, Flip, and Duplicate Items</p>
+                    <p>Edit & Transform</p>
                   </li>
                   <li className="flex items-center font-heading font-medium text-base text-gray-900 text-center md:text-left">
                     <svg className="mr-2.5 shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fillRule="evenodd" clipRule="evenodd" d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z" fill="#14B082" />
                     </svg>
-                    <p>Find Similar Products</p>
+                    <p>Find Similar Items</p>
                   </li>
                 </ul>
               </div>

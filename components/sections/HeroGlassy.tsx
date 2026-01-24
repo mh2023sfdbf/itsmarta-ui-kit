@@ -19,10 +19,10 @@ import HeroTherapist from '@/marta-ui-kit/templates/heroes/HeroTherapist';
 import HeroBeforeAfter from '@/marta-ui-kit/templates/heroes/HeroBeforeAfter';
 import BenefitsStats from '@/marta-ui-kit/templates/features/BenefitsStats';
 import SocialProof from '@/marta-ui-kit/templates/features/SocialProof';
-import RestyleYourSpace from '@/marta-ui-kit/templates/features/RestyleYourSpace';
-import OurTips from '@/marta-ui-kit/templates/features/OurTips';
-import ComparisonTable from '@/marta-ui-kit/templates/features/ComparisonTable';
-import ThreeInOne from '@/marta-ui-kit/templates/features/ThreeInOne';
+import VideoContentLayout from '@/marta-ui-kit/templates/features/VideoContentLayout';
+import GridCards from '@/marta-ui-kit/templates/features/GridCards';
+import TableComparison from '@/marta-ui-kit/templates/features/TableComparison';
+import ThreeColumnFeatures from '@/marta-ui-kit/templates/features/ThreeColumnFeatures';
 import VideoTestimonial from '@/marta-ui-kit/templates/video/VideoTestimonial';
 import CoreFeatures from '@/marta-ui-kit/templates/features/CoreFeatures';
 import TherapistBenefits from '@/marta-ui-kit/templates/features/TherapistBenefits';
@@ -797,14 +797,14 @@ export default function SocialProof() {
 }`
     },
     {
-      id: 'restyle-your-space',
-      title: 'Restyle Your Space',
-      category: 'Features',
+      id: 'video-content-layout',
+      title: 'Video + Content Layout',
+      category: 'Content',
       project: 'design-app',
-      component: <RestyleYourSpace />,
+      component: <VideoContentLayout />,
       code: `import Image from 'next/image';
 
-export default function RestyleYourSpace() {
+export default function VideoContentLayout() {
   return (
     <section className="relative py-32">
       <div className="container mx-auto px-4">
@@ -814,7 +814,7 @@ export default function RestyleYourSpace() {
             <div className="w-full lg:w-3/5">
               <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,_0,_0,_0.08)]">
                 <video className="w-full aspect-video object-cover" autoPlay loop muted playsInline>
-                  <source src="/assets/restyling-bedroom-with-ai.mp4" type="video/mp4" />
+                  <source src="/assets/video.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
@@ -822,9 +822,9 @@ export default function RestyleYourSpace() {
             {/* Content */}
             <div className="w-full lg:w-2/5 space-y-10">
               <div className="space-y-6">
-                <p className="text-gray-500 uppercase tracking-wider text-sm">RESTYLE YOUR SPACE</p>
+                <p className="text-gray-500 uppercase tracking-wider text-sm">HOW IT WORKS</p>
                 <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-gray-900">
-                  Effortless Room Design with AI
+                  Simple Process, Powerful Results
                 </h1>
               </div>
 
@@ -832,27 +832,27 @@ export default function RestyleYourSpace() {
                 <div className="flex items-start gap-6">
                   <span className="font-heading text-gray-400 text-2xl">01</span>
                   <div>
-                    <h3 className="text-xl font-medium mb-2">Upload and analyze</h3>
-                    <p className="text-gray-600">Upload a photo, and our AI will instantly analyze your room's layout.</p>
+                    <h3 className="text-xl font-medium mb-2">Start Your Journey</h3>
+                    <p className="text-gray-600">Begin with a simple upload or entry for optimized results.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-6">
                   <span className="font-heading text-gray-400 text-2xl">02</span>
                   <div>
-                    <h3 className="text-xl font-medium mb-2">Choose your style</h3>
-                    <p className="text-gray-600">Select from curated design styles or customize details.</p>
+                    <h3 className="text-xl font-medium mb-2">Customize Your Experience</h3>
+                    <p className="text-gray-600">Choose from curated options or personalize details.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-6">
                   <span className="font-heading text-gray-400 text-2xl">03</span>
                   <div>
-                    <h3 className="text-xl font-medium mb-2">Chat with AI</h3>
-                    <p className="text-gray-600">Refine your design by chatting with AI.</p>
+                    <h3 className="text-xl font-medium mb-2">Refine & Perfect</h3>
+                    <p className="text-gray-600">Make adjustments until everything is exactly right.</p>
                   </div>
                 </div>
               </div>
 
-              <button className="py-3 px-8 bg-[#2C2C2C] hover:bg-black text-white rounded-full">Try it now</button>
+              <button className="py-3 px-8 bg-[#2C2C2C] hover:bg-black text-white rounded-full">Get Started</button>
             </div>
           </div>
         </div>
@@ -862,33 +862,37 @@ export default function RestyleYourSpace() {
 }`
     },
     {
-      id: 'our-tips',
-      title: 'Our Tips (Did You Know)',
-      category: 'Features',
+      id: 'grid-cards',
+      title: 'Grid Cards Layout',
+      category: 'Content',
       project: 'design-app',
-      component: <OurTips />,
+      component: <GridCards />,
       code: `import Image from 'next/image';
 
-export default function OurTips() {
+export default function GridCards() {
   return (
     <section className="relative overflow-hidden pb-44 pt-20">
       <div className="relative z-10 container mx-auto px-4">
-        <p className="mb-5 font-heading font-medium text-xs uppercase text-center">OUR TIPS</p>
-        <h2 className="mb-24 text-center font-heading text-4xl md:text-5xl text-gray-800">Did You Know?</h2>
+        <p className="mb-5 font-heading font-medium text-xs uppercase text-center">FEATURED</p>
+        <h2 className="mb-24 text-center font-heading text-4xl md:text-5xl text-gray-800">
+          Discover What's Possible
+        </h2>
         
         <div className="md:mx-auto md:max-w-6xl">
           <div className="flex flex-wrap -m-5">
-            {/* Tip cards with videos and images */}
+            {/* Card 1 */}
             <div className="w-full md:w-1/2 p-5">
               <div className="p-9 rounded-2xl bg-[#f7f6f4]">
                 <video className="w-full" loop muted autoPlay playsInline>
-                  <source src="/assets/did-you-know/Upscale.mp4" type="video/mp4" />
+                  <source src="/assets/video.mp4" type="video/mp4" />
                 </video>
-                <h3 className="font-heading text-3xl mt-6">Easy Upscale and more</h3>
-                <p className="font-heading text-base mt-2">You can upscale your photo for high-resolution results.</p>
+                <h3 className="font-heading text-3xl mt-6">Enhanced Quality</h3>
+                <p className="font-heading text-base mt-2">
+                  Upgrade your results with high-resolution outputs.
+                </p>
               </div>
             </div>
-            {/* More tips... */}
+            {/* More cards... */}
           </div>
         </div>
       </div>
@@ -897,18 +901,18 @@ export default function OurTips() {
 }`
     },
     {
-      id: 'comparison-table',
+      id: 'table-comparison',
       title: 'Comparison Table',
-      category: 'Features',
+      category: 'Content',
       project: 'design-app',
-      component: <ComparisonTable />,
-      code: `export default function ComparisonTable() {
+      component: <TableComparison />,
+      code: `export default function TableComparison() {
   return (
     <section className="relative px-4 sm:px-8 lg:px-32 pb-44 pt-20">
       <div className="max-w-screen-xl mx-auto text-center">
         <p className="mb-5 font-heading text-xs uppercase text-center">WHY CHOOSE US?</p>
         <h2 className="mb-12 sm:mb-24 text-center font-heading text-3xl sm:text-4xl md:text-5xl text-gray-800">
-          How We Compare to Other Tools
+          How We Compare
         </h2>
         
         <div className="rounded-xl bg-[#f7f6f4] p-4 sm:p-8 lg:p-14">
@@ -917,29 +921,31 @@ export default function OurTips() {
               <thead>
                 <tr className="border-b">
                   <th className="py-3 sm:py-4 px-3 sm:px-6"></th>
-                  <th className="py-3 sm:py-4 px-3 sm:px-6 bg-pink-50 border-l-4 border-pink-400">Your Product</th>
-                  <th className="py-3 sm:py-4 px-3 sm:px-6">Competitor A</th>
-                  <th className="py-3 sm:py-4 px-3 sm:px-6">Competitor B</th>
+                  <th className="py-3 sm:py-4 px-3 sm:px-6 bg-pink-50 border-l-4 border-pink-400">
+                    Our Platform
+                  </th>
+                  <th className="py-3 sm:py-4 px-3 sm:px-6">Alternative A</th>
+                  <th className="py-3 sm:py-4 px-3 sm:px-6">Alternative B</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b">
                   <td className="py-3 sm:py-4 px-3 sm:px-6 font-semibold">Speed</td>
                   <td className="py-3 sm:py-4 px-3 sm:px-6 bg-pink-50 border-l-4 border-pink-400">
-                    <span className="text-pink-600 font-bold">✅</span> Under 4 Seconds
+                    <span className="text-pink-600 font-bold">✅</span> Lightning Fast
                   </td>
                   <td className="py-3 sm:py-4 px-3 sm:px-6">
-                    <span className="text-red-500 font-bold">❌</span> 10+ Seconds
+                    <span className="text-red-500 font-bold">❌</span> Slower
                   </td>
                   <td className="py-3 sm:py-4 px-3 sm:px-6">
-                    <span className="text-orange-500 font-bold">❌</span> 6-8 Seconds
+                    <span className="text-orange-500 font-bold">❌</span> Moderate
                   </td>
                 </tr>
                 {/* More rows... */}
               </tbody>
             </table>
           </div>
-          <button className="w-full py-3 sm:py-4 bg-black text-white rounded-full">Start Now</button>
+          <button className="w-full py-3 sm:py-4 bg-black text-white rounded-full">Get Started</button>
         </div>
       </div>
     </section>
@@ -947,43 +953,43 @@ export default function OurTips() {
 }`
     },
     {
-      id: 'three-in-one',
-      title: '3 in 1',
-      category: 'Features',
+      id: 'three-column-features',
+      title: 'Three Column Features',
+      category: 'Content',
       project: 'design-app',
-      component: <ThreeInOne />,
+      component: <ThreeColumnFeatures />,
       code: `import Image from 'next/image';
 
-export default function ThreeInOne() {
-  const products = [
+export default function ThreeColumnFeatures() {
+  const features = [
     {
-      title: "Product One",
-      description: "Description for product one",
-      image: "/assets/product1.png",
-      features: ["Feature 1", "Feature 2", "Feature 3"]
+      title: "Core Feature",
+      description: "A comprehensive solution that streamlines your workflow.",
+      image: "/assets/feature1.png",
+      highlights: ["One-Click Setup", "Smart Detection", "High-Quality Output"]
     },
-    // More products...
+    // More features...
   ];
 
   return (
     <section className="relative overflow-hidden py-44 pb-12 bg-[#f7f6f4] p-6 mb-24">
       <div className="container mx-auto px-4">
         <h2 className="mb-3 font-heading text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-gray-200 to-blue-400">
-          3 in 1
+          All in One
         </h2>
         <h2 className="mb-5 font-heading text-center text-gray-900 text-5xl sm:text-7xl">
-          Instead of one you actually buy three
+          Everything You Need in One Place
         </h2>
         
         <div className="flex flex-wrap justify-center divide-y md:divide-y-0 md:divide-x">
-          {products.map((product, index) => (
+          {features.map((feature, index) => (
             <div key={index} className="w-full lg:w-1/3 p-6 md:p-16">
-              <h3 className="font-heading text-center text-2xl lg:text-3xl">{product.title}</h3>
-              <p className="text-center text-gray-600">{product.description}</p>
-              <Image src={product.image} alt={product.title} width={2000} height={2000} className="rounded-2xl mb-8" />
+              <h3 className="font-heading text-center text-2xl lg:text-3xl">{feature.title}</h3>
+              <p className="text-center text-gray-600">{feature.description}</p>
+              <Image src={feature.image} alt={feature.title} width={2000} height={2000} className="rounded-2xl mb-8" />
               <ul>
-                {product.features.map((feature, i) => (
-                  <li key={i} className="flex items-center mb-3">✓ {feature}</li>
+                {feature.highlights.map((highlight, i) => (
+                  <li key={i} className="flex items-center mb-3">✓ {highlight}</li>
                 ))}
               </ul>
             </div>

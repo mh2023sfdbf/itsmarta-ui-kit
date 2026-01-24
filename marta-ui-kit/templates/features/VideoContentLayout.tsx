@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export default function RestyleYourSpace() {
+export default function VideoContentLayout() {
   return (
     <section className="relative py-32">
       <div className="container mx-auto px-4">
@@ -27,10 +27,10 @@ export default function RestyleYourSpace() {
             <div className="w-full lg:w-2/5 space-y-10">
               <div className="space-y-6">
                 <p className="text-gray-500 uppercase tracking-wider text-sm">
-                  RESTYLE YOUR SPACE
+                  HOW IT WORKS
                 </p>
                 <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-gray-900">
-                  Effortless Room Design with AI
+                  Simple Process, Powerful Results
                 </h1>
               </div>
 
@@ -42,10 +42,10 @@ export default function RestyleYourSpace() {
                   </div>
                   <div>
                     <h3 className="text-xl font-medium mb-2 tracking-wide text-gray-900">
-                      Upload and analyze
+                      Start Your Journey
                     </h3>
                     <p className="font-heading mb-4 text-gray-600 text-left">
-                      Upload a photo, and our AI will instantly analyze your room's layout and key features for an optimized redesign.
+                      Begin with a simple upload or entry. Our platform instantly analyzes your input for optimized results.
                     </p>
                   </div>
                 </div>
@@ -56,10 +56,10 @@ export default function RestyleYourSpace() {
                   </div>
                   <div>
                     <h3 className="text-xl font-medium mb-2 tracking-wide text-gray-900">
-                      Choose your style
+                      Customize Your Experience
                     </h3>
                     <p className="text-gray-600 font-heading mb-4 text-left">
-                      Select from curated design styles or customize details to match your vision perfectly.
+                      Choose from curated options or personalize details to match your vision perfectly.
                     </p>
                   </div>
                 </div>
@@ -70,10 +70,10 @@ export default function RestyleYourSpace() {
                   </div>
                   <div>
                     <h3 className="text-xl font-medium mb-2 tracking-wide text-gray-900">
-                      Chat with AI
+                      Refine & Perfect
                     </h3>
                     <p className="text-gray-600 font-heading mb-3 text-left">
-                      Refine your design by chatting with AI—request color changes, style updates, or ambiance tweaks (e.g., "Paint the walls sage green").
+                      Make adjustments and fine-tune your results until everything is exactly as you envisioned.
                     </p>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ export default function RestyleYourSpace() {
               <button
                 className="w-[200px] sm:w-auto min-w-[180px] py-3 px-8 bg-[#2C2C2C] hover:bg-black text-white rounded-full font-heading text-base hover:shadow-lg transition-all duration-300 shadow-sm"
               >
-                <span>Try it now</span>
+                <span>Get Started</span>
               </button>
             </div>
           </div>
