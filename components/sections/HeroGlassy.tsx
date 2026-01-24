@@ -1444,7 +1444,7 @@ export default function PricingCards() {
                           : 'text-black/50 hover:text-black/70'
                       }`}
                     >
-                      MINIMAL & CALM
+                      Minimal & Calm
                     </button>
                     <button
                       onClick={() => {
