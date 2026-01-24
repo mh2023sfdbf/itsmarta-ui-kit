@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import NavMenuMinimal from '@/marta-ui-kit/templates/navigation/NavMenuMinimal';
 import HeroVideo from '@/marta-ui-kit/templates/heroes/HeroVideo';
@@ -11,12 +12,12 @@ import CTAHighlighted from '@/marta-ui-kit/templates/cta/CTAHighlighted';
 import FooterComprehensive from '@/marta-ui-kit/templates/footers/FooterComprehensive';
 import Link from 'next/link';
 
-export default function DemoPage() {
+function DemoContent() {
   const searchParams = useSearchParams();
   const template = searchParams.get('template') || '';
   
   return (
-    <div className="min-h-screen bg-white">
+    <>
       {/* Fixed Back Button - Top Left */}
       <Link
         href={template ? `/?t=${template}#ui-templates` : '/#ui-templates'}
@@ -47,6 +48,23 @@ export default function DemoPage() {
       <FAQAccordion />
       <CTAHighlighted />
       <FooterComprehensive />
+    </>
+  );
+}
+
+export default function DemoPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Suspense fallback={
+        <div className="min-h-screen bg-white flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-8 h-8 border-2 border-black/20 border-t-black/60 rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-sm text-black/50">Loading demo...</p>
+          </div>
+        </div>
+      }>
+        <DemoContent />
+      </Suspense>
     </div>
   );
 }
