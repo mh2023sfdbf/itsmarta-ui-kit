@@ -1,4 +1,5 @@
 import Navigation from "@/components/layout/Navigation";
+import HeroBubbles from "@/components/sections/HeroBubbles";
 import HeroGlassy from "@/components/sections/HeroGlassy";
 import ProjectShowcase from "@/components/sections/ProjectShowcase";
 import Footer from "@/components/sections/Footer";
@@ -17,7 +18,10 @@ export default function Home() {
     <>
       <Navigation />
       <main className="min-h-screen bg-white pt-16">
-        {/* Hero Section */}
+        {/* Hero Section - New Playful Bubbles Design */}
+        <HeroBubbles />
+        
+        {/* Main Content - Templates Section */}
         <HeroGlassy />
       
       {/* Trust Section - Founder Quote */}
