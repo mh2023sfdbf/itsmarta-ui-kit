@@ -11,6 +11,7 @@ export default function HeroBubbles() {
     {
       id: 'clamalo',
       name: 'Clamalo',
+      label: 'Hero Video',
       image: '/project-screenshots/clamalo_concept_preview.jpeg',
       position: 'top-[15%] left-[8%]',
       size: 'w-32 h-32',
@@ -19,6 +20,7 @@ export default function HeroBubbles() {
     {
       id: 'myroomdesigner',
       name: 'MyRoomDesigner',
+      label: 'Sign In',
       image: '/project-screenshots/myroomdesignerai_cover.png',
       position: 'top-[8%] right-[12%]',
       size: 'w-36 h-36',
@@ -27,6 +29,7 @@ export default function HeroBubbles() {
     {
       id: 'myskinroutine',
       name: 'MySkinRoutine',
+      label: 'Pulsing Logo',
       image: '/project-screenshots/myskinroutine_cover.png',
       position: 'top-[45%] left-[5%]',
       size: 'w-28 h-28',
@@ -35,6 +38,7 @@ export default function HeroBubbles() {
     {
       id: 'dreamhouse',
       name: 'DreamHouseAI',
+      label: 'Pricing',
       image: '/project-screenshots/dreamhouseai1_cover.png',
       position: 'bottom-[25%] right-[8%]',
       size: 'w-32 h-32',
@@ -43,6 +47,7 @@ export default function HeroBubbles() {
     {
       id: 'moodboard',
       name: 'MoodboardAI',
+      label: 'Features',
       image: '/project-screenshots/moodboardai_cover.png',
       position: 'bottom-[15%] left-[15%]',
       size: 'w-28 h-28',
@@ -51,6 +56,7 @@ export default function HeroBubbles() {
     {
       id: 'roomdesigner2',
       name: 'Room Design',
+      label: 'Navigation',
       image: '/project-screenshots/myroomdesignerai1.png',
       position: 'top-[35%] right-[6%]',
       size: 'w-24 h-24',
@@ -168,7 +174,14 @@ export default function HeroBubbles() {
               />
             </div>
 
-            {/* Label - Shows on hover */}
+            {/* Small glassy label - Always visible */}
+            <div className="absolute top-2 left-2 right-2 z-10">
+              <div className="px-2 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-white/60 shadow-sm">
+                <span className="text-[10px] font-medium text-black/70 uppercase tracking-wider">{bubble.label}</span>
+              </div>
+            </div>
+
+            {/* Project name - Shows on hover below bubble */}
             <div className={`absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap transition-all duration-300 z-30 ${
               hoveredBubble === bubble.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
             }`}>
