@@ -182,8 +182,8 @@ export default function HeroBubbles() {
 
             {/* Small glassy label - Playfully positioned outside bubble */}
             <div className={`absolute ${bubble.labelPosition} z-10 whitespace-nowrap`}>
-              <div className="px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-white/60 shadow-lg text-center">
-                <span className="text-[9px] font-medium text-black/60 uppercase tracking-widest">{bubble.label}</span>
+              <div className="flex items-center justify-center px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-white/60 shadow-lg">
+                <span className="text-[9px] font-medium text-black/60 uppercase tracking-widest leading-none">{bubble.label}</span>
               </div>
             </div>
 
