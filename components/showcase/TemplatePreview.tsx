@@ -56,8 +56,8 @@ export default function TemplatePreview({
 
   // Viewport configurations with accurate aspect ratios
   const viewportConfig = {
-    // Phone: 19.5:9 portrait
-    mobile: { aspectRatio: 9 / 19.5, frameClass: 'max-w-[320px]', baseWidth: 390, baseHeight: 844 },
+    // Phone: 20:9 portrait (most common modern smartphone ratio)
+    mobile: { aspectRatio: 9 / 20, frameClass: 'max-w-[320px]', baseWidth: 360, baseHeight: 800 },
     // Tablet: 4:3
     tablet: { aspectRatio: 4 / 3, frameClass: 'max-w-[680px]', baseWidth: 1024, baseHeight: 768 },
     // Laptop: 16:10
