@@ -11,7 +11,7 @@ export default function SignInSplit() {
       suppressHydrationWarning
     >
       <div className="min-h-screen flex items-center" suppressHydrationWarning>
-        <div className="w-full md:w-3/5 lg:w-1/2 flex items-center justify-center px-4">
+        <div className="w-full md:w-3/5 lg:w-1/2 flex items-center justify-center px-4 py-4">
           <div className="max-w-sm w-full mx-auto">
             <div className="mb-6 text-center">
               <a className="inline-block mb-6" href="#">
