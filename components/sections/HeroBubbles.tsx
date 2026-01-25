@@ -12,6 +12,7 @@ export default function HeroBubbles() {
       id: 'clamalo',
       name: 'Clamalo',
       label: 'Hero Video',
+      labelPosition: '-top-3 left-1/2 -translate-x-1/2', // Top center
       image: '/project-screenshots/clamalo_concept_preview.jpeg',
       position: 'top-[15%] left-[8%]',
       size: 'w-32 h-32',
@@ -21,6 +22,7 @@ export default function HeroBubbles() {
       id: 'myroomdesigner',
       name: 'MyRoomDesigner',
       label: 'Sign In',
+      labelPosition: '-right-12 top-2', // Right side
       image: '/project-screenshots/myroomdesignerai_cover.png',
       position: 'top-[8%] right-[12%]',
       size: 'w-36 h-36',
@@ -30,6 +32,7 @@ export default function HeroBubbles() {
       id: 'myskinroutine',
       name: 'MySkinRoutine',
       label: 'Pulsing Logo',
+      labelPosition: '-left-14 top-1/2 -translate-y-1/2', // Left side
       image: '/project-screenshots/myskinroutine_cover.png',
       position: 'top-[45%] left-[5%]',
       size: 'w-28 h-28',
@@ -39,6 +42,7 @@ export default function HeroBubbles() {
       id: 'dreamhouse',
       name: 'DreamHouseAI',
       label: 'Pricing',
+      labelPosition: '-bottom-3 left-1/2 -translate-x-1/2', // Bottom center
       image: '/project-screenshots/dreamhouseai1_cover.png',
       position: 'bottom-[25%] right-[8%]',
       size: 'w-32 h-32',
@@ -48,6 +52,7 @@ export default function HeroBubbles() {
       id: 'moodboard',
       name: 'MoodboardAI',
       label: 'Features',
+      labelPosition: '-top-2 right-2', // Top right diagonal
       image: '/project-screenshots/moodboardai_cover.png',
       position: 'bottom-[15%] left-[15%]',
       size: 'w-28 h-28',
@@ -57,6 +62,7 @@ export default function HeroBubbles() {
       id: 'roomdesigner2',
       name: 'Room Design',
       label: 'Navigation',
+      labelPosition: '-right-10 bottom-3', // Right bottom
       image: '/project-screenshots/myroomdesignerai1.png',
       position: 'top-[35%] right-[6%]',
       size: 'w-24 h-24',
@@ -164,7 +170,7 @@ export default function HeroBubbles() {
             hoveredBubble === bubble.id ? 'scale-110 shadow-2xl' : ''
           }`}>
             {/* Project preview image */}
-            <div className="absolute inset-3 rounded-2xl overflow-hidden">
+            <div className="absolute inset-2 rounded-2xl overflow-hidden">
               <Image
                 src={bubble.image}
                 alt={bubble.name}
@@ -174,9 +180,9 @@ export default function HeroBubbles() {
               />
             </div>
 
-            {/* Small glassy label - Centered at bottom, minimal */}
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 w-[calc(100%-16px)]">
-              <div className="px-2 py-0.5 rounded-full bg-white/95 backdrop-blur-sm border border-white/60 shadow-sm text-center">
+            {/* Small glassy label - Playfully positioned outside bubble */}
+            <div className={`absolute ${bubble.labelPosition} z-10 whitespace-nowrap`}>
+              <div className="px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-white/60 shadow-lg text-center">
                 <span className="text-[9px] font-medium text-black/60 uppercase tracking-widest">{bubble.label}</span>
               </div>
             </div>
