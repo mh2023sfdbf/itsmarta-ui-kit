@@ -119,12 +119,12 @@ export default function SignInSplit() {
   
   return (
     <section 
-      className="relative min-h-screen flex items-center bg-[#f7f6f4]" 
+      className="relative h-screen flex items-center bg-[#f7f6f4]" 
       style={{ backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: 'center' }}
     >
-      <div className="container px-4 mx-auto w-full">
+      <div className="container px-4 mx-auto">
         <div className="w-full md:w-3/5 lg:w-1/2">
-          <div className="max-w-sm mx-auto py-12 md:py-0">
+          <div className="max-w-sm mx-auto">
             <div className="mb-6 text-center">
               <a className="inline-block mb-6" href="">
                 <img className="h-16" src={placeholder} alt="Logo"/>
@@ -198,13 +198,10 @@ export default function SignInSplit() {
         </div>
       </div>
 
-      <div 
-        className="absolute top-0 right-0 bottom-0 w-2/5 lg:w-1/2 hidden md:block"
-        style={{
-          backgroundImage: "url('/images/flower-close-up.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
+      <img 
+        className="absolute top-0 right-0 h-full w-2/5 lg:w-1/2 object-cover hidden md:block" 
+        src="/images/flower-close-up.jpg" 
+        alt="Flower close-up"
       />
     </section>
   );
