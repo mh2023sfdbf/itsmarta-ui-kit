@@ -14,7 +14,7 @@ export default function HeroBubbles() {
       label: 'Hero Video',
       labelPosition: '-top-3 left-1/2 -translate-x-1/2', // Top center
       image: '/project-screenshots/clamalo_concept_preview.jpeg',
-      position: 'top-[15%] left-[8%]',
+      position: 'top-[20%] left-[8%]',
       size: 'w-32 h-32',
       delay: '0s',
     },
@@ -24,7 +24,7 @@ export default function HeroBubbles() {
       label: 'Sign In',
       labelPosition: '-right-12 top-2', // Right side
       image: '/project-screenshots/myroomdesignerai_cover.png',
-      position: 'top-[8%] right-[12%]',
+      position: 'top-[15%] right-[12%]',
       size: 'w-36 h-36',
       delay: '0.1s',
     },
@@ -34,7 +34,7 @@ export default function HeroBubbles() {
       label: 'Pulsing Logo',
       labelPosition: '-left-14 top-1/2 -translate-y-1/2', // Left side
       image: '/project-screenshots/myskinroutine_cover.png',
-      position: 'top-[45%] left-[5%]',
+      position: 'top-[50%] left-[5%]',
       size: 'w-28 h-28',
       delay: '0.2s',
     },
@@ -64,7 +64,7 @@ export default function HeroBubbles() {
       label: 'Navigation',
       labelPosition: '-right-10 bottom-3', // Right bottom
       image: '/project-screenshots/myroomdesignerai1.png',
-      position: 'top-[35%] right-[6%]',
+      position: 'top-[40%] right-[6%]',
       size: 'w-24 h-24',
       delay: '0.15s',
     },
