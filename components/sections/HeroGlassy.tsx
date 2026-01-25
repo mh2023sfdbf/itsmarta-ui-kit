@@ -1271,47 +1271,8 @@ export default function PricingCards() {
 
   return (
     <div className="relative w-full bg-white">
-      {/* Header with Padding */}
-      <div className="pt-24 pb-12">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-          {/* Main Headline */}
-          <div className="space-y-4 sm:space-y-6">
-            <h1 className="font-serif italic text-[clamp(2rem,6vw,4.5rem)] leading-[0.95] tracking-[-0.01em] text-black/95 font-light">
-              My UI kits. Live previews.
-              <br />
-              Built from real SaaS work.
-            </h1>
-            <p className="text-sm sm:text-base text-black/60 font-light max-w-xl leading-relaxed">
-              These UI decisions doubled revenue in a real SaaS product. Now you can preview, buy and use them too.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4">
-              <a
-                href="#ui-templates"
-                className="inline-flex items-center gap-2 text-sm text-black hover:text-black/60 transition-colors group"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('ui-templates')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-              >
-                <span>View all templates</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </a>
-              
-              <a 
-                href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-                className="inline-flex items-center px-5 py-2.5 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors"
-              >
-                Buy the code
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Recent Work Subtitle */}
-      <div className="text-right mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-0">
+      <div className="text-right mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-0 pt-8">
         <p className="text-[10px] sm:text-xs uppercase tracking-widest text-black/30 font-medium">
           Recent work
         </p>
