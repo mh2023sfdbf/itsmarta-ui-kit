@@ -103,17 +103,17 @@ export default function HeroBubbles() {
 
       {/* Main Content - Centered */}
       <div className="relative z-10 max-w-4xl mx-auto text-center py-20">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-6">
-          My UI kits. <span className="italic font-serif">Live previews</span>.
+        <h1 className="font-serif italic text-[clamp(2rem,6vw,4.5rem)] leading-[0.95] tracking-[-0.01em] text-black/95 font-light mb-4 sm:mb-6">
+          My UI kits. Live previews.
           <br />
-          <span className="font-light">Built from real SaaS work.</span>
+          Built from real SaaS work.
         </h1>
         
-        <p className="text-lg sm:text-xl md:text-2xl text-black/60 font-light max-w-2xl mx-auto mb-8">
+        <p className="text-sm sm:text-base text-black/60 font-light max-w-xl mx-auto leading-relaxed mb-8">
           These UI decisions doubled revenue in a real SaaS product. Now you can preview, buy and use them too.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
           <a
             href="#ui-templates"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white text-sm font-medium hover:bg-black/90 transition-all duration-200 shadow-lg hover:shadow-xl"
@@ -122,9 +122,10 @@ export default function HeroBubbles() {
           </a>
           <a
             href="/demo-minimal-calm"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/60 backdrop-blur-sm text-black text-sm font-medium hover:bg-white transition-all duration-200 border border-black/10"
+            className="inline-flex items-center gap-2 text-sm text-black hover:text-black/60 transition-colors group"
           >
-            See Full Demo
+            <span>See full demo</span>
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
 
