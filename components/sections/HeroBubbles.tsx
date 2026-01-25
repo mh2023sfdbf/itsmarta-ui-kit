@@ -111,7 +111,7 @@ export default function HeroBubbles() {
       {/* Main Content - Centered */}
       <div className="relative z-10 max-w-4xl mx-auto text-center py-20">
         <h1 className="font-serif italic text-[clamp(2rem,6vw,4.5rem)] leading-[0.95] tracking-[-0.01em] text-black/95 font-light mb-4 sm:mb-6">
-          My UI kits. Live previews.
+          My UI kits. <span className="italic">Live previews.</span>
           <br />
           Built from real SaaS work.
         </h1>

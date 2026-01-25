@@ -2,7 +2,7 @@
 
 export default function Navigation() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-black/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 backdrop-blur-md border-b border-white/20">
       <div className="w-full px-6 md:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Photo */}
@@ -10,7 +10,7 @@ export default function Navigation() {
             href="/" 
             className="flex items-center hover:opacity-70 transition-opacity"
           >
-            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-1 ring-black/10">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-1 ring-white/40 shadow-sm">
               <img 
                 src="/images/marta.png" 
                 alt="Marta" 
@@ -23,13 +23,13 @@ export default function Navigation() {
           <div className="flex items-center gap-6">
             <a 
               href="#work" 
-              className="text-sm text-black/60 hover:text-black transition-colors"
+              className="text-sm text-black/70 hover:text-black transition-colors"
             >
               Recent work
             </a>
             <a 
               href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-              className="inline-flex items-center px-5 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors"
+              className="inline-flex items-center px-5 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-black/80 transition-colors shadow-sm"
             >
               Buy UI Kit
             </a>
