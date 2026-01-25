@@ -2,7 +2,7 @@
 
 export default function Navigation() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 border-b border-white/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm border-b border-white/20">
       <div className="w-full px-6 md:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Photo */}

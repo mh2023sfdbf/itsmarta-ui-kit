@@ -65,7 +65,7 @@ export default function HeroBubbles() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-screen bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
       {/* Blurry Color Blobs Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {/* Top Left - Red/Yellow Blob */}
