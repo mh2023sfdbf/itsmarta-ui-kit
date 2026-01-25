@@ -14,9 +14,6 @@ export default function SignInSplit() {
         <div className="w-full md:w-3/5 lg:w-1/2 flex items-center justify-center px-4 py-4">
           <div className="max-w-sm w-full mx-auto">
             <div className="mb-6 text-center">
-              <a className="inline-block mb-6" href="#">
-                <img className="h-16" src={placeholder} alt="Logo"/>
-              </a>
               <h3 className="mb-4 text-xl md:text-2xl font-heading">Sign in to your account</h3>
             </div>
             
