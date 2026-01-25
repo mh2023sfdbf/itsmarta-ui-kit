@@ -1,58 +1,28 @@
-'use client';
-
 import { Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import NavMenuMinimal from '@/marta-ui-kit/templates/navigation/NavMenuMinimal';
-import HeroVideo from '@/marta-ui-kit/templates/heroes/HeroVideo';
-import BenefitsStats from '@/marta-ui-kit/templates/features/BenefitsStats';
-import SocialProof from '@/marta-ui-kit/templates/features/SocialProof';
-import TestimonialsCards from '@/marta-ui-kit/templates/testimonials/TestimonialsCards';
-import FAQAccordion from '@/marta-ui-kit/templates/faq/FAQAccordion';
-import CTAHighlighted from '@/marta-ui-kit/templates/cta/CTAHighlighted';
-import FooterComprehensive from '@/marta-ui-kit/templates/footers/FooterComprehensive';
-import Link from 'next/link';
+import { Metadata } from 'next';
+import DemoMinimalCalmClient from './DemoMinimalCalmClient';
 
-function DemoContent() {
-  const searchParams = useSearchParams();
-  const template = searchParams.get('template') || '';
-  
-  return (
-    <>
-      {/* Fixed Back Button - Top Left */}
-      <Link
-        href={template ? `/?t=${template}#ui-templates` : '/#ui-templates'}
-        className="fixed top-6 left-6 z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm text-black/70 text-sm font-medium hover:bg-white hover:text-black transition-all duration-200 shadow-lg hover:shadow-xl border border-black/5"
-      >
-        <svg 
-          className="w-4 h-4" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={2} 
-            d="M10 19l-7-7m0 0l7-7m-7 7h18" 
-          />
-        </svg>
-        Back to templates
-      </Link>
+export const metadata: Metadata = {
+  title: 'Live Demo - Minimal & Calm UI Kit | ItsMarta',
+  description: 'Experience all our minimal, conversion-ready UI templates working together as a complete page. See how navigation, hero, features, testimonials, and CTA sections flow seamlessly.',
+  alternates: {
+    canonical: 'https://itsmarta.co/demo-minimal-calm',
+  },
+  openGraph: {
+    title: 'Live Demo - Minimal & Calm UI Kit',
+    description: 'Experience all our minimal, conversion-ready UI templates working together as a complete page.',
+    url: 'https://itsmarta.co/demo-minimal-calm',
+    siteName: 'ItsMarta UI Kit',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Live Demo - Minimal & Calm UI Kit',
+    description: 'Experience all our minimal, conversion-ready UI templates working together as a complete page.',
+  },
+};
 
-      {/* Full Page Demo - Real UI Experience */}
-      <NavMenuMinimal />
-      <HeroVideo />
-      <BenefitsStats />
-      <SocialProof />
-      <TestimonialsCards />
-      <FAQAccordion />
-      <CTAHighlighted />
-      <FooterComprehensive />
-    </>
-  );
-}
-
-export default function DemoPage() {
+export default function DemoMinimalCalmPage() {
   return (
     <div className="min-h-screen bg-white">
       <Suspense fallback={
@@ -63,7 +33,7 @@ export default function DemoPage() {
           </div>
         </div>
       }>
-        <DemoContent />
+        <DemoMinimalCalmClient />
       </Suspense>
     </div>
   );
