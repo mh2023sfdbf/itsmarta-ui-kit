@@ -1,50 +1,57 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function HeroBubbles() {
   const [hoveredBubble, setHoveredBubble] = useState<string | null>(null);
 
-  // Template preview bubbles with positions
+  // Template preview bubbles with positions and real project images
   const bubbles = [
     {
-      id: 'nav',
-      name: 'Navigation',
+      id: 'clamalo',
+      name: 'Clamalo',
+      image: '/project-screenshots/clamalo_concept_preview.jpeg',
       position: 'top-[15%] left-[8%]',
       size: 'w-32 h-32',
       delay: '0s',
     },
     {
-      id: 'hero',
-      name: 'Hero Video',
+      id: 'myroomdesigner',
+      name: 'MyRoomDesigner',
+      image: '/project-screenshots/myroomdesignerai_cover.png',
       position: 'top-[8%] right-[12%]',
       size: 'w-36 h-36',
       delay: '0.1s',
     },
     {
-      id: 'auth',
-      name: 'Sign In',
+      id: 'myskinroutine',
+      name: 'MySkinRoutine',
+      image: '/project-screenshots/myskinroutine_cover.png',
       position: 'top-[45%] left-[5%]',
       size: 'w-28 h-28',
       delay: '0.2s',
     },
     {
-      id: 'features',
-      name: 'Features',
+      id: 'dreamhouse',
+      name: 'DreamHouseAI',
+      image: '/project-screenshots/dreamhouseai1_cover.png',
       position: 'bottom-[25%] right-[8%]',
       size: 'w-32 h-32',
       delay: '0.3s',
     },
     {
-      id: 'testimonials',
-      name: 'Testimonials',
+      id: 'moodboard',
+      name: 'MoodboardAI',
+      image: '/project-screenshots/moodboardai_cover.png',
       position: 'bottom-[15%] left-[15%]',
       size: 'w-28 h-28',
       delay: '0.4s',
     },
     {
-      id: 'pricing',
-      name: 'Pricing',
+      id: 'roomdesigner2',
+      name: 'Room Design',
+      image: '/project-screenshots/myroomdesignerai1.png',
       position: 'top-[35%] right-[6%]',
       size: 'w-24 h-24',
       delay: '0.15s',
@@ -147,16 +154,21 @@ export default function HeroBubbles() {
           onMouseLeave={() => setHoveredBubble(null)}
         >
           {/* Glassy bubble container */}
-          <div className={`relative w-full h-full rounded-3xl backdrop-blur-md bg-white/40 border border-white/60 shadow-xl transition-all duration-300 ${
+          <div className={`relative w-full h-full rounded-3xl backdrop-blur-md bg-white/40 border border-white/60 shadow-xl transition-all duration-300 overflow-hidden ${
             hoveredBubble === bubble.id ? 'scale-110 shadow-2xl' : ''
           }`}>
-            {/* Preview content - placeholder for now */}
-            <div className="absolute inset-2 rounded-2xl bg-gradient-to-br from-white/50 to-white/20 flex items-center justify-center overflow-hidden">
-              {/* Template preview placeholder */}
-              <div className="w-full h-full bg-gradient-to-br from-black/5 to-black/10 rounded-2xl"></div>
+            {/* Project preview image */}
+            <div className="absolute inset-2 rounded-2xl overflow-hidden">
+              <Image
+                src={bubble.image}
+                alt={bubble.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 0px, 200px"
+              />
             </div>
 
-            {/* Label */}
+            {/* Label - Shows on hover */}
             <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap transition-opacity duration-300 ${
               hoveredBubble === bubble.id ? 'opacity-100' : 'opacity-0'
             }`}>
