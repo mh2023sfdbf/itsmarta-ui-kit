@@ -89,19 +89,7 @@ export default function IframePreview({
             .font-hedvig {
               font-family: var(--font-body) !important;
             }
-            /* Override min-h-screen for mobile/tablet only - keep full height on desktop */
-            @media (max-width: 1024px) {
-              .min-h-screen {
-                min-height: auto !important;
-                padding-top: 3rem !important;
-                padding-bottom: 3rem !important;
-              }
-              .h-screen {
-                height: auto !important;
-                padding-top: 3rem !important;
-                padding-bottom: 3rem !important;
-              }
-            }
+            /* Keep full height behavior across all viewports for proper split screens */
           </style>
         </head>
         <body>

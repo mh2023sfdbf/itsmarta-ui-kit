@@ -10,8 +10,8 @@ export default function SignInSplit() {
       style={{ backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: 'center' }}
       suppressHydrationWarning
     >
-      <div className="container px-4 mx-auto min-h-screen flex items-center" suppressHydrationWarning>
-        <div className="w-full md:w-3/5 lg:w-1/2">
+      <div className="container px-4 mx-auto min-h-screen flex items-center py-8" suppressHydrationWarning>
+        <div className="w-full md:w-3/5 lg:w-1/2 my-auto">
           <div className="max-w-sm mx-auto">
             <div className="mb-6 text-center">
               <a className="inline-block mb-6" href="#">
