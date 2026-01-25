@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen bg-white pt-16">
+      <main className="min-h-screen">
         {/* Hero Section - New Playful Bubbles Design */}
         <HeroBubbles />
         
@@ -25,7 +25,7 @@ export default function Home() {
         <HeroGlassy />
       
       {/* Trust Section - Founder Quote */}
-      <section id="work" className="pt-20 sm:pt-24 md:pt-28 lg:pt-40 xl:pt-48 pb-20 sm:pb-24 md:pb-28 lg:pb-40 xl:pb-48 px-6 md:px-8">
+      <section id="work" className="bg-white pt-20 sm:pt-24 md:pt-28 lg:pt-40 xl:pt-48 pb-20 sm:pb-24 md:pb-28 lg:pb-40 xl:pb-48 px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-[200px,1fr] lg:grid-cols-[240px,1fr] gap-12 md:gap-16 lg:gap-20 items-center">
@@ -63,10 +63,12 @@ export default function Home() {
       </section>
       
       {/* Project Showcase */}
-      <ProjectShowcase />
+      <div className="bg-white">
+        <ProjectShowcase />
+      </div>
 
       {/* Advisory Section */}
-      <section id="need-a-second-brain" className="pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-32 px-6 md:px-8 scroll-mt-20">
+      <section id="need-a-second-brain" className="bg-white pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-32 px-6 md:px-8 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto text-center px-6 md:px-16 lg:px-32">
             {/* Title */}
@@ -106,7 +108,9 @@ export default function Home() {
       </section>
 
         {/* Footer */}
-        <Footer />
+        <div className="bg-white">
+          <Footer />
+        </div>
       </main>
     </>
   );
