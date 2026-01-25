@@ -56,10 +56,10 @@ export default function TemplatePreview({
 
   // Viewport configurations with accurate aspect ratios
   const viewportConfig = {
-    // Phone: 20:9 portrait (most common modern smartphone ratio)
-    mobile: { aspectRatio: 9 / 20, frameClass: 'max-w-[320px]', baseWidth: 360, baseHeight: 800 },
+    // Phone: 19.5:9 portrait (iPhone standard) - optimized for preview visibility
+    mobile: { aspectRatio: 9 / 19.5, frameClass: 'max-w-[300px] md:max-w-[320px]', baseWidth: 390, baseHeight: 844 },
     // Tablet: 4:3
-    tablet: { aspectRatio: 4 / 3, frameClass: 'max-w-[680px]', baseWidth: 1024, baseHeight: 768 },
+    tablet: { aspectRatio: 4 / 3, frameClass: 'max-w-[500px] md:max-w-[680px]', baseWidth: 1024, baseHeight: 768 },
     // Laptop: 16:10
     desktop: { aspectRatio: 16 / 10, frameClass: 'max-w-none', baseWidth: 1440, baseHeight: 900 },
   };
@@ -91,27 +91,27 @@ export default function TemplatePreview({
   return (
     <div className="group relative">
       {/* Controls Toolbar - Outside Preview Area */}
-      <div className="flex items-center justify-between mb-4 px-1">
+      <div className="flex items-center justify-between mb-3 md:mb-4 px-1">
         <div className="text-sm text-gray-500">
           {/* Placeholder for balance */}
         </div>
         
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-1.5 md:gap-2 items-center">
           {/* Device Size Toggles */}
           {!showCode && (
-            <div className="flex gap-1 bg-gray-100/80 border border-gray-200/60 rounded-lg p-1">
+            <div className="flex gap-0.5 md:gap-1 bg-gray-100/80 border border-gray-200/60 rounded-lg p-0.5 md:p-1">
               {/* Mobile */}
               <button
                 onClick={() => setViewport('mobile')}
                 className={cn(
-                  "p-1.5 rounded transition-all duration-200",
+                  "p-1 md:p-1.5 rounded transition-all duration-200",
                   viewport === 'mobile'
                     ? "bg-white text-gray-900 shadow-sm"
                     : "text-gray-500 hover:text-gray-900"
                 )}
                 title="Phone view"
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </button>
@@ -120,14 +120,14 @@ export default function TemplatePreview({
               <button
                 onClick={() => setViewport('tablet')}
                 className={cn(
-                  "p-1.5 rounded transition-all duration-200",
+                  "p-1 md:p-1.5 rounded transition-all duration-200",
                   viewport === 'tablet'
                     ? "bg-white text-gray-900 shadow-sm"
                     : "text-gray-500 hover:text-gray-900"
                 )}
                 title="Tablet view"
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </button>
@@ -136,14 +136,14 @@ export default function TemplatePreview({
               <button
                 onClick={() => setViewport('desktop')}
                 className={cn(
-                  "p-1.5 rounded transition-all duration-200",
+                  "p-1 md:p-1.5 rounded transition-all duration-200",
                   viewport === 'desktop'
                     ? "bg-white text-gray-900 shadow-sm"
                     : "text-gray-500 hover:text-gray-900"
                 )}
                 title="Desktop view"
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </button>
@@ -153,7 +153,7 @@ export default function TemplatePreview({
           {/* Live Demo Button */}
           <a
             href={`/demo-minimal-calm${templateId ? `?template=${templateId}` : ''}#ui-templates`}
-            className="px-3 py-1.5 rounded-lg font-medium text-sm transition-all duration-200 bg-gray-100/80 border border-gray-200/60 text-gray-700 hover:bg-gray-200/80"
+            className="px-2 md:px-3 py-1 md:py-1.5 rounded-lg font-medium text-xs md:text-sm transition-all duration-200 bg-gray-100/80 border border-gray-200/60 text-gray-700 hover:bg-gray-200/80"
           >
             Live Demo
           </a>
@@ -162,7 +162,7 @@ export default function TemplatePreview({
           <button
             onClick={() => setShowCode(!showCode)}
             className={cn(
-              "px-3 py-1.5 rounded-lg font-medium text-sm transition-all duration-200",
+              "px-2 md:px-3 py-1 md:py-1.5 rounded-lg font-medium text-xs md:text-sm transition-all duration-200",
               showCode
                 ? "bg-gray-900 text-white"
                 : "bg-gray-100/80 border border-gray-200/60 text-gray-700 hover:bg-gray-200/80"
@@ -181,7 +181,7 @@ export default function TemplatePreview({
           {/* The actual component */}
           <div className={cn(
             "relative flex justify-center items-start bg-white",
-            viewport === "desktop" ? "p-12" : "p-6"
+            viewport === "desktop" ? "p-6 md:p-12" : "p-3 md:p-6"
           )}>
             <div
               ref={frameRef}

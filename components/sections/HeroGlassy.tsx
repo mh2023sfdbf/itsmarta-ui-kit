@@ -1388,8 +1388,8 @@ export default function PricingCards() {
           <p className="text-xs sm:text-sm italic text-black/40 max-w-xl mx-auto mt-10 lg:mt-12">
             Human-led design over generic AI output.
               </p>
-            </div>
-      </div>
+                 </div>
+               </div>
 
       {/* Editorial Opening Statement - Magazine Style */}
       {/* Template Showcase with Switcher */}
@@ -1398,12 +1398,12 @@ export default function PricingCards() {
           {/* Controls Container - Constrained Width */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
             {/* Combined Title and Intro */}
-            <div className="mb-8 sm:mb-12 md:mb-16">
+            <div className="mb-8 md:mb-12 lg:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-4 sm:mb-6 md:mb-8">
                 Calm, conversion-ready UI templates from real SaaS products.
               </h2>
               
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-4 sm:mb-6">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-4 md:mb-6">
                 Preview live Tailwind components in your browser, then buy the code. Easy.
               </p>
 
@@ -1412,85 +1412,64 @@ export default function PricingCards() {
               </p>
 
               {/* Purchase Subheading */}
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed text-black/90 mb-3 sm:mb-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed text-black/90 mb-3 md:mb-4">
                 One purchase includes all templates shown below
               </h3>
               
-              <p className="text-sm sm:text-base text-black/50 font-light mb-6 sm:mb-8 md:mb-10 lg:mb-14">
+              <p className="text-sm sm:text-base text-black/50 font-light mb-6 md:mb-10 lg:mb-14">
                 Everything you need for a calm, conversion-ready UI
-                </p>
-              </div>
-              
+              </p>
+            </div>
+
             {/* Split Layout: Nav Left, Preview Right */}
-            <div id="ui-templates" className="flex flex-col gap-6 scroll-mt-20">
+            <div id="ui-templates" className="space-y-4 md:space-y-0 md:grid md:grid-cols-[280px,1fr] lg:grid-cols-[320px,1fr] md:gap-6 lg:gap-12 items-start scroll-mt-20">
               
-              {/* TOP: Style Switcher - Full Width on Mobile */}
-              <div className="w-full">
-                <p className="text-xs uppercase tracking-widest text-black/40 mb-3 font-medium">Style</p>
-                <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
-                  <button
-                    onClick={() => {
-                      setActiveProject('design-app');
-                      setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
-                    }}
-                    className={`px-4 py-2 text-xs font-medium transition-all duration-300 rounded-full ${
-                      activeProject === 'design-app'
-                        ? 'bg-white text-black shadow-sm'
-                        : 'text-black/50 hover:text-black/70'
-                    }`}
-                  >
-                    Minimal & Calm
-                  </button>
-                  <button
-                    onClick={() => {
-                      setActiveProject('basics');
-                      setActiveTemplate(templates.find(t => t.project === 'basics')?.id || '');
-                    }}
-                    className={`px-4 py-2 text-xs font-medium transition-all duration-300 rounded-full ${
-                      activeProject === 'basics'
-                        ? 'bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 text-black shadow-sm'
-                        : 'text-black/50 hover:text-black/70'
-                    }`}
-                  >
-                    Colorful
-                  </button>
-                </div>
-              </div>
-
-              {/* Template Tabs - Horizontal Scroll on Mobile */}
-              <div className="w-full">
-                <p className="text-xs uppercase tracking-widest text-black/40 mb-3 font-medium">Templates</p>
+              {/* LEFT: Navigation Panel */}
+              <div className="space-y-4 md:space-y-6 md:sticky md:top-8">
                 
-                {/* Mobile: Horizontal scroll tabs */}
-                <div className="lg:hidden">
-                  <div className="overflow-x-auto -mx-4 px-4 pb-2 scrollbar-hide">
-                    <div className="flex gap-2 min-w-max">
-                      {templates.filter(t => t.project === activeProject).map((template) => (
-                        <button
-                          key={template.id}
-                          onClick={() => setActiveTemplate(template.id)}
-                          className={`flex-shrink-0 px-4 py-2.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
-                            activeTemplate === template.id
-                              ? 'bg-black text-white shadow-md'
-                              : 'bg-black/5 text-black/70 hover:bg-black/10'
-                          }`}
-                        >
-                          {template.title}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                {/* Project Switcher */}
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-black/40 mb-2 font-medium">Style</p>
+                  <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full w-full md:w-auto">
+                    <button
+                      onClick={() => {
+                        setActiveProject('design-app');
+                        setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
+                      }}
+                      className={`flex-1 md:flex-none px-3 md:px-4 py-1.5 md:py-2 text-xs font-medium transition-all duration-300 rounded-full ${
+                        activeProject === 'design-app'
+                          ? 'bg-white text-black shadow-sm'
+                          : 'text-black/50 hover:text-black/70'
+                      }`}
+                    >
+                      Minimal & Calm
+                    </button>
+                    <button
+                      onClick={() => {
+                        setActiveProject('basics');
+                        setActiveTemplate(templates.find(t => t.project === 'basics')?.id || '');
+                      }}
+                      className={`flex-1 md:flex-none px-3 md:px-4 py-1.5 md:py-2 text-xs font-medium transition-all duration-300 rounded-full ${
+                        activeProject === 'basics'
+                          ? 'bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 text-black shadow-sm'
+                          : 'text-black/50 hover:text-black/70'
+                      }`}
+                    >
+                      Colorful
+                    </button>
+            </div>
+      </div>
 
-                {/* Desktop: Vertical list with "See more" */}
-                <div className="hidden lg:block">
-                  <div className="space-y-2">
+                {/* Template List */}
+              <div>
+                  <p className="text-xs uppercase tracking-widest text-black/40 mb-2 font-medium">Templates</p>
+                  <div className="space-y-1.5 md:space-y-2">
                     {/* First 5 templates - always visible */}
                     {templates.filter(t => t.project === activeProject).slice(0, 5).map((template) => (
                       <div key={template.id}>
                         <button
                           onClick={() => setActiveTemplate(template.id)}
-                          className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                          className={`w-full text-left px-3 md:px-4 py-2 md:py-3 rounded-lg text-sm font-medium transition-all ${
                             activeTemplate === template.id
                               ? 'bg-black text-white'
                               : 'text-black/70 hover:bg-black/5 hover:text-black'
@@ -1501,7 +1480,7 @@ export default function PricingCards() {
                         
                         {/* Auth states info below Sign In Split */}
                         {template.id === 'sign-in-split' && activeTemplate === 'sign-in-split' && (
-                          <div className="mt-2 ml-4 pl-4 border-l border-black/10 py-2">
+                          <div className="mt-2 ml-3 md:ml-4 pl-3 md:pl-4 border-l border-black/10 py-2">
                             <p className="text-xs font-medium text-black/70 mb-1">
                               All auth states included
                             </p>
@@ -1521,7 +1500,7 @@ export default function PricingCards() {
                       <div>
                         <button
                           onClick={() => setShowAllTemplates(!showAllTemplates)}
-                          className="w-full text-left px-4 py-2 text-xs text-black/50 hover:text-black/70 transition-all flex items-center justify-between group"
+                          className="w-full text-left px-3 md:px-4 py-2 text-xs text-black/50 hover:text-black/70 transition-all flex items-center justify-between group"
                         >
                           <span>{showAllTemplates ? 'Show less' : 'See more templates'}</span>
                           <svg 
@@ -1536,12 +1515,12 @@ export default function PricingCards() {
                         
                         {/* Remaining templates with scroll */}
                         {showAllTemplates && (
-                          <div className="max-h-[400px] overflow-y-auto space-y-2 mt-2 pr-2">
+                          <div className="max-h-[400px] overflow-y-auto space-y-1.5 md:space-y-2 mt-2 pr-2">
                             {templates.filter(t => t.project === activeProject).slice(5).map((template) => (
                               <button
                                 key={template.id}
                                 onClick={() => setActiveTemplate(template.id)}
-                                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                                className={`w-full text-left px-3 md:px-4 py-2 md:py-3 rounded-lg text-sm font-medium transition-all ${
                                   activeTemplate === template.id
                                     ? 'bg-black text-white'
                                     : 'text-black/70 hover:bg-black/5 hover:text-black'
@@ -1555,30 +1534,18 @@ export default function PricingCards() {
                       </div>
                     )}
                   </div>
-                </div>
+              </div>
               </div>
 
-              {/* Auth states info - Mobile only, below tabs */}
-              {activeTemplate === 'sign-in-split' && (
-                <div className="lg:hidden -mt-2 p-4 rounded-lg bg-black/[0.02] border border-black/5">
-                  <p className="text-xs font-medium text-black/70 mb-1">
-                    All auth states included
-                  </p>
-                  <p className="text-xs text-black/40 leading-relaxed">
-                    Sign in, sign up, password reset, magic link, loading & error states. Prompt guidance included.
-                  </p>
-                </div>
-              )}
-
-              {/* Preview Panel */}
+              {/* RIGHT: Preview Panel */}
               {currentTemplate && (
-                <div className="w-full">
+                <div className="md:pl-0">
                   <TemplatePreview
-                    title={currentTemplate.title}
-                    description=""
-                    category={currentTemplate.category}
-                    isPremium
-                    price={49}
+                title={currentTemplate.title}
+                description=""
+                category={currentTemplate.category}
+                isPremium
+                price={49}
                 code={currentTemplate.code}
                 project={currentTemplate.project}
                 templateId={currentTemplate.id}
@@ -1587,33 +1554,33 @@ export default function PricingCards() {
                   </TemplatePreview>
 
                   {/* Full Demo Direct Link Button */}
-                  <div className="mt-6 sm:mt-8">
-                    <a
+                  <div className="mt-4 md:mt-8">
+                  <a
                       href={`/demo-minimal-calm?template=${activeTemplate}`}
-                      className="group w-full relative overflow-hidden rounded-xl sm:rounded-2xl border border-black/10 bg-white p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-2xl transition-all duration-500 block"
+                      className="group w-full relative overflow-hidden rounded-2xl border border-black/10 bg-white p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-2xl transition-all duration-500 block"
                     >
                       {/* Animated gradient background on hover */}
                       <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-black/[0.02] to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       
-                      <div className="relative flex items-center justify-between gap-3 sm:gap-4">
+                      <div className="relative flex items-center justify-between gap-4">
                         {/* Left: Content */}
                         <div className="flex-1 text-left">
-                          <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-black/5 mb-2 sm:mb-3">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 animate-pulse"></div>
-                            <span className="text-[10px] sm:text-xs font-medium text-black/60 uppercase tracking-wider">Live Demo</span>
+                          <div className="inline-flex items-center gap-2 px-2.5 md:px-3 py-1 rounded-full bg-black/5 mb-2 md:mb-3">
+                            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                            <span className="text-xs font-medium text-black/60 uppercase tracking-wider">Live Demo</span>
                           </div>
-                          <h4 className="text-base sm:text-lg md:text-xl font-medium text-black/90 mb-0.5 sm:mb-1">
+                          <h4 className="text-base sm:text-lg md:text-xl font-medium text-black/90 mb-1">
                             See all templates work together
                           </h4>
                           <p className="text-xs sm:text-sm text-black/50 font-light">
                             Experience the UI kit as a complete real page
-                          </p>
-                        </div>
+                </p>
+              </div>
 
                         {/* Right: Arrow Icon */}
-                        <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <svg 
-                            className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:translate-x-0.5 transition-transform duration-200" 
+                            className="w-4 h-4 md:w-5 md:h-5 text-white group-hover:translate-x-0.5 transition-transform duration-200" 
                             fill="none" 
                             stroke="currentColor" 
                             viewBox="0 0 24 24"
