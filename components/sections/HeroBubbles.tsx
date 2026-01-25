@@ -160,11 +160,11 @@ export default function HeroBubbles() {
           onMouseLeave={() => setHoveredBubble(null)}
         >
           {/* Glassy bubble container */}
-          <div className={`relative w-full h-full rounded-3xl backdrop-blur-md bg-white/40 border border-white/60 shadow-xl transition-all duration-300 overflow-hidden ${
+          <div className={`relative w-full h-full rounded-3xl backdrop-blur-md bg-white/40 border border-white/60 shadow-xl transition-all duration-300 ${
             hoveredBubble === bubble.id ? 'scale-110 shadow-2xl' : ''
           }`}>
             {/* Project preview image */}
-            <div className="absolute inset-2 rounded-2xl overflow-hidden">
+            <div className="absolute inset-3 rounded-2xl overflow-hidden">
               <Image
                 src={bubble.image}
                 alt={bubble.name}
@@ -174,10 +174,10 @@ export default function HeroBubbles() {
               />
             </div>
 
-            {/* Small glassy label - Always visible */}
-            <div className="absolute top-2 left-2 right-2 z-10">
-              <div className="px-2 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-white/60 shadow-sm">
-                <span className="text-[10px] font-medium text-black/70 uppercase tracking-wider">{bubble.label}</span>
+            {/* Small glassy label - Centered at bottom, minimal */}
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 w-[calc(100%-16px)]">
+              <div className="px-2 py-0.5 rounded-full bg-white/95 backdrop-blur-sm border border-white/60 shadow-sm text-center">
+                <span className="text-[9px] font-medium text-black/60 uppercase tracking-widest">{bubble.label}</span>
               </div>
             </div>
 
