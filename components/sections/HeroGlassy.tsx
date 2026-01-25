@@ -1388,8 +1388,8 @@ export default function PricingCards() {
           <p className="text-xs sm:text-sm italic text-black/40 max-w-xl mx-auto mt-10 lg:mt-12">
             Human-led design over generic AI output.
               </p>
-                 </div>
-               </div>
+            </div>
+      </div>
 
       {/* Editorial Opening Statement - Magazine Style */}
       {/* Template Showcase with Switcher */}
@@ -1398,71 +1398,92 @@ export default function PricingCards() {
           {/* Controls Container - Constrained Width */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
             {/* Combined Title and Intro */}
-            <div className="mb-12 sm:mb-14 md:mb-16">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-6 sm:mb-7 md:mb-8">
+            <div className="mb-8 sm:mb-12 md:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-4 sm:mb-6 md:mb-8">
                 Calm, conversion-ready UI templates from real SaaS products.
               </h2>
               
-              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-6">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-black/60 font-light max-w-3xl mb-4 sm:mb-6">
                 Preview live Tailwind components in your browser, then buy the code. Easy.
               </p>
 
-              <p className="text-xs text-black/40 mb-32 sm:mb-40 md:mb-48">
+              <p className="text-xs text-black/40 mb-16 sm:mb-24 md:mb-32 lg:mb-48">
                 React · Tailwind · TypeScript · Instant download
               </p>
 
               {/* Purchase Subheading */}
-              <h3 className="text-2xl sm:text-3xl md:text-4xl italic font-serif leading-relaxed text-black/90 mb-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl italic font-serif leading-relaxed text-black/90 mb-3 sm:mb-4">
                 One purchase includes all templates shown below
               </h3>
               
-              <p className="text-sm sm:text-base text-black/50 font-light mb-10 sm:mb-12 md:mb-14">
+              <p className="text-sm sm:text-base text-black/50 font-light mb-6 sm:mb-8 md:mb-10 lg:mb-14">
                 Everything you need for a calm, conversion-ready UI
-              </p>
-            </div>
-
-            {/* Split Layout: Nav Left, Preview Right */}
-            <div id="ui-templates" className="grid lg:grid-cols-[320px,1fr] gap-8 lg:gap-12 xl:gap-16 items-start scroll-mt-20">
+                </p>
+              </div>
               
-              {/* LEFT: Navigation Panel */}
-              <div className="space-y-6 lg:sticky lg:top-8">
-                
-                {/* Project Switcher */}
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-black/40 mb-3 font-medium">Style</p>
-                  <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
-                    <button
-                      onClick={() => {
-                        setActiveProject('design-app');
-                        setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
-                      }}
-                      className={`px-4 py-2 text-xs font-medium transition-all duration-300 rounded-full ${
-                        activeProject === 'design-app'
-                          ? 'bg-white text-black shadow-sm'
-                          : 'text-black/50 hover:text-black/70'
-                      }`}
-                    >
-                      Minimal & Calm
-                    </button>
-                    <button
-                      onClick={() => {
-                        setActiveProject('basics');
-                        setActiveTemplate(templates.find(t => t.project === 'basics')?.id || '');
-                      }}
-                      className={`px-4 py-2 text-xs font-medium transition-all duration-300 rounded-full ${
-                        activeProject === 'basics'
-                          ? 'bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 text-black shadow-sm'
-                          : 'text-black/50 hover:text-black/70'
-                      }`}
-                    >
-                      Colorful
-                    </button>
-            </div>
-      </div>
+            {/* Split Layout: Nav Left, Preview Right */}
+            <div id="ui-templates" className="flex flex-col gap-6 scroll-mt-20">
+              
+              {/* TOP: Style Switcher - Full Width on Mobile */}
+              <div className="w-full">
+                <p className="text-xs uppercase tracking-widest text-black/40 mb-3 font-medium">Style</p>
+                <div className="inline-flex items-center gap-1 p-1 bg-black/5 rounded-full">
+                  <button
+                    onClick={() => {
+                      setActiveProject('design-app');
+                      setActiveTemplate(templates.find(t => t.project === 'design-app')?.id || 'sign-in-split');
+                    }}
+                    className={`px-4 py-2 text-xs font-medium transition-all duration-300 rounded-full ${
+                      activeProject === 'design-app'
+                        ? 'bg-white text-black shadow-sm'
+                        : 'text-black/50 hover:text-black/70'
+                    }`}
+                  >
+                    Minimal & Calm
+                  </button>
+                  <button
+                    onClick={() => {
+                      setActiveProject('basics');
+                      setActiveTemplate(templates.find(t => t.project === 'basics')?.id || '');
+                    }}
+                    className={`px-4 py-2 text-xs font-medium transition-all duration-300 rounded-full ${
+                      activeProject === 'basics'
+                        ? 'bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 text-black shadow-sm'
+                        : 'text-black/50 hover:text-black/70'
+                    }`}
+                  >
+                    Colorful
+                  </button>
+                </div>
+              </div>
 
-                {/* Template List */}
-              <div>
-                  <p className="text-xs uppercase tracking-widest text-black/40 mb-3 font-medium">Templates</p>
+              {/* Template Tabs - Horizontal Scroll on Mobile */}
+              <div className="w-full">
+                <p className="text-xs uppercase tracking-widest text-black/40 mb-3 font-medium">Templates</p>
+                
+                {/* Mobile: Horizontal scroll tabs */}
+                <div className="lg:hidden">
+                  <div className="overflow-x-auto -mx-4 px-4 pb-2 scrollbar-hide">
+                    <div className="flex gap-2 min-w-max">
+                      {templates.filter(t => t.project === activeProject).map((template) => (
+                        <button
+                          key={template.id}
+                          onClick={() => setActiveTemplate(template.id)}
+                          className={`flex-shrink-0 px-4 py-2.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
+                            activeTemplate === template.id
+                              ? 'bg-black text-white shadow-md'
+                              : 'bg-black/5 text-black/70 hover:bg-black/10'
+                          }`}
+                        >
+                          {template.title}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Desktop: Vertical list with "See more" */}
+                <div className="hidden lg:block">
                   <div className="space-y-2">
                     {/* First 5 templates - always visible */}
                     {templates.filter(t => t.project === activeProject).slice(0, 5).map((template) => (
@@ -1534,18 +1555,30 @@ export default function PricingCards() {
                       </div>
                     )}
                   </div>
-              </div>
+                </div>
               </div>
 
-              {/* RIGHT: Preview Panel */}
+              {/* Auth states info - Mobile only, below tabs */}
+              {activeTemplate === 'sign-in-split' && (
+                <div className="lg:hidden -mt-2 p-4 rounded-lg bg-black/[0.02] border border-black/5">
+                  <p className="text-xs font-medium text-black/70 mb-1">
+                    All auth states included
+                  </p>
+                  <p className="text-xs text-black/40 leading-relaxed">
+                    Sign in, sign up, password reset, magic link, loading & error states. Prompt guidance included.
+                  </p>
+                </div>
+              )}
+
+              {/* Preview Panel */}
               {currentTemplate && (
-                <div className="lg:pl-8">
+                <div className="w-full">
                   <TemplatePreview
-                title={currentTemplate.title}
-                description=""
-                category={currentTemplate.category}
-                isPremium
-                price={49}
+                    title={currentTemplate.title}
+                    description=""
+                    category={currentTemplate.category}
+                    isPremium
+                    price={49}
                 code={currentTemplate.code}
                 project={currentTemplate.project}
                 templateId={currentTemplate.id}
@@ -1554,33 +1587,33 @@ export default function PricingCards() {
                   </TemplatePreview>
 
                   {/* Full Demo Direct Link Button */}
-                  <div className="mt-8">
-                  <a
+                  <div className="mt-6 sm:mt-8">
+                    <a
                       href={`/demo-minimal-calm?template=${activeTemplate}`}
-                      className="group w-full relative overflow-hidden rounded-2xl border border-black/10 bg-white p-6 sm:p-8 shadow-sm hover:shadow-2xl transition-all duration-500 block"
+                      className="group w-full relative overflow-hidden rounded-xl sm:rounded-2xl border border-black/10 bg-white p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-2xl transition-all duration-500 block"
                     >
                       {/* Animated gradient background on hover */}
                       <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-black/[0.02] to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       
-                      <div className="relative flex items-center justify-between gap-4">
+                      <div className="relative flex items-center justify-between gap-3 sm:gap-4">
                         {/* Left: Content */}
                         <div className="flex-1 text-left">
-                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 mb-3">
-                            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                            <span className="text-xs font-medium text-black/60 uppercase tracking-wider">Live Demo</span>
+                          <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-black/5 mb-2 sm:mb-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 animate-pulse"></div>
+                            <span className="text-[10px] sm:text-xs font-medium text-black/60 uppercase tracking-wider">Live Demo</span>
                           </div>
-                          <h4 className="text-lg sm:text-xl font-medium text-black/90 mb-1">
+                          <h4 className="text-base sm:text-lg md:text-xl font-medium text-black/90 mb-0.5 sm:mb-1">
                             See all templates work together
                           </h4>
-                          <p className="text-sm text-black/50 font-light">
+                          <p className="text-xs sm:text-sm text-black/50 font-light">
                             Experience the UI kit as a complete real page
-                </p>
-              </div>
+                          </p>
+                        </div>
 
                         {/* Right: Arrow Icon */}
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <svg 
-                            className="w-5 h-5 text-white group-hover:translate-x-0.5 transition-transform duration-200" 
+                            className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:translate-x-0.5 transition-transform duration-200" 
                             fill="none" 
                             stroke="currentColor" 
                             viewBox="0 0 24 24"
