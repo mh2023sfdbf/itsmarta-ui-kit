@@ -38,7 +38,6 @@ import TermsOfUse from '@/marta-ui-kit/templates/legal/TermsOfUse';
 export default function HeroGlassy() {
   const [activeTemplate, setActiveTemplate] = useState('sign-in-split');
   const [activeProject, setActiveProject] = useState('design-app');
-  const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [showAllTemplates, setShowAllTemplates] = useState(false);
 
   // Check URL for template parameter on mount (coming back from demo)
@@ -60,39 +59,6 @@ export default function HeroGlassy() {
       }
     }
   }, []);
-
-  // Project preview photos carousel
-  const carouselCards = [
-    {
-      title: "Clamalo",
-      image: "/project-screenshots/clamalo_concept_preview.jpeg",
-      alt: "Clamalo Concept Preview"
-    },
-    {
-      title: "DreamHouse AI",
-      image: "/project-screenshots/dreamhouseai1_cover.png",
-      alt: "DreamHouse AI Cover"
-    },
-    {
-      title: "MyRoom Designer AI",
-      image: "/project-screenshots/myroomdesignerai_cover.png",
-      alt: "MyRoom Designer AI Cover"
-    },
-    {
-      title: "MySkin Routine",
-      image: "/project-screenshots/myskinroutine_cover.png",
-      alt: "MySkin Routine Cover"
-    },
-  ];
-
-  // Auto-scroll conveyor belt
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentCardIndex((prev) => (prev + 1) % carouselCards.length);
-    }, 3000); // Scroll every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [carouselCards.length]);
 
   // Template type definition
   type TemplateProject = 'design-app' | 'therapy-app' | 'basics';
@@ -1271,55 +1237,6 @@ export default function PricingCards() {
 
   return (
     <div className="relative w-full bg-white">
-      {/* Recent Work Subtitle */}
-      <div className="text-right mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-0 pt-8">
-        <p className="text-[10px] sm:text-xs uppercase tracking-widest text-black/30 font-medium">
-          Recent work
-        </p>
-      </div>
-
-      {/* Full Width Conveyor Belt - Minimal Pro Style */}
-      <div className="relative w-full overflow-hidden pb-16 pt-4 mb-12">
-        <div 
-          className="flex gap-20 lg:gap-28 transition-transform duration-700 ease-out"
-          style={{
-            transform: `translateX(-${(currentCardIndex * 100) / carouselCards.length}%)`
-          }}
-        >
-          {/* Cards - duplicate for infinite loop */}
-          {[...carouselCards, ...carouselCards].map((card, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[50vw] lg:w-[38vw] relative"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
-                <Image
-                  src={card.image}
-                  alt={card.alt}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 640px) 85vw, (max-width: 768px) 70vw, (max-width: 1024px) 50vw, 38vw"
-                />
-                
-                {/* Smooth ombre gradient overlay - shorter with smooth fade */}
-                <div 
-                  className="absolute bottom-0 left-0 right-0 backdrop-blur-[1px] pt-20 pb-6 px-6"
-                  style={{
-                    background: 'linear-gradient(to top, rgb(255 255 255 / 1) 0%, rgb(255 255 255 / 0.85) 30%, rgb(255 255 255 / 0.5) 60%, rgb(255 255 255 / 0.15) 85%, transparent 100%)'
-                  }}
-                >
-                  <p className="text-gray-900 text-base font-medium tracking-wide">{card.title}</p>
-                </div>
-              </div>
-              
-              {/* Elegant vertical divider matching horizontal divider */}
-              {index < carouselCards.length * 2 - 1 && (
-                <div className="absolute right-[-40px] lg:right-[-56px] top-[3%] bottom-[3%] w-[1px] bg-gradient-to-b from-transparent via-gray-300/40 to-transparent" />
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Designed by a Founder Section */}
       <div className="pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-32 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
