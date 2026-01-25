@@ -53,6 +53,54 @@ export default function HeroBubbles() {
 
   return (
     <section className="relative min-h-screen bg-[#f7f6f4] overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      {/* Blurry Color Blobs Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Top Left - Red/Yellow Blob */}
+        <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-[600px] h-[600px]">
+          <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-60 blur-3xl">
+            <g transform="translate(300,300)">
+              <path d="M138.6,-155.1C173.2,-120.6,182.4,-60.3,175.1,-7.4C167.7,45.6,143.9,91.3,109.3,126.8C74.6,162.3,29.1,187.7,-18.8,199.2C-66.7,210.8,-117,208.4,-156.8,179.1C-196.5,149.9,-225.8,93.9,-227.7,39.4C-229.6,-15.2,-204.2,-68.2,-167.3,-106.2C-130.3,-144.3,-81.8,-167.3,-27.4,-179.6C27.1,-191.9,81.1,-193.6,138.6,-155.1Z" fill="#fecaca"></path>
+            </g>
+          </svg>
+        </div>
+
+        {/* Top Right - Purple/Pink Blob */}
+        <div className="absolute top-0 right-0 translate-x-1/4 -translate-y-1/3 w-[700px] h-[700px]">
+          <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-50 blur-3xl">
+            <g transform="translate(300,300)">
+              <path d="M115.4,-145.5C148.1,-112.3,173.5,-71.8,180.3,-27.2C187.1,17.4,175.2,66.1,148.7,107.3C122.2,148.5,81.1,182.2,36.5,193.6C-8.1,205,-56.3,193.9,-98.8,168.7C-141.3,143.5,-178.2,104.1,-189.6,58.9C-201.1,13.7,-187.2,-37.3,-162.8,-76.9C-138.4,-116.5,-103.5,-144.7,-63.8,-174.4C-24.1,-204.1,20.5,-235.3,63.8,-223.7C107.1,-212.1,148.9,-157.7,138.6,-155.1Z" fill="#e9d5ff"></path>
+            </g>
+          </svg>
+        </div>
+
+        {/* Center - Yellow Blob */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]">
+          <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-40 blur-3xl">
+            <g transform="translate(300,300)">
+              <path d="M138.6,-155.1C173.2,-120.6,182.4,-60.3,175.1,-7.4C167.7,45.6,143.9,91.3,109.3,126.8C74.6,162.3,29.1,187.7,-18.8,199.2C-66.7,210.8,-117,208.4,-156.8,179.1C-196.5,149.9,-225.8,93.9,-227.7,39.4C-229.6,-15.2,-204.2,-68.2,-167.3,-106.2C-130.3,-144.3,-81.8,-167.3,-27.4,-179.6C27.1,-191.9,81.1,-193.6,138.6,-155.1Z" fill="#fef3c7"></path>
+            </g>
+          </svg>
+        </div>
+
+        {/* Bottom Left - Pink/Red Blob */}
+        <div className="absolute bottom-0 left-0 -translate-x-1/3 translate-y-1/4 w-[650px] h-[650px]">
+          <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-50 blur-3xl">
+            <g transform="translate(300,300)">
+              <path d="M98.7,-117.3C125.1,-85.4,142.1,-49.5,148.2,-9.8C154.3,29.9,149.4,73.4,127.8,107.8C106.1,142.2,67.6,167.5,25.8,178.9C-16,190.3,-61.1,187.9,-98.3,166.2C-135.5,144.5,-164.9,103.6,-176.8,58.4C-188.7,13.2,-183.2,-36.3,-163.4,-76.2C-143.6,-116.1,-109.6,-146.4,-71.8,-174.7C-34,-203,-17,-229.3,7.6,-238.2C32.2,-247.1,72.3,-238.5,98.7,-117.3Z" fill="#fbcfe8"></path>
+            </g>
+          </svg>
+        </div>
+
+        {/* Bottom Right - Purple Blob */}
+        <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/3 w-[700px] h-[700px]">
+          <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-45 blur-3xl">
+            <g transform="translate(300,300)">
+              <path d="M115.4,-145.5C148.1,-112.3,173.5,-71.8,180.3,-27.2C187.1,17.4,175.2,66.1,148.7,107.3C122.2,148.5,81.1,182.2,36.5,193.6C-8.1,205,-56.3,193.9,-98.8,168.7C-141.3,143.5,-178.2,104.1,-189.6,58.9C-201.1,13.7,-187.2,-37.3,-162.8,-76.9C-138.4,-116.5,-103.5,-144.7,-63.8,-174.4C-24.1,-204.1,20.5,-235.3,63.8,-223.7C107.1,-212.1,148.9,-157.7,138.6,-155.1Z" fill="#ddd6fe"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+
       {/* Main Content - Centered */}
       <div className="relative z-10 max-w-4xl mx-auto text-center py-20">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-black/90 tracking-tight mb-6">
@@ -84,18 +132,6 @@ export default function HeroBubbles() {
         <p className="text-xs text-black/40 mt-8">
           React · Tailwind · TypeScript · Copy & Paste
         </p>
-      </div>
-
-      {/* Central Colorful Blob - Main Element */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="relative w-[600px] h-[600px] opacity-40">
-          {/* Animated gradient blob */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-200 via-yellow-100 to-purple-200 blur-3xl animate-pulse"></div>
-          <div 
-            className="absolute inset-[10%] rounded-full bg-gradient-to-tl from-purple-200 via-pink-100 to-yellow-200 blur-2xl animate-pulse"
-            style={{ animationDelay: '1s', animationDuration: '3s' }}
-          ></div>
-        </div>
       </div>
 
       {/* Floating Glassy Bubbles - Template Previews */}
