@@ -6,11 +6,11 @@ export default function SignInSplit() {
   
   return (
     <section 
-      className="relative h-screen flex items-center bg-[#f7f6f4]" 
+      className="relative min-h-screen bg-[#f7f6f4]" 
       style={{ backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: 'center' }}
       suppressHydrationWarning
     >
-      <div className="container px-4 mx-auto" suppressHydrationWarning>
+      <div className="container px-4 mx-auto min-h-screen flex items-center" suppressHydrationWarning>
         <div className="w-full md:w-3/5 lg:w-1/2">
           <div className="max-w-sm mx-auto">
             <div className="mb-6 text-center">
@@ -89,7 +89,7 @@ export default function SignInSplit() {
       </div>
 
       <img 
-        className="absolute top-0 right-0 h-full w-2/5 lg:w-1/2 object-cover hidden md:block" 
+        className="md:absolute md:top-0 md:right-0 mx-auto md:h-full md:w-2/5 lg:w-1/2 md:object-cover hidden md:block" 
         src="/images/flower-close-up.jpg" 
         alt="Flower close-up"
       />
