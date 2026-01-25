@@ -39,6 +39,7 @@ export default function HeroGlassy() {
   const [activeTemplate, setActiveTemplate] = useState('sign-in-split');
   const [activeProject, setActiveProject] = useState('design-app');
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [showAllTemplates, setShowAllTemplates] = useState(false);
 
   // Check URL for template parameter on mount (coming back from demo)
   useEffect(() => {
@@ -1486,7 +1487,8 @@ export default function PricingCards() {
               
                   {/* Tablet & Desktop: Vertical button list */}
                   <div className="hidden md:block space-y-2">
-                    {templates.filter(t => t.project === activeProject).map((template) => (
+                    {/* First 5 templates - always visible */}
+                    {templates.filter(t => t.project === activeProject).slice(0, 5).map((template) => (
                       <div key={template.id}>
                         <button
                           onClick={() => setActiveTemplate(template.id)}
@@ -1515,6 +1517,45 @@ export default function PricingCards() {
                         )}
                       </div>
                     ))}
+                    
+                    {/* See more dropdown - Desktop only */}
+                    {templates.filter(t => t.project === activeProject).length > 5 && (
+                      <div>
+                        <button
+                          onClick={() => setShowAllTemplates(!showAllTemplates)}
+                          className="w-full text-left px-4 py-2 text-xs text-black/50 hover:text-black/70 transition-all flex items-center justify-between group"
+                        >
+                          <span>{showAllTemplates ? 'Show less' : 'See more templates'}</span>
+                          <svg 
+                            className={`w-3 h-3 transition-transform ${showAllTemplates ? 'rotate-180' : ''}`}
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        
+                        {/* Remaining templates with scroll */}
+                        {showAllTemplates && (
+                          <div className="max-h-[400px] overflow-y-auto space-y-2 mt-2 pr-2">
+                            {templates.filter(t => t.project === activeProject).slice(5).map((template) => (
+                              <button
+                                key={template.id}
+                                onClick={() => setActiveTemplate(template.id)}
+                                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                                  activeTemplate === template.id
+                                    ? 'bg-black text-white'
+                                    : 'text-black/70 hover:bg-black/5 hover:text-black'
+                                }`}
+                              >
+                                {template.title}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                   
                   {/* Auth states info - Mobile only (separate card) */}
