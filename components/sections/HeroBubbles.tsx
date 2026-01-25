@@ -59,9 +59,9 @@ export default function HeroBubbles() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-[#f7f6f4] overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-screen bg-gradient-to-r from-red-100 via-yellow-50 to-purple-100 overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8">
       {/* Blurry Color Blobs Background */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none z-0">
         {/* Top Left - Red/Yellow Blob */}
         <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-[600px] h-[600px]">
           <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-60 blur-3xl">
@@ -146,7 +146,7 @@ export default function HeroBubbles() {
       {bubbles.map((bubble) => (
         <div
           key={bubble.id}
-          className={`absolute ${bubble.position} ${bubble.size} hidden lg:block animate-float`}
+          className={`absolute ${bubble.position} ${bubble.size} hidden lg:block animate-float z-20`}
           style={{
             animationDelay: bubble.delay,
           }}
@@ -169,10 +169,10 @@ export default function HeroBubbles() {
             </div>
 
             {/* Label - Shows on hover */}
-            <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap transition-opacity duration-300 ${
-              hoveredBubble === bubble.id ? 'opacity-100' : 'opacity-0'
+            <div className={`absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap transition-all duration-300 z-30 ${
+              hoveredBubble === bubble.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
             }`}>
-              <div className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-black/10 shadow-lg">
+              <div className="px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm border border-black/10 shadow-lg">
                 <span className="text-xs font-medium text-black/70">{bubble.name}</span>
               </div>
             </div>
