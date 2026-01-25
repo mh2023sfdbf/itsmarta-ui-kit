@@ -1459,13 +1459,12 @@ export default function PricingCards() {
             </div>
       </div>
 
-                {/* Template List - Horizontal Scrollable Chips */}
+                {/* Template List - Responsive: Horizontal on Mobile, Vertical on Desktop */}
               <div>
                   <p className="text-xs uppercase tracking-widest text-black/40 mb-2 font-medium">Templates</p>
                   
-                  {/* Horizontal scrollable container */}
-                  <div className="relative">
-                    {/* Scrollable row */}
+                  {/* Mobile: Horizontal scrollable chips */}
+                  <div className="md:hidden relative">
                     <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory scroll-smooth">
                       {templates.filter(t => t.project === activeProject).map((template) => (
                         <button
@@ -1481,14 +1480,46 @@ export default function PricingCards() {
                         </button>
                       ))}
                     </div>
-                    
-                    {/* Scroll hint gradient on mobile */}
-                    <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden"></div>
+                    {/* Scroll hint gradient */}
+                    <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+              </div>
+              
+                  {/* Tablet & Desktop: Vertical button list */}
+                  <div className="hidden md:block space-y-2">
+                    {templates.filter(t => t.project === activeProject).map((template) => (
+                      <div key={template.id}>
+                        <button
+                          onClick={() => setActiveTemplate(template.id)}
+                          className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                            activeTemplate === template.id
+                              ? 'bg-black text-white'
+                              : 'text-black/70 hover:bg-black/5 hover:text-black'
+                          }`}
+                        >
+                          {template.title}
+                        </button>
+                        
+                        {/* Auth states info below Sign In Split on desktop */}
+                        {template.id === 'sign-in-split' && activeTemplate === 'sign-in-split' && (
+                          <div className="mt-2 ml-4 pl-4 border-l border-black/10 py-2">
+                            <p className="text-xs font-medium text-black/70 mb-1">
+                              All auth states included
+                            </p>
+                            <p className="text-xs text-black/40 leading-relaxed">
+                              Sign in, sign up, password reset, magic link, loading & error states.
+                            </p>
+                            <p className="text-xs text-black/40 mt-1 italic">
+                              Prompt guidance included.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
                   
-                  {/* Auth states info - shown when Sign In Split is active */}
+                  {/* Auth states info - Mobile only (separate card) */}
                   {activeTemplate === 'sign-in-split' && (
-                    <div className="mt-3 p-3 rounded-lg bg-black/[0.02] border border-black/5">
+                    <div className="md:hidden mt-3 p-3 rounded-lg bg-black/[0.02] border border-black/5">
                       <p className="text-xs font-medium text-black/70 mb-1">
                         All auth states included
                       </p>
