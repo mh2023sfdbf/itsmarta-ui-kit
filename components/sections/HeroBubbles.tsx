@@ -82,7 +82,7 @@ export default function HeroBubbles() {
     {
       id: 'text-landing',
       text: 'Landing Pages',
-      position: 'top-[35%] right-[25%]',
+      position: 'top-[18%] right-[25%]',
       size: 'w-28',
       delay: '0.6s',
     },
