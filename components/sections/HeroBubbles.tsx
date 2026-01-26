@@ -12,7 +12,7 @@ export default function HeroBubbles() {
       id: 'clamalo',
       name: 'Clamalo',
       label: 'Hero Video',
-      labelPosition: 'top-1/2 -translate-y-1/2 -right-[4.5rem]', // Right side, vertically centered
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/clamalo_concept_preview.jpeg',
       position: 'top-[20%] left-[8%]',
       size: 'w-32 h-32',
@@ -22,7 +22,7 @@ export default function HeroBubbles() {
       id: 'myroomdesigner',
       name: 'MyRoomDesigner',
       label: 'Sign In',
-      labelPosition: 'top-1/2 -translate-y-1/2 -left-[4.5rem]', // Left side for right-positioned bubbles
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/myroomdesignerai_cover.png',
       position: 'top-[15%] right-[12%]',
       size: 'w-36 h-36',
@@ -32,7 +32,7 @@ export default function HeroBubbles() {
       id: 'myskinroutine',
       name: 'MySkinRoutine',
       label: 'Pulsing Logo',
-      labelPosition: 'top-1/2 -translate-y-1/2 -right-[5rem]', // Right side, vertically centered
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/myskinroutine_cover.png',
       position: 'top-[50%] left-[5%]',
       size: 'w-28 h-28',
@@ -42,7 +42,7 @@ export default function HeroBubbles() {
       id: 'dreamhouse',
       name: 'DreamHouseAI',
       label: 'Pricing',
-      labelPosition: 'top-1/2 -translate-y-1/2 -left-[4rem]', // Left side for right-positioned bubbles
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/dreamhouseai1_cover.png',
       position: 'bottom-[25%] right-[8%]',
       size: 'w-32 h-32',
@@ -52,7 +52,7 @@ export default function HeroBubbles() {
       id: 'moodboard',
       name: 'MoodboardAI',
       label: 'Features',
-      labelPosition: 'top-1/2 -translate-y-1/2 -right-[4.5rem]', // Right side, vertically centered
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/moodboardai_cover.png',
       position: 'bottom-[15%] left-[15%]',
       size: 'w-28 h-28',
@@ -62,7 +62,7 @@ export default function HeroBubbles() {
       id: 'roomdesigner2',
       name: 'Room Design',
       label: 'Navigation',
-      labelPosition: 'top-1/2 -translate-y-1/2 -left-[5rem]', // Left side for right-positioned bubbles
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/myroomdesignerai1.png',
       position: 'top-[40%] right-[6%]',
       size: 'w-24 h-24',
@@ -180,19 +180,12 @@ export default function HeroBubbles() {
               />
             </div>
 
-            {/* Small glassy label - Playfully positioned outside bubble */}
-            <div className={`absolute ${bubble.labelPosition} z-10 whitespace-nowrap`}>
-              <div className="flex items-center justify-center px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-white/60 shadow-lg">
-                <span className="text-[9px] font-medium text-black/60 uppercase tracking-widest leading-none">{bubble.label}</span>
-              </div>
-            </div>
-
-            {/* Project name - Shows on hover below bubble */}
-            <div className={`absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap transition-all duration-300 z-30 ${
+            {/* Template label - Shows on hover below bubble */}
+            <div className={`absolute ${bubble.labelPosition} z-30 whitespace-nowrap transition-all duration-300 ${
               hoveredBubble === bubble.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
             }`}>
-              <div className="px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm border border-black/10 shadow-lg">
-                <span className="text-xs font-medium text-black/70">{bubble.name}</span>
+              <div className="flex items-center justify-center px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-white/60 shadow-lg">
+                <span className="text-[9px] font-medium text-black/60 uppercase tracking-widest leading-none">{bubble.label}</span>
               </div>
             </div>
           </div>
