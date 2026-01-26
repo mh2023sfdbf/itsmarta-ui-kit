@@ -59,7 +59,6 @@ export default function IframePreview({
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="stylesheet" href="/globals.css">
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           ${project === 'design-app' 
@@ -76,6 +75,15 @@ export default function IframePreview({
               padding: 0;
               overflow: ${fixedViewport ? 'auto' : 'hidden'};
               font-family: var(--font-body);
+              /* Disable text selection and copying */
+              user-select: none;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+            }
+            /* Disable right-click */
+            * {
+              -webkit-touch-callout: none;
             }
             .font-heading {
               font-family: var(--font-heading) !important;
@@ -91,6 +99,68 @@ export default function IframePreview({
             }
             /* Keep full height behavior across all viewports for proper split screens */
           </style>
+          <script>
+            // Disable right-click
+            document.addEventListener('contextmenu', (e) => e.preventDefault());
+            
+            // Disable keyboard shortcuts for DevTools and copy
+            document.addEventListener('keydown', (e) => {
+              if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                (e.metaKey && e.altKey && e.key === 'I') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+                (e.metaKey && e.altKey && e.key === 'J') ||
+                (e.ctrlKey && e.key === 'U') ||
+                (e.metaKey && e.key === 'U') ||
+                (e.ctrlKey && e.key === 'c') ||
+                (e.metaKey && e.key === 'c') ||
+                (e.ctrlKey && e.key === 'a') ||
+                (e.metaKey && e.key === 'a')
+              ) {
+                e.preventDefault();
+                return false;
+              }
+            });
+            
+            // Simple hash function for class obfuscation
+            function hashClass(str) {
+              let hash = 0;
+              for (let i = 0; i < str.length; i++) {
+                hash = ((hash << 5) - hash) + str.charCodeAt(i);
+                hash = hash & hash;
+              }
+              return '_' + Math.abs(hash).toString(36).substring(0, 6);
+            }
+            
+            // Obfuscate classes after content loads
+            setTimeout(() => {
+              try {
+                const classMap = new Map();
+                document.querySelectorAll('[class]').forEach(el => {
+                  const classes = el.className.split(' ').filter(Boolean);
+                  const newClasses = classes.map(cls => {
+                    if (!classMap.has(cls)) {
+                      classMap.set(cls, hashClass(cls));
+                    }
+                    return classMap.get(cls);
+                  });
+                  el.className = newClasses.join(' ');
+                });
+                
+                // Remove React data attributes
+                document.querySelectorAll('*').forEach(el => {
+                  Array.from(el.attributes).forEach(attr => {
+                    if (attr.name.startsWith('data-react') || attr.name.startsWith('data-__')) {
+                      el.removeAttribute(attr.name);
+                    }
+                  });
+                });
+              } catch (e) {
+                console.warn('Obfuscation skipped');
+              }
+            }, 100);
+          </script>
         </head>
         <body>
           <div id="iframe-root"></div>
