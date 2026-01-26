@@ -63,7 +63,7 @@ export default function Home() {
       
       {/* Project Showcase */}
       <div className="bg-white animate-on-load animate-slideUp animate-delay-300">
-        <ProjectShowcase />
+      <ProjectShowcase />
       </div>
 
       {/* Advisory Section */}
@@ -108,7 +108,7 @@ export default function Home() {
 
         {/* Footer */}
         <div className="bg-white">
-          <Footer />
+        <Footer />
         </div>
       </main>
     </>

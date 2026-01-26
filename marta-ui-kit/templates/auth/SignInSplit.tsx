@@ -87,7 +87,7 @@ export default function SignInSplit() {
 
       <img 
         className="md:absolute md:top-0 md:right-0 mx-auto md:h-full md:w-2/5 lg:w-1/2 md:object-cover hidden md:block" 
-        src="/images/flower-close-up.jpg" 
+        src="/images/flower1.png" 
         alt="Flower close-up"
       />
     </section>

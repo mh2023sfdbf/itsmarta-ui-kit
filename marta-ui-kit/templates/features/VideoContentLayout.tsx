@@ -16,7 +16,7 @@ export default function VideoContentLayout() {
                   muted
                   playsInline
                 >
-                  <source src="/assets/restyling-bedroom-with-ai.mp4" type="video/mp4" />
+                  <source src="/videos/template-video1.mp4" type="video/mp4" />
                 </video>
                 {/* Decorative Element */}
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-pink-100 to-pink-50 rounded-full -z-10"></div>

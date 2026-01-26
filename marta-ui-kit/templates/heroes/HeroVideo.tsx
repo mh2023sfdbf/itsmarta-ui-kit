@@ -7,13 +7,13 @@ export default function HeroVideo() {
         {/* Hero Content with Video Taking Center Stage */}
         <div className="flex flex-col items-center text-center relative z-10">
           <h1 className="font-heading text-3xl sm:text-4xl md:text-4xl lg:text-5xl max-w-4xl mx-auto mb-3 md:mb-4 text-coolGray-900">
-            <span className="block sm:inline">Track. </span>
-            <span className="">Reflect. </span>
+            <span className="block sm:inline">Build. </span>
+            <span className="">Launch. </span>
             <span className="">Grow.</span>
           </h1>
           
           <p className="text-sm md:text-base text-coolGray-700 max-w-2xl mx-auto mb-5 md:mb-6 leading-relaxed">
-            Capture your thoughts, feelings, and reflections. Your space to grow, your way.
+            The modern platform that helps teams collaborate, create, and succeed together.
           </p>
           
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 md:mb-7">
@@ -42,7 +42,7 @@ export default function HeroVideo() {
                   playsInline 
                   className="absolute inset-0 w-full h-full object-cover rounded-xl shadow-2xl"
                 >
-                  <source src="https://app.clamalo.com/videos/clamalo-main.mp4" type="video/mp4" />
+                  <source src="/videos/template-video2.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
