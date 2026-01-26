@@ -6,7 +6,7 @@ export default function HeroVideo() {
       <div className="container mx-auto py-6 md:py-8 px-4 sm:px-6 md:px-8 lg:px-10 relative">
         {/* Hero Content with Video Taking Center Stage */}
         <div className="flex flex-col items-center text-center relative z-10">
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-4xl lg:text-5xl max-w-4xl mx-auto mb-3 md:mb-4 text-coolGray-900">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide max-w-4xl mx-auto mb-3 md:mb-4 text-coolGray-900">
             <span className="block sm:inline">Build. </span>
             <span className="">Launch. </span>
             <span className="">Grow.</span>
@@ -33,19 +33,16 @@ export default function HeroVideo() {
 
           {/* Video in Spotlight - Compact on desktop/tablet */}
           <div className="relative w-full max-w-xl md:max-w-2xl mx-auto mb-6 md:mb-8">
-            <div className="relative p-1 rounded-2xl">
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <video 
-                  autoPlay 
-                  muted 
-                  loop 
-                  playsInline 
-                  className="absolute inset-0 w-full h-full object-cover rounded-xl shadow-2xl"
-                >
-                  <source src="/videos/template-video2.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,_0,_0,_0.08)] transition-all duration-300">
+              <video 
+                className="w-full aspect-video object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/videos/template-video2.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>

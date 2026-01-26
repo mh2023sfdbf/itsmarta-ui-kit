@@ -16,7 +16,7 @@ export default function GridCards() {
             <div className="w-full md:w-1/2 p-3 md:p-0 md:pr-1.5 md:pb-0.5 md:mt-auto">
               <div className="p-9 transform hover:-translate-y-3 rounded-2xl transition ease-out duration-1000 bg-[#f7f6f4]">
                 <div className="relative w-full" style={{ paddingBottom: '66.67%' }}>
-                  <video className="absolute inset-0 w-full h-full object-cover rounded-lg" loop muted autoPlay playsInline>
+                  <video className="absolute inset-0 w-full h-full object-cover" loop muted autoPlay playsInline>
                     <source src="/videos/template-video3.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
@@ -80,7 +80,7 @@ export default function GridCards() {
                   </p>
                 </div>
                 <div className="relative w-full" style={{ paddingBottom: '66.67%' }}>
-                  <video className="absolute inset-0 w-full h-full object-cover rounded-lg" loop muted autoPlay playsInline>
+                  <video className="absolute inset-0 w-full h-full object-cover" loop muted autoPlay playsInline>
                     <source src="/videos/template-video4.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
