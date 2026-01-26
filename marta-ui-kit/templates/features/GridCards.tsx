@@ -97,9 +97,9 @@ export default function GridCards() {
                   width={800} 
                   height={600} 
                 />
-                <div className="pb-0 p-6 mb-6">
-                  <h3 className="mb-5 font-heading text-3xl">Powerful Tools Included</h3>
-                  <p className="mb-4 font-heading text-base text-opacity-70">
+                <div className="pb-0 p-6 mb-2">
+                  <h3 className="py-4 font-heading text-3xl">Powerful Tools Included</h3>
+                  <p className="mb-2 font-heading text-base text-opacity-70">
                     Access a comprehensive suite of tools designed to enhance your workflow. Explore features like:
                   </p>
                 </div>
