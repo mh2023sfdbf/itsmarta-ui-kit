@@ -68,55 +68,51 @@ export default function HeroBubbles() {
       size: 'w-24 h-24',
       delay: '0.15s',
     },
+  ];
+
+  // Text-only bubbles showing what we offer
+  const textBubbles = [
     {
-      id: 'dreamhouse2',
-      name: 'DreamHouse',
-      label: 'Testimonials',
-      labelPosition: '-bottom-8 left-0',
-      image: '/project-screenshots/dreamhouseai2.png',
-      position: 'top-[28%] left-[22%]',
-      size: 'w-28 h-28',
-      delay: '0.25s',
-    },
-    {
-      id: 'moodboard2',
-      name: 'MoodboardAI',
-      label: 'FAQ',
-      labelPosition: '-bottom-8 left-0',
-      image: '/project-screenshots/moodboardai_cover.png',
-      position: 'bottom-[35%] left-[8%]',
-      size: 'w-24 h-24',
-      delay: '0.35s',
-    },
-    {
-      id: 'clamalo2',
-      name: 'Clamalo',
-      label: 'CTA',
-      labelPosition: '-bottom-8 left-0',
-      image: '/project-screenshots/clamalo_concept1.png',
-      position: 'top-[60%] right-[15%]',
-      size: 'w-32 h-32',
-      delay: '0.45s',
-    },
-    {
-      id: 'myroomdesigner3',
-      name: 'MyRoomDesigner',
-      label: 'Footer',
-      labelPosition: '-bottom-8 left-0',
-      image: '/project-screenshots/myroomdesignerai2.png',
-      position: 'bottom-[8%] right-[20%]',
-      size: 'w-28 h-28',
+      id: 'text-auth',
+      text: 'Sign In Templates',
+      position: 'top-[12%] left-[25%]',
+      size: 'w-32',
       delay: '0.5s',
     },
     {
-      id: 'myskinroutine2',
-      name: 'MySkinRoutine',
-      label: 'Comparison',
-      labelPosition: '-bottom-8 left-0',
-      image: '/project-screenshots/myskinroutine.png',
-      position: 'top-[12%] left-[28%]',
-      size: 'w-24 h-24',
-      delay: '0.28s',
+      id: 'text-landing',
+      text: 'Landing Pages',
+      position: 'top-[35%] right-[25%]',
+      size: 'w-28',
+      delay: '0.6s',
+    },
+    {
+      id: 'text-nav',
+      text: 'Navigation Bars',
+      position: 'bottom-[35%] left-[18%]',
+      size: 'w-32',
+      delay: '0.7s',
+    },
+    {
+      id: 'text-pricing',
+      text: 'Pricing Cards',
+      position: 'top-[55%] right-[18%]',
+      size: 'w-28',
+      delay: '0.8s',
+    },
+    {
+      id: 'text-features',
+      text: 'Feature Sections',
+      position: 'bottom-[20%] right-[28%]',
+      size: 'w-32',
+      delay: '0.9s',
+    },
+    {
+      id: 'text-testimonials',
+      text: 'Testimonials',
+      position: 'top-[25%] left-[40%]',
+      size: 'w-28',
+      delay: '1s',
     },
   ];
 
@@ -238,6 +234,24 @@ export default function HeroBubbles() {
                 <span className="text-[9px] font-medium text-black/60 uppercase tracking-widest leading-none">{bubble.label}</span>
               </div>
             </div>
+          </div>
+        </div>
+      ))}
+
+      {/* Text-Only Bubbles - Showing What We Offer */}
+      {textBubbles.map((bubble) => (
+        <div
+          key={bubble.id}
+          className={`absolute ${bubble.position} ${bubble.size} hidden lg:block animate-float z-10`}
+          style={{
+            animationDelay: bubble.delay,
+          }}
+        >
+          {/* Glassy text bubble */}
+          <div className="px-4 py-2.5 rounded-full backdrop-blur-md bg-white/50 border border-white/70 shadow-lg">
+            <p className="text-[10px] font-medium text-black/70 uppercase tracking-wider leading-none text-center">
+              {bubble.text}
+            </p>
           </div>
         </div>
       ))}
