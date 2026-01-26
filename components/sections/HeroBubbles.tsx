@@ -167,27 +167,30 @@ export default function HeroBubbles() {
       </div>
 
       {/* Main Content - Centered */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center py-20">
-        <h1 className="text-[clamp(2rem,6vw,4.5rem)] leading-[0.95] tracking-[-0.01em] text-black/95 mb-4 sm:mb-6 animate-on-load animate-slideUp">
-          <span className="text-[0.85em] font-[350]">My UI kits.</span> <span className="font-serif italic font-normal">Live previews.</span>
+      <div className="relative z-10 max-w-4xl mx-auto text-center py-20 px-6">
+        <h1 className="text-[clamp(3rem,8vw,4.5rem)] md:text-[clamp(2rem,6vw,4.5rem)] leading-[0.95] tracking-[-0.01em] text-black/95 mb-6 sm:mb-6 md:mb-4 animate-on-load animate-slideUp">
+          <span className="text-[0.85em] font-[350]">My UI kits.</span>
+          <br className="md:hidden" />
+          <span className="md:inline"> </span>
+          <span className="font-serif italic font-normal">Live previews.</span>
           <br />
           <span className="text-[0.85em] font-[350]">Built from real SaaS work.</span>
         </h1>
         
-        <p className="text-sm sm:text-base text-black/60 font-light max-w-xl mx-auto leading-relaxed mb-8 animate-on-load animate-slideUp animate-delay-100">
+        <p className="text-base md:text-sm sm:text-base text-black/60 font-light max-w-xl mx-auto leading-relaxed mb-10 md:mb-8 animate-on-load animate-slideUp animate-delay-100">
           These UI decisions doubled revenue in a real SaaS product. Now you can preview, buy and use them too.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 animate-on-load animate-slideUp animate-delay-200">
+        <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-4 md:gap-4 sm:gap-6 animate-on-load animate-slideUp animate-delay-200">
           <a
             href="#ui-templates"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white text-sm font-medium hover:bg-black/90 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center px-8 py-4 md:px-6 md:py-3 rounded-full bg-black text-white text-base md:text-sm font-medium hover:bg-black/90 transition-all duration-200 shadow-lg hover:shadow-xl w-full md:w-auto max-w-sm md:max-w-none"
           >
             Browse Live Previews
           </a>
           <a
             href="/demo-minimal-calm"
-            className="inline-flex items-center gap-2 text-sm text-black hover:text-black/60 transition-colors group"
+            className="inline-flex items-center justify-center gap-2 text-base md:text-sm text-black hover:text-black/60 transition-colors group"
           >
             <span>See full demo</span>
             <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -195,7 +198,7 @@ export default function HeroBubbles() {
         </div>
 
         {/* Tech Stack */}
-        <p className="text-xs text-black/40 mt-8">
+        <p className="text-xs text-black/40 mt-10 md:mt-8">
           React · Tailwind · TypeScript · Copy & Paste
         </p>
       </div>
