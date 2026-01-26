@@ -24,7 +24,7 @@ export default function HeroBubbles() {
       label: 'Sign In',
       labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/myroomdesignerai_cover.png',
-      position: 'top-[15%] right-[12%]',
+      position: 'top-[18%] right-[10%]',
       size: 'w-36 h-36',
       delay: '0.1s',
     },
@@ -44,7 +44,7 @@ export default function HeroBubbles() {
       label: 'Pricing',
       labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/dreamhouseai1_cover.png',
-      position: 'bottom-[25%] right-[8%]',
+      position: 'bottom-[21%] right-[8%]',
       size: 'w-32 h-32',
       delay: '0.3s',
     },
@@ -64,7 +64,7 @@ export default function HeroBubbles() {
       label: 'Navigation',
       labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/myroomdesignerai1.png',
-      position: 'top-[40%] right-[6%]',
+      position: 'top-[43%] right-[6%]',
       size: 'w-24 h-24',
       delay: '0.15s',
     },
@@ -75,7 +75,7 @@ export default function HeroBubbles() {
     {
       id: 'text-auth',
       text: 'Sign In Template',
-      position: 'top-[12%] left-[25%]',
+      position: 'top-[18%] left-[25%]',
       size: 'w-32',
       delay: '0.5s',
     },
@@ -89,7 +89,7 @@ export default function HeroBubbles() {
     {
       id: 'text-nav',
       text: 'Navigation Bars',
-      position: 'bottom-[35%] left-[18%]',
+      position: 'bottom-[37%] left-[18%]',
       size: 'w-32',
       delay: '0.7s',
     },
@@ -103,14 +103,14 @@ export default function HeroBubbles() {
     {
       id: 'text-features',
       text: 'Feature Sections',
-      position: 'bottom-[20%] right-[28%]',
+      position: 'bottom-[24%] right-[24%]',
       size: 'w-32',
       delay: '0.9s',
     },
     {
       id: 'text-testimonials',
       text: 'Social Proof',
-      position: 'top-[25%] left-[40%]',
+      position: 'bottom-[20%] left-[26%]',
       size: 'w-28',
       delay: '1s',
     },

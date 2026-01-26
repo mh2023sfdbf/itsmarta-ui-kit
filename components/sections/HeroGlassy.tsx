@@ -1260,14 +1260,14 @@ export default function PricingCards() {
             <p>
               Shaped by real experience shipping and iterating SaaS products end-to-end.
             </p>
-          </div>
+            </div>
 
           {/* Differentiator Note */}
           <p className="text-xs sm:text-sm italic text-black/40 max-w-xl mx-auto mt-10 lg:mt-12">
             Human-led design over generic AI output.
               </p>
-                 </div>
-               </div>
+          </div>
+        </div>
 
       {/* Editorial Opening Statement - Magazine Style */}
       {/* Template Showcase with Switcher */}
@@ -1297,7 +1297,7 @@ export default function PricingCards() {
               <p className="text-sm sm:text-base text-black/50 font-light mb-6 md:mb-10 lg:mb-14">
                 Everything you need for a calm, conversion-ready UI
               </p>
-            </div>
+      </div>
 
             {/* Split Layout: Nav Left, Preview Right */}
             <div id="ui-templates" className="space-y-4 md:space-y-0 md:grid md:grid-cols-[280px,1fr] lg:grid-cols-[320px,1fr] md:gap-6 lg:gap-12 items-start scroll-mt-20">
@@ -1335,9 +1335,9 @@ export default function PricingCards() {
                     >
                       Colorful
                     </button>
-            </div>
-      </div>
-
+                </div>
+              </div>
+              
                 {/* Template List - Responsive: Horizontal on Mobile, Vertical on Desktop */}
               <div>
                   <p className="text-xs uppercase tracking-widest text-black/40 mb-2 font-medium">Templates</p>
@@ -1357,12 +1357,12 @@ export default function PricingCards() {
                         >
                           {template.title}
                         </button>
-                      ))}
-                    </div>
+          ))}
+        </div>
                     {/* Scroll hint gradient */}
                     <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
-              </div>
-              
+      </div>
+
                   {/* Tablet & Desktop: Vertical button list */}
                   <div className="hidden md:block space-y-2">
                     {/* First 5 templates - always visible */}
@@ -1390,15 +1390,15 @@ export default function PricingCards() {
                             </p>
                             <p className="text-xs text-black/40 mt-1 italic">
                               Prompt guidance included.
-                            </p>
-                          </div>
+              </p>
+            </div>
                         )}
-                      </div>
+      </div>
                     ))}
                     
                     {/* See more dropdown - Desktop only */}
                     {templates.filter(t => t.project === activeProject).length > 5 && (
-                      <div>
+              <div>
                         <button
                           onClick={() => setShowAllTemplates(!showAllTemplates)}
                           className="w-full text-left px-4 py-2 text-xs text-black/50 hover:text-black/70 transition-all flex items-center justify-between group"
@@ -1434,8 +1434,8 @@ export default function PricingCards() {
                         )}
                       </div>
                     )}
-                  </div>
-                  
+              </div>
+              
                   {/* Auth states info - Mobile only (separate card) */}
                   {activeTemplate === 'sign-in-split' && (
                     <div className="md:hidden mt-3 p-3 rounded-lg bg-black/[0.02] border border-black/5">

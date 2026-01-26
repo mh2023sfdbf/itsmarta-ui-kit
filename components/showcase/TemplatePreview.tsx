@@ -97,58 +97,58 @@ export default function TemplatePreview({
         </div>
         
         <div className="flex gap-1.5 md:gap-2 items-center">
-          {/* Device Size Toggles */}
-          {!showCode && (
+            {/* Device Size Toggles */}
+            {!showCode && (
             <div className="flex gap-0.5 md:gap-1 bg-gray-100/80 border border-gray-200/60 rounded-lg p-0.5 md:p-1">
-              {/* Mobile */}
-              <button
-                onClick={() => setViewport('mobile')}
-                className={cn(
+                {/* Mobile */}
+                <button
+                  onClick={() => setViewport('mobile')}
+                  className={cn(
                   "p-1 md:p-1.5 rounded transition-all duration-200",
-                  viewport === 'mobile'
+                    viewport === 'mobile'
                     ? "bg-white text-gray-900 shadow-sm"
                     : "text-gray-500 hover:text-gray-900"
-                )}
+                  )}
                 title="Phone view"
-              >
+                >
                 <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </button>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </button>
 
-              {/* Tablet */}
-              <button
-                onClick={() => setViewport('tablet')}
-                className={cn(
+                {/* Tablet */}
+                <button
+                  onClick={() => setViewport('tablet')}
+                  className={cn(
                   "p-1 md:p-1.5 rounded transition-all duration-200",
-                  viewport === 'tablet'
+                    viewport === 'tablet'
                     ? "bg-white text-gray-900 shadow-sm"
                     : "text-gray-500 hover:text-gray-900"
-                )}
+                  )}
                 title="Tablet view"
-              >
+                >
                 <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </button>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </button>
 
-              {/* Desktop */}
-              <button
-                onClick={() => setViewport('desktop')}
-                className={cn(
+                {/* Desktop */}
+                <button
+                  onClick={() => setViewport('desktop')}
+                  className={cn(
                   "p-1 md:p-1.5 rounded transition-all duration-200",
-                  viewport === 'desktop'
+                    viewport === 'desktop'
                     ? "bg-white text-gray-900 shadow-sm"
                     : "text-gray-500 hover:text-gray-900"
-                )}
+                  )}
                 title="Desktop view"
-              >
+                >
                 <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </button>
-            </div>
-          )}
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </button>
+              </div>
+            )}
 
           {/* Live Demo Button */}
           <a
@@ -158,19 +158,19 @@ export default function TemplatePreview({
             Live Demo
           </a>
 
-          {/* View Code Button */}
-          <button
-            onClick={() => setShowCode(!showCode)}
-            className={cn(
+            {/* View Code Button */}
+            <button
+              onClick={() => setShowCode(!showCode)}
+              className={cn(
               "px-2 md:px-3 py-1 md:py-1.5 rounded-lg font-medium text-xs md:text-sm transition-all duration-200",
-              showCode
+                showCode
                 ? "bg-gray-900 text-white"
                 : "bg-gray-100/80 border border-gray-200/60 text-gray-700 hover:bg-gray-200/80"
-            )}
-          >
+              )}
+            >
             {showCode ? "← Preview" : "View Code"}
-          </button>
-        </div>
+            </button>
+          </div>
       </div>
 
       {/* Preview Container */}
@@ -183,7 +183,7 @@ export default function TemplatePreview({
             "relative flex justify-center items-start bg-white",
             viewport === "desktop" ? "p-6 md:p-12" : "p-3 md:p-6"
           )}>
-            <div
+            <div 
               ref={frameRef}
               className={cn(
                 "relative w-full mx-auto transition-all duration-500 ease-in-out",
@@ -205,22 +205,22 @@ export default function TemplatePreview({
                         ? "shadow-[0_24px_80px_rgba(0,0,0,0.15)] ring-1 ring-black/10"
                         : "shadow-[0_20px_60px_rgba(0,0,0,0.10)] ring-1 ring-black/5"
                     )}
-                    style={{
+              style={{
                       width: currentConfig.baseWidth,
                       height: currentConfig.baseHeight,
                       transform: `scale(${previewScale})`,
                       transformOrigin: "top left",
                     }}
                   >
-                    <IframePreview
-                      key={viewport}
+                <IframePreview 
+                  key={viewport}
                       width={currentConfig.baseWidth}
                       height={currentConfig.baseHeight}
                       fixedViewport
-                      project={project}
-                    >
-                      {children}
-                    </IframePreview>
+                  project={project}
+                >
+                  {children}
+                </IframePreview>
                   </div>
                 </div>
               </div>
@@ -262,12 +262,12 @@ export default function TemplatePreview({
                   </a>
 
                   {/* Minimal Close Button */}
-                  <button 
-                    onClick={() => setShowCode(false)}
+                    <button 
+                      onClick={() => setShowCode(false)}
                     className="text-xs text-black/50 hover:text-black/70 font-light transition-colors underline decoration-1 underline-offset-2"
-                  >
-                    Close Preview
-                  </button>
+                    >
+                      Close Preview
+                    </button>
 
                   {/* Features - Airy spacing */}
                   <div className="pt-8 mt-8 border-t border-black/10 text-left">
@@ -326,12 +326,12 @@ export default function TemplatePreview({
       {/* Quick Actions */}
       <div className="mt-8 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
         <div className="max-w-md mx-auto">
-          <a 
-            href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
+        <a 
+          href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
             className="block w-full px-10 py-3.5 bg-black text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:bg-black/90 transition-all duration-200 text-center text-sm"
-          >
+        >
             Buy All Templates — ${price}
-          </a>
+        </a>
           <p className="text-center text-xs text-black/40 mt-4">
             Get all templates shown above · Instant download · Commercial license
           </p>
