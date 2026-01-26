@@ -20,6 +20,10 @@
     --font-outfit: 'Outfit', sans-serif;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-white text-gray-900 antialiased;
   }
@@ -118,6 +122,48 @@
 
   .animate-float {
     animation: float 6s ease-in-out infinite;
+  }
+
+  /* Slide up animations for page load */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Staggered animation delays */
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Initial state for animations */
+  .animate-on-load {
+    opacity: 0;
   }
 
   /* Minimal custom scrollbar for lightbox */
