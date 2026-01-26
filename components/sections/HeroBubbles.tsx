@@ -12,7 +12,7 @@ export default function HeroBubbles() {
       id: 'clamalo',
       name: 'Clamalo',
       label: 'Hero Video',
-      labelPosition: '-top-3 left-1/2 -translate-x-1/2', // Top center
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/clamalo_concept_preview.jpeg',
       position: 'top-[20%] left-[8%]',
       size: 'w-32 h-32',
@@ -22,7 +22,7 @@ export default function HeroBubbles() {
       id: 'myroomdesigner',
       name: 'MyRoomDesigner',
       label: 'Sign In',
-      labelPosition: '-right-12 top-2', // Right side
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/myroomdesignerai_cover.png',
       position: 'top-[15%] right-[12%]',
       size: 'w-36 h-36',
@@ -32,7 +32,7 @@ export default function HeroBubbles() {
       id: 'myskinroutine',
       name: 'MySkinRoutine',
       label: 'Pulsing Logo',
-      labelPosition: '-left-14 top-1/2 -translate-y-1/2', // Left side
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/myskinroutine_cover.png',
       position: 'top-[50%] left-[5%]',
       size: 'w-28 h-28',
@@ -42,7 +42,7 @@ export default function HeroBubbles() {
       id: 'dreamhouse',
       name: 'DreamHouseAI',
       label: 'Pricing',
-      labelPosition: '-bottom-3 left-1/2 -translate-x-1/2', // Bottom center
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/dreamhouseai1_cover.png',
       position: 'bottom-[25%] right-[8%]',
       size: 'w-32 h-32',
@@ -52,7 +52,7 @@ export default function HeroBubbles() {
       id: 'moodboard',
       name: 'MoodboardAI',
       label: 'Features',
-      labelPosition: '-top-2 right-2', // Top right diagonal
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/moodboardai_cover.png',
       position: 'bottom-[15%] left-[15%]',
       size: 'w-28 h-28',
@@ -62,7 +62,7 @@ export default function HeroBubbles() {
       id: 'roomdesigner2',
       name: 'Room Design',
       label: 'Navigation',
-      labelPosition: '-right-10 bottom-3', // Right bottom
+      labelPosition: '-bottom-8 left-0', // Below, left-aligned
       image: '/project-screenshots/myroomdesignerai1.png',
       position: 'top-[40%] right-[6%]',
       size: 'w-24 h-24',
