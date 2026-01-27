@@ -1,15 +1,39 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+
+// Navigation
 import NavMenuMinimal from '@/marta-ui-kit/templates/navigation/NavMenuMinimal';
+
+// Heroes
 import HeroVideo from '@/marta-ui-kit/templates/heroes/HeroVideo';
-import BenefitsStats from '@/marta-ui-kit/templates/features/BenefitsStats';
+
+// Features
 import SocialProof from '@/marta-ui-kit/templates/features/SocialProof';
+import ThreeColumnFeatures from '@/marta-ui-kit/templates/features/ThreeColumnFeatures';
+import GridCards from '@/marta-ui-kit/templates/features/GridCards';
+
+// Content
+import VideoContentLayout from '@/marta-ui-kit/templates/features/VideoContentLayout';
+import TableComparison from '@/marta-ui-kit/templates/features/TableComparison';
+
+// Social Proof
 import TestimonialsCards from '@/marta-ui-kit/templates/testimonials/TestimonialsCards';
+
+// Pricing
+import PricingCards from '@/marta-ui-kit/templates/pricing/PricingCards';
+
+// Dashboard
+import StatsCards from '@/marta-ui-kit/templates/dashboard/StatsCards';
+import DashboardOverview from '@/marta-ui-kit/templates/dashboard/DashboardOverview';
+
+// Support
 import FAQAccordion from '@/marta-ui-kit/templates/faq/FAQAccordion';
+
+// CTA & Footer
 import CTAHighlighted from '@/marta-ui-kit/templates/cta/CTAHighlighted';
 import FooterComprehensive from '@/marta-ui-kit/templates/footers/FooterComprehensive';
-import Link from 'next/link';
 
 export default function DemoMinimalCalmClient() {
   const searchParams = useSearchParams();
@@ -38,12 +62,18 @@ export default function DemoMinimalCalmClient() {
         Back to templates
       </Link>
 
-      {/* Full Page Demo - Real UI Experience */}
+      {/* Full Page Demo - All Minimal & Calm Templates */}
       <NavMenuMinimal />
       <HeroVideo />
-      <BenefitsStats />
       <SocialProof />
+      <ThreeColumnFeatures />
+      <VideoContentLayout />
+      <GridCards />
+      <TableComparison />
       <TestimonialsCards />
+      <StatsCards />
+      <DashboardOverview />
+      <PricingCards />
       <FAQAccordion />
       <CTAHighlighted />
       <FooterComprehensive />
