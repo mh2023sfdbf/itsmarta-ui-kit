@@ -176,22 +176,53 @@ export default function IframePreview({
     if (root) {
       setMountNode(root);
       
-      // Wait for fonts and styles to load before showing
-      Promise.all([
+      // CRITICAL: Comprehensive loading strategy to prevent blank previews on first load
+      // We must wait for: external stylesheets, fonts, and document to be fully ready
+      
+      // 1. Wait for all external stylesheets to load
+      const stylesheetPromises = Array.from(iframeDoc.querySelectorAll('link[rel="stylesheet"]'))
+        .map(link => {
+          return new Promise((resolve) => {
+            if ((link as HTMLLinkElement).sheet) {
+              resolve(true);
+            } else {
+              link.addEventListener('load', () => resolve(true), { once: true });
+              link.addEventListener('error', () => resolve(true), { once: true });
+              // Timeout fallback in case event doesn't fire
+              setTimeout(() => resolve(true), 2000);
+            }
+          });
+        });
+      
+      // 2. Wait for iframe document to be complete
+      const documentReadyPromise = new Promise(resolve => {
+        if (iframeDoc.readyState === 'complete') {
+          resolve(true);
+        } else {
+          iframe.contentWindow?.addEventListener('load', () => resolve(true), { once: true });
+          // Timeout fallback
+          setTimeout(() => resolve(true), 3000);
+        }
+      });
+      
+      // 3. Wait for fonts to be ready
+      const fontsReadyPromise = Promise.race([
         iframeDoc.fonts.ready,
-        new Promise(resolve => {
-          if (iframeDoc.readyState === 'complete') {
-            resolve(true);
-          } else {
-            iframe.contentWindow?.addEventListener('load', () => resolve(true), { once: true });
-          }
-        })
+        new Promise(resolve => setTimeout(() => resolve(true), 2000)) // 2s timeout for fonts
+      ]);
+      
+      // 4. Wait for ALL conditions + buffer time
+      Promise.all([
+        ...stylesheetPromises,
+        documentReadyPromise,
+        fontsReadyPromise
       ]).then(() => {
-        // Extra delay to ensure all styles are applied
-        setTimeout(() => setIsReady(true), 100);
-      }).catch(() => {
-        // Fallback if fonts fail to load
-        setTimeout(() => setIsReady(true), 300);
+        // Critical buffer: ensure all styles are computed and applied
+        setTimeout(() => setIsReady(true), 150);
+      }).catch((error) => {
+        console.warn('Preview loading warning:', error);
+        // Fallback: show preview anyway after delay
+        setTimeout(() => setIsReady(true), 500);
       });
     }
 
