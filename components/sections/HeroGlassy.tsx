@@ -1023,6 +1023,43 @@ export default function FAQAccordion() {
 }`
     },
     {
+      id: 'testimonials-slider',
+      title: 'Testimonials Slider',
+      category: 'Social Proof',
+      project: 'design-app',
+      component: <TestimonialsCards />,
+      code: `export default function TestimonialsCards() {
+  return (
+    <section className="py-20 md:py-40 overflow-hidden bg-white">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="mb-16">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-gray-900">
+            What our customers say
+          </h2>
+        </div>
+        <div className="flex flex-nowrap overflow-x-auto xl:flex-wrap -mx-4 pb-8 scrollbar-hide">
+          {/* Testimonial cards with horizontal scroll on mobile, 3 columns on desktop */}
+          <div className="flex-shrink-0 w-full sm:w-100 xl:w-1/3 px-4 mb-8">
+            <div className="flex flex-col h-full p-8 md:p-10 bg-white shadow-sm border border-gray-100 rounded-2xl hover:shadow-md transition-shadow duration-300">
+              <p className="text-lg md:text-xl font-heading text-gray-700 leading-relaxed mb-8">
+                "Customer testimonial quote goes here..."
+              </p>
+              <div className="mt-auto flex items-center">
+                <img className="block w-14 h-14 rounded-full object-cover" src="..." alt="Customer" />
+                <div className="ml-4">
+                  <span className="block text-base font-heading font-medium text-gray-900">Name</span>
+                  <span className="block text-sm text-gray-600">Title</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
       id: 'three-column-features',
       title: 'Three Column Features',
       category: 'Content',

@@ -42,7 +42,7 @@ export default function HeroVideo() {
                 playsInline
               >
                 <source src="/videos/template-video2.mp4" type="video/mp4" />
-              </video>
+                </video>
             </div>
           </div>
         </div>

@@ -58,7 +58,7 @@ export default function IframePreview({
       <html lang="en">
         <head>
           <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="viewport" content="width=${width}, initial-scale=1.0">
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           ${project === 'design-app' 
@@ -228,7 +228,7 @@ export default function IframePreview({
       resizeObserver.disconnect();
       iframe.contentWindow?.removeEventListener('load', updateHeight);
     };
-  }, [project, fixedViewport]);
+  }, [project, fixedViewport, width]);
 
   // Re-measure when children change
   useEffect(() => {
