@@ -31,8 +31,7 @@ import DashboardOverview from '@/marta-ui-kit/templates/dashboard/DashboardOverv
 // Support
 import FAQAccordion from '@/marta-ui-kit/templates/faq/FAQAccordion';
 
-// CTA & Footer
-import CTAHighlighted from '@/marta-ui-kit/templates/cta/CTAHighlighted';
+// Footer
 import FooterComprehensive from '@/marta-ui-kit/templates/footers/FooterComprehensive';
 
 export default function DemoMinimalCalmClient() {
@@ -75,7 +74,6 @@ export default function DemoMinimalCalmClient() {
       <DashboardOverview />
       <PricingCards />
       <FAQAccordion />
-      <CTAHighlighted />
       <FooterComprehensive />
     </>
   );
