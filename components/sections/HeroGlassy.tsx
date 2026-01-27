@@ -34,6 +34,11 @@ import CTAElevate from '@/marta-ui-kit/templates/cta/CTAElevate';
 import BridgeGapCTA from '@/marta-ui-kit/templates/about/BridgeGapCTA';
 import PricingCards from '@/marta-ui-kit/templates/pricing/PricingCards';
 import TermsOfUse from '@/marta-ui-kit/templates/legal/TermsOfUse';
+import DashboardOverview from '@/marta-ui-kit/templates/dashboard/DashboardOverview';
+import EmptyState from '@/marta-ui-kit/templates/dashboard/EmptyState';
+import LoadingState from '@/marta-ui-kit/templates/dashboard/LoadingState';
+import ErrorState from '@/marta-ui-kit/templates/dashboard/ErrorState';
+import StatsCards from '@/marta-ui-kit/templates/dashboard/StatsCards';
 
 export default function HeroGlassy() {
   const [activeTemplate, setActiveTemplate] = useState('sign-in-split');
@@ -1103,7 +1108,7 @@ export default function FAQAccordion() {
         <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-gray-900 mb-6">
             Everything you need to succeed
-          </h2>
+        </h2>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
             Powerful features designed to help you work smarter, not harder.
           </p>
@@ -1444,6 +1449,221 @@ export default function PricingCards() {
 }`
     },
     {
+      id: 'dashboard-overview',
+      title: 'Dashboard Overview',
+      category: 'Dashboard',
+      project: 'design-app',
+      component: <DashboardOverview />,
+      code: `'use client';
+
+export default function DashboardOverview() {
+  return (
+    <section className="relative min-h-screen bg-[#f7f6f4] pb-20 pt-12">
+      <div className="container mx-auto px-4 md:px-8">
+        {/* Header */}
+        <div className="mb-10">
+          <h1 className="font-heading text-3xl md:text-4xl text-gray-900 mb-2">
+            Dashboard Overview
+          </h1>
+          <p className="font-heading text-base text-gray-600">
+            Welcome back. Here's what's happening today.
+          </p>
+        </div>
+
+        {/* Stats Grid - KPI Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <div className="bg-white rounded-2xl p-6 transform hover:-translate-y-1 transition ease-out duration-300">
+            {/* Card content... */}
+          </div>
+        </div>
+
+        {/* Recent Activity Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2 bg-white rounded-2xl p-6 md:p-8">
+            {/* Activity feed... */}
+          </div>
+          <div className="bg-white rounded-2xl p-6 md:p-8">
+            {/* Quick actions... */}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'stats-cards',
+      title: 'Stats Cards (KPIs)',
+      category: 'Dashboard',
+      project: 'design-app',
+      component: <StatsCards />,
+      code: `'use client';
+
+export default function StatsCards() {
+  return (
+    <section className="relative overflow-hidden pb-20 pt-20 bg-[#f7f6f4]">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="text-center mb-12">
+          <p className="mb-3 font-heading font-medium text-xs tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-400 uppercase">
+            ANALYTICS
+          </p>
+          <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-4">
+            Your Performance at a Glance
+          </h2>
+        </div>
+
+        {/* Style 1: Simple Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          <div className="bg-white rounded-2xl p-6 transform hover:-translate-y-1 transition ease-out duration-300">
+            {/* Stat card... */}
+          </div>
+        </div>
+
+        {/* Style 2: Large Stats with Descriptions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20 max-w-5xl mx-auto">
+          {/* Large stat cards... */}
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'empty-state',
+      title: 'Empty State',
+      category: 'Dashboard',
+      project: 'design-app',
+      component: <EmptyState />,
+      code: `'use client';
+
+export default function EmptyState() {
+  return (
+    <section className="relative min-h-screen bg-[#f7f6f4] pb-20 pt-12">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="mb-10">
+          <h1 className="font-heading text-3xl md:text-4xl text-gray-900 mb-2">
+            Dashboard
+          </h1>
+          <p className="font-heading text-base text-gray-600">
+            Your workspace is ready to go.
+          </p>
+        </div>
+
+        {/* Empty State - Centered */}
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="max-w-md w-full bg-white rounded-2xl p-8 md:p-12 text-center">
+            <div className="mb-8 flex justify-center">
+              <div className="w-24 h-24 rounded-full bg-[#f7f6f4] flex items-center justify-center">
+                {/* Icon... */}
+              </div>
+            </div>
+            <h2 className="font-heading text-2xl md:text-3xl text-gray-900 mb-3">
+              No Data Yet
+            </h2>
+            <p className="font-heading text-base text-gray-600 mb-8">
+              Start by adding your first item to see your dashboard come to life.
+            </p>
+            <div className="space-y-3">
+              <button className="w-full font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition">
+                Add Your First Item
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'loading-state',
+      title: 'Loading State (Skeletons)',
+      category: 'Dashboard',
+      project: 'design-app',
+      component: <LoadingState />,
+      code: `'use client';
+
+export default function LoadingState() {
+  return (
+    <section className="relative min-h-screen bg-[#f7f6f4] pb-20 pt-12">
+      <div className="container mx-auto px-4 md:px-8">
+        {/* Header Skeleton */}
+        <div className="mb-10">
+          <div className="h-10 w-64 bg-white rounded-lg animate-shimmer mb-2"></div>
+          <div className="h-6 w-80 bg-white rounded-lg animate-shimmer"></div>
+        </div>
+
+        {/* Stats Grid Skeleton */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <div className="bg-white rounded-2xl p-6">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-10 h-10 rounded-full bg-[#f7f6f4] animate-pulse"></div>
+              <div className="h-6 w-16 bg-[#f7f6f4] rounded-full animate-shimmer"></div>
+            </div>
+            <div className="h-9 w-24 bg-[#f7f6f4] rounded-lg animate-shimmer mb-2"></div>
+            <div className="h-5 w-28 bg-[#f7f6f4] rounded-lg animate-shimmer"></div>
+          </div>
+        </div>
+
+        {/* Activity Section Skeleton */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2 bg-white rounded-2xl p-6 md:p-8">
+            {/* Skeleton content... */}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'error-state',
+      title: 'Error State',
+      category: 'Dashboard',
+      project: 'design-app',
+      component: <ErrorState />,
+      code: `'use client';
+
+export default function ErrorState() {
+  return (
+    <section className="relative min-h-screen bg-[#f7f6f4] pb-20 pt-12">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="mb-10">
+          <h1 className="font-heading text-3xl md:text-4xl text-gray-900 mb-2">
+            Dashboard
+          </h1>
+          <p className="font-heading text-base text-gray-600">
+            Something went wrong.
+          </p>
+        </div>
+
+        {/* Error State - Centered */}
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="max-w-md w-full bg-white rounded-2xl p-8 md:p-12 text-center">
+            <div className="mb-8 flex justify-center">
+              <div className="w-24 h-24 rounded-full bg-pink-50 flex items-center justify-center">
+                {/* Error icon... */}
+              </div>
+            </div>
+            <h2 className="font-heading text-2xl md:text-3xl text-gray-900 mb-3">
+              Something Went Wrong
+            </h2>
+            <p className="font-heading text-base text-gray-600 mb-8">
+              We encountered an error while loading your data. Please try again.
+            </p>
+            <div className="space-y-3">
+              <button className="w-full font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition">
+                Try Again
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
       id: 'terms-of-use',
       title: 'Terms of Use',
       category: 'Legal',
@@ -1713,7 +1933,7 @@ export default function PricingCards() {
                       </p>
                       <p className="text-xs text-black/40 leading-relaxed">
                         Sign in, sign up, password reset, magic link, loading & error states.
-                      </p>
+                </p>
                       <p className="text-xs text-black/40 mt-1 italic">
                         Prompt guidance included.
                       </p>
