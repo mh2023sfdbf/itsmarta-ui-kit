@@ -123,32 +123,9 @@ export default function IframePreview({
               }
             });
             
-            // Simple hash function for class obfuscation
-            function hashClass(str) {
-              let hash = 0;
-              for (let i = 0; i < str.length; i++) {
-                hash = ((hash << 5) - hash) + str.charCodeAt(i);
-                hash = hash & hash;
-              }
-              return '_' + Math.abs(hash).toString(36).substring(0, 6);
-            }
-            
-            // Obfuscate classes after content loads
+            // Clean up React data attributes after render (non-blocking)
             setTimeout(() => {
               try {
-                const classMap = new Map();
-                document.querySelectorAll('[class]').forEach(el => {
-                  const classes = el.className.split(' ').filter(Boolean);
-                  const newClasses = classes.map(cls => {
-                    if (!classMap.has(cls)) {
-                      classMap.set(cls, hashClass(cls));
-                    }
-                    return classMap.get(cls);
-                  });
-                  el.className = newClasses.join(' ');
-                });
-                
-                // Remove React data attributes
                 document.querySelectorAll('*').forEach(el => {
                   Array.from(el.attributes).forEach(attr => {
                     if (attr.name.startsWith('data-react') || attr.name.startsWith('data-__')) {
@@ -157,9 +134,9 @@ export default function IframePreview({
                   });
                 });
               } catch (e) {
-                console.warn('Obfuscation skipped');
+                // Silent fail
               }
-            }, 100);
+            }, 500);
           </script>
         </head>
         <body>
@@ -198,8 +175,24 @@ export default function IframePreview({
     const root = iframeDoc.getElementById('iframe-root');
     if (root) {
       setMountNode(root);
-      // Mark as ready once mount node is set
-      setTimeout(() => setIsReady(true), 50);
+      
+      // Wait for fonts and styles to load before showing
+      Promise.all([
+        iframeDoc.fonts.ready,
+        new Promise(resolve => {
+          if (iframeDoc.readyState === 'complete') {
+            resolve(true);
+          } else {
+            iframe.contentWindow?.addEventListener('load', () => resolve(true), { once: true });
+          }
+        })
+      ]).then(() => {
+        // Extra delay to ensure all styles are applied
+        setTimeout(() => setIsReady(true), 100);
+      }).catch(() => {
+        // Fallback if fonts fail to load
+        setTimeout(() => setIsReady(true), 300);
+      });
     }
 
     if (fixedViewport) {
@@ -235,7 +228,7 @@ export default function IframePreview({
       resizeObserver.disconnect();
       iframe.contentWindow?.removeEventListener('load', updateHeight);
     };
-  }, []);
+  }, [project, fixedViewport]);
 
   // Re-measure when children change
   useEffect(() => {
