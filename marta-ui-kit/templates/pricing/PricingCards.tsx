@@ -3,148 +3,198 @@
 import { useState } from 'react';
 
 export default function PricingCards() {
-  const [yearly, setYearly] = useState(false);
+  const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <section id="therapist-pricing" className="py-24 bg-orange-50 lg:pb-34">
-      <div className="container mx-auto px-4">
-        {/* Heading */}
-        <div className="max-w-4xl mb-20 text-center mx-auto">
-          <h2 className="font-heading text-4xl xs:text-5xl sm:text-6xl mb-4">Simple, Transparent Pricing</h2>
-          <p className="text-lg text-gray-700 mb-3">
-            For clients, and everyday journalers, <span className="font-sego">YourLogo</span> is{' '}
-            <span className="font-bold">always free</span>. Therapists get 10 days to try it risk-free.
+    <section className="py-20 md:py-40 bg-white">
+      <div className="container mx-auto px-4 max-w-7xl">
+        {/* Header */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-gray-900 mb-6">
+            Simple, transparent pricing
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 mb-4">
+            Choose the plan that fits your needs. Start free, upgrade anytime.
           </p>
-          <div className="inline-flex items-center bg-white rounded-lg px-4 py-2 border border-purple-200">
-            <p className="text-sm font-medium">Only therapists pay for premium features</p>
+          <div className="inline-flex items-center bg-[#f7f6f4] rounded-lg px-4 py-2 border border-gray-200">
+            <p className="text-sm font-medium text-gray-700">All plans include 14-day free trial</p>
           </div>
         </div>
 
         {/* Toggle */}
-        <div className="flex justify-center mb-20">
+        <div className="flex justify-center mb-16 md:mb-20">
           <div className="inline-flex items-center bg-white border border-gray-200 rounded-full shadow-sm p-1">
-            <button
-              onClick={() => setYearly(false)}
+            <button 
+              onClick={() => setIsYearly(false)}
               className={`py-2 px-6 rounded-full text-sm transition duration-200 ${
-                !yearly ? 'bg-purple-200 text-black font-medium' : 'text-gray-500 hover:text-gray-700'
+                !isYearly 
+                  ? 'bg-gray-900 text-white font-medium' 
+                  : 'text-gray-500 hover:text-gray-700'
               }`}
             >
               Monthly
             </button>
-            <button
-              onClick={() => setYearly(true)}
+            <button 
+              onClick={() => setIsYearly(true)}
               className={`relative py-2 px-6 rounded-full text-sm transition duration-200 ${
-                yearly ? 'bg-purple-200 text-black font-medium' : 'text-gray-500 hover:text-gray-700'
+                isYearly 
+                  ? 'bg-gray-900 text-white font-medium' 
+                  : 'text-gray-500 hover:text-gray-700'
               }`}
             >
               Yearly
-              <span className="absolute -top-3 -right-5 bg-[#fbf9bf] text-xs px-2 py-0.5 rounded-full shadow font-medium text-black">
-                25% OFF
+              <span className="absolute -top-3 -right-5 bg-[#f7f6f4] text-xs px-2 py-0.5 rounded-full shadow-sm font-medium text-black border border-gray-200">
+                Save 25%
               </span>
             </button>
           </div>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
-          {/* Free Plan */}
-          <div className="rounded-2xl p-10 text-center bg-white flex flex-col opacity-50">
-            <div className="bg-blue-100 rounded-full text-blue-800 font-medium py-1 px-4 text-xs mb-4 inline-block mx-auto">
-              For Clients and Everyday Journalers
+        <div className="grid gap-6 md:gap-8 lg:gap-10 md:grid-cols-3 max-w-6xl mx-auto">
+          {/* Starter Plan */}
+          <div className="rounded-2xl p-8 md:p-10 text-center bg-white flex flex-col shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-[#f7f6f4] rounded-full text-gray-900 font-medium py-1 px-4 text-xs mb-4 inline-block mx-auto border border-gray-200">
+              For Individuals
             </div>
-            <h3 className="font-heading text-3xl mb-3 text-gray-900">Always Free</h3>
-            <p className="text-5xl font-semibold font-heading mb-2 text-black">$0</p>
-            <p className="text-gray-600 mb-6 text-base">
-              Track emotions, journal daily, reflect, and share with your therapist, if you choose — completely free.
+            <h3 className="font-heading text-3xl md:text-4xl mb-3 text-gray-900 font-light">Starter</h3>
+            <p className="text-5xl md:text-6xl font-light font-heading mb-2 text-black">$0</p>
+            <p className="text-gray-600 mb-6 text-sm md:text-base leading-relaxed">
+              Perfect for getting started with essential features and exploring the platform.
             </p>
-            <div className="mt-auto">
-              <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-black bg-purple-200 hover:bg-purple-100 rounded-full transition duration-300">
-                Start Journaling Free
-              </a>
-            </div>
-          </div>
-
-          {/* Premium Plan */}
-          <div className="rounded-2xl p-10 text-center bg-white transform scale-105 shadow-lg border-2 border-purple-300">
-            <div className="rounded-full font-medium py-1 px-4 text-xs mb-4 inline-block mx-auto bg-gray-100">
-              For Therapists
-            </div>
-            <h3 className="font-heading text-3xl mb-3 text-gray-900">Premium</h3>
-            <div className="flex items-center justify-center mb-1 relative">
-              <p className="text-5xl font-semibold font-heading text-black">{yearly ? '$261' : '$29'}</p>
-              {yearly && (
-                <span className="ml-2 text-xs bg-[#fbf9bf] text-black px-2 py-0.5 rounded-full font-medium">
-                  Save $87
-                </span>
-              )}
-            </div>
-            <p className="text-sm text-gray-500 mb-4">{yearly ? 'per year' : 'per month'}</p>
-            <div className="bg-green-50 rounded-lg p-3 mb-6">
-              <p className="text-sm text-green-800">
-                Currently includes all Professional features! ($59 value) including unlimited clients and listing in directory.
-              </p>
-            </div>
-            <p className="mb-6 text-base">Perfect for solo therapists who want deeper client insight and advanced tools.</p>
             <ul className="text-left mb-8 space-y-3">
               <li className="flex items-start">
-                <span className="mr-2 text-sm">•</span>
-                <span className="text-sm">10 clients</span>
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">Up to 5 projects</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-2 text-sm">•</span>
-                <span className="text-sm">Listing in therapist database</span>
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">Basic analytics</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-2 text-sm">•</span>
-                <span className="text-sm">Advanced analytics</span>
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">Community support</span>
               </li>
             </ul>
             <div className="mt-auto">
-              <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-white border border-gray-900 bg-gray-900 hover:bg-gray-800 rounded-full transition duration-300 w-full">
-                Start 10-Day Trial
-              </a>
+              <button className="w-full py-3 md:py-4 px-6 text-sm md:text-base font-medium text-black border border-gray-900 bg-white hover:bg-gray-50 rounded-full transition duration-300">
+                Get Started
+              </button>
             </div>
           </div>
 
-          {/* Professional Plan */}
-          <div className="rounded-2xl p-10 text-center bg-white shadow-sm flex flex-col">
-            <div className="bg-gray-100 rounded-full text-gray-800 font-medium py-1 px-4 text-xs mb-4 inline-block mx-auto">
-              For Therapists
+          {/* Pro Plan */}
+          <div className="rounded-2xl p-8 md:p-10 text-center bg-[#f7f6f4] flex flex-col shadow-lg border-2 border-gray-900 transform md:scale-105 relative">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-4 py-1 rounded-full font-medium">
+              Most Popular
             </div>
-            <div className="bg-yellow-100 text-yellow-800 rounded-lg px-3 py-1 text-xs font-bold mb-2 inline-block mx-auto">
-              Coming Soon
+            <div className="bg-white rounded-full text-gray-900 font-medium py-1 px-4 text-xs mb-4 inline-block mx-auto border border-gray-200">
+              For Teams
             </div>
-            <h3 className="font-heading text-3xl mb-3 text-gray-900">Professional</h3>
-            <div className="flex items-center justify-center mb-1 relative">
-              <p className="text-5xl font-semibold font-heading text-black">{yearly ? '$531' : '$59'}</p>
-              {yearly && (
-                <span className="ml-2 text-xs bg-[#fbf9bf] text-black px-2 py-0.5 rounded-full font-medium">
-                  Save $177
+            <h3 className="font-heading text-3xl md:text-4xl mb-3 text-gray-900 font-light">Professional</h3>
+            <div className="flex items-center justify-center mb-1">
+              <p className="text-5xl md:text-6xl font-light font-heading text-black">
+                ${isYearly ? '228' : '29'}
+              </p>
+              {isYearly && (
+                <span className="ml-2 text-xs bg-white text-black px-2 py-1 rounded-full font-medium border border-gray-200">
+                  Save $120
                 </span>
               )}
             </div>
-            <p className="text-sm text-gray-500 mb-4">{yearly ? 'per year' : 'per month'}</p>
-            <p className="mb-6 text-base">
-              Ideal for therapists ready to expand their client base and be discoverable through our therapist directory.
+            <p className="text-sm text-gray-600 mb-6">{isYearly ? 'per year' : 'per month'}</p>
+            <p className="mb-6 text-sm md:text-base leading-relaxed text-gray-700">
+              Ideal for growing teams who need advanced features and priority support.
             </p>
-            <ul className="text-left mb-8 space-y-3 opacity-60">
+            <ul className="text-left mb-8 space-y-3">
               <li className="flex items-start">
-                <span className="mr-2 text-sm">•</span>
-                <span className="text-sm">Unlimited clients</span>
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">Unlimited projects</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-2 text-sm">•</span>
-                <span className="text-sm">Listing in therapist database</span>
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">Advanced analytics & insights</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-2 text-sm">•</span>
-                <span className="text-sm">Custom branding options</span>
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">Priority support</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">Custom integrations</span>
               </li>
             </ul>
             <div className="mt-auto">
-              <a href="#" className="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-black border border-gray-400 cursor-not-allowed rounded-full transition duration-300">
-                Coming Soon
-              </a>
+              <button className="w-full py-3 md:py-4 px-6 text-sm md:text-base font-medium text-white border border-gray-900 bg-gray-900 hover:bg-gray-800 rounded-full transition duration-300">
+                Start Free Trial
+              </button>
+            </div>
+          </div>
+
+          {/* Enterprise Plan */}
+          <div className="rounded-2xl p-8 md:p-10 text-center bg-white shadow-md flex flex-col border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-[#f7f6f4] rounded-full text-gray-900 font-medium py-1 px-4 text-xs mb-4 inline-block mx-auto border border-gray-200">
+              For Organizations
+            </div>
+            <h3 className="font-heading text-3xl md:text-4xl mb-3 text-gray-900 font-light">Enterprise</h3>
+            <div className="flex items-center justify-center mb-1">
+              <p className="text-5xl md:text-6xl font-light font-heading text-black">
+                ${isYearly ? '948' : '99'}
+              </p>
+              {isYearly && (
+                <span className="ml-2 text-xs bg-[#f7f6f4] text-black px-2 py-1 rounded-full font-medium border border-gray-200">
+                  Save $240
+                </span>
+              )}
+            </div>
+            <p className="text-sm text-gray-600 mb-6">{isYearly ? 'per year' : 'per month'}</p>
+            <p className="mb-6 text-sm md:text-base leading-relaxed text-gray-700">
+              Designed for large organizations requiring enterprise-grade security and support.
+            </p>
+            <ul className="text-left mb-8 space-y-3">
+              <li className="flex items-start">
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">Everything in Professional</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">Dedicated account manager</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">Custom SLA & security</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">On-premise deployment option</span>
+              </li>
+            </ul>
+            <div className="mt-auto">
+              <button className="w-full py-3 md:py-4 px-6 text-sm md:text-base font-medium text-black border border-gray-900 bg-white hover:bg-gray-50 rounded-full transition duration-300">
+                Contact Sales
+              </button>
             </div>
           </div>
         </div>
@@ -152,4 +202,3 @@ export default function PricingCards() {
     </section>
   );
 }
-
