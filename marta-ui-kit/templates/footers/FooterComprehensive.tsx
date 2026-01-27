@@ -11,8 +11,8 @@ export default function FooterComprehensive() {
   const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E";
 
   return (
-    <section className="relative py-24 overflow-hidden">
-      <div className="relative z-10 container mx-auto px-4 md:mt-6">
+    <section className="relative py-20 overflow-hidden bg-white">
+      <div className="relative z-10 container mx-auto px-4 md:mt-6 max-w-7xl">
         <div className="flex flex-wrap -m-6 border-t border-gray-200 md:pt-8">
           {/* Logo and Description */}
           <div className="w-full md:w-1/2 lg:w-5/12 p-6">
@@ -70,10 +70,10 @@ export default function FooterComprehensive() {
                 Company
               </h3>
               <ul className={`pl-4 lg:pl-0 mt-2 lg:mt-0 space-y-2 lg:space-y-4 mb-4 ${companyOpen ? 'block' : 'hidden lg:block'}`}>
-                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Features</a></li>
-                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">About Us</a></li>
-                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Pricing</a></li>
-                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Pricing for Therapists</a></li>
+                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700 transition duration-200" href="">Features</a></li>
+                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700 transition duration-200" href="">About Us</a></li>
+                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700 transition duration-200" href="">Pricing</a></li>
+                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700 transition duration-200" href="">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -94,8 +94,9 @@ export default function FooterComprehensive() {
                 Support
               </h3>
               <ul className={`pl-4 lg:pl-0 mt-2 lg:mt-0 space-y-2 lg:space-y-4 mb-4 ${supportOpen ? 'block' : 'hidden lg:block'}`}>
-                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Account</a></li>
-                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">FAQ</a></li>
+                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700 transition duration-200" href="">Account</a></li>
+                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700 transition duration-200" href="">Help Center</a></li>
+                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700 transition duration-200" href="">FAQ</a></li>
               </ul>
             </div>
           </div>
@@ -115,13 +116,14 @@ export default function FooterComprehensive() {
               <h3 className="mb-9 hidden lg:block font-heading font-semibold text-xs text-gray-500 uppercase tracking-px">
                 Legals
               </h3>
-              <ul className={`pl-4 lg:pl-0 mt-2 lg:mt-0 space-y-2 lg:space-y-4 md:mr-14 ${legalOpen ? 'block' : 'hidden lg:block'}`}>
-                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Terms & Conditions</a></li>
-                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Privacy Policy</a></li>
-                <li className="md:pt-4">
-                  <a className="font-heading font-medium text-base hover:text-purple-500 bg-pink-50 font-black text-purple-600" href="">
+              <ul className={`pl-4 lg:pl-0 mt-2 lg:mt-0 space-y-2 lg:space-y-4 ${legalOpen ? 'block' : 'hidden lg:block'}`}>
+                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700 transition duration-200" href="">Terms & Conditions</a></li>
+                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700 transition duration-200" href="">Privacy Policy</a></li>
+                <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700 transition duration-200" href="">Cookie Policy</a></li>
+                <li className="lg:pt-4">
+                  <p className="font-heading font-medium text-sm text-gray-600">
                     Save up to 25% with our Annual Plans.
-                  </a>
+                  </p>
                 </li>
               </ul>
             </div>

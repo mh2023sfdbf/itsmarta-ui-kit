@@ -919,6 +919,110 @@ export default function GridCards() {
 }`
     },
     {
+      id: 'footer',
+      title: 'Footer',
+      category: 'Layout',
+      project: 'design-app',
+      component: <FooterComprehensive />,
+      code: `'use client';
+
+import { useState } from 'react';
+
+export default function FooterComprehensive() {
+  const [companyOpen, setCompanyOpen] = useState(false);
+  const [supportOpen, setSupportOpen] = useState(false);
+  const [legalOpen, setLegalOpen] = useState(false);
+  
+  const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E";
+
+  return (
+    <section className="relative py-20 overflow-hidden bg-white">
+      <div className="relative z-10 container mx-auto px-4 md:mt-6 max-w-7xl">
+        <div className="flex flex-wrap -m-6 border-t border-gray-200 md:pt-8">
+          <div className="w-full md:w-1/2 lg:w-5/12 p-6">
+            <div className="flex flex-col justify-between h-full">
+              <div>
+                <img className="mb-12" src={placeholder} alt="Logo"/>
+              </div>
+              
+              <div className="mb-8">
+                <h3 className="mb-4 font-heading font-semibold text-xs uppercase tracking-px text-gray-900">Follow Us</h3>
+                <div className="flex space-x-5 text-gray-900">
+                  {/* Social icons */}
+                </div>
+              </div>
+
+              <div>
+                <p className="text-gray-600 text-sm">© 2026. All Rights Reserved</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Company, Support, Legals sections */}
+          <div className="w-full md:w-1/2 lg:w-2/12 px-6">
+            <h3 className="mb-9 font-heading font-semibold text-xs text-gray-500 uppercase">Company</h3>
+            <ul className="space-y-4">
+              <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Features</a></li>
+              <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">About Us</a></li>
+              <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Pricing</a></li>
+            </ul>
+          </div>
+          
+          <div className="w-full md:w-1/2 lg:w-2/12 px-6">
+            <h3 className="mb-9 font-heading font-semibold text-xs text-gray-500 uppercase">Support</h3>
+            <ul className="space-y-4">
+              <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Account</a></li>
+              <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">FAQ</a></li>
+            </ul>
+          </div>
+          
+          <div className="w-full md:w-1/2 lg:w-3/12 px-6">
+            <h3 className="mb-9 font-heading font-semibold text-xs text-gray-500 uppercase">Legals</h3>
+            <ul className="space-y-4">
+              <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Terms & Conditions</a></li>
+              <li><a className="font-heading font-medium text-base text-gray-900 hover:text-gray-700" href="">Privacy Policy</a></li>
+              <li className="pt-4">
+                <p className="font-heading font-medium text-sm text-gray-600">Save up to 25% with our Annual Plans.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
+      id: 'faq',
+      title: 'FAQ',
+      category: 'Support',
+      project: 'design-app',
+      component: <FAQAccordion />,
+      code: `'use client';
+
+import { useState } from 'react';
+
+export default function FAQAccordion() {
+  const [selected, setSelected] = useState<number | null>(null);
+
+  return (
+    <section id="faq" className="relative py-20 md:py-40 bg-white">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="mb-16">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-gray-600 text-lg">Everything you need to know about our product and services.</p>
+        </div>
+        <div className="space-y-1">
+          {/* 10 FAQ questions with accordion functionality */}
+        </div>
+      </div>
+    </section>
+  );
+}`
+    },
+    {
       id: 'three-column-features',
       title: 'Three Column Features',
       category: 'Content',
