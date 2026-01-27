@@ -21,9 +21,11 @@ export default function IframePreview({
   project = 'therapy-app',
 }: IframePreviewProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [mountNode, setMountNode] = useState<HTMLElement | null>(null);
   const [iframeHeight, setIframeHeight] = useState(800);
   const [isReady, setIsReady] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
   
   // Font configuration based on project
   const fontConfig = project === 'design-app' 
@@ -44,9 +46,35 @@ export default function IframePreview({
         headingClass: 'font-outfit'
       };
 
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Load when element is about to enter viewport (200px before)
+          if (entry.isIntersecting || entry.intersectionRatio > 0) {
+            setShouldLoad(true);
+            observer.disconnect(); // Stop observing once loaded
+          }
+        });
+      },
+      {
+        rootMargin: '200px', // Start loading 200px before entering viewport
+        threshold: 0,
+      }
+    );
+
+    observer.observe(container);
+
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const iframe = iframeRef.current;
-    if (!iframe) return;
+    if (!iframe || !shouldLoad) return;
 
     const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
     if (!iframeDoc) return;
@@ -259,7 +287,7 @@ export default function IframePreview({
       resizeObserver.disconnect();
       iframe.contentWindow?.removeEventListener('load', updateHeight);
     };
-  }, [project, fixedViewport, width]);
+  }, [project, fixedViewport, width, shouldLoad]);
 
   // Re-measure when children change
   useEffect(() => {
@@ -284,21 +312,36 @@ export default function IframePreview({
   }, [children, fixedViewport, mountNode]);
 
   return (
-    <>
-      <iframe
-        ref={iframeRef}
-        className="transition-all duration-500"
-        style={{
-          width: fit ? '100%' : `${width}px`,
-          height: fixedViewport ? `${height}px` : fit ? '100%' : `${iframeHeight}px`,
-          border: 'none',
-          opacity: isReady ? 1 : 0,
-          transition: 'opacity 0.2s ease-in-out',
-        }}
-        title="Preview"
-      />
-      {mountNode && createPortal(children, mountNode)}
-    </>
+    <div ref={containerRef} style={{ minHeight: fixedViewport ? height : iframeHeight }}>
+      {shouldLoad ? (
+        <>
+          <iframe
+            ref={iframeRef}
+            className="transition-all duration-500"
+            style={{
+              width: fit ? '100%' : `${width}px`,
+              height: fixedViewport ? `${height}px` : fit ? '100%' : `${iframeHeight}px`,
+              border: 'none',
+              opacity: isReady ? 1 : 0,
+              transition: 'opacity 0.2s ease-in-out',
+            }}
+            title="Preview"
+          />
+          {mountNode && createPortal(children, mountNode)}
+        </>
+      ) : (
+        // Placeholder while not in viewport
+        <div 
+          className="flex items-center justify-center bg-gray-50"
+          style={{
+            width: fit ? '100%' : `${width}px`,
+            height: fixedViewport ? `${height}px` : `${iframeHeight}px`,
+          }}
+        >
+          <div className="text-sm text-gray-400">Loading preview...</div>
+        </div>
+      )}
+    </div>
   );
 }
 
