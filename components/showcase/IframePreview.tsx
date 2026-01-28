@@ -151,87 +151,16 @@ export default function IframePreview({
               }
             });
             
-            // Hash function for class obfuscation
-            function hashClass(str) {
-              let hash = 0;
-              for (let i = 0; i < str.length; i++) {
-                hash = ((hash << 5) - hash) + str.charCodeAt(i);
-                hash = hash & hash;
-              }
-              return '_' + Math.abs(hash).toString(36).substring(0, 6);
-            }
-            
-            // Obfuscate all classes after content loads
-            function obfuscateClasses() {
-              try {
-                const classMap = new Map();
-                
-                // First pass: collect all unique classes
-                document.querySelectorAll('*').forEach(function(el) {
-                  const classes = el.className;
-                  if (typeof classes === 'string' && classes) {
-                    classes.split(/\\s+/).forEach(function(cls) {
-                      if (cls && !classMap.has(cls)) {
-                        classMap.set(cls, hashClass(cls));
-                      }
-                    });
-                  }
-                });
-                
-                // Second pass: replace classes in elements
-                document.querySelectorAll('*').forEach(function(el) {
-                  const classes = el.className;
-                  if (typeof classes === 'string' && classes) {
-                    const newClasses = classes.split(/\\s+/)
-                      .filter(Boolean)
-                      .map(function(cls) { return classMap.get(cls) || cls; })
-                      .join(' ');
-                    el.className = newClasses;
-                  }
-                });
-                
-                // Third pass: update CSS rules
-                Array.from(document.styleSheets).forEach(function(sheet) {
-                  try {
-                    const rules = Array.from(sheet.cssRules || []);
-                    rules.forEach(function(rule, index) {
-                      if (rule.selectorText) {
-                        let newSelector = rule.selectorText;
-                        classMap.forEach(function(hash, original) {
-                          const pattern = '.' + original;
-                          newSelector = newSelector.split(pattern).join('.' + hash);
-                        });
-                        if (newSelector !== rule.selectorText) {
-                          const cssText = rule.cssText.replace(rule.selectorText, newSelector);
-                          sheet.deleteRule(index);
-                          sheet.insertRule(cssText, index);
-                        }
-                      }
-                    });
-                  } catch (e) {
-                    // Skip CORS-protected stylesheets
-                  }
-                });
-              } catch (e) {
-                console.warn('Obfuscation error:', e);
-              }
-            }
-            
             // Clean up React data attributes after render (non-blocking)
-            setTimeout(function() {
+            setTimeout(() => {
               try {
-                document.querySelectorAll('*').forEach(function(el) {
-                  Array.from(el.attributes).forEach(function(attr) {
+                document.querySelectorAll('*').forEach(el => {
+                  Array.from(el.attributes).forEach(attr => {
                     if (attr.name.startsWith('data-react') || attr.name.startsWith('data-__')) {
                       el.removeAttribute(attr.name);
                     }
                   });
                 });
-                
-                // Obfuscate classes after cleanup - only once, with longer delay
-                setTimeout(function() {
-                  obfuscateClasses();
-                }, 1000);
               } catch (e) {
                 // Silent fail
               }
