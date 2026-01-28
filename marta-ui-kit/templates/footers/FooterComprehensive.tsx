@@ -18,7 +18,9 @@ export default function FooterComprehensive() {
           <div className="w-full md:w-1/2 lg:w-5/12 p-6">
             <div className="flex flex-col justify-between h-full">
               <div>
-                <img className="mb-12" src={placeholder} alt="Logo"/>
+                <h2 className="font-heading text-2xl font-light tracking-wide text-gray-900 mb-12">
+                  minimal and calm
+                </h2>
               </div>
               
               {/* Social Media Buttons */}
@@ -66,7 +68,7 @@ export default function FooterComprehensive() {
                   +
                 </span>
               </button>
-              <h3 className="mb-9 hidden lg:block font-heading font-semibold text-xs text-gray-500 uppercase tracking-px">
+              <h3 className="mb-9 hidden lg:block font-heading text-xs uppercase tracking-widest text-gray-500">
                 Company
               </h3>
               <ul className={`pl-4 lg:pl-0 mt-2 lg:mt-0 space-y-2 lg:space-y-4 mb-4 ${companyOpen ? 'block' : 'hidden lg:block'}`}>
@@ -90,7 +92,7 @@ export default function FooterComprehensive() {
                   +
                 </span>
               </button>
-              <h3 className="mb-9 hidden lg:block font-heading font-semibold text-xs text-gray-500 uppercase tracking-px">
+              <h3 className="mb-9 hidden lg:block font-heading text-xs uppercase tracking-widest text-gray-500">
                 Support
               </h3>
               <ul className={`pl-4 lg:pl-0 mt-2 lg:mt-0 space-y-2 lg:space-y-4 mb-4 ${supportOpen ? 'block' : 'hidden lg:block'}`}>
@@ -113,7 +115,7 @@ export default function FooterComprehensive() {
                   +
                 </span>
               </button>
-              <h3 className="mb-9 hidden lg:block font-heading font-semibold text-xs text-gray-500 uppercase tracking-px">
+              <h3 className="mb-9 hidden lg:block font-heading text-xs uppercase tracking-widest text-gray-500">
                 Legals
               </h3>
               <ul className={`pl-4 lg:pl-0 mt-2 lg:mt-0 space-y-2 lg:space-y-4 ${legalOpen ? 'block' : 'hidden lg:block'}`}>

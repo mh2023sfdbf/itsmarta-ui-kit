@@ -5,8 +5,8 @@ export default function NavMenuMinimal() {
 
   return (
     <section className="bg-[#f7f6f4]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-5 relative max-w-7xl mx-auto">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="flex items-center justify-between py-5 relative">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             <a href="/" className="inline-block text-xs xl:text-sm font-medium uppercase tracking-[0.2em] text-gray-900">

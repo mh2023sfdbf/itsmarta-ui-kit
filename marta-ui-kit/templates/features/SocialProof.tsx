@@ -27,7 +27,7 @@ export default function SocialProof() {
   return (
     <section className="relative pt-24">
       <div className="relative z-10 container px-4 mx-auto">
-        <p className="text-gray-600 text-center uppercase tracking-px mb-6 text-xs">
+        <p className="font-heading text-xs uppercase tracking-widest text-gray-500 text-center mb-6">
           AS SEEN ON
         </p>
         <div className="sm:flex grid grid-cols-2 flex-wrap max-w-5xl mx-auto -m-3">

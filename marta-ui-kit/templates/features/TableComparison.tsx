@@ -2,7 +2,7 @@ export default function TableComparison() {
   return (
     <section className="relative px-4 sm:px-8 lg:px-32 pb-44 pt-20 bg-[#f7f6f4]">
       <div className="max-w-screen-xl mx-auto text-center">
-        <p className="mb-8 font-heading font-medium text-xs tracking-wider text-gray-500 uppercase text-center">
+        <p className="mb-8 font-heading text-xs uppercase tracking-widest text-gray-500 text-center">
           WHY CHOOSE US?
         </p>
         <h2 className="mb-16 sm:mb-32 text-center font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-gray-900">

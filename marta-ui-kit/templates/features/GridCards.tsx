@@ -7,7 +7,7 @@ export default function GridCards() {
         <p className="mb-5 font-heading font-medium text-xs tracking-wider text-transparent bg-clip-text bg-gradient-cyan uppercase text-center">
           FEATURED
         </p>
-        <h2 className="mb-24 text-center font-heading text-4xl md:text-5xl text-gray-800">
+        <h2 className="mb-24 text-center font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-gray-900">
           Discover What's Possible
         </h2>
         <div className="md:mx-auto md:max-w-6xl">

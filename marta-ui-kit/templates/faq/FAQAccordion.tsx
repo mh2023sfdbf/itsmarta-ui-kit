@@ -12,7 +12,7 @@ export default function FAQAccordion() {
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-600 text-lg">Everything you need to know about our product and services.</p>
+          <p className="font-heading text-base md:text-lg text-gray-600 leading-relaxed">Everything you need to know about our product and services.</p>
         </div>
           <div className="space-y-1">
               {/* Question 1 */}

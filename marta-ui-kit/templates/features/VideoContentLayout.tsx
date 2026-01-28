@@ -26,7 +26,7 @@ export default function VideoContentLayout() {
             {/* Right Side - Content */}
             <div className="w-full lg:w-2/5 space-y-10">
               <div className="space-y-6">
-                <p className="text-gray-500 uppercase tracking-wider text-sm">
+                <p className="font-heading text-xs uppercase tracking-widest text-gray-500">
                   HOW IT WORKS
                 </p>
                 <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-gray-900">
@@ -44,7 +44,7 @@ export default function VideoContentLayout() {
                     <h3 className="text-xl font-medium mb-2 tracking-wide text-gray-900">
                       Start Your Journey
                     </h3>
-                    <p className="font-heading mb-4 text-gray-600 text-left">
+                    <p className="font-heading text-base text-gray-600 leading-relaxed mb-4">
                       Begin with a simple upload or entry. Our platform instantly analyzes your input for optimized results.
                     </p>
                   </div>
