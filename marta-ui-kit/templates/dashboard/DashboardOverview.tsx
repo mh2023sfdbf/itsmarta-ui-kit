@@ -108,8 +108,24 @@ export default function DashboardOverview() {
               </button>
             </div>
 
-            {/* Activity Items */}
-            <div className="space-y-6">
+            {/* Empty State - Alternative view */}
+            <div className="text-center py-12">
+              <div className="w-20 h-20 shrink-0 rounded-full border-2 border-dashed border-gray-200 flex items-center justify-center mx-auto mb-6">
+                <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+              </div>
+              <p className="font-heading text-xs uppercase tracking-widest text-gray-400 mb-3">
+                EMPTY
+              </p>
+              <h3 className="font-heading text-xl text-gray-900 mb-2">
+                No Activity Yet
+              </h3>
+              <p className="font-heading text-sm text-gray-500 max-w-xs mx-auto">
+                Your recent activity will appear here once you start using the platform
+              </p>
+            </div>
+            
+            {/* Activity Items - Comment out for empty state, uncomment to show activity */}
+            {/* <div className="space-y-6">
               
               <div className="flex items-start space-x-4 pb-6 border-b border-gray-100">
                 <div className="flex-1 min-w-0">
@@ -166,7 +182,7 @@ export default function DashboardOverview() {
                   3hr ago
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Actions - Takes 1 column */}
@@ -176,19 +192,19 @@ export default function DashboardOverview() {
             </h2>
 
             <div className="space-y-3">
-              <button className="w-full font-heading text-sm py-3 px-5 rounded-full ring-1 ring-gray-900 hover:bg-gray-100 transition text-left focus:outline-none focus:ring-2 focus:ring-gray-900">
+              <button className="w-full font-heading text-sm py-3 px-5 rounded-full border border-black hover:bg-gray-100 transition text-left focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                 Add New User
               </button>
 
-              <button className="w-full font-heading text-sm py-3 px-5 rounded-full ring-1 ring-gray-900 hover:bg-gray-100 transition text-left focus:outline-none focus:ring-2 focus:ring-gray-900">
+              <button className="w-full font-heading text-sm py-3 px-5 rounded-full border border-black hover:bg-gray-100 transition text-left focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                 Generate Report
               </button>
 
-              <button className="w-full font-heading text-sm py-3 px-5 rounded-full ring-1 ring-gray-900 hover:bg-gray-100 transition text-left focus:outline-none focus:ring-2 focus:ring-gray-900">
+              <button className="w-full font-heading text-sm py-3 px-5 rounded-full border border-black hover:bg-gray-100 transition text-left focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                 Export Data
               </button>
 
-              <button className="w-full font-heading text-sm py-3 px-5 rounded-full ring-1 ring-gray-900 hover:bg-gray-100 transition text-left focus:outline-none focus:ring-2 focus:ring-gray-900">
+              <button className="w-full font-heading text-sm py-3 px-5 rounded-full border border-black hover:bg-gray-100 transition text-left focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                 Settings
               </button>
             </div>

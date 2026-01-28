@@ -40,10 +40,10 @@ export default function ErrorState() {
 
             {/* Actions */}
             <div className="space-y-3">
-              <button className="w-full font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
+              <button className="w-full font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                 Try Again
               </button>
-              <button className="w-full font-heading text-sm py-3 px-6 rounded-full ring-1 ring-gray-900 hover:bg-gray-100 transition text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900">
+              <button className="w-full font-heading text-sm py-3 px-6 rounded-full border border-black hover:bg-gray-100 transition text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                 Go Back
               </button>
             </div>
@@ -112,10 +112,10 @@ export default function ErrorState() {
               </p>
 
               <div className="flex items-center justify-center space-x-3">
-                <button className="font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
+                <button className="font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                   Retry Connection
                 </button>
-                <button className="font-heading text-sm py-3 px-6 rounded-full ring-1 ring-gray-900 hover:bg-gray-100 transition text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900">
+                <button className="font-heading text-sm py-3 px-6 rounded-full border border-black hover:bg-gray-100 transition text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                   Go Offline
                 </button>
               </div>

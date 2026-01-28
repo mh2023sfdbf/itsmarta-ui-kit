@@ -6,14 +6,14 @@ export default function StatsCards() {
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="mb-12">
           <p className="mb-3 font-heading text-xs uppercase tracking-widest text-gray-500">
             ANALYTICS
           </p>
           <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-4">
             Performance Overview
           </h2>
-          <p className="font-heading text-base text-gray-600 max-w-2xl mx-auto">
+          <p className="font-heading text-base text-gray-600 max-w-2xl">
             Track your key metrics and monitor growth in real-time
           </p>
         </div>

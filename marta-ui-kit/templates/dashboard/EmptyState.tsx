@@ -42,10 +42,10 @@ export default function EmptyState() {
 
             {/* Actions */}
             <div className="space-y-3">
-              <button className="w-full font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
+              <button className="w-full font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                 Add Your First Item
               </button>
-              <button className="w-full font-heading text-sm py-3 px-6 rounded-full ring-1 ring-gray-900 hover:bg-gray-100 transition text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900">
+              <button className="w-full font-heading text-sm py-3 px-6 rounded-full border border-black hover:bg-gray-100 transition text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                 Import Data
               </button>
             </div>
@@ -93,7 +93,7 @@ export default function EmptyState() {
               </div>
 
               {/* Placeholder Card 2 */}
-              <div className="border border-dashed border-gray-300 rounded-2xl p-8 flex items-center justify-center min-h-[200px]">
+              <div className="border-2 border-dashed border-gray-300 rounded-2xl p-8 flex items-center justify-center min-h-[200px]">
                 <div className="text-center">
                   <div className="mb-3">
                     <span className="text-gray-300 text-3xl font-light">+</span>
@@ -119,7 +119,7 @@ export default function EmptyState() {
 
             {/* CTA */}
             <div className="text-center">
-              <button className="inline-flex items-center font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
+              <button className="inline-flex items-center font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                 Create New Project
               </button>
             </div>
@@ -149,7 +149,7 @@ export default function EmptyState() {
               <p className="font-heading text-sm text-gray-600 mb-6 max-w-sm mx-auto">
                 Your recent activity will appear here once you start using the platform.
               </p>
-              <button className="font-heading text-sm py-2.5 px-5 rounded-full ring-1 ring-gray-900 hover:bg-gray-100 transition text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900">
+              <button className="font-heading text-sm py-2.5 px-5 rounded-full border border-black hover:bg-gray-100 transition text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
                 Refresh
               </button>
             </div>
