@@ -228,30 +228,14 @@ export default function IframePreview({
                   });
                 });
                 
-                // Obfuscate classes after cleanup
-                obfuscateClasses();
+                // Obfuscate classes after cleanup - only once, with longer delay
+                setTimeout(function() {
+                  obfuscateClasses();
+                }, 1000);
               } catch (e) {
                 // Silent fail
               }
             }, 500);
-            
-            // Continuous monitoring for dynamic content
-            setInterval(function() {
-              try {
-                // Re-apply obfuscation for new elements
-                const hasUnobfuscatedClasses = Array.from(document.querySelectorAll('*')).some(function(el) {
-                  const classes = el.className;
-                  return typeof classes === 'string' && classes && 
-                         classes.split(/\\s+/).some(function(cls) { return cls && !cls.startsWith('_'); });
-                });
-                
-                if (hasUnobfuscatedClasses) {
-                  obfuscateClasses();
-                }
-              } catch (e) {
-                // Silent fail
-              }
-            }, 1000);
           </script>
         </head>
         <body>
