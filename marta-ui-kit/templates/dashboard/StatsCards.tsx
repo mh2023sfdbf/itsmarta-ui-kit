@@ -10,7 +10,7 @@ export default function StatsCards() {
           <p className="mb-3 font-heading text-xs uppercase tracking-widest text-gray-500">
             ANALYTICS
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-gray-900 mb-4">
+          <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-4">
             Performance Overview
           </h2>
           <p className="font-heading text-base text-gray-600 max-w-2xl">

@@ -54,14 +54,14 @@ export default function TemplatePreview({
   const visibleCode = lines.slice(0, visibleLines).join('\n');
   const blurredCode = lines.slice(visibleLines).join('\n');
 
-  // Viewport configurations with accurate aspect ratios
+  // Viewport configurations with accurate aspect ratios - maximized for better preview
   const viewportConfig = {
-    // Phone: 19.5:9 portrait (iPhone standard) - optimized for preview visibility
-    mobile: { aspectRatio: 9 / 19.5, frameClass: 'max-w-[300px] md:max-w-[320px]', baseWidth: 390, baseHeight: 844 },
-    // Tablet: 4:3
-    tablet: { aspectRatio: 4 / 3, frameClass: 'max-w-[500px] md:max-w-[680px]', baseWidth: 1024, baseHeight: 768 },
-    // Laptop: 16:10
-    desktop: { aspectRatio: 16 / 10, frameClass: 'max-w-none', baseWidth: 1440, baseHeight: 900 },
+    // Phone: 19.5:9 portrait (iPhone standard) - maximized width for better visibility
+    mobile: { aspectRatio: 9 / 19.5, frameClass: 'max-w-[360px] md:max-w-[400px]', baseWidth: 390, baseHeight: 844 },
+    // Tablet: 4:3 - larger for better preview
+    tablet: { aspectRatio: 4 / 3, frameClass: 'max-w-[640px] md:max-w-[800px]', baseWidth: 1024, baseHeight: 768 },
+    // Laptop: 16:10 - maximized
+    desktop: { aspectRatio: 16 / 10, frameClass: 'max-w-[1200px]', baseWidth: 1440, baseHeight: 900 },
   };
 
   const currentConfig = viewportConfig[viewport];
@@ -181,7 +181,7 @@ export default function TemplatePreview({
           {/* The actual component */}
           <div className={cn(
             "relative flex justify-center items-start bg-white",
-            viewport === "desktop" ? "p-6 md:p-12" : "p-3 md:p-6"
+            viewport === "desktop" ? "p-2" : "p-1"
           )}>
             <div 
               ref={frameRef}
@@ -199,12 +199,7 @@ export default function TemplatePreview({
                   }}
                 >
                   <div
-                    className={cn(
-                      "rounded-3xl overflow-hidden bg-white",
-                      viewport === "desktop"
-                        ? "shadow-[0_24px_80px_rgba(0,0,0,0.15)] ring-1 ring-black/10"
-                        : "shadow-[0_20px_60px_rgba(0,0,0,0.10)] ring-1 ring-black/5"
-                    )}
+                    className="rounded-3xl overflow-hidden bg-white border border-black/[0.08]"
               style={{
                       width: currentConfig.baseWidth,
                       height: currentConfig.baseHeight,
@@ -246,17 +241,17 @@ export default function TemplatePreview({
               </div>
 
               {/* Lock Overlay - Vibrant & Visible */}
-              <div className="absolute inset-0 flex items-center justify-center backdrop-blur-sm bg-gradient-to-br from-black/40 via-black/30 to-black/20">
-                <div className="text-center bg-gradient-to-r from-red-100/95 via-yellow-50/95 to-purple-100/95 backdrop-blur-xl border-2 border-white/80 rounded-3xl p-10 shadow-2xl max-w-sm mx-4 ">
+              <div className="absolute inset-0 flex items-center justify-center backdrop-blur-sm bg-gradient-to-br from-black/40 via-black/30 to-black/20 p-4 md:p-3">
+                <div className="text-center bg-gradient-to-r from-red-100/95 via-yellow-50/95 to-purple-100/95 backdrop-blur-xl border-2 border-white/80 rounded-2xl md:rounded-3xl p-3 sm:p-5 md:p-8 lg:p-10 shadow-2xl max-w-[75%] sm:max-w-sm w-full">
                   
-                  <p className="text-sm text-black/60 mb-8 font-light">
+                  <p className="text-xs sm:text-sm text-black/60 mb-3 sm:mb-5 md:mb-8 font-light">
                     One purchase unlocks everything
                   </p>
 
                   {/* Primary CTA Button */}
                   <a 
                     href="https://buy.stripe.com/test_28E4gy5Wf2i37Ri4QJ4ko02"
-                    className="block w-full px-8 py-3.5 bg-black text-white rounded-full font-medium text-sm shadow-lg hover:bg-black/90 hover:shadow-xl hover:scale-105 transition-all duration-200 text-center mb-4"
+                    className="block w-full px-3 sm:px-5 md:px-8 py-2 sm:py-2.5 md:py-3.5 bg-black text-white rounded-full font-medium text-xs sm:text-sm shadow-lg hover:bg-black/90 hover:shadow-xl hover:scale-105 transition-all duration-200 text-center mb-2 sm:mb-3 md:mb-4"
                   >
                     Buy All Templates — ${price}
                   </a>
@@ -264,25 +259,25 @@ export default function TemplatePreview({
                   {/* Minimal Close Button */}
                     <button 
                       onClick={() => setShowCode(false)}
-                    className="text-xs text-black/50 hover:text-black/70 font-light transition-colors underline decoration-1 underline-offset-2"
+                    className="text-xs text-black/50 hover:text-black/70 font-light transition-colors underline decoration-1 underline-offset-2 mb-3 sm:mb-0"
                     >
                       Close Preview
                     </button>
 
-                  {/* Features - Airy spacing */}
-                  <div className="pt-8 mt-8 border-t border-black/10 text-left">
-                    <p className="text-xs font-medium text-black/50 uppercase tracking-wider mb-3">
+                  {/* Features - Compact on mobile */}
+                  <div className="pt-3 sm:pt-5 md:pt-8 mt-3 sm:mt-5 md:mt-8 border-t border-black/10 text-left">
+                    <p className="text-xs font-medium text-black/50 uppercase tracking-wider mb-1.5 sm:mb-2 md:mb-3">
                       What's Included
                     </p>
-                    <ul className="space-y-2 text-xs text-black/70 leading-relaxed">
+                    <ul className="space-y-1 sm:space-y-1.5 md:space-y-2 text-xs text-black/70 leading-snug sm:leading-relaxed">
                       {[
                         "React + Tailwind + TypeScript",
                         "Clean component structure",
                         "Responsive layouts",
                         "Commercial license"
                       ].map((feature) => (
-                        <li key={feature} className="flex items-start gap-2">
-                          <svg className="w-3.5 h-3.5 text-black/50 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <li key={feature} className="flex items-start gap-1.5 sm:gap-2">
+                          <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-black/50 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                           <span>{feature}</span>

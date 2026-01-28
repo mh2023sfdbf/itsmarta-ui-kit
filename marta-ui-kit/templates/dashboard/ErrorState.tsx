@@ -96,8 +96,8 @@ export default function ErrorState() {
             <div className="text-center">
               {/* Minimal Connection Icon */}
               <div className="mb-6 flex justify-center">
-                <div className="w-20 h-20 shrink-0 rounded-full border-2 border-dashed border-gray-200 flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+                <div className="w-20 h-20 rounded-full border-2 border-dashed border-gray-200 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
                 </div>
               </div>
 
@@ -140,7 +140,7 @@ export default function ErrorState() {
               You don't have permission to view this content. Contact your administrator for access.
             </p>
 
-            <button className="w-full font-heading text-sm py-3 px-6 rounded-full ring-1 ring-gray-900 hover:bg-gray-100 transition text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900">
+            <button className="w-full font-heading text-sm py-3 px-6 rounded-full bg-black text-white hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
               Return to Dashboard
             </button>
           </div>

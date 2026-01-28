@@ -137,8 +137,10 @@ export default function EmptyState() {
 
             {/* Empty List */}
             <div className="py-16 text-center">
-              <div className="w-20 h-20 shrink-0 rounded-full border-2 border-dashed border-gray-200 flex items-center justify-center mx-auto mb-4">
-                <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+              <div className="mb-4 flex justify-center">
+                <div className="w-20 h-20 rounded-full border-2 border-dashed border-gray-200 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                </div>
               </div>
               <p className="font-heading text-xs uppercase tracking-widest text-gray-500 mb-3">
                 EMPTY
