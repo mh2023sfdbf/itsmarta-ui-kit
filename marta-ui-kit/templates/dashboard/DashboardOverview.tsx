@@ -2,95 +2,175 @@
 
 export default function DashboardOverview() {
   return (
-    <section className="relative min-h-screen bg-[#f7f6f4] pb-20 pt-12">
+    <section className="relative min-h-screen bg-[#f7f6f4] pb-12 md:pb-20 pt-8 md:pt-12">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Header */}
-        <div className="mb-10">
-          <p className="font-heading text-xs uppercase tracking-widest text-gray-500 mb-3">
+        <div className="mb-8 md:mb-10">
+          <p className="font-heading text-xs uppercase tracking-widest text-gray-500 mb-2">
             OVERVIEW
           </p>
-          <h1 className="font-heading text-3xl md:text-4xl text-gray-900 mb-2">
+          <h1 className="font-heading text-2xl md:text-3xl lg:text-4xl text-gray-900 mb-2">
             Dashboard
           </h1>
-          <p className="font-heading text-base text-gray-600">
+          <p className="font-heading text-sm md:text-base text-gray-600">
             Welcome back. Here's what's happening today.
           </p>
         </div>
 
         {/* Stats Grid - KPI Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-          
-          {/* Stat Card 1 */}
-          <div className="bg-white rounded-2xl p-6 transform hover:-translate-y-1 transition ease-out duration-300 border border-gray-100">
-            <div className="flex items-start justify-between mb-4">
-              <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
-                USERS
-              </p>
-              <span className="font-heading text-xs text-gray-900">
-                +12.5%
-              </span>
+        {/* Mobile: Horizontal scroll | Tablet+: Grid */}
+        <div className="mb-8 md:mb-10">
+          {/* Mobile: Horizontal Scrolling */}
+          <div className="sm:hidden -mx-4 px-4">
+            <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-1">
+              {/* Stat Card 1 */}
+              <div className="min-w-[280px] snap-start bg-white rounded-2xl p-5 border border-gray-100">
+                <div className="flex items-start justify-between mb-3">
+                  <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
+                    USERS
+                  </p>
+                  <span className="font-heading text-xs text-gray-900">
+                    +12.5%
+                  </span>
+                </div>
+                <h3 className="font-heading text-3xl text-gray-900 mb-1">
+                  2,847
+                </h3>
+                <p className="font-heading text-sm text-gray-500">
+                  Total users
+                </p>
+              </div>
+
+              {/* Stat Card 2 */}
+              <div className="min-w-[280px] snap-start bg-white rounded-2xl p-5 border border-gray-100">
+                <div className="flex items-start justify-between mb-3">
+                  <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
+                    REVENUE
+                  </p>
+                  <span className="font-heading text-xs text-gray-900">
+                    +8.2%
+                  </span>
+                </div>
+                <h3 className="font-heading text-3xl text-gray-900 mb-1">
+                  $45,231
+                </h3>
+                <p className="font-heading text-sm text-gray-500">
+                  This month
+                </p>
+              </div>
+
+              {/* Stat Card 3 */}
+              <div className="min-w-[280px] snap-start bg-white rounded-2xl p-5 border border-gray-100">
+                <div className="flex items-start justify-between mb-3">
+                  <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
+                    ACTIVE
+                  </p>
+                  <span className="font-heading text-xs text-gray-500">
+                    -3.1%
+                  </span>
+                </div>
+                <h3 className="font-heading text-3xl text-gray-900 mb-1">
+                  1,429
+                </h3>
+                <p className="font-heading text-sm text-gray-500">
+                  Sessions
+                </p>
+              </div>
+
+              {/* Stat Card 4 */}
+              <div className="min-w-[280px] snap-start bg-white rounded-2xl p-5 border border-gray-100">
+                <div className="flex items-start justify-between mb-3">
+                  <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
+                    CONVERSION
+                  </p>
+                  <span className="font-heading text-xs text-gray-900">
+                    +24.3%
+                  </span>
+                </div>
+                <h3 className="font-heading text-3xl text-gray-900 mb-1">
+                  94.2%
+                </h3>
+                <p className="font-heading text-sm text-gray-500">
+                  Success rate
+                </p>
+              </div>
             </div>
-            <h3 className="font-heading text-3xl md:text-4xl text-gray-900 mb-1">
-              2,847
-            </h3>
-            <p className="font-heading text-sm text-gray-500">
-              Total users
-            </p>
           </div>
 
-          {/* Stat Card 2 */}
-          <div className="bg-white rounded-2xl p-6 transform hover:-translate-y-1 transition ease-out duration-300 border border-gray-100">
-            <div className="flex items-start justify-between mb-4">
-              <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
-                REVENUE
+          {/* Tablet+: Grid Layout */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Stat Card 1 */}
+            <div className="bg-white rounded-2xl p-6 transform hover:-translate-y-1 transition ease-out duration-300 border border-gray-100">
+              <div className="flex items-start justify-between mb-4">
+                <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
+                  USERS
+                </p>
+                <span className="font-heading text-xs text-gray-900">
+                  +12.5%
+                </span>
+              </div>
+              <h3 className="font-heading text-3xl md:text-4xl text-gray-900 mb-1">
+                2,847
+              </h3>
+              <p className="font-heading text-sm text-gray-500">
+                Total users
               </p>
-              <span className="font-heading text-xs text-gray-900">
-                +8.2%
-              </span>
             </div>
-            <h3 className="font-heading text-3xl md:text-4xl text-gray-900 mb-1">
-              $45,231
-            </h3>
-            <p className="font-heading text-sm text-gray-500">
-              This month
-            </p>
-          </div>
 
-          {/* Stat Card 3 */}
-          <div className="bg-white rounded-2xl p-6 transform hover:-translate-y-1 transition ease-out duration-300 border border-gray-100">
-            <div className="flex items-start justify-between mb-4">
-              <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
-                ACTIVE
+            {/* Stat Card 2 */}
+            <div className="bg-white rounded-2xl p-6 transform hover:-translate-y-1 transition ease-out duration-300 border border-gray-100">
+              <div className="flex items-start justify-between mb-4">
+                <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
+                  REVENUE
+                </p>
+                <span className="font-heading text-xs text-gray-900">
+                  +8.2%
+                </span>
+              </div>
+              <h3 className="font-heading text-3xl md:text-4xl text-gray-900 mb-1">
+                $45,231
+              </h3>
+              <p className="font-heading text-sm text-gray-500">
+                This month
               </p>
-              <span className="font-heading text-xs text-gray-500">
-                -3.1%
-              </span>
             </div>
-            <h3 className="font-heading text-3xl md:text-4xl text-gray-900 mb-1">
-              1,429
-            </h3>
-            <p className="font-heading text-sm text-gray-500">
-              Sessions
-            </p>
-          </div>
 
-          {/* Stat Card 4 */}
-          <div className="bg-white rounded-2xl p-6 transform hover:-translate-y-1 transition ease-out duration-300 border border-gray-100">
-            <div className="flex items-start justify-between mb-4">
-              <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
-                CONVERSION
+            {/* Stat Card 3 */}
+            <div className="bg-white rounded-2xl p-6 transform hover:-translate-y-1 transition ease-out duration-300 border border-gray-100">
+              <div className="flex items-start justify-between mb-4">
+                <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
+                  ACTIVE
+                </p>
+                <span className="font-heading text-xs text-gray-500">
+                  -3.1%
+                </span>
+              </div>
+              <h3 className="font-heading text-3xl md:text-4xl text-gray-900 mb-1">
+                1,429
+              </h3>
+              <p className="font-heading text-sm text-gray-500">
+                Sessions
               </p>
-              <span className="font-heading text-xs text-gray-900">
-                +24.3%
-              </span>
             </div>
-            <h3 className="font-heading text-3xl md:text-4xl text-gray-900 mb-1">
-              94.2%
-            </h3>
-            <p className="font-heading text-sm text-gray-500">
-              Success rate
-            </p>
+
+            {/* Stat Card 4 */}
+            <div className="bg-white rounded-2xl p-6 transform hover:-translate-y-1 transition ease-out duration-300 border border-gray-100">
+              <div className="flex items-start justify-between mb-4">
+                <p className="font-heading text-xs uppercase tracking-wider text-gray-500">
+                  CONVERSION
+                </p>
+                <span className="font-heading text-xs text-gray-900">
+                  +24.3%
+                </span>
+              </div>
+              <h3 className="font-heading text-3xl md:text-4xl text-gray-900 mb-1">
+                94.2%
+              </h3>
+              <p className="font-heading text-sm text-gray-500">
+                Success rate
+              </p>
+            </div>
           </div>
         </div>
 
@@ -99,7 +179,7 @@ export default function DashboardOverview() {
           
           {/* Activity Feed - Takes 2 columns */}
           <div className="lg:col-span-2 bg-white rounded-2xl p-6 md:p-8 border border-gray-100">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-6 md:mb-8">
               <h2 className="font-heading text-xs uppercase tracking-widest text-gray-900">
                 Recent Activity
               </h2>
@@ -109,7 +189,7 @@ export default function DashboardOverview() {
             </div>
 
             {/* Empty State - Alternative view */}
-            <div className="text-center py-12">
+            <div className="text-center py-10 md:py-12">
               <div className="mb-6 flex justify-center">
                 <div className="w-20 h-20 rounded-full border-2 border-dashed border-gray-200 flex items-center justify-center">
                   <div className="w-2 h-2 rounded-full bg-gray-300"></div>
@@ -118,10 +198,10 @@ export default function DashboardOverview() {
               <p className="font-heading text-xs uppercase tracking-widest text-gray-400 mb-3">
                 EMPTY
               </p>
-              <h3 className="font-heading text-xl text-gray-900 mb-2">
+              <h3 className="font-heading text-lg md:text-xl text-gray-900 mb-2">
                 No Activity Yet
               </h3>
-              <p className="font-heading text-sm text-gray-500 max-w-xs mx-auto">
+              <p className="font-heading text-sm text-gray-500 max-w-xs mx-auto px-4">
                 Your recent activity will appear here once you start using the platform
               </p>
             </div>
@@ -134,7 +214,7 @@ export default function DashboardOverview() {
                   <p className="font-heading text-base text-gray-900 mb-2">
                     New user registered
                   </p>
-                  <p className="font-heading text-sm text-gray-500">
+                  <p className="font-heading text-xs md:text-sm text-gray-500">
                     sarah.wilson@example.com
                   </p>
                 </div>
@@ -148,7 +228,7 @@ export default function DashboardOverview() {
                   <p className="font-heading text-base text-gray-900 mb-2">
                     Report generated
                   </p>
-                  <p className="font-heading text-sm text-gray-500">
+                  <p className="font-heading text-xs md:text-sm text-gray-500">
                     Monthly analytics ready
                   </p>
                 </div>
@@ -162,7 +242,7 @@ export default function DashboardOverview() {
                   <p className="font-heading text-base text-gray-900 mb-2">
                     Product shipped
                   </p>
-                  <p className="font-heading text-sm text-gray-500">
+                  <p className="font-heading text-xs md:text-sm text-gray-500">
                     Order #3847 dispatched
                   </p>
                 </div>
@@ -176,7 +256,7 @@ export default function DashboardOverview() {
                   <p className="font-heading text-base text-gray-900 mb-2">
                     System update available
                   </p>
-                  <p className="font-heading text-sm text-gray-500">
+                  <p className="font-heading text-xs md:text-sm text-gray-500">
                     New features ready
                   </p>
                 </div>
@@ -189,7 +269,7 @@ export default function DashboardOverview() {
 
           {/* Quick Actions - Takes 1 column */}
           <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100">
-            <h2 className="font-heading text-xs uppercase tracking-widest text-gray-900 mb-8">
+            <h2 className="font-heading text-xs uppercase tracking-widest text-gray-900 mb-6 md:mb-8">
               Quick Actions
             </h2>
 

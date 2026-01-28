@@ -196,7 +196,7 @@ export default function FAQAccordion() {
               </div>
 
               {/* Question 10 */}
-              <div className="border-b border-gray-200 py-6">
+              <div className="py-6">
                 <button
                   onClick={() => setSelected(selected === 10 ? null : 10)}
                   className="flex items-start md:items-center justify-between w-full focus:outline-none text-left group"

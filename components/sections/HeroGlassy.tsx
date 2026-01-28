@@ -1927,15 +1927,12 @@ export default function ErrorState() {
               
                   {/* Auth states info - Mobile only (separate card) */}
                   {activeTemplate === 'sign-in-split' && (
-                    <div className="md:hidden mt-3 p-3 rounded-lg bg-black/[0.02] border border-black/5">
-                      <p className="text-xs font-medium text-black/70 mb-1">
-                        All auth states included
+                    <div className="md:hidden mt-2 p-2.5 rounded-lg bg-black/[0.02] border border-black/5">
+                      <p className="text-xs uppercase tracking-widest text-black/40 mb-1">
+                        All States Included
                       </p>
-                      <p className="text-xs text-black/40 leading-relaxed">
-                        Sign in, sign up, password reset, magic link, loading & error states.
-                </p>
-                      <p className="text-xs text-black/40 mt-1 italic">
-                        Prompt guidance included.
+                      <p className="text-xs text-black/30 leading-snug">
+                        Sign in, sign up, password reset, magic link, loading & error states. Prompt guidance included.
                       </p>
                     </div>
                   )}
@@ -1962,30 +1959,27 @@ export default function ErrorState() {
                   <div className="mt-4 md:mt-8">
                   <a
                       href={`/demo-minimal-calm?template=${activeTemplate}`}
-                      className="group w-full relative overflow-hidden rounded-2xl border border-black/10 bg-white p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-2xl transition-all duration-500 block"
+                      className="group w-full rounded-3xl border border-black/[0.08] bg-white p-5 md:p-6 hover:border-black/[0.12] transition-all duration-300 block"
                     >
-                      {/* Animated gradient background on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-black/[0.02] to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      
-                      <div className="relative flex items-center justify-between gap-4">
+                      <div className="flex items-center justify-between gap-4">
                         {/* Left: Content */}
                         <div className="flex-1 text-left">
-                          <div className="inline-flex items-center gap-2 px-2.5 md:px-3 py-1 rounded-full bg-black/5 mb-2 md:mb-3">
-                            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                            <span className="text-xs font-medium text-black/60 uppercase tracking-wider">Live Demo</span>
+                          <div className="inline-flex items-center gap-1.5 mb-2">
+                            <div className="w-1.5 h-1.5 rounded-full bg-gray-900"></div>
+                            <span className="font-heading text-xs uppercase tracking-widest text-gray-500">Live Demo</span>
                           </div>
-                          <h4 className="text-base sm:text-lg md:text-xl font-medium text-black/90 mb-1">
+                          <h4 className="font-heading text-base md:text-lg font-medium text-gray-900 mb-1">
                             See all templates work together
                           </h4>
-                          <p className="text-xs sm:text-sm text-black/50 font-light">
+                          <p className="font-heading text-xs md:text-sm text-gray-600">
                             Experience the UI kit as a complete real page
                 </p>
               </div>
 
-                        {/* Right: Arrow Icon */}
-                        <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        {/* Right: Arrow */}
+                        <div className="flex-shrink-0">
                           <svg 
-                            className="w-4 h-4 md:w-5 md:h-5 text-white group-hover:translate-x-0.5 transition-transform duration-200" 
+                            className="w-5 h-5 md:w-6 md:h-6 text-gray-900 group-hover:translate-x-1 transition-transform duration-200" 
                             fill="none" 
                             stroke="currentColor" 
                             viewBox="0 0 24 24"
@@ -1993,8 +1987,8 @@ export default function ErrorState() {
                             <path 
                               strokeLinecap="round" 
                               strokeLinejoin="round" 
-                              strokeWidth={2} 
-                              d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                              strokeWidth={1.5} 
+                              d="M17 8l4 4m0 0l-4 4m4-4H3" 
                             />
                           </svg>
                         </div>

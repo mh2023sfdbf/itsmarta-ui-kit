@@ -9,7 +9,7 @@ export default function NavMenuMinimal() {
         <div className="flex items-center justify-between py-5 relative">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/" className="inline-block text-xs xl:text-sm font-medium uppercase tracking-[0.2em] text-gray-900">
+            <a href="/" className="inline-block text-xs xl:text-sm font-heading uppercase tracking-[0.2em] text-gray-900">
               MINIMAL & CALM
             </a>
           </div>

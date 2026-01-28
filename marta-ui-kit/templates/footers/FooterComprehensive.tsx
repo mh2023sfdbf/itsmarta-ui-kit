@@ -18,8 +18,8 @@ export default function FooterComprehensive() {
           <div className="w-full md:w-1/2 lg:w-5/12 p-6">
             <div className="flex flex-col justify-between h-full">
               <div>
-                <h2 className="font-heading text-2xl font-light tracking-wide text-gray-900 mb-12">
-                  minimal and calm
+                <h2 className="font-heading text-xs xl:text-sm font-heading uppercase tracking-[0.2em] text-gray-900 mb-12">
+                  MINIMAL & CALM
                 </h2>
               </div>
               

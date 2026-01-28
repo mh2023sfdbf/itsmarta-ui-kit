@@ -61,7 +61,7 @@ export default function SignInSplit() {
 
               <div className="flex flex-wrap items-center justify-between mb-6">
                 <div className="w-full md:w-auto mt-1">
-                  <a className="inline-block text-xs text-pink-500 hover:text-pink-600" href="#">
+                  <a className="inline-block text-xs text-gray-900 font-medium hover:text-black" href="#">
                     Forgot your password?
                   </a>
                 </div>
@@ -76,7 +76,7 @@ export default function SignInSplit() {
               
               <p className="text-center">
                 <span className="text-xs">Don&apos;t have an account? </span>
-                <a className="inline-block text-xs text-pink-500 hover:text-pink-600 hover:underline" href="#">
+                <a className="inline-block text-xs text-gray-900 font-medium hover:text-black hover:underline" href="#">
                   Sign up
                 </a>
               </p>
